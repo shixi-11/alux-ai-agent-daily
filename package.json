@@ -4,7 +4,8 @@
   "private": true,
   "description": "Build and multi-viewport verification tools for ALUX AI Agent Intelligence Daily.",
   "scripts": {
-    "verify:render": "node scripts/render-check.cjs"
+    "verify:render": "node scripts/render-check.cjs",
+    "verify:boundary": "node scripts/verify-release-boundary.cjs"
   },
   "devDependencies": {
     "playwright": "^1.54.0"

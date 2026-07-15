@@ -1,0 +1,49 @@
+# 公开 GitHub 内容边界
+
+本仓库是 ALUX AI智能体情报日报的公开产品仓库。公开内容只服务于站点阅读、双语出版、构建部署和可复现维护，不承载个人对话、Agent 内部过程或本机运行状态。
+
+## 每日自动发布可以提交
+
+每日任务只能提交同一期的以下文件：
+
+- `content/zh/YYYYMMDD_ALUX_AI智能体情报日报.html`
+- `content/en/YYYYMMDD.body.html`
+- `content/en/translation-manifest.json`
+- 由 `scripts/sync-reports.ps1` 重建的 `public/`
+
+这些文件必须是面向读者的正式成品。中英文首页、最新页、日期页、归档和 sitemap 必须在同一次构建、同一次提交中更新。
+
+## 仓库维护可以提交
+
+只有在明确的代码或出版系统维护任务中，才可单独审查并提交：
+
+- `scripts/`、`templates/`、`assets/`、`tools/`
+- `docs/`、`AGENTS.md`、`AUTOMATION.md`、`automation/`
+- 依赖清单、Vercel 配置和其他正式工程文件
+
+维护改动不得混入每日内容发布提交。每日任务发现这些文件有未提交改动时必须停止，不得顺手带入。
+
+## 永远不可以提交
+
+- 个人 Telegram chat ID、手机号、邮箱、私聊内容或其他私人身份信息
+- API key、access token、OAuth 凭据、cookie、私钥、`.env`、本机 credential helper 内容
+- `/Users/...`、`C:\Users\...`、工作区目录、缓存路径或其他本机绝对路径
+- OpenClaw 本地 prompt、research packet、sources、manifest、ledger、运行锁、恢复状态
+- 工作日志、失败原因、网络/VPN 状态、质量门禁输出、截图、调试转储、工具输出
+- Agent 名称、内部称呼、自言自语、思考过程、对用户的回复草稿
+- 半成品、未审校英文、未验证来源、未通过响应式或正式域名验收的页面
+
+## GitHub 上可以怎么说
+
+- 日报发布提交固定使用：`发布 YYYY-MM-DD 中英双语日报`
+- 维护提交使用简洁、中性的结果描述，例如：`加强公开发布边界校验`
+- 公开文档只解释稳定的产品规则、目录合同、构建方法和验收标准
+
+## GitHub 上不可以怎么说
+
+- 不写“我做了什么”“哪里报错”“等用户合并”“稍后重试”等过程叙述
+- 不写私聊对象、内部 Agent 分工、个人偏好、账号状态或本机故障
+- 不把诊断日志、命令输出、内部检查清单或临时解决方案当成公开产品说明
+- 不创建每日发布 PR，也不留下等待人工合并的说明；验收通过后由正式发布脚本直接推送 `main`
+
+`scripts/verify-release-boundary.cjs` 会在每日推送前扫描当期中英文成品及正式站点文件。命中私人信息、内部运行痕迹、本机路径或常见密钥形态时，发布必须停止。

@@ -1,8 +1,8 @@
 # ALUX AI Agent Intelligence Daily · Agent 接班说明
 
-本文件是所有继续维护者的第一入口。克隆或同步仓库后，先读本文件，再读 `README.md`、`AUTOMATION.md`、`docs/OPERATIONS.md`、`docs/RESPONSIVE_LAYOUT_STANDARD.md` 与 `docs/SHARE_CARD_STANDARD.md`。OpenClaw Agent 还必须读 `automation/OPENCLAW_DAILY_TASK.md`，并用该合同升级现有定时任务的正文。
+本文件是所有继续维护者的第一入口。克隆或同步仓库后，先读本文件，再读 `README.md`、`AUTOMATION.md`、`docs/OPERATIONS.md`、`docs/RESPONSIVE_LAYOUT_STANDARD.md`、`docs/PUBLIC_REPOSITORY_BOUNDARY.md` 与 `docs/SHARE_CARD_STANDARD.md`。OpenClaw Agent 还必须读 `automation/OPENCLAW_DAILY_TASK.md`，并用该合同升级现有定时任务的正文。
 
-当前自动化合同版本为 `2.3.0`。OpenClaw 发现现有日报任务没有 `[ALUX_DAILY_CONTRACT_VERSION: 2.3.0]` 时，必须保留原任务 ID、执行时间、时区和凭据，只替换任务正文并完成一次 dry run；不得另建一个重复任务。
+当前自动化合同版本为 `2.3.1`。OpenClaw 发现现有日报任务没有 `[ALUX_DAILY_CONTRACT_VERSION: 2.3.1]` 时，必须保留原任务 ID、执行时间、时区和凭据，只替换任务正文并完成一次 dry run；不得另建一个重复任务。
 
 ## 任务目标
 
@@ -36,7 +36,7 @@
 
 1. 查看 `content/zh/`、`content/en/translation-manifest.json` 与 Git 状态，确认最新日期和未完事项。
 2. 新建 `content/zh/YYYYMMDD_ALUX_AI智能体情报日报.html`。不覆盖历史日期。
-3. 按项目翻译配置执行“分析 → 初译 → 审校 → 润色”，新建 `content/en/YYYYMMDD.body.html`。
+3. 按项目翻译配置执行“分析 → 初译 → 独立审校 → 润色”，新建 `content/en/YYYYMMDD.body.html`；独立审校必须由不同编辑上下文完成，不能由初译同一遍输出自行认证。
 4. 核对中英两版的数字、产品名、版本号、融资金额、RISC 判断和外部来源链接。
 5. 更新翻译清单，只有人工或 Agent 精修复核后才可标记 `reviewed`。
 6. 依次执行：
@@ -47,13 +47,13 @@
    node .\scripts\render-check.cjs
    ```
 
-7. 检查生成截图和验证输出；只有全部通过后才可提交和推送。日常发布使用 `scripts/publish.ps1`，它只允许当期中英文母稿、翻译清单和脚本生成的 `public/` 进入提交。
+7. 检查生成截图和验证输出，并运行 `node scripts/verify-release-boundary.cjs YYYY-MM-DD`；只有全部通过后才可提交和推送。日常发布使用 `scripts/publish.ps1`，它只允许当期中英文母稿、翻译清单和脚本生成的 `public/` 进入提交，并直接提交、推送正式仓库 `main`，不创建 PR、不等待人工合并。
 8. 推送 `main` 后运行 `node scripts/verify-official-deployment.cjs YYYY-MM-DD`；只有正式域名的中英首页、最新页、日期页与本地成品哈希一致，才算发布完成。
 
 ## 翻译标准
 
 - 目标语言：美式英语（`en-US`）。
-- 翻译模式：精译，必须完整执行“分析 → 初译 → 审校 → 润色”，不得省略任何阶段。
+- 翻译模式：精译，必须完整执行“分析 → 初译 → 独立审校 → 润色”，不得省略任何阶段，也不得由初译者在同一遍输出里自行宣称审校通过。
 - 目标读者：全球 AI Agent、基础设施、技术与商业读者。
 - 文风：母语级科技情报出版物，专业、简洁、准确、权威，不逐字直译。
 - 不得发明事实、更改数字、替换来源或扩大 ALUX 已有能力。

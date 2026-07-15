@@ -6,9 +6,10 @@
 2. `docs/REPORT_STYLE_GUIDE.md`
 3. `docs/RESPONSIVE_LAYOUT_STANDARD.md`
 4. `docs/DAILY_PUBLISH_CHECKLIST.md`
-5. `docs/SHARE_CARD_STANDARD.md`
-6. `.baoyu-skills/baoyu-translate/EXTEND.md`
-7. `automation/OPENCLAW_DAILY_TASK.md`
+5. `docs/PUBLIC_REPOSITORY_BOUNDARY.md`
+6. `docs/SHARE_CARD_STANDARD.md`
+7. `.baoyu-skills/baoyu-translate/EXTEND.md`
+8. `automation/OPENCLAW_DAILY_TASK.md`
 
 读完后，保留你原有自动化的执行时间和时区，按 `automation/OPENCLAW_DAILY_TASK.md` 替换任务正文。`automation/task-contract.json` 是供 Agent 和脚本读取的机器可读合同。
 
@@ -17,7 +18,7 @@
 1. 读取 `automation/task-contract.json` 的 `contractVersion`。
 2. 找到你已经存在的日报自动化任务，不新建重复任务。
 3. 保留原任务 ID、schedule、时区、通知对象和凭据配置，只用 `automation/OPENCLAW_DAILY_TASK.md` 替换任务正文。
-4. 确认正文含当前版本标记 `[ALUX_DAILY_CONTRACT_VERSION: 2.3.0]`。
+4. 确认正文含当前版本标记 `[ALUX_DAILY_CONTRACT_VERSION: 2.3.1]`。
 5. 先手动执行一次 dry run；只有中英生成、构建和验收都通过，才让升级后的任务进入下一次定时运行。
 
 ## 你的完整任务
@@ -29,12 +30,12 @@
 3. 核对中英两版事实、数字、产品名、版本号、RISC 判断和所有来源链接。
 4. 更新 `content/en/translation-manifest.json` 并将已精修的当期标记为 `reviewed`。
 5. 运行生成和验收脚本，让中英首页、最新页、日期页、语言切换、归档和 sitemap 同时更新。
-6. 全部验收通过后，只将当期中英母稿、翻译清单与 `public/` 成品一起推送到 GitHub；内部研究包、日志、prompt、manifest、ledger、截图和工具输出不得进入仓库。
+6. 全部验收通过后，只将当期中英母稿、翻译清单与 `public/` 成品一起直接提交并推送正式仓库 `main`；不创建 PR、不等待人工合并。内部研究包、日志、prompt、manifest、ledger、截图和工具输出不得进入仓库。
 7. 等待 Vercel 完成部署，并用 `scripts/verify-official-deployment.cjs` 验证正式域名与本地成品哈希一致。OpenClaw 只有在这一步通过后才能发送同一期 HTML 附件与固定链接文案。
 
 英文内容变长时，不得保留中文模板的窄固定标签列。热区矩阵在宽屏使用至少 `172px` 的英文标签列并允许自然换行，在 `620px` 及以下变为单列；任何标签、强度徽章或正文重叠都会让 `render-check.cjs` 失败并阻止发布。
 
-英文翻译合同固定为：目标语言美式英语（`en-US`）；翻译模式为精译并完整执行“分析 → 初译 → 审校 → 润色”；目标读者是全球 AI Agent、基础设施、技术与商业读者；文风是母语级科技情报出版物，专业、简洁、准确、权威，不逐字直译。任何 Agent 不得自行降级为直译、浏览器即时翻译或未经审校的机器翻译。
+英文翻译合同固定为：目标语言美式英语（`en-US`）；翻译模式为精译并完整执行“分析 → 初译 → 独立审校 → 润色”；目标读者是全球 AI Agent、基础设施、技术与商业读者；文风是母语级科技情报出版物，专业、简洁、准确、权威，不逐字直译。独立审校必须由不同编辑上下文完成；任何 Agent 不得自行降级为直译、浏览器即时翻译或未经审校的机器翻译。
 
 `.panel-head` 标题与右侧说明同样不得重叠，`920px` 及以下改为上下排列。顶栏 Logo 和语言切换外框必须保持 `44px` 等高；不得删除、跳过或弱化这些真实文字边界门禁。
 
@@ -64,6 +65,7 @@ pwsh -NoProfile -File ./scripts/update-translation-manifest.ps1 -Date YYYY-MM-DD
 pwsh -NoProfile -File ./scripts/sync-reports.ps1
 pwsh -NoProfile -File ./scripts/verify-site.ps1
 node ./scripts/render-check.cjs
+node ./scripts/verify-release-boundary.cjs YYYY-MM-DD
 pwsh -NoProfile -File ./scripts/publish.ps1
 node ./scripts/verify-official-deployment.cjs YYYY-MM-DD
 ```

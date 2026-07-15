@@ -8,6 +8,12 @@ tools/share-card/.share-card-render.tmp.png
 artifacts/
 test-results/
 .playwright/
+outputs/
+logs/
+research_packet*
+send-ledger.json
+translation_review.json
+.run-lock/
 .DS_Store
 Thumbs.db
 *.log

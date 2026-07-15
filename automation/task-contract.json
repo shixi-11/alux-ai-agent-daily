@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contractVersion": "2.3.0",
+  "contractVersion": "2.3.1",
   "task": "ALUX AI Agent Intelligence Daily bilingual publish",
   "schedulePolicy": "Preserve the existing OpenClaw schedule and timezone; replace only the task workflow.",
   "automationTimezone": "preserve-existing",
@@ -21,6 +21,7 @@
       "review",
       "polish"
     ],
+    "independentReview": true,
     "audience": "Global AI Agent, infrastructure, technology and business readers",
     "style": "Native-level technology intelligence publication: professional, concise, accurate and authoritative; never literal word-for-word translation"
   },
@@ -30,6 +31,7 @@
     "docs/REPORT_STYLE_GUIDE.md",
     "docs/RESPONSIVE_LAYOUT_STANDARD.md",
     "docs/DAILY_PUBLISH_CHECKLIST.md",
+    "docs/PUBLIC_REPOSITORY_BOUNDARY.md",
     "docs/SHARE_CARD_STANDARD.md",
     ".baoyu-skills/baoyu-translate/EXTEND.md"
   ],
@@ -37,12 +39,13 @@
     "Pull the latest main branch and inspect git status.",
     "Resume any unfinished translation or review before starting a new date.",
     "Generate the Chinese report in the current reviewed layout and editorial style.",
-    "Create a refined en-US translation for global AI Agent, infrastructure, technology and business readers; complete analysis, initial translation, review and polish, and never translate literally word for word.",
+    "Create a refined en-US translation for global AI Agent, infrastructure, technology and business readers; complete analysis, initial translation, independent review in a separate editor context, and polish, and never translate literally word for word.",
     "Mark the translation reviewed and refresh source/translation hashes.",
     "Build both locales and update both homepages, latest routes, dated routes, archives and sitemap together.",
     "Run structural, hash, link, SEO and multi-viewport rendering checks.",
+    "Run the public release boundary scanner and reject private identity, credentials, local paths, internal artifacts and process narration.",
     "Reject every daily change outside the official release allowlist.",
-    "Commit Chinese source, English source, translation manifest and public output together; push main.",
+    "Commit Chinese source, English source, translation manifest and public output together; push the official main branch directly without a pull request or manual merge.",
     "Verify the official domain and deployed file hashes after Vercel finishes deployment.",
     "Only after official-domain verification, send the matching Chinese HTML attachment and the fixed multiline Telegram message."
   ],
@@ -62,6 +65,7 @@
   ],
   "telegramDelivery": {
     "target": "configured-private-recipient",
+    "targetEnvironmentVariable": "ALUX_TELEGRAM_CHAT_ID",
     "attachment": "content/zh/YYYYMMDD_ALUX_AI智能体情报日报.html",
     "sendAfter": "official deployment verification passes",
     "preserveBlankLines": true,
@@ -81,6 +85,7 @@
   "hardGates": [
     "No locale may be missing for a published date.",
     "Every translation must be reviewed and match the manifest hashes.",
+    "Every translation must receive an independent editorial review outside the initial translation pass before it is marked reviewed.",
     "Every English issue must satisfy the translationContract in full; no stage may be skipped or downgraded to literal or browser machine translation.",
     "Chinese and English external source URL sets and structural counts must match.",
     "No unhandled Chinese text may remain in English content.",
@@ -91,6 +96,8 @@
     "The visible logo control and language switch are vertically aligned at 44px high, with language targets at least 44px high.",
     "The rendered heat-row overlap gate must pass and must not be bypassed or weakened.",
     "No file outside repositoryPublishAllowlist may enter a daily release commit.",
+    "No private identity, credential, local path, internal artifact, work log, tool output or process narration may enter public release content.",
+    "Daily publication must commit and push the official main branch directly; it must not stop at a pull request or wait for a manual merge.",
     "Telegram delivery is blocked until the official domain serves byte-equivalent current home, latest and dated pages.",
     "Do not push when any validation fails."
   ],
@@ -99,6 +106,7 @@
     "pwsh -NoProfile -File ./scripts/sync-reports.ps1",
     "pwsh -NoProfile -File ./scripts/verify-site.ps1",
     "node ./scripts/render-check.cjs",
+    "node ./scripts/verify-release-boundary.cjs YYYY-MM-DD",
     "pwsh -NoProfile -File ./scripts/publish.ps1",
     "node ./scripts/verify-official-deployment.cjs YYYY-MM-DD"
   ]

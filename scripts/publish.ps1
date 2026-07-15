@@ -19,7 +19,17 @@ if ($env:NODE_EXE -and (Test-Path -LiteralPath $env:NODE_EXE -PathType Leaf)) {
     $nodeCommand = Get-Command node -ErrorAction SilentlyContinue
     if ($nodeCommand) {
         $nodeExecutable = $nodeCommand.Source
-    } elseif ($env:LOCALAPPDATA) {
+    } else {
+        $commonNodePaths = @(
+            '/opt/homebrew/opt/node@24/bin/node',
+            '/opt/homebrew/bin/node',
+            '/usr/local/bin/node'
+        )
+        $nodeExecutable = $commonNodePaths | Where-Object {
+            Test-Path -LiteralPath $_ -PathType Leaf
+        } | Select-Object -First 1
+    }
+    if (-not $nodeExecutable -and $env:LOCALAPPDATA) {
         $bundledNode = Join-Path $env:LOCALAPPDATA 'codex-runtimes\codex-primary-runtime\dependencies\node\bin\node.exe'
         if (Test-Path -LiteralPath $bundledNode -PathType Leaf) {
             $nodeExecutable = $bundledNode
@@ -69,6 +79,11 @@ foreach ($relativePath in $requiredReleaseFiles) {
     }
 }
 
+& $nodeExecutable (Join-Path $PSScriptRoot 'verify-release-boundary.cjs') $releaseDate
+if ($LASTEXITCODE -ne 0) {
+    throw '当期成品包含私人信息、内部运行痕迹、本机路径或凭据形态，已停止公开发布。'
+}
+
 function Test-AllowedDailyReleasePath {
     param([Parameter(Mandatory)] [string]$Name)
     $normalized = $Name.Replace('\', '/')
@@ -113,7 +128,7 @@ if (-not $NoPush) {
     if ($LASTEXITCODE -ne 0) {
         throw 'GitHub 推送失败。'
     }
-    Write-Host ('已推送：{0}' -f $commitMessage) -ForegroundColor Green
+    Write-Host ('已直接提交并推送 main，无需 PR 或人工合并：{0}' -f $commitMessage) -ForegroundColor Green
     & $nodeExecutable (Join-Path $PSScriptRoot 'verify-official-deployment.cjs') $releaseDate
     if ($LASTEXITCODE -ne 0) {
         throw 'Vercel 正式域名尚未部署当前中英版本；已停止 Telegram 交付。'
