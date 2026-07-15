@@ -147,6 +147,7 @@ foreach ($file in $sourceFiles) {
         date = $date
         dateIso = $dateIso
         dateZh = $date.ToString('yyyy年M月d日')
+        sourceLastWriteUtc = $file.LastWriteTimeUtc
         sourceFile = $file.Name
         title = $displayTitle
         lead = $lead
@@ -159,6 +160,8 @@ foreach ($file in $sourceFiles) {
 $reportsDescending = @($reports | Sort-Object date -Descending)
 $latest = $reportsDescending[0]
 $earliest = @($reports | Sort-Object date)[0]
+$generatedAtUtc = @($reports | Sort-Object sourceLastWriteUtc -Descending)[0].sourceLastWriteUtc
+$generatedAtLocal = $generatedAtUtc.ToLocalTime()
 
 $latestDirectory = Join-Path $PublicRoot 'latest'
 if (-not (Test-Path -LiteralPath $latestDirectory)) {
@@ -204,7 +207,7 @@ $replacementMap = [ordered]@{
     '{{DATE_RANGE}}' = (Encode-Html ($earliest.date.ToString('M月d日') + '—' + $latest.date.ToString('M月d日')))
     '{{MONTH_COUNT}}' = [string]$monthGroups.Count
     '{{ARCHIVE_GROUPS}}' = $archiveBuilder.ToString().Trim()
-    '{{GENERATED_AT}}' = (Get-Date).ToString('yyyy-MM-dd HH:mm')
+    '{{GENERATED_AT}}' = $generatedAtLocal.ToString('yyyy-MM-dd HH:mm')
 }
 foreach ($entry in $replacementMap.GetEnumerator()) {
     $indexTemplate = $indexTemplate.Replace($entry.Key, [string]$entry.Value)
@@ -213,7 +216,7 @@ Write-Utf8NoBom -Path (Join-Path $PublicRoot 'index.html') -Content $indexTempla
 
 $archivePayload = [ordered]@{
     schemaVersion = 1
-    generatedAt = (Get-Date).ToString('o')
+    generatedAt = $generatedAtUtc.ToString('o')
     baseUrl = $BaseUrl.TrimEnd('/')
     latest = [ordered]@{
         date = $latest.dateIso
