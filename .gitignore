@@ -1,4 +1,5 @@
 .vercel/
+.env*
 artifacts/
 .DS_Store
 Thumbs.db
