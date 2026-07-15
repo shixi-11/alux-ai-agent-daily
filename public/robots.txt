@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://report.alux.network/sitemap.xml

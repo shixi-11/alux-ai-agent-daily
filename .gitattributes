@@ -1,0 +1,10 @@
+*.html -text
+*.ps1 -text
+*.cmd -text
+*.json text eol=lf
+*.xml text eol=lf
+*.txt text eol=lf
+*.md text eol=lf
+*.cjs text eol=lf
+*.css text eol=lf
+
