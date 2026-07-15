@@ -121,7 +121,7 @@ foreach ($file in $sourceFiles) {
     if ($titleEn -and $titleCn -and $titleEn.EndsWith('Agent') -and $titleCn.StartsWith('Agent ')) {
         $titleCn = $titleCn.Substring(6).TrimStart()
     }
-    $displayTitle = (@($titleEn, $titleCn) | Where-Object { $_ }) -join ' '
+    $displayTitle = (@($titleEn, $titleCn) | Where-Object { $_ }) -join ''
     if (-not $displayTitle) {
         $displayTitle = 'ALUX AI 智能体情报日报'
     }

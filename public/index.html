@@ -30,14 +30,14 @@
     .eyebrow{display:flex;flex-wrap:wrap;gap:8px 14px;color:var(--teal);font-size:12px;font-weight:850;letter-spacing:.11em;text-transform:uppercase}
     h1{margin:18px 0 20px;font-family:"Songti SC","Noto Serif CJK SC",SimSun,Georgia,serif;font-size:clamp(42px,6.2vw,76px);line-height:1.03;letter-spacing:-.025em;color:#101827}
     h1 span{display:block;margin-top:12px;color:var(--indigo);font-family:Georgia,"Times New Roman",serif;font-size:.55em;letter-spacing:-.01em}
-    .intro{max-width:700px;margin:0;color:#3d4857;font-size:clamp(17px,1.7vw,20px);line-height:1.65}
+    .intro{max-width:700px;margin:0;color:#3d4857;font-size:clamp(17px,1.7vw,20px);line-height:1.65;text-wrap:pretty}
     .facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:30px}
     .fact{padding:14px 15px;border-top:2px solid var(--navy);background:rgba(255,255,255,.58)}
-    .fact b{display:block;color:var(--navy);font-size:22px;font-variant-numeric:tabular-nums}.fact span{display:block;margin-top:4px;color:var(--muted);font-size:12px}
+    .fact b{display:block;color:var(--navy);font-size:clamp(18px,1.4vw,22px);font-variant-numeric:tabular-nums;white-space:nowrap;word-break:keep-all}.fact:last-child b{font-size:clamp(17px,1.25vw,20px);letter-spacing:-.035em}.fact span{display:block;margin-top:4px;color:var(--muted);font-size:12px}
     .latest{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:space-between;min-height:440px;padding:30px;background:var(--navy);color:#f8fbff;box-shadow:var(--shadow);overflow:hidden}
     .latest:before{content:"";position:absolute;z-index:-1;inset:-20%;background:radial-gradient(circle at 80% 18%,rgba(58,184,160,.24),transparent 34%),linear-gradient(135deg,transparent 40%,rgba(255,255,255,.04) 40%,rgba(255,255,255,.04) 41%,transparent 41%);background-size:auto,26px 26px}
     .latest-kicker{display:flex;justify-content:space-between;gap:18px;font-size:12px;font-weight:850;letter-spacing:.08em;text-transform:uppercase;color:#a8d8ce}
-    .latest h2{margin:46px 0 16px;font-family:"Songti SC","Noto Serif CJK SC",SimSun,Georgia,serif;font-size:clamp(30px,3.5vw,47px);line-height:1.18;letter-spacing:-.01em}
+    .latest h2{margin:46px 0 16px;font-family:"Songti SC","Noto Serif CJK SC",SimSun,Georgia,serif;font-size:clamp(29px,3.1vw,40px);line-height:1.18;letter-spacing:-.02em;text-wrap:balance}
     .latest p{margin:0;color:#d8e1eb;font-size:15px;line-height:1.72}
     .latest-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:30px}
     .button{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 18px;background:#f4faf8;color:#143b36;text-decoration:none;font-weight:850;font-size:14px}
@@ -67,7 +67,7 @@
   <header class="shell topbar">
     <a class="brand" href="/" aria-label="ALUX AI 智能体情报日报首页">
       <span class="brand-mark">A</span>
-      <span class="brand-copy">ALUX AI 智能体情报日报<small>AI Agent Intelligence Daily</small></span>
+      <span class="brand-copy">ALUX AI智能体情报日报<small>AI Agent Intelligence Daily</small></span>
     </a>
     <nav class="topnav" aria-label="主导航"><a href="/latest/">最新一期</a><a href="#archive">历史归档</a></nav>
   </header>
@@ -76,8 +76,8 @@
     <section class="hero" aria-labelledby="page-title">
       <div class="hero-copy">
         <div class="eyebrow"><span>ALUX Intelligence</span><span>Daily Archive</span></div>
-        <h1 id="page-title">AI 智能体<br>情报日报<span>Signals for Agent Infrastructure</span></h1>
-        <p class="intro">持续跟踪全球 AI Agent 的产品、技术、安全、融资与基础设施变化，并把行业信号映射到 ALUX 的运行时、长交易、能力安全与可重放证据链。</p>
+        <h1 id="page-title">AI智能体<br>情报日报<span>Signals for Agent Infrastructure</span></h1>
+        <p class="intro">持续跟踪全球 AI Agent 的产品、技术、安全、融资与基础设施变化，并将信号映射到 ALUX 的运行时、长交易、能力安全与可重放证据链。</p>
         <div class="facts" aria-label="归档统计">
           <div class="fact"><b>18</b><span>已归档日报</span></div>
           <div class="fact"><b>2</b><span>覆盖月份</span></div>
@@ -88,7 +88,7 @@
       <article class="latest">
         <div>
           <div class="latest-kicker"><span>Latest Report</span><time datetime="2026-07-15">2026年7月15日</time></div>
-          <h2>AI Agent 身份与恢复合流</h2>
+          <h2>AI Agent身份与恢复合流</h2>
           <p>今天最强的新证据来自真实执行边界：Agent 请求开始携带可验证机器身份，十小时级研究任务依赖持久日志与检查点，多工作区产品则必须在授权过期和 daemon 重启后恢复正确状态。</p>
         </div>
         <div class="latest-actions">
@@ -112,77 +112,77 @@
   <div class="report-list">
     <a class="report-row is-latest" href="/2026/07/15/">
       <time datetime="2026-07-15"><b>15</b><span>07月</span></time>
-      <div class="report-copy"><span class="latest-pill">最新</span><strong>AI Agent 身份与恢复合流</strong><p>今天最强的新证据来自真实执行边界：Agent 请求开始携带可验证机器身份，十小时级研究任务依赖持久日志与检查点，多工作区产品则必须在授权过期和 daemon 重启后恢复正确状态。</p></div>
+      <div class="report-copy"><span class="latest-pill">最新</span><strong>AI Agent身份与恢复合流</strong><p>今天最强的新证据来自真实执行边界：Agent 请求开始携带可验证机器身份，十小时级研究任务依赖持久日志与检查点，多工作区产品则必须在授权过期和 daemon 重启后恢复正确状态。</p></div>
       <span class="report-arrow" aria-hidden="true">↗</span>
     </a>
     <a class="report-row" href="/2026/07/14/">
       <time datetime="2026-07-14"><b>14</b><span>07月</span></time>
-      <div class="report-copy"><strong>AI Agent 恢复与权限进入底层</strong><p>今天最强的新证据来自运行时细节：Agent 在休眠后能否恢复正确能力、无人值守时能否守住审批、浏览器能否被限制在授权域名，正在成为生产门槛。</p></div>
+      <div class="report-copy"><strong>AI Agent恢复与权限进入底层</strong><p>今天最强的新证据来自运行时细节：Agent 在休眠后能否恢复正确能力、无人值守时能否守住审批、浏览器能否被限制在授权域名，正在成为生产门槛。</p></div>
       <span class="report-arrow" aria-hidden="true">↗</span>
     </a>
     <a class="report-row" href="/2026/07/13/">
       <time datetime="2026-07-13"><b>13</b><span>07月</span></time>
-      <div class="report-copy"><strong>AI Agent 工作入口转向责任链</strong><p>今天最值得看的不是模型分数，而是 Agent 正同时进入公司战略、监管边界、设备入口与硬件控制路径。大脑继续扩张，机体、免疫和社会接口开始决定谁能真正进入生产。</p></div>
+      <div class="report-copy"><strong>AI Agent工作入口转向责任链</strong><p>今天最值得看的不是模型分数，而是 Agent 正同时进入公司战略、监管边界、设备入口与硬件控制路径。大脑继续扩张，机体、免疫和社会接口开始决定谁能真正进入生产。</p></div>
       <span class="report-arrow" aria-hidden="true">↗</span>
     </a>
     <a class="report-row" href="/2026/07/12/">
       <time datetime="2026-07-12"><b>12</b><span>07月</span></time>
-      <div class="report-copy"><strong>AI Agent 并行大脑需要责任机体</strong><p>今天的高价值变化不是又多一个 Agent，而是并行智能体正式进入模型、SDK 和会话产品。与此同时，OAuth、系统卡与全栈融资把问题推向同一处：谁授权、怎样隔离、失败后如何恢复、结果如何证明。</p></div>
+      <div class="report-copy"><strong>AI Agent并行大脑需要责任机体</strong><p>今天的高价值变化不是又多一个 Agent，而是并行智能体正式进入模型、SDK 和会话产品。与此同时，OAuth、系统卡与全栈融资把问题推向同一处：谁授权、怎样隔离、失败后如何恢复、结果如何证明。</p></div>
       <span class="report-arrow" aria-hidden="true">↗</span>
     </a>
     <a class="report-row" href="/2026/07/11/">
       <time datetime="2026-07-11"><b>11</b><span>07月</span></time>
-      <div class="report-copy"><strong>AI Agent 身体与边界加速成形</strong><p>AWS 把隔离、状态保留与暂停恢复做成云原语，腾讯把海量 Agent 的独立状态空间产品化；今天最强的不是新大脑，而是 R｜强韧/机体 与 S｜安全/免疫 。</p></div>
+      <div class="report-copy"><strong>AI Agent身体与边界加速成形</strong><p>AWS 把隔离、状态保留与暂停恢复做成云原语，腾讯把海量 Agent 的独立状态空间产品化；今天最强的不是新大脑，而是 R｜强韧/机体 与 S｜安全/免疫 。</p></div>
       <span class="report-arrow" aria-hidden="true">↗</span>
     </a>
     <a class="report-row" href="/2026/07/10/">
       <time datetime="2026-07-10"><b>10</b><span>07月</span></time>
-      <div class="report-copy"><strong>AI Agent 生产责任下沉到运行时</strong><p>今天的新信号不靠宏大叙事取胜：框架开始补嵌套状态恢复、渐进式工具披露、会话 TTL、执行图与资源校验。对 ALUX 而言，最值得抓住的是把这些分散修补收束成一条可验证的 长交易 责任链。</p></div>
+      <div class="report-copy"><strong>AI Agent生产责任下沉到运行时</strong><p>今天的新信号不靠宏大叙事取胜：框架开始补嵌套状态恢复、渐进式工具披露、会话 TTL、执行图与资源校验。对 ALUX 而言，最值得抓住的是把这些分散修补收束成一条可验证的 长交易 责任链。</p></div>
       <span class="report-arrow" aria-hidden="true">↗</span>
     </a>
     <a class="report-row" href="/2026/07/09/">
       <time datetime="2026-07-09"><b>09</b><span>07月</span></time>
-      <div class="report-copy"><strong>AI Agent 进入可分发、可隔离、可审计阶段</strong><p>今天的主信号是：Agent 不再只是在 IDE、聊天框或内部自动化里“跑起来”，而是在 marketplace、registry、runtime security、observability export 和 team session 里变成企业对象。市场正在把智能体从功能面推向 生产级运行时 责任。</p></div>
+      <div class="report-copy"><strong>AI Agent进入可分发、可隔离、可审计阶段</strong><p>今天的主信号是：Agent 不再只是在 IDE、聊天框或内部自动化里“跑起来”，而是在 marketplace、registry、runtime security、observability export 和 team session 里变成企业对象。市场正在把智能体从功能面推向 生产级运行时 责任。</p></div>
       <span class="report-arrow" aria-hidden="true">↗</span>
     </a>
     <a class="report-row" href="/2026/07/08/">
       <time datetime="2026-07-08"><b>08</b><span>07月</span></time>
-      <div class="report-copy"><strong>AI Agent 连接层正在标准化</strong><p>今天的主信号是：Agent 行业的竞争焦点继续从“模型多聪明”转向“谁能管住工具、资源、授权和运行状态”。Microsoft、GitHub、AAIF 相关网关、Qwen Code 与 Arcade.dev 指向同一件事：生产级 Agent 需要一层能承接 长交易 、权限、恢复和审计的 生产级运行时 。</p></div>
+      <div class="report-copy"><strong>AI Agent连接层正在标准化</strong><p>今天的主信号是：Agent 行业的竞争焦点继续从“模型多聪明”转向“谁能管住工具、资源、授权和运行状态”。Microsoft、GitHub、AAIF 相关网关、Qwen Code 与 Arcade.dev 指向同一件事：生产级 Agent 需要一层能承接 长交易 、权限、恢复和审计的 生产级运行时 。</p></div>
       <span class="report-arrow" aria-hidden="true">↗</span>
     </a>
     <a class="report-row" href="/2026/07/07/">
       <time datetime="2026-07-07"><b>07</b><span>07月</span></time>
-      <div class="report-copy"><strong>AI Agent 恢复能力成为主线</strong><p>今天的主信号是：Agent 生产化正在逼近真实故障、真实支付、真实身份和真实连接。Codex 修远程恢复，AgentCore 加入支付治理，Gemini Enterprise 管 Agent Registry 和出站策略，LangGraph、Qwen Code、Cloudflare、MCP 都在修状态、恢复和能力边界。</p></div>
+      <div class="report-copy"><strong>AI Agent恢复能力成为主线</strong><p>今天的主信号是：Agent 生产化正在逼近真实故障、真实支付、真实身份和真实连接。Codex 修远程恢复，AgentCore 加入支付治理，Gemini Enterprise 管 Agent Registry 和出站策略，LangGraph、Qwen Code、Cloudflare、MCP 都在修状态、恢复和能力边界。</p></div>
       <span class="report-arrow" aria-hidden="true">↗</span>
     </a>
     <a class="report-row" href="/2026/07/06/">
       <time datetime="2026-07-06"><b>06</b><span>07月</span></time>
-      <div class="report-copy"><strong>AI Agent 生产化收口到运行时</strong><p>今天的主信号是：智能体正在从“谁更会想”转向“谁能被组织托付”。Workspace Agents 进入计费节点，ADK 2.0 强调确定性流程，AgentCore、MCP、Qwen Code 和 Cloudflare Agents 都在把行动、连接、状态和治理推向生产层。</p></div>
+      <div class="report-copy"><strong>AI Agent生产化收口到运行时</strong><p>今天的主信号是：智能体正在从“谁更会想”转向“谁能被组织托付”。Workspace Agents 进入计费节点，ADK 2.0 强调确定性流程，AgentCore、MCP、Qwen Code 和 Cloudflare Agents 都在把行动、连接、状态和治理推向生产层。</p></div>
       <span class="report-arrow" aria-hidden="true">↗</span>
     </a>
     <a class="report-row" href="/2026/07/05/">
       <time datetime="2026-07-05"><b>05</b><span>07月</span></time>
-      <div class="report-copy"><strong>AI Agent 免疫与机体成主战场</strong><p>今天的主信号是：智能体平台的风险开始从模型输出，转向带凭据、工具、沙箱、网关和团队会话的运行时责任链。外部生态已经把 Agent 接进真实执行环境， ALUX 要抓住的不是更聪明的大脑，而是可恢复、可授权、可审计、可跨组织协作的完整机器。</p></div>
+      <div class="report-copy"><strong>AI Agent免疫与机体成主战场</strong><p>今天的主信号是：智能体平台的风险开始从模型输出，转向带凭据、工具、沙箱、网关和团队会话的运行时责任链。外部生态已经把 Agent 接进真实执行环境， ALUX 要抓住的不是更聪明的大脑，而是可恢复、可授权、可审计、可跨组织协作的完整机器。</p></div>
       <span class="report-arrow" aria-hidden="true">↗</span>
     </a>
     <a class="report-row" href="/2026/07/04/">
       <time datetime="2026-07-04"><b>04</b><span>07月</span></time>
-      <div class="report-copy"><strong>AI Agent 运行时责任链成形</strong><p>今天的主信号是： Agent 工作正在从会话进入团队频道、终端和云工作流。大脑继续变强，真正稀缺的是让 长交易 可恢复、可授权、可重放、可跨组织协作的生产级运行时。</p></div>
+      <div class="report-copy"><strong>AI Agent运行时责任链成形</strong><p>今天的主信号是： Agent 工作正在从会话进入团队频道、终端和云工作流。大脑继续变强，真正稀缺的是让 长交易 可恢复、可授权、可重放、可跨组织协作的生产级运行时。</p></div>
       <span class="report-arrow" aria-hidden="true">↗</span>
     </a>
     <a class="report-row" href="/2026/07/03/">
       <time datetime="2026-07-03"><b>03</b><span>07月</span></time>
-      <div class="report-copy"><strong>AI Agent 控制面下沉到运行时</strong><p>今天的主信号是：智能体产品从“会做事”转向“可被企业托付”。多智能体编排、连接器治理、持久任务队列、开源编码智能体和 Agent gateway 话语同时升温，说明市场正在寻找一层能承接 长交易 、权限、恢复和审计的 生产级运行时 。</p></div>
+      <div class="report-copy"><strong>AI Agent控制面下沉到运行时</strong><p>今天的主信号是：智能体产品从“会做事”转向“可被企业托付”。多智能体编排、连接器治理、持久任务队列、开源编码智能体和 Agent gateway 话语同时升温，说明市场正在寻找一层能承接 长交易 、权限、恢复和审计的 生产级运行时 。</p></div>
       <span class="report-arrow" aria-hidden="true">↗</span>
     </a>
     <a class="report-row" href="/2026/07/02/">
       <time datetime="2026-07-02"><b>02</b><span>07月</span></time>
-      <div class="report-copy"><strong>AI Agent 工作台变运行时</strong><p>今天最强信号不是某个模型单点跃升，而是 共享工作台 、长程 CLI、浏览器 agent、企业模型权限和安全融资一起把智能体推到生产责任链上。 ALUX 应抓住两组最强 RISC 字母： R 强韧 与 S 安全 。</p></div>
+      <div class="report-copy"><strong>AI Agent工作台变运行时</strong><p>今天最强信号不是某个模型单点跃升，而是 共享工作台 、长程 CLI、浏览器 agent、企业模型权限和安全融资一起把智能体推到生产责任链上。 ALUX 应抓住两组最强 RISC 字母： R 强韧 与 S 安全 。</p></div>
       <span class="report-arrow" aria-hidden="true">↗</span>
     </a>
     <a class="report-row" href="/2026/07/01/">
       <time datetime="2026-07-01"><b>01</b><span>07月</span></time>
-      <div class="report-copy"><strong>AI Agent 接入层开始收费</strong><p>今天的主信号很清楚：智能体不再只是在工具里试跑，它开始连接云资源、企业知识库、内容访问、支付授权和安全边界。市场正在把“能连上”快速商品化， ALUX 要抢的是连接之后的 生产级运行时 ：可靠执行、安全权限、可重放审计，以及未来跨公司协作。</p></div>
+      <div class="report-copy"><strong>AI Agent接入层开始收费</strong><p>今天的主信号很清楚：智能体不再只是在工具里试跑，它开始连接云资源、企业知识库、内容访问、支付授权和安全边界。市场正在把“能连上”快速商品化， ALUX 要抢的是连接之后的 生产级运行时 ：可靠执行、安全权限、可重放审计，以及未来跨公司协作。</p></div>
       <span class="report-arrow" aria-hidden="true">↗</span>
     </a>
   </div>
@@ -195,17 +195,17 @@
   <div class="report-list">
     <a class="report-row" href="/2026/06/30/">
       <time datetime="2026-06-30"><b>30</b><span>06月</span></time>
-      <div class="report-copy"><strong>AI Agent 运行时边界显形</strong><p>今天的主信号是：智能体开始接入真实经济动作和企业控制面后，运行时边界被迫显形。支付、网关、持久工作空间、本地控制面漏洞、checkpoint 与可观测性，都在指向同一件事：企业真正要买的是 生产级运行时 。</p></div>
+      <div class="report-copy"><strong>AI Agent运行时边界显形</strong><p>今天的主信号是：智能体开始接入真实经济动作和企业控制面后，运行时边界被迫显形。支付、网关、持久工作空间、本地控制面漏洞、checkpoint 与可观测性，都在指向同一件事：企业真正要买的是 生产级运行时 。</p></div>
       <span class="report-arrow" aria-hidden="true">↗</span>
     </a>
     <a class="report-row" href="/2026/06/29/">
       <time datetime="2026-06-29"><b>29</b><span>06月</span></time>
-      <div class="report-copy"><strong>AI Agent 长程执行成为主战场</strong><p>今天的主信号是： AI Agent 正从“能完成一次任务”进入“能连续工作、被追踪、被约束、可恢复”的阶段。OpenAI、Microsoft、AWS、LangChain、Langfuse、xAI 和中国开源模型的动作都在指向同一件事：模型大脑继续增强，但企业真正要买的是 生产级运行时 。</p></div>
+      <div class="report-copy"><strong>AI Agent长程执行成为主战场</strong><p>今天的主信号是： AI Agent 正从“能完成一次任务”进入“能连续工作、被追踪、被约束、可恢复”的阶段。OpenAI、Microsoft、AWS、LangChain、Langfuse、xAI 和中国开源模型的动作都在指向同一件事：模型大脑继续增强，但企业真正要买的是 生产级运行时 。</p></div>
       <span class="report-arrow" aria-hidden="true">↗</span>
     </a>
     <a class="report-row" href="/2026/06/28/">
       <time datetime="2026-06-28"><b>28</b><span>06月</span></time>
-      <div class="report-copy"><strong>AI Agent 生产化开始收口</strong><p>今天的主信号不是模型继续变聪明，而是企业级 Agent 的竞争焦点正在下沉到 运行时治理 。 联网检索 、 身份权限 、 状态恢复 、 评估观测 和 长程执行 ，开始被云厂商、开源框架与融资市场同时定价。</p></div>
+      <div class="report-copy"><strong>AI Agent生产化开始收口</strong><p>今天的主信号不是模型继续变聪明，而是企业级 Agent 的竞争焦点正在下沉到 运行时治理 。 联网检索 、 身份权限 、 状态恢复 、 评估观测 和 长程执行 ，开始被云厂商、开源框架与融资市场同时定价。</p></div>
       <span class="report-arrow" aria-hidden="true">↗</span>
     </a>
   </div>
