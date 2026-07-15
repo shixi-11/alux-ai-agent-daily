@@ -192,6 +192,7 @@ function Add-ReportSiteChrome {
         $homePath = '/'
         $latestPath = '/latest/'
         $brand = 'ALUX AI智能体情报日报'
+        $brandTagline = 'AI Agent Intelligence Daily'
         $latestLabel = '最新一期'
         $archiveLabel = '历史归档'
         $languageLabel = '语言切换'
@@ -204,6 +205,7 @@ function Add-ReportSiteChrome {
         $homePath = '/en/'
         $latestPath = '/en/latest/'
         $brand = 'ALUX AI Agent Intelligence Daily'
+        $brandTagline = 'Signals for Agent Infrastructure'
         $latestLabel = 'Latest'
         $archiveLabel = 'Archive'
         $languageLabel = 'Language switcher'
@@ -217,7 +219,7 @@ function Add-ReportSiteChrome {
     $nav = @"
 <!-- site:i18n-nav:start -->
 <header class="report-sitebar">
-  <a class="report-sitebrand" href="$homePath">$(Encode-Html $brand)</a>
+  <a class="report-sitebrand" href="$homePath"><span class="report-sitebrand-copy"><span>$(Encode-Html $brand)</span><small>$(Encode-Html $brandTagline)</small></span></a>
   <nav class="report-sitenav" aria-label="$(Encode-Html $archiveLabel)">
     <a href="$latestPath">$(Encode-Html $latestLabel)</a>
     <a href="$homePath#archive">$(Encode-Html $archiveLabel)</a>

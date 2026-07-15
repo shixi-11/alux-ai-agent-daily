@@ -39,12 +39,12 @@ if ($LASTEXITCODE -ne 0) {
 
 git -C $siteRoot rev-parse --is-inside-work-tree *> $null
 if ($LASTEXITCODE -ne 0) {
-    throw '日报站点还没有初始化为 Git 仓库。'
+    throw '项目根目录还没有初始化为 Git 仓库。'
 }
 
 $remote = git -C $siteRoot remote get-url origin 2>$null
 if ($LASTEXITCODE -ne 0 -or [string]::IsNullOrWhiteSpace(($remote -join ''))) {
-    throw '日报站点还没有连接 GitHub origin。'
+    throw '项目根目录还没有连接 GitHub origin。'
 }
 
 git -C $siteRoot add --all

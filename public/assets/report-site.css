@@ -1,6 +1,6 @@
 .report-sitebar,
 .report-sitefooter {
-  width: min(1240px, calc(100% - 44px));
+  width: min(1196px, calc(100% - 44px));
   margin: 0 auto;
   color: #354052;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
@@ -32,11 +32,35 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  min-width: 0;
   min-height: 44px;
   color: #14213d !important;
-  font-size: 13px;
+}
+
+.report-sitebrand-copy {
+  display: block;
+  min-width: 0;
+  line-height: 1.12;
+}
+
+.report-sitebrand-copy > span {
+  display: block;
+  color: #14213d;
+  font-size: 15px;
   font-weight: 850;
   letter-spacing: .035em;
+  white-space: nowrap;
+}
+
+.report-sitebrand-copy small {
+  display: block;
+  margin-top: 4px;
+  color: #5d6877;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .report-sitebrand::before {
@@ -219,6 +243,11 @@ html[lang="en-US"] .panel-head span {
 }
 
 @media (max-width: 920px) {
+  .report-sitebar,
+  .report-sitefooter {
+    width: calc(100% - 28px);
+  }
+
   html[lang="en-US"] .panel-head {
     flex-direction: column;
     align-items: flex-start;
@@ -232,19 +261,20 @@ html[lang="en-US"] .panel-head span {
 }
 
 @media (max-width: 620px) {
-  .report-sitebar,
-  .report-sitefooter {
-    width: calc(100% - 20px);
-  }
-
   .report-sitebar {
     gap: 10px;
   }
 
   .report-sitebrand {
-    max-width: 150px;
+    max-width: min(67vw, 320px);
+  }
+
+  .report-sitebrand-copy > span {
     font-size: 12px;
-    line-height: 1.25;
+  }
+
+  .report-sitebrand-copy small {
+    display: none;
   }
 
   .report-sitenav {
@@ -295,9 +325,16 @@ html[lang="en-US"] .panel-head span {
   }
 }
 
+@media (max-width: 520px) {
+  .report-sitebar,
+  .report-sitefooter {
+    width: calc(100% - 20px);
+  }
+}
+
 @media (max-width: 360px) {
   .report-sitebrand {
-    max-width: 126px;
+    max-width: 205px;
   }
 
   .report-sitebrand::before {

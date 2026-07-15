@@ -293,6 +293,42 @@ async function inspectHomepage(browser, locale, viewport) {
   return result;
 }
 
+async function inspectArchiveHashCleanup(browser, locale) {
+  const page = await browser.newPage({ viewport: { width: 1024, height: 768 }, deviceScaleFactor: 1 });
+  try {
+    await page.goto(`http://127.0.0.1:${port}${locale.home}#archive`, { waitUntil: 'networkidle' });
+    await page.waitForFunction(() => location.hash === '');
+    const direct = {
+      hash: await page.evaluate(() => location.hash),
+      archiveVisible: await page.locator('#archive').evaluate((node) => {
+        const rect = node.getBoundingClientRect();
+        return rect.top < innerHeight && rect.bottom > 0;
+      }),
+    };
+    await page.goto(`http://127.0.0.1:${port}${locale.home}`, { waitUntil: 'networkidle' });
+    await page.locator('.nav-archive').click();
+    await page.waitForFunction(() => {
+      const archive = document.getElementById('archive');
+      if (!archive || location.hash !== '') return false;
+      const rect = archive.getBoundingClientRect();
+      return rect.top < innerHeight && rect.bottom > 0;
+    });
+    const clicked = {
+      hash: await page.evaluate(() => location.hash),
+      archiveVisible: await page.locator('#archive').evaluate((node) => {
+        const rect = node.getBoundingClientRect();
+        return rect.top < innerHeight && rect.bottom > 0;
+      }),
+    };
+    if (direct.hash || clicked.hash || !direct.archiveVisible || !clicked.archiveVisible) {
+      throw new Error(`${locale.key}: archive hash cleanup failed ${JSON.stringify({ direct, clicked })}`);
+    }
+    return { direct, clicked };
+  } finally {
+    await page.close();
+  }
+}
+
 function sampleReportUrls(locale) {
   const reports = locale.archive.reports;
   const indexes = [0, Math.floor((reports.length - 1) / 2), reports.length - 1];
@@ -393,7 +429,7 @@ async function inspectReport(browser, locale, viewport, url, capture) {
   await new Promise((resolve) => server.listen(port, '127.0.0.1', resolve));
   if (!chromeExecutable) throw new Error('Google Chrome executable was not found');
   const browser = await chromium.launch({ headless: true, executablePath: chromeExecutable });
-  const results = { latestDate, reportCount, homepages: {}, reports: {}, allEnglishLayouts: {} };
+  const results = { latestDate, reportCount, homepages: {}, archiveHashCleanup: {}, reports: {}, allEnglishLayouts: {} };
   try {
     for (const locale of locales) {
       results.homepages[locale.key] = {};
@@ -401,6 +437,7 @@ async function inspectReport(browser, locale, viewport, url, capture) {
       for (const viewport of viewports) {
         results.homepages[locale.key][viewport.name] = await inspectHomepage(browser, locale, viewport);
       }
+      results.archiveHashCleanup[locale.key] = await inspectArchiveHashCleanup(browser, locale);
       const sampleUrls = sampleReportUrls(locale);
       for (const viewport of viewports) {
         results.reports[locale.key][viewport.name] = [];

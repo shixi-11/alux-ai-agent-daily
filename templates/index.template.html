@@ -121,5 +121,30 @@
     <span>ALUX AI Agent Intelligence Daily</span>
     <span>最近更新（中国标准时间）：{{GENERATED_AT}} · <a href="/archive.json">归档清单</a></span>
   </footer>
+  <script>
+    (() => {
+      const archive = document.getElementById('archive');
+      if (!archive) return;
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const cleanArchiveHash = () => {
+        if (location.hash === '#archive') {
+          history.replaceState(null, '', location.pathname + location.search);
+        }
+      };
+      document.querySelectorAll('a[href="#archive"]').forEach((link) => {
+        link.addEventListener('click', (event) => {
+          event.preventDefault();
+          archive.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+          cleanArchiveHash();
+        });
+      });
+      if (location.hash === '#archive') {
+        requestAnimationFrame(() => {
+          archive.scrollIntoView({ block: 'start' });
+          cleanArchiveHash();
+        });
+      }
+    })();
+  </script>
 </body>
 </html>

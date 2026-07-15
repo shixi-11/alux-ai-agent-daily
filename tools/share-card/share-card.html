@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=768, initial-scale=1">
+  <title>ALUX AI智能体情报日报中文站分享卡</title>
+  <style>
+    :root {
+      --ink: #111827;
+      --muted: #5b6575;
+      --paper: #f5f7fa;
+      --paper-2: #eef3f7;
+      --panel: #ffffff;
+      --line: #d9e0e7;
+      --line-strong: #aeb9c6;
+      --navy: #14213d;
+      --navy-2: #18264f;
+      --teal: #0f766e;
+      --teal-soft: #c6d9d1;
+    }
+
+    * { box-sizing: border-box; }
+
+    html,
+    body {
+      width: 768px;
+      height: 1024px;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    body {
+      color: var(--ink);
+      background: var(--paper-2);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: geometricPrecision;
+    }
+
+    .sheet {
+      position: relative;
+      display: grid;
+      grid-template-rows: 76px 180px minmax(0, 1fr) 44px;
+      gap: 20px;
+      width: 768px;
+      height: 1024px;
+      padding: 36px 48px 30px 58px;
+      background:
+        linear-gradient(180deg, rgba(238, 243, 247, .98) 0%, rgba(249, 251, 252, 1) 43%, rgba(243, 246, 248, 1) 100%);
+    }
+
+    .sheet::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 10px;
+      background: var(--navy);
+    }
+
+    .sheet::after {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 10px;
+      width: 4px;
+      background: var(--teal);
+    }
+
+    .masthead {
+      display: flex;
+      align-items: center;
+      min-width: 0;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(20, 33, 61, .22);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      min-width: 0;
+      gap: 14px;
+    }
+
+    .mark {
+      display: grid;
+      width: 54px;
+      height: 54px;
+      flex: 0 0 54px;
+      place-items: center;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .mark img {
+      display: block;
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
+    }
+
+    .brand-name {
+      display: block;
+      color: var(--navy);
+      font-size: 18px;
+      font-weight: 850;
+      line-height: 1.2;
+      letter-spacing: .01em;
+      white-space: nowrap;
+    }
+
+    .brand-en {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      line-height: 1.2;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .intro {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 0;
+      padding-left: 2px;
+    }
+
+    h1 {
+      margin: 0;
+      color: #121722;
+      font-family: "Songti SC", "Noto Serif CJK SC", SimSun, Georgia, serif;
+      font-size: 61px;
+      font-weight: 700;
+      line-height: .98;
+      letter-spacing: -.035em;
+    }
+
+    h1 span { display: block; }
+
+    .promise {
+      margin: 18px 0 0;
+      color: #354052;
+      font-size: 18px;
+      font-weight: 650;
+      line-height: 1.35;
+      letter-spacing: .01em;
+    }
+
+    .scan-panel {
+      position: relative;
+      display: grid;
+      grid-template-rows: 24px minmax(0, 1fr) 34px 20px;
+      justify-items: center;
+      min-height: 0;
+      padding: 22px 26px 20px;
+      overflow: hidden;
+      border: 1px solid #263653;
+      border-top: 7px solid var(--teal);
+      background:
+        repeating-linear-gradient(135deg, rgba(255, 255, 255, .022) 0 1px, transparent 1px 28px),
+        linear-gradient(145deg, var(--navy) 0%, #132641 54%, #123c48 100%);
+    }
+
+    .panel-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #c5e3df;
+      font-size: 12px;
+      font-weight: 850;
+      line-height: 1;
+      letter-spacing: .1em;
+    }
+
+    .panel-label strong {
+      color: #fff;
+      font-size: inherit;
+      letter-spacing: inherit;
+    }
+
+    .qr-frame {
+      align-self: center;
+      display: grid;
+      width: 450px;
+      height: 450px;
+      place-items: center;
+      border: 1px solid var(--line-strong);
+      background: #fff;
+      box-shadow: 0 18px 42px rgba(5, 14, 32, .28);
+    }
+
+    .qr-frame img {
+      display: block;
+      width: 414px;
+      height: 414px;
+      image-rendering: pixelated;
+    }
+
+    .scan-title {
+      align-self: end;
+      color: #fff;
+      font-size: 25px;
+      font-weight: 850;
+      line-height: 1.2;
+      letter-spacing: .02em;
+    }
+
+    .scan-sub {
+      align-self: end;
+      color: #c9d5df;
+      font-size: 13px;
+      font-weight: 550;
+      line-height: 1.2;
+      letter-spacing: .02em;
+    }
+
+    footer {
+      display: flex;
+      align-items: end;
+      justify-content: flex-start;
+      min-width: 0;
+      border-top: 1px solid rgba(20, 33, 61, .22);
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1;
+    }
+
+    footer strong {
+      color: var(--teal);
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: .015em;
+    }
+
+  </style>
+</head>
+<body>
+  <article class="sheet" aria-label="ALUX AI智能体情报日报中文站二维码分享卡">
+    <header class="masthead">
+      <div class="brand">
+        <span class="mark"><img src="../../assets/alux-mark.png" alt="ALUX"></span>
+        <span>
+          <span class="brand-name">ALUX AI智能体情报日报</span>
+          <span class="brand-en">AI Agent Intelligence Daily</span>
+        </span>
+      </div>
+    </header>
+
+    <section class="intro">
+      <h1><span>AI智能体</span><span>情报日报</span></h1>
+      <p class="promise">每日更新 · 中英双语 · 历史归档</p>
+    </section>
+
+    <section class="scan-panel">
+      <div class="panel-label"><strong>中文站</strong></div>
+      <div class="qr-frame"><img src="qr.png" alt="中文站二维码"></div>
+      <div class="scan-title">微信扫码查看</div>
+      <div class="scan-sub">最新一期与全部历史日报</div>
+    </section>
+
+    <footer>
+      <strong>ai-agent-daily.alux.network</strong>
+    </footer>
+  </article>
+</body>
+</html>

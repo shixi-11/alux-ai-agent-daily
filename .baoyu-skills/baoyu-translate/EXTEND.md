@@ -1,7 +1,8 @@
 target_language: en-US
 default_mode: refined
 audience: "Global AI Agent, infrastructure, technical, and business readers"
-style: "Native English technology-intelligence publication; professional, concise, precise, and authoritative"
+required_stages: "analysis -> initial translation -> review -> polish"
+style: "Native-level English technology-intelligence publication; professional, concise, accurate, and authoritative; never literal word-for-word translation"
 chunk_threshold: 4000
 chunk_max_words: 5000
 

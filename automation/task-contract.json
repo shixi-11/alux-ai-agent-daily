@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contractVersion": "2.1.0",
+  "contractVersion": "2.2.0",
   "task": "ALUX AI Agent Intelligence Daily bilingual publish",
   "schedulePolicy": "Preserve the existing OpenClaw schedule and timezone; replace only the task workflow.",
   "automationTimezone": "preserve-existing",
@@ -12,19 +12,32 @@
     "translationManifest": "content/en/translation-manifest.json",
     "translationPreferences": ".baoyu-skills/baoyu-translate/EXTEND.md"
   },
+  "translationContract": {
+    "targetLanguage": "en-US",
+    "mode": "refined translation",
+    "requiredStages": [
+      "analysis",
+      "initial translation",
+      "review",
+      "polish"
+    ],
+    "audience": "Global AI Agent, infrastructure, technology and business readers",
+    "style": "Native-level technology intelligence publication: professional, concise, accurate and authoritative; never literal word-for-word translation"
+  },
   "requiredReading": [
     "AGENTS.md",
     "AUTOMATION.md",
     "docs/REPORT_STYLE_GUIDE.md",
     "docs/RESPONSIVE_LAYOUT_STANDARD.md",
     "docs/DAILY_PUBLISH_CHECKLIST.md",
+    "docs/SHARE_CARD_STANDARD.md",
     ".baoyu-skills/baoyu-translate/EXTEND.md"
   ],
   "steps": [
     "Pull the latest main branch and inspect git status.",
     "Resume any unfinished translation or review before starting a new date.",
     "Generate the Chinese report in the current reviewed layout and editorial style.",
-    "Create a refined en-US translation with identical structure, facts, numbers, links and evidence boundaries.",
+    "Create a refined en-US translation for global AI Agent, infrastructure, technology and business readers; complete analysis, initial translation, review and polish, and never translate literally word for word.",
     "Mark the translation reviewed and refresh source/translation hashes.",
     "Build both locales and update both homepages, latest routes, dated routes, archives and sitemap together.",
     "Run structural, hash, link, SEO and multi-viewport rendering checks.",
@@ -45,6 +58,7 @@
   "hardGates": [
     "No locale may be missing for a published date.",
     "Every translation must be reviewed and match the manifest hashes.",
+    "Every English issue must satisfy the translationContract in full; no stage may be skipped or downgraded to literal or browser machine translation.",
     "Chinese and English external source URL sets and structural counts must match.",
     "No unhandled Chinese text may remain in English content.",
     "No horizontal overflow or clipped content at the required viewport matrix.",

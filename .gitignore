@@ -1,6 +1,10 @@
 .vercel/
 .env*
 node_modules/
+output/
+local-archive/
+tools/share-card/qr.png
+tools/share-card/.share-card-render.tmp.png
 artifacts/
 test-results/
 .playwright/
