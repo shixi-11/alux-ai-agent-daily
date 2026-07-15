@@ -2,6 +2,7 @@
 param(
     [string]$SourceRoot,
     [string]$SiteRoot,
+    [string]$TranslationRoot,
     [string]$BaseUrl = 'https://ai-agent-daily.alux.network'
 )
 
@@ -13,60 +14,54 @@ if ([string]::IsNullOrWhiteSpace($SiteRoot)) {
     $SiteRoot = Split-Path -Parent $PSScriptRoot
 }
 if ([string]::IsNullOrWhiteSpace($SourceRoot)) {
-    $SourceRoot = Split-Path -Parent $SiteRoot
+    $SourceRoot = Join-Path $SiteRoot 'content\zh'
+}
+if ([string]::IsNullOrWhiteSpace($TranslationRoot)) {
+    $TranslationRoot = Join-Path $SiteRoot 'content\en'
 }
 
 $SiteRoot = [System.IO.Path]::GetFullPath($SiteRoot)
 $SourceRoot = [System.IO.Path]::GetFullPath($SourceRoot)
+$TranslationRoot = [System.IO.Path]::GetFullPath($TranslationRoot)
 $PublicRoot = Join-Path $SiteRoot 'public'
 $TemplateRoot = Join-Path $SiteRoot 'templates'
+$AssetRoot = Join-Path $SiteRoot 'assets'
+$ManifestPath = Join-Path $TranslationRoot 'translation-manifest.json'
 $ReportNamePattern = '^(?<date>\d{8})_ALUX_AI智能体情报日报\.html$'
+$EnglishCulture = [System.Globalization.CultureInfo]::GetCultureInfo('en-US')
 
-function Write-Utf8NoBom {
-    param(
-        [Parameter(Mandatory)] [string]$Path,
-        [Parameter(Mandatory)] [string]$Content
-    )
-    $parent = Split-Path -Parent $Path
-    if ($parent -and -not (Test-Path -LiteralPath $parent)) {
-        New-Item -ItemType Directory -Path $parent | Out-Null
+. (Join-Path $PSScriptRoot 'site-lib.ps1')
+
+foreach ($requiredDirectory in @($SourceRoot, $TemplateRoot, $AssetRoot, $TranslationRoot)) {
+    if (-not (Test-Path -LiteralPath $requiredDirectory -PathType Container)) {
+        throw "缺少必要目录：$requiredDirectory"
     }
-    [System.IO.File]::WriteAllText($Path, $Content, [System.Text.UTF8Encoding]::new($false))
 }
-
-function Get-HtmlText {
-    param(
-        [Parameter(Mandatory)] [string]$Html,
-        [Parameter(Mandatory)] [string]$Pattern
-    )
-    $match = [regex]::Match(
-        $Html,
-        $Pattern,
-        [System.Text.RegularExpressions.RegexOptions]::IgnoreCase -bor
-        [System.Text.RegularExpressions.RegexOptions]::Singleline
-    )
-    if (-not $match.Success) {
-        return ''
+foreach ($requiredFile in @(
+    (Join-Path $TemplateRoot 'index.template.html'),
+    (Join-Path $TemplateRoot 'index.en.template.html'),
+    (Join-Path $TemplateRoot '404.template.html'),
+    (Join-Path $AssetRoot 'report-site.css'),
+    $ManifestPath
+)) {
+    if (-not (Test-Path -LiteralPath $requiredFile -PathType Leaf)) {
+        throw "缺少必要文件：$requiredFile"
     }
-    $value = $match.Groups['value'].Value
-    $value = [regex]::Replace($value, '<[^>]+>', ' ')
-    $value = [System.Net.WebUtility]::HtmlDecode($value)
-    return ([regex]::Replace($value, '\s+', ' ')).Trim()
-}
-
-function Encode-Html {
-    param([AllowEmptyString()] [string]$Value)
-    return [System.Net.WebUtility]::HtmlEncode($Value)
-}
-
-if (-not (Test-Path -LiteralPath $SourceRoot -PathType Container)) {
-    throw "日报源目录不存在：$SourceRoot"
-}
-if (-not (Test-Path -LiteralPath $TemplateRoot -PathType Container)) {
-    throw "模板目录不存在：$TemplateRoot"
 }
 if (-not (Test-Path -LiteralPath $PublicRoot -PathType Container)) {
-    New-Item -ItemType Directory -Path $PublicRoot | Out-Null
+    New-Item -ItemType Directory -Path $PublicRoot -Force | Out-Null
+}
+
+$translationManifest = Get-Content -LiteralPath $ManifestPath -Raw -Encoding UTF8 | ConvertFrom-Json
+if ($translationManifest.locale -ne 'en-US') {
+    throw '翻译清单 locale 必须是 en-US。'
+}
+$translationManifestByDate = @{}
+foreach ($entry in @($translationManifest.reports)) {
+    if ($translationManifestByDate.ContainsKey([string]$entry.date)) {
+        throw "翻译清单含重复日期：$($entry.date)"
+    }
+    $translationManifestByDate[[string]$entry.date] = $entry
 }
 
 $sourceFiles = @(
@@ -74,9 +69,11 @@ $sourceFiles = @(
         Where-Object { $_.Name -match $ReportNamePattern } |
         Sort-Object Name
 )
-
 if ($sourceFiles.Count -eq 0) {
     throw "没有找到符合命名规则的日报：$SourceRoot"
+}
+if ($translationManifestByDate.Count -ne $sourceFiles.Count) {
+    throw "翻译清单与中文日报数量不一致：清单 $($translationManifestByDate.Count)，中文 $($sourceFiles.Count)。"
 }
 
 $reports = New-Object System.Collections.Generic.List[object]
@@ -86,15 +83,9 @@ foreach ($file in $sourceFiles) {
     if ($file.Name -notmatch $ReportNamePattern) {
         continue
     }
-
     $dateToken = $Matches['date']
-    $date = [datetime]::ParseExact(
-        $dateToken,
-        'yyyyMMdd',
-        [System.Globalization.CultureInfo]::InvariantCulture
-    )
+    $date = [datetime]::ParseExact($dateToken, 'yyyyMMdd', [System.Globalization.CultureInfo]::InvariantCulture)
     $dateIso = $date.ToString('yyyy-MM-dd')
-
     if ($seenDates.ContainsKey($dateIso)) {
         throw "同一日期出现多份日报：$dateIso"
     }
@@ -113,6 +104,41 @@ foreach ($file in $sourceFiles) {
         throw "$($file.Name) 含有本地文件引用，无法安全部署。"
     }
 
+    $translationPath = Join-Path $TranslationRoot ($dateToken + '.body.html')
+    if (-not (Test-Path -LiteralPath $translationPath -PathType Leaf)) {
+        throw "$dateIso 缺少英文母稿：$translationPath"
+    }
+    $englishBody = Get-Content -LiteralPath $translationPath -Raw -Encoding UTF8
+    Assert-EnglishBodyFragment -BodyFragment $englishBody -SourceHtml $html -DateIso $dateIso
+
+    $sourceHash = (Get-FileHash -LiteralPath $file.FullName -Algorithm SHA256).Hash.ToLowerInvariant()
+    $translationHash = (Get-FileHash -LiteralPath $translationPath -Algorithm SHA256).Hash.ToLowerInvariant()
+    if (-not $translationManifestByDate.ContainsKey($dateIso)) {
+        throw "$dateIso 未进入翻译审核清单。"
+    }
+    $translationEntry = $translationManifestByDate[$dateIso]
+    if ($translationEntry.status -ne 'reviewed') {
+        throw "$dateIso 英文母稿未通过审核：status=$($translationEntry.status)"
+    }
+    if ([string]$translationEntry.sourceSha256 -ne $sourceHash) {
+        throw "$dateIso 中文源文已改动，英文翻译需重新审核。"
+    }
+    if ([string]$translationEntry.translationSha256 -ne $translationHash) {
+        throw "$dateIso 英文母稿已改动，请重新标记 reviewed。"
+    }
+    if ([string]::IsNullOrWhiteSpace([string]$translationEntry.reviewedAt)) {
+        throw "$dateIso 英文母稿缺少 reviewedAt，不能确定原子发布时间。"
+    }
+    try {
+        $reviewedAtUtc = [datetimeoffset]::Parse(
+            [string]$translationEntry.reviewedAt,
+            [System.Globalization.CultureInfo]::InvariantCulture,
+            [System.Globalization.DateTimeStyles]::RoundtripKind
+        ).UtcDateTime
+    } catch {
+        throw "$dateIso reviewedAt 不是有效的 ISO 8601 时间：$($translationEntry.reviewedAt)"
+    }
+
     $titleEn = Get-HtmlText -Html $html -Pattern '<span[^>]+class\s*=\s*[\x22\x27][^\x22\x27]*title-en[^\x22\x27]*[\x22\x27][^>]*>(?<value>.*?)</span>'
     $titleCn = Get-HtmlText -Html $html -Pattern '<span[^>]+class\s*=\s*[\x22\x27][^\x22\x27]*title-cn[^\x22\x27]*[\x22\x27][^>]*>(?<value>.*?)</span>'
     if (-not $titleEn -and -not $titleCn) {
@@ -123,80 +149,156 @@ foreach ($file in $sourceFiles) {
     }
     $displayTitle = (@($titleEn, $titleCn) | Where-Object { $_ }) -join ''
     if (-not $displayTitle) {
-        $displayTitle = 'ALUX AI 智能体情报日报'
+        $displayTitle = 'ALUX AI智能体情报日报'
     }
-
     $lead = Get-HtmlText -Html $html -Pattern '<p[^>]+class\s*=\s*[\x22\x27][^\x22\x27]*lead[^\x22\x27]*[\x22\x27][^>]*>(?<value>.*?)</p>'
     if (-not $lead) {
         $lead = '聚焦 AI Agent 运行时、可靠执行、安全边界与产业信号。'
     }
 
-    $relativeDirectory = Join-Path (Join-Path $date.ToString('yyyy') $date.ToString('MM')) $date.ToString('dd')
-    $destinationDirectory = Join-Path $PublicRoot $relativeDirectory
-    if (-not (Test-Path -LiteralPath $destinationDirectory)) {
-        New-Item -ItemType Directory -Path $destinationDirectory | Out-Null
+    $englishTitleMain = Get-HtmlText -Html $englishBody -Pattern '<span[^>]+class\s*=\s*[\x22\x27][^\x22\x27]*title-en[^\x22\x27]*[\x22\x27][^>]*>(?<value>.*?)</span>'
+    $englishTitleSubject = Get-HtmlText -Html $englishBody -Pattern '<span[^>]+class\s*=\s*[\x22\x27][^\x22\x27]*title-cn[^\x22\x27]*[\x22\x27][^>]*>(?<value>.*?)</span>'
+    if ($englishTitleMain -and $englishTitleSubject) {
+        $englishDisplayTitle = $englishTitleMain + ' — ' + $englishTitleSubject
+    } elseif ($englishTitleMain -or $englishTitleSubject) {
+        $englishDisplayTitle = @($englishTitleMain, $englishTitleSubject) | Where-Object { $_ } | Select-Object -First 1
+    } else {
+        $englishDisplayTitle = Get-HtmlText -Html $englishBody -Pattern '<h1[^>]*>(?<value>.*?)</h1>'
     }
-    $destinationPath = Join-Path $destinationDirectory 'index.html'
-    Copy-Item -LiteralPath $file.FullName -Destination $destinationPath -Force
+    if (-not $englishDisplayTitle) {
+        throw "$dateIso 英文母稿缺少标题。"
+    }
+    $englishLead = Get-HtmlText -Html $englishBody -Pattern '<p[^>]+class\s*=\s*[\x22\x27][^\x22\x27]*lead[^\x22\x27]*[\x22\x27][^>]*>(?<value>.*?)</p>'
+    if (-not $englishLead) {
+        throw "$dateIso 英文母稿缺少 lead。"
+    }
 
-    $hash = (Get-FileHash -LiteralPath $file.FullName -Algorithm SHA256).Hash.ToLowerInvariant()
+    $relativeDirectory = Join-Path (Join-Path $date.ToString('yyyy') $date.ToString('MM')) $date.ToString('dd')
     $url = '/' + ($relativeDirectory -replace '\\', '/') + '/'
-    $publicPath = (($relativeDirectory -replace '\\', '/') + '/index.html')
-
+    $englishUrl = '/en' + $url
     $reports.Add([pscustomobject][ordered]@{
         date = $date
         dateIso = $dateIso
         dateZh = $date.ToString('yyyy年M月d日')
+        dateEn = $date.ToString('MMMM d, yyyy', $EnglishCulture)
         sourceLastWriteUtc = $file.LastWriteTimeUtc
+        translationLastWriteUtc = (Get-Item -LiteralPath $translationPath).LastWriteTimeUtc
+        reviewedAtUtc = $reviewedAtUtc
         sourceFile = $file.Name
+        translationFile = Split-Path -Leaf $translationPath
+        sourceHtml = $html
+        englishBody = $englishBody
         title = $displayTitle
         lead = $lead
+        titleEn = [string]$englishDisplayTitle
+        leadEn = $englishLead
         url = $url
-        publicPath = $publicPath
-        sha256 = $hash
+        englishUrl = $englishUrl
+        publicPath = (($relativeDirectory -replace '\\', '/') + '/index.html')
+        englishPublicPath = ('en/' + ($relativeDirectory -replace '\\', '/') + '/index.html')
+        sourceSha256 = $sourceHash
+        translationSha256 = $translationHash
+        publicSha256 = ''
+        englishPublicSha256 = ''
     })
+}
+
+$reportsAscending = @($reports | Sort-Object date)
+for ($index = 0; $index -lt $reportsAscending.Count; $index++) {
+    $report = $reportsAscending[$index]
+    $previousZh = if ($index -gt 0) { $reportsAscending[$index - 1].url } else { '' }
+    $nextZh = if ($index -lt ($reportsAscending.Count - 1)) { $reportsAscending[$index + 1].url } else { '' }
+    $previousEn = if ($previousZh) { '/en' + $previousZh } else { '' }
+    $nextEn = if ($nextZh) { '/en' + $nextZh } else { '' }
+
+    $chinesePage = Add-ReportSiteChrome -Html $report.sourceHtml -Language 'zh-CN' -BaseUrl $BaseUrl -DateIso $report.dateIso -ChinesePath $report.url -EnglishPath $report.englishUrl -PreviousPath $previousZh -NextPath $nextZh
+    $englishPage = Set-DocumentBody -Html $report.sourceHtml -BodyFragment $report.englishBody
+    $englishPage = Set-HtmlTitle -Html $englishPage -Title ($report.dateIso + ' ALUX AI Agent Intelligence Daily')
+    $englishPage = Add-ReportSiteChrome -Html $englishPage -Language 'en-US' -BaseUrl $BaseUrl -DateIso $report.dateIso -ChinesePath $report.url -EnglishPath $report.englishUrl -PreviousPath $previousEn -NextPath $nextEn
+
+    $chineseDestination = Join-Path $PublicRoot ($report.publicPath -replace '/', '\\')
+    $englishDestination = Join-Path $PublicRoot ($report.englishPublicPath -replace '/', '\\')
+    Write-Utf8NoBom -Path $chineseDestination -Content $chinesePage
+    Write-Utf8NoBom -Path $englishDestination -Content $englishPage
+    $report.publicSha256 = (Get-FileHash -LiteralPath $chineseDestination -Algorithm SHA256).Hash.ToLowerInvariant()
+    $report.englishPublicSha256 = (Get-FileHash -LiteralPath $englishDestination -Algorithm SHA256).Hash.ToLowerInvariant()
 }
 
 $reportsDescending = @($reports | Sort-Object date -Descending)
 $latest = $reportsDescending[0]
-$earliest = @($reports | Sort-Object date)[0]
-$generatedAtUtc = @($reports | Sort-Object sourceLastWriteUtc -Descending)[0].sourceLastWriteUtc
-$generatedAtLocal = $generatedAtUtc.ToLocalTime()
-
-$latestDirectory = Join-Path $PublicRoot 'latest'
-if (-not (Test-Path -LiteralPath $latestDirectory)) {
-    New-Item -ItemType Directory -Path $latestDirectory | Out-Null
-}
-Copy-Item -LiteralPath (Join-Path $SourceRoot $latest.sourceFile) -Destination (Join-Path $latestDirectory 'index.html') -Force
-
-$archiveBuilder = [System.Text.StringBuilder]::new()
-$monthGroups = $reportsDescending | Group-Object { $_.date.ToString('yyyy-MM') }
-foreach ($group in $monthGroups) {
-    $monthDate = [datetime]::ParseExact($group.Name + '-01', 'yyyy-MM-dd', [System.Globalization.CultureInfo]::InvariantCulture)
-    $null = $archiveBuilder.AppendLine('<section class="archive-group" aria-labelledby="month-' + $group.Name + '">')
-    $null = $archiveBuilder.AppendLine('  <div class="month-strip">')
-    $null = $archiveBuilder.AppendLine('    <h3 id="month-' + $group.Name + '">' + (Encode-Html $monthDate.ToString('yyyy年M月')) + '</h3>')
-    $null = $archiveBuilder.AppendLine('    <span>' + $group.Count + ' 期</span>')
-    $null = $archiveBuilder.AppendLine('  </div>')
-    $null = $archiveBuilder.AppendLine('  <div class="report-list">')
-
-    foreach ($report in @($group.Group | Sort-Object date -Descending)) {
-        $latestClass = if ($report.dateIso -eq $latest.dateIso) { ' is-latest' } else { '' }
-        $latestLabel = if ($report.dateIso -eq $latest.dateIso) { '<span class="latest-pill">最新</span>' } else { '' }
-        $null = $archiveBuilder.AppendLine('    <a class="report-row' + $latestClass + '" href="' + (Encode-Html $report.url) + '">')
-        $null = $archiveBuilder.AppendLine('      <time datetime="' + $report.dateIso + '"><b>' + $report.date.ToString('dd') + '</b><span>' + $report.date.ToString('MM月') + '</span></time>')
-        $null = $archiveBuilder.AppendLine('      <div class="report-copy">' + $latestLabel + '<strong>' + (Encode-Html $report.title) + '</strong><p>' + (Encode-Html $report.lead) + '</p></div>')
-        $null = $archiveBuilder.AppendLine('      <span class="report-arrow" aria-hidden="true">↗</span>')
-        $null = $archiveBuilder.AppendLine('    </a>')
+$earliest = $reportsAscending[0]
+$generatedAtUtc = @($reports | ForEach-Object { $_.reviewedAtUtc } | Sort-Object -Descending)[0]
+$shanghaiTimeZone = $null
+foreach ($timeZoneId in @('China Standard Time', 'Asia/Shanghai')) {
+    try {
+        $shanghaiTimeZone = [System.TimeZoneInfo]::FindSystemTimeZoneById($timeZoneId)
+        break
+    } catch {
+        continue
     }
-
-    $null = $archiveBuilder.AppendLine('  </div>')
-    $null = $archiveBuilder.AppendLine('</section>')
+}
+$generatedAtLocal = if ($shanghaiTimeZone) {
+    [System.TimeZoneInfo]::ConvertTimeFromUtc(
+        [datetime]::SpecifyKind($generatedAtUtc, [System.DateTimeKind]::Utc),
+        $shanghaiTimeZone
+    )
+} else {
+    [datetime]::SpecifyKind($generatedAtUtc, [System.DateTimeKind]::Utc).AddHours(8)
 }
 
-$indexTemplatePath = Join-Path $TemplateRoot 'index.template.html'
-$indexTemplate = Get-Content -LiteralPath $indexTemplatePath -Raw -Encoding UTF8
-$replacementMap = [ordered]@{
+Write-Utf8NoBom -Path (Join-Path $PublicRoot 'latest\index.html') -Content (Get-Content -LiteralPath (Join-Path $PublicRoot ($latest.publicPath -replace '/', '\\')) -Raw -Encoding UTF8)
+Write-Utf8NoBom -Path (Join-Path $PublicRoot 'en\latest\index.html') -Content (Get-Content -LiteralPath (Join-Path $PublicRoot ($latest.englishPublicPath -replace '/', '\\')) -Raw -Encoding UTF8)
+$publicAssetRoot = Join-Path $PublicRoot 'assets'
+if (-not (Test-Path -LiteralPath $publicAssetRoot -PathType Container)) {
+    New-Item -ItemType Directory -Path $publicAssetRoot -Force | Out-Null
+}
+Copy-Item -LiteralPath (Join-Path $AssetRoot 'report-site.css') -Destination (Join-Path $PublicRoot 'assets\report-site.css') -Force
+Copy-Item -LiteralPath (Join-Path $AssetRoot 'alux-mark.png') -Destination (Join-Path $PublicRoot 'assets\alux-mark.png') -Force
+
+function New-ArchiveMarkup {
+    param(
+        [Parameter(Mandatory)] [object[]]$Items,
+        [Parameter(Mandatory)] [ValidateSet('zh-CN', 'en-US')] [string]$Language,
+        [Parameter(Mandatory)] [string]$LatestDateIso
+    )
+    $builder = [System.Text.StringBuilder]::new()
+    $monthGroups = $Items | Group-Object { $_.date.ToString('yyyy-MM') }
+    foreach ($group in $monthGroups) {
+        $monthDate = [datetime]::ParseExact($group.Name + '-01', 'yyyy-MM-dd', [System.Globalization.CultureInfo]::InvariantCulture)
+        $monthLabel = if ($Language -eq 'zh-CN') { $monthDate.ToString('yyyy年M月') } else { $monthDate.ToString('MMMM yyyy', $EnglishCulture) }
+        $issueCountLabel = if ($Language -eq 'zh-CN') { $group.Count.ToString() + '期' } elseif ($group.Count -eq 1) { '1 Issue' } else { $group.Count.ToString() + ' Issues' }
+        $null = $builder.AppendLine('<section class="archive-group" aria-labelledby="month-' + $Language + '-' + $group.Name + '">')
+        $null = $builder.AppendLine('  <div class="month-strip">')
+        $null = $builder.AppendLine('    <h3 id="month-' + $Language + '-' + $group.Name + '">' + (Encode-Html $monthLabel) + '</h3>')
+        $null = $builder.AppendLine('    <span>' + (Encode-Html $issueCountLabel) + '</span>')
+        $null = $builder.AppendLine('  </div>')
+        $null = $builder.AppendLine('  <div class="report-list">')
+        foreach ($report in @($group.Group | Sort-Object date -Descending)) {
+            $isLatest = $report.dateIso -eq $LatestDateIso
+            $latestClass = if ($isLatest) { ' is-latest' } else { '' }
+            $latestLabel = if ($isLatest -and $Language -eq 'zh-CN') { '<span class="latest-pill">最新</span>' } elseif ($isLatest) { '<span class="latest-pill">Latest</span>' } else { '' }
+            $url = if ($Language -eq 'zh-CN') { $report.url } else { $report.englishUrl }
+            $title = if ($Language -eq 'zh-CN') { $report.title } else { $report.titleEn }
+            $lead = if ($Language -eq 'zh-CN') { $report.lead } else { $report.leadEn }
+            $monthShort = if ($Language -eq 'zh-CN') { $report.date.ToString('M月') } else { $report.date.ToString('MMM', $EnglishCulture).ToUpperInvariant() }
+            $null = $builder.AppendLine('    <a class="report-row' + $latestClass + '" href="' + (Encode-Html $url) + '">')
+            $null = $builder.AppendLine('      <time datetime="' + $report.dateIso + '"><b>' + $report.date.ToString('dd') + '</b><span>' + (Encode-Html $monthShort) + '</span></time>')
+            $null = $builder.AppendLine('      <div class="report-copy">' + $latestLabel + '<strong>' + (Encode-Html $title) + '</strong><p>' + (Encode-Html $lead) + '</p></div>')
+            $null = $builder.AppendLine('      <span class="report-arrow" aria-hidden="true">↗</span>')
+            $null = $builder.AppendLine('    </a>')
+        }
+        $null = $builder.AppendLine('  </div>')
+        $null = $builder.AppendLine('</section>')
+    }
+    return $builder.ToString().Trim()
+}
+
+$chineseArchiveMarkup = New-ArchiveMarkup -Items $reportsDescending -Language 'zh-CN' -LatestDateIso $latest.dateIso
+$englishArchiveMarkup = New-ArchiveMarkup -Items $reportsDescending -Language 'en-US' -LatestDateIso $latest.dateIso
+$monthGroups = $reportsDescending | Group-Object { $_.date.ToString('yyyy-MM') }
+
+$chineseIndex = Get-Content -LiteralPath (Join-Path $TemplateRoot 'index.template.html') -Raw -Encoding UTF8
+$chineseReplacementMap = [ordered]@{
     '{{BASE_URL}}' = $BaseUrl.TrimEnd('/')
     '{{LATEST_DATE_ISO}}' = $latest.dateIso
     '{{LATEST_DATE_ZH}}' = $latest.dateZh
@@ -204,49 +306,86 @@ $replacementMap = [ordered]@{
     '{{LATEST_TITLE}}' = Encode-Html $latest.title
     '{{LATEST_LEAD}}' = Encode-Html $latest.lead
     '{{REPORT_COUNT}}' = [string]$reports.Count
-    '{{DATE_RANGE}}' = (Encode-Html ($earliest.date.ToString('M月d日') + '—' + $latest.date.ToString('M月d日')))
+    '{{DATE_RANGE}}' = Encode-Html ($earliest.date.ToString('M月d日') + '—' + $latest.date.ToString('M月d日'))
     '{{MONTH_COUNT}}' = [string]$monthGroups.Count
-    '{{ARCHIVE_GROUPS}}' = $archiveBuilder.ToString().Trim()
+    '{{ARCHIVE_GROUPS}}' = $chineseArchiveMarkup
     '{{GENERATED_AT}}' = $generatedAtLocal.ToString('yyyy-MM-dd HH:mm')
 }
-foreach ($entry in $replacementMap.GetEnumerator()) {
-    $indexTemplate = $indexTemplate.Replace($entry.Key, [string]$entry.Value)
+foreach ($entry in $chineseReplacementMap.GetEnumerator()) {
+    $chineseIndex = $chineseIndex.Replace($entry.Key, [string]$entry.Value)
 }
-Write-Utf8NoBom -Path (Join-Path $PublicRoot 'index.html') -Content $indexTemplate
+Write-Utf8NoBom -Path (Join-Path $PublicRoot 'index.html') -Content $chineseIndex
 
-$archivePayload = [ordered]@{
-    schemaVersion = 1
+$englishIndex = Get-Content -LiteralPath (Join-Path $TemplateRoot 'index.en.template.html') -Raw -Encoding UTF8
+$englishReplacementMap = [ordered]@{
+    '{{BASE_URL}}' = $BaseUrl.TrimEnd('/')
+    '{{LATEST_DATE_ISO}}' = $latest.dateIso
+    '{{LATEST_DATE_EN}}' = $latest.dateEn
+    '{{LATEST_URL}}' = $latest.englishUrl
+    '{{LATEST_TITLE}}' = Encode-Html $latest.titleEn
+    '{{LATEST_LEAD}}' = Encode-Html $latest.leadEn
+    '{{REPORT_COUNT}}' = [string]$reports.Count
+    '{{DATE_RANGE}}' = Encode-Html ($earliest.date.ToString('MMM d', $EnglishCulture) + '—' + $latest.date.ToString('MMM d', $EnglishCulture))
+    '{{MONTH_COUNT}}' = [string]$monthGroups.Count
+    '{{ARCHIVE_GROUPS}}' = $englishArchiveMarkup
+    '{{GENERATED_AT}}' = $generatedAtLocal.ToString('yyyy-MM-dd HH:mm')
+}
+foreach ($entry in $englishReplacementMap.GetEnumerator()) {
+    $englishIndex = $englishIndex.Replace($entry.Key, [string]$entry.Value)
+}
+Write-Utf8NoBom -Path (Join-Path $PublicRoot 'en\index.html') -Content $englishIndex
+
+$chineseArchivePayload = [ordered]@{
+    schemaVersion = 2
+    locale = 'zh-CN'
     generatedAt = $generatedAtUtc.ToString('o')
     baseUrl = $BaseUrl.TrimEnd('/')
-    latest = [ordered]@{
-        date = $latest.dateIso
-        url = $latest.url
-        latestUrl = '/latest/'
-    }
-    reports = @(
-        $reportsDescending | ForEach-Object {
-            [ordered]@{
-                date = $_.dateIso
-                title = $_.title
-                lead = $_.lead
-                url = $_.url
-                publicPath = $_.publicPath
-                sourceFile = $_.sourceFile
-                sha256 = $_.sha256
-            }
+    latest = [ordered]@{ date = $latest.dateIso; url = $latest.url; latestUrl = '/latest/'; alternateUrl = $latest.englishUrl }
+    reports = @($reportsDescending | ForEach-Object {
+        [ordered]@{
+            date = $_.dateIso; title = $_.title; lead = $_.lead; url = $_.url; alternateUrl = $_.englishUrl
+            publicPath = $_.publicPath; sourceFile = $_.sourceFile; sha256 = $_.sourceSha256; publicSha256 = $_.publicSha256
         }
-    )
+    })
 }
-Write-Utf8NoBom -Path (Join-Path $PublicRoot 'archive.json') -Content ($archivePayload | ConvertTo-Json -Depth 6)
+Write-Utf8NoBom -Path (Join-Path $PublicRoot 'archive.json') -Content ($chineseArchivePayload | ConvertTo-Json -Depth 6)
+
+$englishArchivePayload = [ordered]@{
+    schemaVersion = 2
+    locale = 'en-US'
+    generatedAt = $generatedAtUtc.ToString('o')
+    baseUrl = $BaseUrl.TrimEnd('/') + '/en'
+    latest = [ordered]@{ date = $latest.dateIso; url = $latest.englishUrl; latestUrl = '/en/latest/'; alternateUrl = $latest.url }
+    reports = @($reportsDescending | ForEach-Object {
+        [ordered]@{
+            date = $_.dateIso; title = $_.titleEn; lead = $_.leadEn; url = $_.englishUrl; alternateUrl = $_.url
+            publicPath = $_.englishPublicPath; sourceFile = $_.translationFile; sha256 = $_.translationSha256; publicSha256 = $_.englishPublicSha256
+        }
+    })
+}
+Write-Utf8NoBom -Path (Join-Path $PublicRoot 'en\archive.json') -Content ($englishArchivePayload | ConvertTo-Json -Depth 6)
 
 $base = $BaseUrl.TrimEnd('/')
-$sitemapUrls = @($base + '/', $base + '/latest/') + @($reportsDescending | ForEach-Object { $base + $_.url })
-$sitemapItems = $sitemapUrls | ForEach-Object {
-    '  <url><loc>' + [System.Security.SecurityElement]::Escape($_) + '</loc></url>'
+$sitemapPairs = New-Object System.Collections.Generic.List[object]
+$sitemapPairs.Add([pscustomobject]@{ zh = $base + '/'; en = $base + '/en/' })
+$sitemapPairs.Add([pscustomobject]@{ zh = $base + '/latest/'; en = $base + '/en/latest/' })
+foreach ($report in $reportsDescending) {
+    $sitemapPairs.Add([pscustomobject]@{ zh = $base + $report.url; en = $base + $report.englishUrl })
+}
+$sitemapItems = New-Object System.Collections.Generic.List[string]
+foreach ($pair in $sitemapPairs) {
+    foreach ($primary in @($pair.zh, $pair.en)) {
+        $sitemapItems.Add('  <url>')
+        $sitemapItems.Add('    <loc>' + [System.Security.SecurityElement]::Escape($primary) + '</loc>')
+        $sitemapItems.Add('    <xhtml:link rel="alternate" hreflang="zh-CN" href="' + [System.Security.SecurityElement]::Escape($pair.zh) + '" />')
+        $sitemapItems.Add('    <xhtml:link rel="alternate" hreflang="en" href="' + [System.Security.SecurityElement]::Escape($pair.en) + '" />')
+        $sitemapItems.Add('    <xhtml:link rel="alternate" hreflang="x-default" href="' + [System.Security.SecurityElement]::Escape($pair.zh) + '" />')
+        $sitemapItems.Add('  </url>')
+    }
 }
 $sitemap = @(
     '<?xml version="1.0" encoding="UTF-8"?>'
-    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">'
     $sitemapItems
     '</urlset>'
 ) -join "`n"
@@ -256,6 +395,6 @@ Write-Utf8NoBom -Path (Join-Path $PublicRoot 'robots.txt') -Content ("User-agent
 $notFoundTemplate = Get-Content -LiteralPath (Join-Path $TemplateRoot '404.template.html') -Raw -Encoding UTF8
 Write-Utf8NoBom -Path (Join-Path $PublicRoot '404.html') -Content $notFoundTemplate
 
-Write-Host ('已同步 {0} 期日报：{1} 至 {2}' -f $reports.Count, $earliest.dateIso, $latest.dateIso) -ForegroundColor Green
-Write-Host ('最新固定归档：{0}' -f $latest.url)
-Write-Host '最新入口：/latest/'
+Write-Host ('已同步 {0} 期中英双语日报：{1} 至 {2}' -f $reports.Count, $earliest.dateIso, $latest.dateIso) -ForegroundColor Green
+Write-Host ('最新固定归档：{0} / {1}' -f $latest.url, $latest.englishUrl)
+Write-Host '最新入口：/latest/ / /en/latest/'

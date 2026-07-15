@@ -1,6 +1,9 @@
 .vercel/
 .env*
+node_modules/
 artifacts/
+test-results/
+.playwright/
 .DS_Store
 Thumbs.db
 *.log

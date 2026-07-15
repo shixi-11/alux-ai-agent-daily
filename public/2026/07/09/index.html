@@ -13,14 +13,38 @@
  @media (max-width:920px){.intel-panel{padding:18px}.panel-head{flex-direction:column;align-items:flex-start;gap:6px}.panel-head span{text-align:left;line-height:1.45}.title-cn{white-space:normal;overflow-wrap:anywhere}.risc-head{align-items:flex-start}.risc-head span{white-space:normal;text-align:left}}
  @media (max-width:520px){.page{padding-left:10px;padding-right:10px}.intel-panel{padding:14px;gap:12px}.panel-head strong{white-space:normal}.heat-list{grid-template-rows:none}.heat-row{grid-template-columns:1fr;gap:6px;align-items:start;padding:13px 0}.heat-row strong{display:inline;margin-right:8px}.heat-row .strength{margin-top:0;vertical-align:middle}.priority-note strong .nowrap,.priority-note .priority-brand,.nowrap{white-space:normal;overflow-wrap:anywhere}.risc-head{flex-direction:column;gap:4px}.stat span{white-space:normal}.sources li{overflow-wrap:anywhere}}
  </style>
+<!-- site:i18n-head:start -->
+<link rel="canonical" href="https://ai-agent-daily.alux.network/2026/07/09/">
+<link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/2026/07/09/">
+<link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/2026/07/09/">
+<link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/2026/07/09/">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:url" content="https://ai-agent-daily.alux.network/2026/07/09/">
+<link rel="icon" type="image/png" href="/assets/alux-mark.png">
+<link rel="apple-touch-icon" href="/assets/alux-mark.png">
+<link rel="stylesheet" href="/assets/report-site.css">
+<!-- site:i18n-head:end -->
 </head>
 <body>
+<!-- site:i18n-nav:start -->
+<header class="report-sitebar">
+  <a class="report-sitebrand" href="/">ALUX AI智能体情报日报</a>
+  <nav class="report-sitenav" aria-label="历史归档">
+    <a href="/latest/">最新一期</a>
+    <a href="/#archive">历史归档</a>
+    <span class="language-switch" aria-label="语言切换">
+      <a href="/2026/07/09/" lang="zh-CN" aria-current="page">中文</a>
+      <a href="/en/2026/07/09/" lang="en">EN</a>
+    </span>
+  </nav>
+</header>
+<!-- site:i18n-nav:end -->
  <main class="page">
  <section class="hero">
  <div class="hero-copy">
  <div class="eyebrow"><span>ALUX AI Agent Daily</span><span>2026-07-09</span><span>Infrastructure Brief</span></div>
  <h1><span class="title-en">AI Agent</span><span class="title-cn">进入可分发、可隔离、可审计阶段</span></h1>
- <p class="lead">今天的主信号是：Agent 不再只是在 IDE、聊天框或内部自动化里“跑起来”，而是在 marketplace、registry、runtime security、observability export 和 team session 里变成企业对象。市场正在把智能体从功能面推向<span class="nowrap">生产级运行时</span>责任。</p>
+ <p class="lead">今天的主信号是：Agent 不再只是在 IDE、聊天框或内部自动化里“跑起来”，而是在 marketplace、registry、runtime security、observability export 和 team session 里变成企业对象。市场正在把智能体从功能层推向<span class="nowrap">生产级运行时</span>的责任边界。</p>
  <div class="stats" aria-label="今日情报概览"><div class="stat"><b>9</b><span>重点信号</span></div><div class="stat"><b>15</b><span>候选信号</span></div><div class="stat"><b>8</b><span>官方/开源来源</span></div><div class="stat"><b>1</b><span>最高优先级动作</span></div></div>
  <div class="judgment"><strong>今日总判断：</strong>最高价值信号是 Google 把第三方 Agent 发布到 Gemini Enterprise 与 Marketplace。它说明 Agent 开始进入企业采购、部署和协作分发层；但真正缺的仍是<span class="nowrap">长交易</span>状态、能力边界、故障恢复和可重放证据。<span class="nowrap">ALUX</span> 应把自己讲成 marketplace / registry 之后的可信执行机器。</div>
  </div>
@@ -34,5 +58,11 @@
  <section class="section"><h2>风险边界</h2><p><span class="nowrap">ALUX</span> 不能被说成已经完整交付智能体平台。准确说，当前底层 TVM 已具备并发、持久化执行、能力安全、运行记录和逐比特重放审计等关键基础；智能体产品层、可观测性、仪表盘、追踪与评估工具仍是待构建和融资重点。</p><p>也不要说 TVM 让 LLM 本身确定性。准确说，TVM 记录模型输出和运行环境输入，使编排、权限、状态转移和审计可重放、可验证。</p></section>
  <section class="section"><h2>来源</h2><ol class="sources"><li><a href="https://cloud.google.com/blog/topics/developers-practitioners/publish-agents-in-gemini-enterprise-and-google-cloud-marketplace" target="_blank" rel="noopener">Google Cloud / Gemini Enterprise Agent Platform：Google Cloud 开放把 Vertex AI 与第三方 Agent 发布到 Gemini Enterprise 与 Google Cloud Marketplace</a> <span class="source-tier">官方博客</span></li><li><a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/release-notes.html" target="_blank" rel="noopener">Amazon Bedrock AgentCore：AWS Bedrock AgentCore 文档要求 8 月前把 Agent Runtime 改用 Agent Registry namespace/agentName/aliasName</a> <span class="source-tier">官方文档</span></li><li><a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-security.html" target="_blank" rel="noopener">Amazon Bedrock AgentCore Runtime：AWS AgentCore Runtime 安全最佳实践把 IMDSv2、confused deputy 防护和最小权限列为运行时边界</a> <span class="source-tier">官方文档</span></li><li><a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-troubleshooting.html" target="_blank" rel="noopener">Amazon Bedrock AgentCore Runtime：AWS AgentCore Runtime troubleshooting 把长运行、会话 ID、异步超时和 S3 大文件处理写成生产运维问题</a> <span class="source-tier">官方文档</span></li><li><a href="https://langfuse.com/changelog/2026-07-07-query-experiments-via-api-and-mcp" target="_blank" rel="noopener">Langfuse：Langfuse 7 月 7 日发布通过 API/MCP 查询实验能力，让评估与观测数据可被智能体直接读取</a> <span class="source-tier">官方 Changelog</span></li><li><a href="https://langfuse.com/changelog/2026-07-08-export-traces-as-parquet" target="_blank" rel="noopener">Langfuse：Langfuse 7 月 8 日支持把 Traces 导出为 Parquet，Agent 证据链开始进入数据仓库和离线审计层</a> <span class="source-tier">官方 Changelog</span></li><li><a href="https://github.com/QwenLM/qwen-code/releases" target="_blank" rel="noopener">Alibaba Qwen / Qwen Code：Qwen Code v0.19.8 继续推进多工作区、运行时热重载、DM 策略和外部分屏，开源编码 Agent 的工作面加速生产化</a> <span class="source-tier">官方 GitHub Release</span></li><li><a href="https://github.com/microsoft/agent-framework/releases" target="_blank" rel="noopener">Microsoft Agent Framework：Microsoft Agent Framework .NET 1.13.0 补充 per-user session isolation、approval 配置和工具安全面</a> <span class="source-tier">官方 GitHub Release</span></li><li><a href="https://www.anthropic.com/news/claude-tag" target="_blank" rel="noopener">Anthropic Claude Team / Enterprise：Anthropic Claude Tag 让团队在 Claude 内 @ 同事协作，并配套管理员日志、用量控制和数据边界</a> <span class="source-tier">官方公告</span></li></ol></section>
  </main>
+<!-- site:issue-footer:start -->
+<footer class="report-sitefooter">
+  <nav class="issue-nav" aria-label="历史归档"><a rel="prev" href="/2026/07/08/">← 上一期</a><a rel="next" href="/2026/07/10/">下一期 →</a></nav>
+  <a href="/">ALUX AI智能体情报日报 · 2026-07-09</a>
+</footer>
+<!-- site:issue-footer:end -->
 </body>
 </html>

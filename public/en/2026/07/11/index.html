@@ -1,0 +1,544 @@
+<!doctype html><html lang="en-US"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>2026-07-11 ALUX AI Agent Intelligence Daily</title><style>
+ :root{--ink:#111827;--muted:#5b6575;--subtle:#7a8493;--bg:#f5f7fa;--panel:#ffffff;--panel-2:#edf3f6;--line:#d9e0e7;--line-strong:#aeb9c6;--indigo:#22356f;--teal:#0f766e;--green:#166049;--amber:#9a6a16;--graphite:#202632;--soft:#e7edf2;--ice:#f9fbfc;}
+ *{box-sizing:border-box} html{overflow-x:hidden} body{margin:0;background:linear-gradient(180deg,#eef3f7 0%,#f8fafc 38%,#f3f6f8 100%);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;line-height:1.66;letter-spacing:0;word-break:normal;overflow-wrap:break-word;overflow-x:hidden;} a{color:var(--indigo);text-decoration:none;border-bottom:1px solid rgba(34,53,111,.26)} a:hover{border-bottom-color:var(--indigo)} .nowrap{white-space:nowrap;word-break:keep-all}.page{max-width:1240px;margin:0 auto;padding:26px 22px 56px}.hero{min-height:78vh;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(360px,.98fr);gap:28px;align-items:stretch;border-bottom:1px solid var(--line-strong);padding:10px 0 34px}.hero-copy{display:flex;flex-direction:column;justify-content:center;min-width:0}.eyebrow{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;color:var(--subtle);font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}.eyebrow span{white-space:nowrap}.hero h1{font-family:"Songti SC","Noto Serif CJK SC","SimSun",Georgia,serif;font-size:clamp(40px,6.1vw,74px);line-height:1.05;margin:16px 0 18px;color:#121722;font-weight:700;text-wrap:balance}.title-en{display:block;font-family:Georgia,"Times New Roman",serif;color:#18264f}.title-cn{display:block;margin-top:12px;font-size:clamp(28px,4.35vw,50px);line-height:1.2;white-space:nowrap;word-break:keep-all;letter-spacing:0;color:#10201d}.lead{font-size:clamp(17px,1.75vw,20px);line-height:1.58;color:#374151;max-width:700px;margin:0;text-wrap:pretty}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:26px 0 0}.stat{border:1px solid var(--line);background:rgba(255,255,255,.72);padding:12px 14px;min-height:76px}.stat b{display:block;font-size:22px;line-height:1.1;color:#18264f;font-variant-numeric:tabular-nums}.stat span{display:block;margin-top:7px;color:var(--muted);font-size:12px;white-space:nowrap;word-break:keep-all}.judgment{margin-top:18px;padding:20px 22px;background:#fff;border:1px solid var(--line-strong)}.judgment strong{color:#0f4f44}.intel-panel{align-self:stretch;background:#fff;border:1px solid var(--line-strong);padding:20px;display:grid;grid-template-rows:auto auto minmax(0,1fr) auto;gap:14px;min-height:0}.panel-head{display:flex;justify-content:space-between;gap:18px;align-items:start;border-bottom:1px solid var(--line);padding-bottom:14px}.panel-head strong{font-size:18px;color:#13203a;white-space:nowrap}.panel-head span{font-size:12.5px;color:var(--muted);text-align:right}.heat-summary{background:#f7fafb;border:1px solid var(--line);padding:13px 14px}.heat-summary b{display:block;font-size:13px;color:#0f5e55;margin-bottom:3px}.heat-summary p{margin:0;font-size:13px;line-height:1.5;color:#3e4856}.heat-list{display:grid;grid-template-rows:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.heat-row{display:grid;grid-template-columns:76px minmax(0,1fr);gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}.heat-row:last-child{border-bottom:0}.heat-row strong{display:block;font-size:15px;line-height:1.25;color:#172033;white-space:nowrap}.heat-row .strength{display:inline-flex;width:max-content;margin-top:7px;padding:2px 7px;border:1px solid #b8c7de;background:#eef4ff;color:#22356f;font-size:11px;font-weight:800;line-height:1.2;white-space:nowrap}.heat-row p{margin:0;color:#3e4856;font-size:13px;line-height:1.45}.heat-row em{display:block;margin-top:4px;color:#0f5e55;font-size:12.5px;line-height:1.38;font-style:normal}.priority-note{background:#eef5f2;border:1px solid #c6d9d1;padding:13px 14px}.priority-note span{display:block;color:#0f766e;font-weight:800;font-size:12px;margin-bottom:4px}.priority-note strong{display:block;color:#172033;font-size:14px;line-height:1.45}.priority-note strong .nowrap{display:inline;color:#172033;font-size:inherit;font-weight:inherit;margin:0;white-space:nowrap;word-break:keep-all}.priority-note .priority-brand{display:inline;color:#111827;font-size:inherit;font-weight:inherit;margin:0;white-space:nowrap;word-break:keep-all}.section{padding:38px 0;border-bottom:1px solid var(--line)}.section:last-child{border-bottom:0;padding-bottom:0}.section h2{font-family:"Songti SC","Noto Serif CJK SC","SimSun",Georgia,serif;font-size:clamp(25px,3vw,38px);line-height:1.18;margin:0 0 20px;color:#172033;text-wrap:balance}.radar{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.item{background:#fff;border:1px solid var(--line);padding:18px;min-height:164px}.tag{display:inline-flex;align-items:center;font-size:12px;font-weight:800;color:#22356f;background:#e8edf8;padding:4px 9px;border-radius:999px;white-space:nowrap;word-break:keep-all}.tag.green{color:#166049;background:#dcefe8}.tag.amber{color:#805711;background:#efe5ce}.item,.signal,.note,.side,.judgment,.intel-panel,.risc-primer{min-width:0;max-width:100%}.item h3,.signal h3{font-size:19px;line-height:1.28;margin:12px 0 8px;color:#172033;text-wrap:balance}.item p,.signal p{margin:7px 0;color:#3e4856;min-width:0}.risc-primer{background:#fff;border:1px solid var(--line-strong);padding:22px}.risc-primer-intro{display:grid;grid-template-columns:minmax(0,.95fr) minmax(260px,.55fr);gap:18px;align-items:end;margin-bottom:16px}.risc-equation{margin:0 0 8px;color:#10201d;font-weight:900;font-size:16px;line-height:1.35;word-break:keep-all}.risc-primer p{margin:0;color:#3e4856}.risc-primer-line{border-left:3px solid #0f766e;padding-left:14px;color:#172033;font-weight:800;line-height:1.55}.risc-primer-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.risc-primer-card{background:#f7fafb;border:1px solid var(--line);padding:14px;min-width:0}.risc-primer-card b{display:block;color:#172033;font-size:15px;line-height:1.28;white-space:nowrap;word-break:keep-all}.risc-primer-card span{display:block;margin-top:6px;color:#3e4856;font-size:13px;line-height:1.48}.risc-primer-close{display:block;margin-top:14px;color:#0f5e55;font-weight:800}.signals{display:grid;gap:12px}.signal{background:#fff;border:1px solid var(--line);padding:20px;display:grid;grid-template-columns:minmax(0,1fr) 292px;gap:20px}.signal > div{min-width:0}.meta{font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:7px 12px;min-width:0}.meta span{white-space:nowrap}.side{border-left:1px solid var(--line);padding-left:18px;background:linear-gradient(90deg,#f7fafb,transparent);padding-top:2px}.side strong{display:block;color:#0f5e55;margin:7px 0 2px;font-size:13px;white-space:nowrap}.side p{font-size:14px;line-height:1.55}.risc-scorecard{margin-top:12px;border:1px solid var(--line);background:#f7fafb;padding:12px 13px}.risc-head{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:8px;color:#172033;font-weight:800;font-size:12.5px}.risc-head span{color:#0f5e55;white-space:nowrap}.risc-check{display:grid;grid-template-columns:minmax(106px,.7fr) 58px minmax(0,1.4fr);gap:8px;align-items:start;padding:7px 0;border-top:1px solid #e1e7ee;font-size:12.5px;line-height:1.42}.risc-check:first-of-type{border-top:0}.risc-key{color:#22356f;font-weight:800;word-break:keep-all}.risc-value{display:inline-flex;width:max-content;min-width:48px;justify-content:center;border:1px solid #b8c7de;background:#eef4ff;color:#22356f;font-size:11px;font-weight:900;line-height:1.15;padding:3px 6px;border-radius:999px;white-space:nowrap}.risc-value.yes{border-color:#bdd8d0;background:#e4f2ee;color:#0f5e55}.risc-value.no{border-color:#c8cfd8;background:#edf1f5;color:#4b5563}.risc-value.partial{border-color:#d8c79a;background:#f5efe2;color:#805711}.risc-evidence{color:#3e4856;min-width:0}.matrix{display:grid;grid-template-columns:1fr 1fr;gap:12px}.note{background:#eef5f2;border:1px solid #c6d9d1;padding:20px}.note.amber{background:#f5efe2;border-color:#d8c79a}.sources{columns:2;column-gap:34px}.sources li{break-inside:avoid;margin:0 0 10px;color:#4b5563}.source-tier{color:#0f766e;font-weight:800;white-space:nowrap}
+ @media (max-width:920px){.page{padding:18px 14px 44px}.hero{grid-template-columns:1fr;min-height:auto;padding:12px 0 28px}.intel-panel{min-height:auto}.stats{grid-template-columns:repeat(2,1fr)}.radar,.matrix{grid-template-columns:1fr}.risc-primer-intro{grid-template-columns:1fr;align-items:start}.risc-primer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.signal{grid-template-columns:minmax(0,1fr)}.side{border-left:0;border-top:1px solid var(--line);padding-left:0;padding-top:14px;background:transparent}.sources{columns:1}.hero h1{font-size:clamp(36px,10vw,56px)}.title-cn{font-size:clamp(26px,7.2vw,38px);line-height:1.24}}
+ @media (max-width:520px){.page{padding-left:12px;padding-right:12px}.stats{grid-template-columns:1fr 1fr}.stat{padding:10px 11px}.heat-row{grid-template-columns:68px minmax(0,1fr)}.section{padding:34px 0}.risc-primer{padding:16px}.risc-primer-grid{grid-template-columns:1fr}.risc-primer-card b{white-space:normal}.signal{padding:16px;gap:14px}.meta{gap:6px 10px;line-height:1.35}.meta span{white-space:normal;word-break:keep-all;overflow-wrap:anywhere}.item h3,.signal h3{font-size:18px;line-height:1.32}.item p,.signal p{font-size:15.5px;line-height:1.72;overflow-wrap:anywhere}.side p{font-size:14.5px;line-height:1.62}.risc-check{grid-template-columns:minmax(0,1fr);gap:4px}.risc-value{min-width:54px}}
+ .panel-head > *,.heat-row > *,.risc-head > *{min-width:0}.panel-head span,.heat-row p,.heat-row em,.priority-note strong,.risc-evidence{overflow-wrap:anywhere}.title-en{overflow-wrap:anywhere}
+ @media (max-width:920px){.intel-panel{padding:18px}.panel-head{flex-direction:column;align-items:flex-start;gap:6px}.panel-head span{text-align:left;line-height:1.45}.title-cn{white-space:normal;overflow-wrap:anywhere}.risc-head{align-items:flex-start}.risc-head span{white-space:normal;text-align:left}}
+ @media (max-width:520px){.page{padding-left:10px;padding-right:10px}.intel-panel{padding:14px;gap:12px}.panel-head strong{white-space:normal}.heat-list{grid-template-rows:none}.heat-row{grid-template-columns:1fr;gap:6px;align-items:start;padding:13px 0}.heat-row strong{display:inline;margin-right:8px}.heat-row .strength{margin-top:0;vertical-align:middle}.priority-note strong .nowrap,.priority-note .priority-brand,.nowrap{white-space:normal;overflow-wrap:anywhere}.risc-head{flex-direction:column;gap:4px}.stat span{white-space:normal}.sources li{overflow-wrap:anywhere}}
+ </style><!-- site:i18n-head:start -->
+<link rel="canonical" href="https://ai-agent-daily.alux.network/en/2026/07/11/">
+<link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/2026/07/11/">
+<link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/2026/07/11/">
+<link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/2026/07/11/">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://ai-agent-daily.alux.network/en/2026/07/11/">
+<link rel="icon" type="image/png" href="/assets/alux-mark.png">
+<link rel="apple-touch-icon" href="/assets/alux-mark.png">
+<link rel="stylesheet" href="/assets/report-site.css">
+<!-- site:i18n-head:end -->
+</head><body>
+<!-- site:i18n-nav:start -->
+<header class="report-sitebar">
+  <a class="report-sitebrand" href="/en/">ALUX AI Agent Intelligence Daily</a>
+  <nav class="report-sitenav" aria-label="Archive">
+    <a href="/en/latest/">Latest</a>
+    <a href="/en/#archive">Archive</a>
+    <span class="language-switch" aria-label="Language switcher">
+      <a href="/2026/07/11/" lang="zh-CN">中文</a>
+      <a href="/en/2026/07/11/" lang="en" aria-current="page">EN</a>
+    </span>
+  </nav>
+</header>
+<!-- site:i18n-nav:end -->
+<main class="page">
+<section class="hero">
+<div class="hero-copy">
+<div class="eyebrow">
+<span>ALUX AI Agent Daily</span>
+<span>2026-07-11</span>
+<span>Infrastructure Brief</span>
+</div>
+<h1>
+<span class="title-en">AI Agent</span>
+<span class="title-cn">The Body and Its Boundaries Take Shape</span>
+</h1>
+<p class="lead">AWS is turning isolation, state retention, and pause-and-resume into cloud primitives, while Tencent is productizing dedicated state spaces for agents at massive scale. Today’s strongest momentum is not in a new brain, but in <span class="nowrap">R · Resilience / Body</span> and <span class="nowrap">S · Security / Immune System</span>.</p>
+<div class="stats">
+<div class="stat">
+<b>14</b>
+<span>Candidate Signals</span>
+</div>
+<div class="stat">
+<b>8</b>
+<span>Key Signals</span>
+</div>
+<div class="stat">
+<b>R + S</b>
+<span>Strongest RISC Today</span>
+</div>
+<div class="stat">
+<b>6</b>
+<span>Official / Primary Sources</span>
+</div>
+</div>
+<div class="judgment">
+<strong>Today’s Take:</strong> The agent production stack is shifting from “Can it do the work?” to “Does it have a body, an identity, and an accountable chain of responsibility?” <span class="nowrap">ALUX</span> should seize the opportunity to unify state, capabilities, and replay evidence across cloud sandboxes, enterprise connectors, and inter-agent trust into a single <span class="nowrap">long-running transaction</span>.</div>
+</div>
+<aside class="intel-panel">
+<div class="panel-head">
+<strong>Today’s Heat Matrix</strong>
+<span>Start with the body, then examine the entry points</span>
+</div>
+<div class="heat-summary">
+<b>Heat Summary</b>
+<p>AWS, Tencent, OpenAI, and Salesforce are all pushing execution environments, enterprise workspaces, collaboration relationships, and security accountability down into the infrastructure layer.</p>
+</div>
+<div class="heat-list">
+<div class="heat-row">
+<div>
+<strong>R · Body</strong>
+<span class="strength">High</span>
+</div>
+<div>
+<p>MicroVM state retention and agent-native storage are taking shape at the same time.</p>
+<em>ALUX: prove recovery across systems, not merely sandbox recovery.</em>
+</div>
+</div>
+<div class="heat-row">
+<div>
+<strong>S · Immune System</strong>
+<span class="strength">High</span>
+</div>
+<div>
+<p>Loom and agent trust architectures are raising the bar for identity, policy, and accountability.</p>
+<em>ALUX: encode authorization, denial, and audit as execution semantics.</em>
+</div>
+</div>
+<div class="heat-row">
+<div>
+<strong>C · Society</strong>
+<span class="strength">Medium-High</span>
+</div>
+<div>
+<p>Work agents, skill standards, and inter-agent delegation are competing to become the primary entry point.</p>
+<em>ALUX: define session ownership and the chain of responsibility across companies.</em>
+</div>
+</div>
+<div class="heat-row">
+<div>
+<strong>I · Brain</strong>
+<span class="strength">Medium</span>
+</div>
+<div>
+<p>Enterprise memory keeps advancing, but it has not solved execution reliability.</p>
+<em>ALUX: record evidence of memory provenance, use, and revocation.</em>
+</div>
+</div>
+</div>
+<div class="priority-note">
+<span>Top-Priority Action</span>
+<strong>Have <span class="priority-brand">ALUX</span> produce a boundary map between the <span class="nowrap">agent sandbox layer</span> and the <span class="nowrap">long-running transaction accountability layer</span>, then pair it with a demo showing credentials expiring after a pause and being reauthorized on recovery.</strong>
+</div>
+</aside>
+</section>
+<section class="section">
+<h2>How the RISC Machine Works</h2>
+<div class="risc-primer">
+<div class="risc-primer-intro">
+<div>
+<p class="risc-equation">RISC = the four systems of a production-grade agent / robotic body</p>
+<p>A truly production-grade agent needs more than a brain. It also needs a body that can keep acting, an immune system that prevents overreach, and social interfaces that let it enter organizations and complete handoffs.</p>
+</div>
+<div class="risc-primer-line">The industry has delivered an excellent brain, but a production-grade agent still needs a body, an immune system, and a society.<span class="risc-primer-close"> ALUX is building the complete machine.</span>
+</div>
+</div>
+<div class="risc-primer-grid">
+<div class="risc-primer-card">
+<b>R · Resilience / Body</b>
+<span>Durable execution, fault tolerance, recovery, and scaling determine whether the body can stay on its feet.</span>
+</div>
+<div class="risc-primer-card">
+<b>I · Intelligence / Brain</b>
+<span>Model loops, memory, tool orchestration, and reasoning determine whether it can think clearly.</span>
+</div>
+<div class="risc-primer-card">
+<b>S · Security / Immune System</b>
+<span>Capabilities, policies, audits, and isolation determine whether it can prevent overreach and loss of control.</span>
+</div>
+<div class="risc-primer-card">
+<b>C · Connectivity / Society</b>
+<span>Delegation, sessions, connectors, and neutral collaboration determine whether it can operate inside organizations.</span>
+</div>
+</div>
+</div>
+</section>
+<section class="section">
+<h2>Today’s ALUX Radar</h2>
+<div class="radar">
+<div class="item">
+<span class="tag green">Opportunity</span>
+<h3>The Runtime Body Becomes a Cloud Primitive</h3>
+<p>MicroVMs, Agent Bucket, and enterprise memory point to the same conclusion: state, isolation, and recovery are no longer application-layer afterthoughts. They are becoming core agent product features.</p>
+</div>
+<div class="item">
+<span class="tag amber">Risk</span>
+<h3>Cloud Providers Are Rapidly Absorbing Foundational Capabilities</h3>
+<p>AWS can already provide state retention and isolated sandboxes. If <span class="nowrap">ALUX</span> speaks only of “durable execution,” its differentiation will narrow. It must clearly articulate cross-system <span class="nowrap">long-running transactions</span>, OCAP, and replay evidence.</p>
+</div>
+<div class="item">
+<span class="tag">Actionable Asset</span>
+<h3>Sandbox vs. Accountability-Layer Boundary Map</h3>
+<p>Place AWS, Tencent, OpenAI, and Salesforce on one diagram: they provide components of the body, entry points, and governance; <span class="nowrap">ALUX</span> provides the verifiable chain of execution responsibility.</p>
+</div>
+</div>
+</section>
+<section class="section">
+<h2>Key Signals</h2>
+<div class="signals">
+<article class="signal">
+<div>
+<div class="meta">
+<span>01</span>
+<span>AWS Lambda MicroVMs</span>
+<span>United States / Global</span>
+<span>2026-07-10</span>
+<span class="source-tier">Official Blog</span>
+</div>
+<h3>AWS Lambda MicroVMs Bring Agent Code Execution into Isolated Virtual Machines That Can Pause and Resume</h3>
+<p><strong>What happened:</strong> AWS introduced Lambda MicroVMs. Each user or job receives a Firecracker environment with no shared kernel, near-instant startup, memory and disk state retention, sessions of up to eight hours, idle pause-and-resume, and horizontal scaling.</p>
+<p><strong>Why it matters to <span class="nowrap">ALUX</span>:</strong> This directly validates ALUX’s view that a production-grade agent first needs a body that can stay on its feet. AWS has turned isolation, state retention, and recovery into cloud primitives. ALUX must differentiate through cross-system long-running transactions, capability objects, and replayable audits—not by claiming reliability in generic terms.</p>
+<p><strong>Recommended action and deliverable:</strong> Produce a “MicroVM Sandbox Layer / ALUX Long-Running Transaction Layer” boundary map, then add a fault-injection example in which credentials expire during a pause and must be refreshed on recovery. Deliverable: “Agent Sandbox and Long-Running Transaction Boundary Map.”</p>
+<div class="risc-scorecard">
+<div class="risc-head">
+<strong>RISC: R Primary · Resilience / Body</strong>
+<span>S Secondary · Security / Immune System</span>
+</div>
+<p>This signal primarily affects the agent’s resilience/body: state retention, pause-and-resume, and horizontal scaling determine whether the body can keep working. The isolated MicroVM also strengthens security/the immune system.</p>
+<div class="risc-check">
+<span class="risc-key">Durable Execution</span>
+<span class="risc-value yes">Yes</span>
+<span class="risc-evidence">Sessions can run for up to eight hours while retaining memory, disk, and process state.</span>
+</div>
+<div class="risc-check">
+<span class="risc-key">Failure Recovery</span>
+<span class="risc-value partial">Partial</span>
+<span class="risc-evidence">Idle sessions can pause and resume nearly instantly, but the source does not establish failover across nodes.</span>
+</div>
+</div>
+</div>
+<aside class="side">
+<strong>Partnership / Learning Opportunity</strong>
+<p>A useful reference case for discussions with Claude Managed Agents, agent sandbox, and cloud infrastructure teams. Study snapshot startup, pause-and-resume, lifecycle hooks, and credential-refresh boundaries.</p>
+<strong>Risk Boundary</strong>
+<p>MicroVM state retention does not provide long-running transaction semantics or prove replay across tools. It will, however, rapidly raise the baseline for runtime infrastructure.</p>
+<strong>What Changed Today</strong>
+<p>On July 10, AWS published two official articles detailing Lambda MicroVMs for agent code execution, state retention, and integration with Claude Managed Agents.</p>
+</aside>
+</article>
+<article class="signal">
+<div>
+<div class="meta">
+<span>02</span>
+<span>Loom for AWS</span>
+<span>United States / Global</span>
+<span>2026-07-09</span>
+<span class="source-tier">Official Release</span>
+</div>
+<h3>AWS Uses Loom to Unify Agent Identity, Least Privilege, Policy, and Audit in One Security Plane</h3>
+<p><strong>What happened:</strong> AWS introduced Loom for AWS, a unified security platform for identity, least privilege, policy control, visibility, and security operations when deploying AI agents at scale.</p>
+<p><strong>Why it matters to <span class="nowrap">ALUX</span>:</strong> Cloud providers are elevating agent security from isolated guardrails to a runtime governance plane. ALUX’s opportunity is not to build another cloud policy console, but to encode capability grants, state transitions, denials, and audits as verifiable execution semantics.</p>
+<p><strong>Recommended action and deliverable:</strong> Organize the comparison into three layers: identity governance, capability objects, and replay evidence. Deliverable: “Three-Layer Agent Security Comparison.”</p>
+<div class="risc-scorecard">
+<div class="risc-head">
+<strong>RISC: S Primary · Security / Immune System</strong>
+<span>R Secondary · Resilience / Body</span>
+</div>
+<p>This signal primarily affects the agent’s security/immune system: identity, permissions, policy, and audit determine whether an agent can overstep its authority and whether its actions remain accountable. Security operations at scale then extend into resilience/the body.</p>
+<div class="risc-check">
+<span class="risc-key">Policy Approval</span>
+<span class="risc-value yes">Yes</span>
+<span class="risc-evidence">The official release identifies least privilege and policy control as core requirements for secure deployment.</span>
+</div>
+<div class="risc-check">
+<span class="risc-key">Rollback Audit</span>
+<span class="risc-value partial">Partial</span>
+<span class="risc-evidence">Loom emphasizes visibility and audit, but public materials do not establish rollback or deterministic replay.</span>
+</div>
+</div>
+</div>
+<aside class="side">
+<strong>Partnership / Learning Opportunity</strong>
+<p>Discuss capability objects and runtime evidence interfaces with cloud security, IAM, and agent governance teams. Study how cloud platforms combine agent identity, permissions, and security operations in a single entry point.</p>
+<strong>Risk Boundary</strong>
+<p>Public materials do not establish bit-for-bit replay or neutral execution across companies. Loom remains within the AWS control plane.</p>
+<strong>What Changed Today</strong>
+<p>On July 9, AWS added Loom, expanding its security narrative from individual AgentCore capabilities to a unified governance platform.</p>
+</aside>
+</article>
+<article class="signal">
+<div>
+<div class="meta">
+<span>03</span>
+<span>OpenAI ChatGPT Work</span>
+<span>United States / Global</span>
+<span>2026-07-09</span>
+<span class="source-tier">Reliable Media / Official Release Coverage</span>
+</div>
+<h3>ChatGPT Work Completes Projects Across Connected Tools While Users and Enterprises Retain Approval Authority</h3>
+<p><strong>What happened:</strong> OpenAI introduced ChatGPT Work, powered by GPT-5.6. It can decompose multi-step projects, read context from connected tools, and produce documents, spreadsheets, presentations, or collaborative websites, while users and enterprise administrators retain control and approval authority.</p>
+<p><strong>Why it matters to <span class="nowrap">ALUX</span>:</strong> Foundation-model companies are claiming the agent entry point for team workflows. ALUX should not compete for the “smarter brain.” It should instead own the authorization chain, state recovery, and evidentiary accountability that follow execution across tools.</p>
+<p><strong>Recommended action and deliverable:</strong> Add one investor-facing page answering: “After a Work Agent completes a project, what does ALUX prove?” Deliverable: “Work Agent Chain-of-Responsibility Brief.”</p>
+<div class="risc-scorecard">
+<div class="risc-head">
+<strong>RISC: C Primary · Connectivity / Society</strong>
+<span>S Secondary · Security / Immune System</span>
+</div>
+<p>This signal primarily affects the agent’s connectivity/society: agents collaborate across connected tools, enterprise workspaces, and shared deliverables. Approval and administrator controls make security/the immune system the secondary dimension.</p>
+<div class="risc-check">
+<span class="risc-key">Ecosystem Connectivity</span>
+<span class="risc-value yes">Yes</span>
+<span class="risc-evidence">The product draws context from connected tools and creates work products in multiple formats.</span>
+</div>
+<div class="risc-check">
+<span class="risc-key">Session Type</span>
+<span class="risc-value yes">Yes</span>
+<span class="risc-evidence">The interaction moves beyond instant conversation to multi-step projects, with Sites serving as shared collaborative outputs.</span>
+</div>
+</div>
+</div>
+<aside class="side">
+<strong>Partnership / Learning Opportunity</strong>
+<p>Treat ChatGPT Work as a hypothetical front end for an ALUX runtime adapter. Study project-based delegation, connector context, and collaborative interfaces for work products.</p>
+<strong>Risk Boundary</strong>
+<p>The current evidence is based mainly on release coverage. Cross-company delegation, neutral execution, and replayable audits remain unproven.</p>
+<strong>What Changed Today</strong>
+<p>On July 9, OpenAI added ChatGPT Work, a GPT-5.6-powered project agent—not merely another billing or sharing update for Workspace Agents.</p>
+</aside>
+</article>
+<article class="signal">
+<div>
+<div class="meta">
+<span>04</span>
+<span>Oracle AI Agent Memory 26.6</span>
+<span>United States / Global</span>
+<span>2026-07-10</span>
+<span class="source-tier">Official Blog</span>
+</div>
+<h3>Oracle Agent Memory 26.6 Makes Fast Retrieval, Accurate Memory, and Enterprise Context a Foundational Agent Layer</h3>
+<p><strong>What happened:</strong> Oracle introduced AI Agent Memory 26.6, focused on storing and retrieving enterprise agent context faster and more accurately while reducing repeated queries and context mismatches.</p>
+<p><strong>Why it matters to <span class="nowrap">ALUX</span>:</strong> A stronger memory layer improves the agent’s brain, but also expands the need to audit what was remembered, when it took effect, and whether it was contaminated. ALUX should record memory writes, source hashes, time of use, and revocation outcomes instead of treating memory as a black box.</p>
+<p><strong>Recommended action and deliverable:</strong> Define a Memory Event schema with write, retrieve, sourceHash, policy, expiry, and replay verdict fields. Deliverable: “Auditable Memory Event Schema.”</p>
+<div class="risc-scorecard">
+<div class="risc-head">
+<strong>RISC: I Primary · Intelligence / Brain</strong>
+<span>S Secondary · Security / Immune System</span>
+</div>
+<p>This signal primarily affects the agent’s intelligence/brain: memory storage and retrieval determine whether it retains the right information and can find it accurately. Memory contamination and revocation then extend into security/the immune system.</p>
+<div class="risc-check">
+<span class="risc-key">Memory Use</span>
+<span class="risc-value yes">Yes</span>
+<span class="risc-evidence">The release focuses directly on the speed and accuracy of agent memory.</span>
+</div>
+<div class="risc-check">
+<span class="risc-key">Reasoning Depth</span>
+<span class="risc-value partial">Partial</span>
+<span class="risc-evidence">More accurate context can improve decisions, but the source does not establish deeper reasoning.</span>
+</div>
+</div>
+</div>
+<aside class="side">
+<strong>Partnership / Learning Opportunity</strong>
+<p>Discuss auditable memory adapters with database, vector search, and enterprise knowledge-platform teams. Study enterprise memory retrieval accuracy and low-latency paths.</p>
+<strong>Risk Boundary</strong>
+<p>The source does not establish consistency across tasks, contamination rollback, or deterministic replay. More accurate retrieval is not the same as reliable execution.</p>
+<strong>What Changed Today</strong>
+<p>On July 10, Oracle released Agent Memory 26.6 as a standalone enterprise capability.</p>
+</aside>
+</article>
+<article class="signal">
+<div>
+<div class="meta">
+<span>05</span>
+<span>Salesforce Agent Trust</span>
+<span>United States / Global</span>
+<span>2026-07-10</span>
+<span class="source-tier">Official Blog</span>
+</div>
+<h3>Salesforce Proposes an Agent-to-Agent Trust Architecture Where Identity, Authorization, Intent, and Accountability Come Before Interconnection</h3>
+<p><strong>What happened:</strong> Salesforce set out five trust requirements for agent-to-agent communication, placing verifiable identity, authorization, intent, data boundaries, and evidence of accountability ahead of agent interconnection.</p>
+<p><strong>Why it matters to <span class="nowrap">ALUX</span>:</strong> This strongly validates ALUX’s future narrative for collaboration across companies: connectivity is not merely another protocol. It requires a neutral execution venue, capability grants, session accountability, and accountable state.</p>
+<p><strong>Recommended action and deliverable:</strong> Map the five requirements for agent interconnection to ALUX RISC C/S. Deliverable: “Cross-Agent Trust Mapping.”</p>
+<div class="risc-scorecard">
+<div class="risc-head">
+<strong>RISC: C Primary · Connectivity / Society</strong>
+<span>S Secondary · Security / Immune System</span>
+</div>
+<p>This signal primarily affects the agent’s connectivity/society: inter-agent connections and task handoffs require new social protocols. Identity, authorization, and evidence of accountability form the security/immune-system layer.</p>
+<div class="risc-check">
+<span class="risc-key">Cross-Company Delegation</span>
+<span class="risc-value partial">Partial</span>
+<span class="risc-evidence">The article discusses trust conditions for communication and delegation between agents, but not a validated cross-company execution system.</span>
+</div>
+<div class="risc-check">
+<span class="risc-key">Neutral Substrate</span>
+<span class="risc-value no">No</span>
+<span class="risc-evidence">Salesforce offers principles, not a publicly documented neutral execution venue.</span>
+</div>
+</div>
+</div>
+<aside class="side">
+<strong>Partnership / Learning Opportunity</strong>
+<p>A useful opening for business-development conversations with Salesforce, the CRM ecosystem, and A2A/MCP identity teams. Study how the enterprise market turns inter-agent trust into understandable admission requirements.</p>
+<strong>Risk Boundary</strong>
+<p>The blog presents a framework of principles. It does not mean Salesforce has delivered a neutral runtime across companies; the vision must not be presented as an implementation.</p>
+<strong>What Changed Today</strong>
+<p>On July 10, Salesforce introduced a complete trust architecture for agent-to-agent interactions.</p>
+</aside>
+</article>
+<article class="signal">
+<div>
+<div class="meta">
+<span>06</span>
+<span>Tencent Cloud Agent Bucket</span>
+<span>China</span>
+<span>2026-07-09</span>
+<span class="source-tier">Official Release</span>
+</div>
+<h3>Tencent Cloud Agent Bucket Gives 100-Million-Scale Agent Fleets Dedicated Cloud Spaces, Native Isolation, and S3-Compatible Storage</h3>
+<p><strong>What happened:</strong> Tencent Cloud introduced Agent Bucket, providing dedicated cloud spaces, native isolation, high-performance storage, consumer-cloud-drive-style file management, S3 interfaces, multimodal retrieval, and 100-million-scale agent concurrency. It is already used in WorkBuddy, AI PCs, and in-vehicle cloud environments.</p>
+<p><strong>Why it matters to <span class="nowrap">ALUX</span>:</strong> Chinese cloud providers are turning “a state space for every agent” into infrastructure. ALUX can learn from the product’s storage scale and entry points, but must emphasize that it handles cross-system long-running transactions, permissions, and replay—not merely object storage.</p>
+<p><strong>Recommended action and deliverable:</strong> Define an Agent State Adapter with bucket namespace, sourceHash, capability, checkpoint, and retention fields. Deliverable: “Agent State Adapter Field Map.”</p>
+<div class="risc-scorecard">
+<div class="risc-head">
+<strong>RISC: R Primary · Resilience / Body</strong>
+<span>C Secondary · Connectivity / Society</span>
+</div>
+<p>This signal primarily affects the agent’s resilience/body: dedicated state spaces, storage performance, and scale determine whether the body can continue operating. S3 compatibility and support for multiple scenarios expand connectivity/society.</p>
+<div class="risc-check">
+<span class="risc-key">Durable Execution</span>
+<span class="risc-value partial">Partial</span>
+<span class="risc-evidence">Dedicated cloud spaces and file management support persistent state, but not a complete execution lifecycle.</span>
+</div>
+<div class="risc-check">
+<span class="risc-key">Horizontal Scaling</span>
+<span class="risc-value yes">Yes</span>
+<span class="risc-evidence">Official materials claim support for 100-million-scale agent concurrency and massive numbers of isolated spaces.</span>
+</div>
+</div>
+</div>
+<aside class="side">
+<strong>Partnership / Learning Opportunity</strong>
+<p>A potential partnership entry point for Chinese cloud, AI PC, in-vehicle agent, and enterprise productivity scenarios. Study agent-native namespaces, object-storage compatibility, and multimodal retrieval integration.</p>
+<strong>Risk Boundary</strong>
+<p>A dedicated bucket does not provide transaction isolation, capability security, or replayable state. The claim of concurrency at the scale of hundreds of millions also requires further validation of how the metric is defined.</p>
+<strong>What Changed Today</strong>
+<p>On July 9, Tencent Cloud publicly detailed Agent Bucket’s dedicated cloud spaces, 100-million-scale concurrency, and deployed use cases for the first time.</p>
+</aside>
+</article>
+<article class="signal">
+<div>
+<div class="meta">
+<span>07</span>
+<span>Baidu Dazi Enterprise Edition</span>
+<span>China</span>
+<span>2026-07-10</span>
+<span class="source-tier">Reliable Media / Company Event</span>
+</div>
+<h3>Baidu Dazi Launches an Enterprise Edition and Skill Integration Standard as Enterprise Agent Platforms Compete to Set Ecosystem Rules</h3>
+<p><strong>What happened:</strong> At AIDAY, Baidu introduced Dazi Enterprise Edition alongside an enterprise Skill integration standard and an alliance program, aiming to make its platform the entry point for integrating, distributing, and coordinating enterprise agent skills.</p>
+<p><strong>Why it matters to <span class="nowrap">ALUX</span>:</strong> Skill standards are competing for ecosystem access and enterprise mindshare. ALUX’s opportunity is to become the permissions, state, and audit layer for any Skill execution—not merely another skill directory.</p>
+<p><strong>Recommended action and deliverable:</strong> Monitor the standard itself and draft a three-part adaptation specification covering Skill description, capability grant, and execution evidence. Deliverable: “Enterprise Skill Runtime Contract Draft.”</p>
+<div class="risc-scorecard">
+<div class="risc-head">
+<strong>RISC: C Primary · Connectivity / Society</strong>
+<span>S Secondary · Security / Immune System</span>
+</div>
+<p>This signal primarily affects the agent’s connectivity/society: enterprise Skill standards determine how agents enter tool and organizational ecosystems. Permissions and auditable execution are the required security/immune-system complement.</p>
+<div class="risc-check">
+<span class="risc-key">Ecosystem Connectivity</span>
+<span class="risc-value yes">Yes</span>
+<span class="risc-evidence">The enterprise edition launched alongside a Skill integration standard and alliance program.</span>
+</div>
+<div class="risc-check">
+<span class="risc-key">Neutral Substrate</span>
+<span class="risc-value no">No</span>
+<span class="risc-evidence">Baidu controls the standard; neutrality across clouds and companies has not been established.</span>
+</div>
+</div>
+</div>
+<aside class="side">
+<strong>Partnership / Learning Opportunity</strong>
+<p>A potential opening into enterprise applications, skill marketplaces, and China’s agent-platform ecosystem. Study the integration, distribution, and alliance model for enterprise Skills.</p>
+<strong>Risk Boundary</strong>
+<p>Current public information is centered on the event announcement. The standard’s details, governance constraints, and cross-platform portability remain uncertain.</p>
+<strong>What Changed Today</strong>
+<p>On July 10, Baidu added Dazi Enterprise Edition, an enterprise Skill integration standard, and an alliance program.</p>
+</aside>
+</article>
+<article class="signal">
+<div>
+<div class="meta">
+<span>08</span>
+<span>Lyzr</span>
+<span>United States / India</span>
+<span>2026-07-09</span>
+<span class="source-tier">Reliable Media</span>
+</div>
+<h3>Lyzr Lets Its Own Agent Lead Investor Outreach for a $100 Million Raise, Putting Agent Execution to a High-Stakes Market Test</h3>
+<p><strong>What happened:</strong> Enterprise agent company Lyzr tasked its own agent with investor discovery, outreach, and interaction around fundraising materials for a $100 million round, putting the product directly into the fundraising process. The round remains in progress.</p>
+<p><strong>Why it matters to <span class="nowrap">ALUX</span>:</strong> The signal is not simply the size of the raise. It is the use of a high-accountability external action as product proof. This sharpens the questions ALUX is designed to answer: who authorized the agent to contact whom, what data it used, what commitments it made, how those commitments can be withdrawn, and how the activity can be audited.</p>
+<p><strong>Recommended action and deliverable:</strong> Use this as an investor-facing case study on why high-accountability external actions need ALUX. Deliverable: “Fundraising Agent Chain-of-Responsibility Case Study.”</p>
+<div class="risc-scorecard">
+<div class="risc-head">
+<strong>RISC: C Primary · Connectivity / Society</strong>
+<span>S Secondary · Security / Immune System</span>
+</div>
+<p>This signal primarily affects the agent’s connectivity/society: the agent represents a company in external relationships with investors. Authorization, commitments, and audit trails make security/the immune system the decisive secondary dimension.</p>
+<div class="risc-check">
+<span class="risc-key">Cross-Company Delegation</span>
+<span class="risc-value partial">Partial</span>
+<span class="risc-evidence">The agent is delegated to engage external investors, but not through a neutral cross-company execution protocol.</span>
+</div>
+<div class="risc-check">
+<span class="risc-key">Session Type</span>
+<span class="risc-value partial">Partial</span>
+<span class="risc-evidence">Fundraising outreach is a sustained, relationship-based session, but public materials do not describe a state-handoff mechanism.</span>
+</div>
+</div>
+</div>
+<aside class="side">
+<strong>Partnership / Learning Opportunity</strong>
+<p>Discuss chain-of-responsibility runtimes with enterprise-agent, fundraising-automation, and compliance teams. Study how to demonstrate that the product itself constitutes evidence in a fundraising narrative.</p>
+<strong>Risk Boundary</strong>
+<p>The raise is not complete, so neither its valuation nor its amount should be presented as funds received. The agent’s actual share of the work also requires independent verification.</p>
+<strong>What Changed Today</strong>
+<p>On July 9, it was first reported that Lyzr had put an agent in charge of investor outreach for a $100 million raise.</p>
+</aside>
+</article>
+</div>
+</section>
+<section class="section">
+<h2>Funding / Partnership Opportunities</h2>
+<div class="matrix">
+<div class="note">
+<strong>Most Direct Partnership Opportunities:</strong> AWS Lambda MicroVMs, Tencent Cloud Agent Bucket, enterprise IAM, agent memory, and Skill marketplaces. Their shared interfaces are session namespace, capability, checkpoint, source hash, and replay verdict.</div>
+<div class="note">
+<strong>Funding Narrative Opportunity:</strong> Lyzr’s use of an agent directly in fundraising shows that the market is willing to test products through high-accountability actions. <span class="nowrap">ALUX</span> can turn “Who authorized it, what did it do, and can its commitments be proven?” into a sharp, single-page chain-of-responsibility narrative.</div>
+</div>
+</section>
+<section class="section">
+<h2>Technical / Product Implications</h2>
+<div class="matrix">
+<div class="note amber">
+<strong>Recommended Artifact:</strong> Agent Runtime Boundary v0. The sandbox handles process and file isolation; cloud storage holds state; <span class="nowrap">ALUX</span> handles capability-mediated <span class="nowrap">long-running transactions</span>, state transitions, and replayable audits.</div>
+<div class="note amber">
+<strong>Recommended Demo:</strong> An agent invokes a CRM and an enterprise Skill inside an isolated MicroVM, then pauses mid-task. When it resumes, the old credentials are invalid; the system obtains fresh approval, continues execution, and produces a complete replay evidence chain.</div>
+</div>
+</section>
+<section class="section">
+<h2>Risk Boundaries</h2>
+<p><span class="nowrap">ALUX</span> must not be presented as a complete, already-delivered agent platform. The accurate claim is that the underlying TVM already provides critical foundations including concurrency, durable execution, capability security, execution records, and bit-for-bit replay audits. The agent product layer, observability, dashboards, tracing, and evaluation tools remain priorities for development and funding.</p>
+<p>Nor should TVM be described as making the LLM itself deterministic. The accurate claim is that TVM records model outputs and runtime-environment inputs, making orchestration, permissions, state transitions, and audits replayable and verifiable. AWS pause-and-resume, Tencent’s isolated storage, OpenAI’s project agents, and Salesforce’s trust principles must not be overstated as completed neutral execution across companies.</p>
+</section>
+<section class="section">
+<h2>Sources</h2>
+<ol class="sources">
+<li><a href="https://aws.amazon.com/blogs/compute/announcing-lambda-microvms-serverless-compute-environments-with-vm-level-isolation-and-near-instant-startup/" target="_blank" rel="noopener">AWS Lambda MicroVMs: AWS Lambda MicroVMs Bring Agent Code Execution into Isolated Virtual Machines That Can Pause and Resume</a> <span class="source-tier">Official Blog</span></li>
+<li><a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxNU182OFY5X2NYVG5XaFlKWDJQaDY5N0dPVV9GM3RhcEZsdmFDSWhuOERrbi1DdFBOa1UtZnE4QzZSOGVLZjA1Y2cyTXlSUXBfbTRDbmpjM1BMdnVPSWtBWnhObTBiUWQ4U2FPN1JrTzdQMG82TVNxY2hVX3FRc1o3cHYzdkU1VUJ3SGk1bEsyNGlma2RIczBBaWEwZi1HRWZFM0E?oc=5" target="_blank" rel="noopener">Loom for AWS: AWS Uses Loom to Unify Agent Identity, Least Privilege, Policy, and Audit in One Security Plane</a> <span class="source-tier">Official Release</span></li>
+<li><a href="https://www.jiemian.com/article/14734921.html" target="_blank" rel="noopener">OpenAI ChatGPT Work: ChatGPT Work Completes Projects Across Connected Tools While Users and Enterprises Retain Approval Authority</a> <span class="source-tier">Reliable Media / Official Release Coverage</span></li>
+<li><a href="https://news.google.com/rss/articles/CBMibkFVX3lxTE05TkZDVTVkYUtNbXNyTENFa19YYXIzeGFuSGl5bi1iT2tqOFB5VlZ1VFgyMDloVUsySE03ZjI0MFR6NFN0bWF2ZTFnUENJcW1uMHZBNVB3emdJODdpZGhjX0ZHendNbmdxU18tUzd3?oc=5" target="_blank" rel="noopener">Oracle AI Agent Memory 26.6: Oracle Agent Memory 26.6 Makes Fast Retrieval, Accurate Memory, and Enterprise Context a Foundational Agent Layer</a> <span class="source-tier">Official Blog</span></li>
+<li><a href="https://www.salesforce.com/blog/new-ai-trust-architecture/" target="_blank" rel="noopener">Salesforce Agent Trust: Salesforce Proposes an Agent-to-Agent Trust Architecture Where Identity, Authorization, Intent, and Accountability Come Before Interconnection</a> <span class="source-tier">Official Blog</span></li>
+<li><a href="https://cloud.tencent.com/developer/article/2706011" target="_blank" rel="noopener">Tencent Cloud Agent Bucket: Tencent Cloud Agent Bucket Gives 100-Million-Scale Agent Fleets Dedicated Cloud Spaces, Native Isolation, and S3-Compatible Storage</a> <span class="source-tier">Official Release</span></li>
+<li><a href="https://news.google.com/rss/articles/CBMiTkFVX3lxTE11M1JZdjVTWkRtWG1sM05vdFBCcy1hc1Jra0dqeWdoWkpnNG1GcThrOW9rN2p6d3VqV3lHbDFsdHpDeG5saWU5V0ZQT1JWQQ?oc=5" target="_blank" rel="noopener">Baidu Dazi Enterprise Edition: Baidu Dazi Launches an Enterprise Edition and Skill Integration Standard as Enterprise Agent Platforms Compete to Set Ecosystem Rules</a> <span class="source-tier">Reliable Media / Company Event</span></li>
+<li><a href="https://techcrunch.com/2026/07/09/an-ai-agent-startup-just-let-its-agent-run-its-100-million-fundraise/" target="_blank" rel="noopener">Lyzr: Lyzr Lets Its Own Agent Lead Investor Outreach for a $100 Million Raise, Putting Agent Execution to a High-Stakes Market Test</a> <span class="source-tier">Reliable Media</span></li>
+</ol>
+</section>
+</main>
+<!-- site:issue-footer:start -->
+<footer class="report-sitefooter">
+  <nav class="issue-nav" aria-label="Archive"><a rel="prev" href="/en/2026/07/10/">← Previous Issue</a><a rel="next" href="/en/2026/07/12/">Next Issue →</a></nav>
+  <a href="/en/">ALUX AI Agent Intelligence Daily · 2026-07-11</a>
+</footer>
+<!-- site:issue-footer:end -->
+</body></html>

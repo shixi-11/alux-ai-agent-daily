@@ -1,0 +1,12 @@
+{
+  "name": "alux-ai-agent-daily",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Build and multi-viewport verification tools for ALUX AI Agent Intelligence Daily.",
+  "scripts": {
+    "verify:render": "node scripts/render-check.cjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.54.0"
+  }
+}

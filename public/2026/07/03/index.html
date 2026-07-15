@@ -13,14 +13,38 @@
  @media (max-width:920px){.intel-panel{padding:18px}.panel-head{flex-direction:column;align-items:flex-start;gap:6px}.panel-head span{text-align:left;line-height:1.45}.title-cn{white-space:normal;overflow-wrap:anywhere}.risc-head{align-items:flex-start}.risc-head span{white-space:normal;text-align:left}}
  @media (max-width:520px){.page{padding-left:10px;padding-right:10px}.intel-panel{padding:14px;gap:12px}.panel-head strong{white-space:normal}.heat-list{grid-template-rows:none}.heat-row{grid-template-columns:1fr;gap:6px;align-items:start;padding:13px 0}.heat-row strong{display:inline;margin-right:8px}.heat-row .strength{margin-top:0;vertical-align:middle}.priority-note strong .nowrap,.priority-note .priority-brand,.nowrap{white-space:normal;overflow-wrap:anywhere}.risc-head{flex-direction:column;gap:4px}.stat span{white-space:normal}.sources li{overflow-wrap:anywhere}}
  </style>
+<!-- site:i18n-head:start -->
+<link rel="canonical" href="https://ai-agent-daily.alux.network/2026/07/03/">
+<link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/2026/07/03/">
+<link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/2026/07/03/">
+<link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/2026/07/03/">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:url" content="https://ai-agent-daily.alux.network/2026/07/03/">
+<link rel="icon" type="image/png" href="/assets/alux-mark.png">
+<link rel="apple-touch-icon" href="/assets/alux-mark.png">
+<link rel="stylesheet" href="/assets/report-site.css">
+<!-- site:i18n-head:end -->
 </head>
 <body>
+<!-- site:i18n-nav:start -->
+<header class="report-sitebar">
+  <a class="report-sitebrand" href="/">ALUX AI智能体情报日报</a>
+  <nav class="report-sitenav" aria-label="历史归档">
+    <a href="/latest/">最新一期</a>
+    <a href="/#archive">历史归档</a>
+    <span class="language-switch" aria-label="语言切换">
+      <a href="/2026/07/03/" lang="zh-CN" aria-current="page">中文</a>
+      <a href="/en/2026/07/03/" lang="en">EN</a>
+    </span>
+  </nav>
+</header>
+<!-- site:i18n-nav:end -->
  <main class="page">
  <section class="hero">
  <div class="hero-copy">
  <div class="eyebrow"><span>ALUX AI Agent Daily</span><span>2026-07-03</span><span>Infrastructure Brief</span></div>
  <h1><span class="title-en">AI Agent</span><span class="title-cn">控制面下沉到运行时</span></h1>
- <p class="lead">今天的主信号是：智能体产品从“会做事”转向“可被企业托付”。多智能体编排、连接器治理、持久任务队列、开源编码智能体和 Agent gateway 话语同时升温，说明市场正在寻找一层能承接<span class="nowrap">长交易</span>、权限、恢复和审计的<span class="nowrap">生产级运行时</span>。</p>
+ <p class="lead">今天的主信号是：智能体产品从“会做事”转向“可被企业托付”。多智能体编排、连接器治理、持久任务队列、开源编码智能体和 Agent Gateway 相关讨论同时升温，说明市场正在寻找一层能承接<span class="nowrap">长交易</span>、权限、恢复和审计的<span class="nowrap">生产级运行时</span>。</p>
  <div class="stats" aria-label="今日情报概览"><div class="stat"><b>8</b><span>重点信号</span></div><div class="stat"><b>17</b><span>候选信号</span></div><div class="stat"><b>11</b><span>官方/开源来源</span></div><div class="stat"><b>1</b><span>最高优先级动作</span></div></div>
  <div class="judgment"><strong>今日总判断：</strong>今天最强信号不是单个模型更聪明，而是 Agent 生产化语言正在收敛到三个词：执行边界、连接治理、可观测证据。Google ADK、Mistral Connectors、Temporal durable queue、Qwen Code 和 MintMCP 都在同一条线上逼近 ALUX 的叙事空位：让智能体动作成为可恢复、可授权、可重放的长交易。</div>
  </div>
@@ -34,5 +58,11 @@
  <section class="section"><h2>风险边界</h2><p><span class="nowrap">ALUX</span> 不能被说成已经完整交付智能体平台。准确说，当前底层 TVM 已具备并发、持久化执行、能力安全、运行记录和逐比特重放审计等关键基础；智能体产品层、可观测性、仪表盘、追踪与评估工具仍是待构建和融资重点。</p><p>也不要说 TVM 让 LLM 本身确定性。准确说，TVM 记录模型输出和运行环境输入，使编排、权限、状态转移和审计可重放、可验证。</p></section>
  <section class="section"><h2>来源</h2><ol class="sources"><li><a href="https://cloud.google.com/blog/topics/developers-practitioners/beyond-static-prompts-with-google-adk" target="_blank" rel="noopener">Google Cloud / ADK：Google ADK 发布 scale-proof multi-agent 工作流文章，把状态转移、工具调用与执行边界拦截写成企业工程模式</a> <span class="source-tier">官方博客</span></li><li><a href="https://cloud.google.com/blog/topics/inside-google-cloud/whats-new-google-cloud" target="_blank" rel="noopener">Google Cloud / Anthropic Claude：Google Cloud 最新公告显示 Claude Opus 4.8 接入 Gemini Enterprise Agent Platform，模型选择正在被平台化</a> <span class="source-tier">官方公告</span></li><li><a href="https://openai.com/index/codex-for-every-role-tool-workflow/" target="_blank" rel="noopener">OpenAI Codex：OpenAI Codex 扩展到角色插件、Sites 与 annotations，工作产物从代码任务进入团队共享资产</a> <span class="source-tier">官方发布</span></li><li><a href="https://mistral.ai/news/more-control-over-connectors/" target="_blank" rel="noopener">Mistral AI：Mistral Connectors 增加 workspace/org 管控、scoped API key、多账号连接与 Connector Debugger</a> <span class="source-tier">官方发布</span></li><li><a href="https://temporal.io/blog/durable-digest-june-2026" target="_blank" rel="noopener">Temporal：Temporal Durable Digest 强调权限、worker versioning、checkpoint cancellation 和 durable job queue</a> <span class="source-tier">官方博客</span></li><li><a href="https://github.com/QwenLM/qwen-code" target="_blank" rel="noopener">Alibaba Qwen / Qwen Code：Qwen Code 开源终端编码智能体，打包 Auto-Memory、Auto-Skills、SubAgents、Agent Teams、MCP 与多协议模型切换</a> <span class="source-tier">官方 GitHub</span></li><li><a href="https://mistral.ai/news/ocr-4/" target="_blank" rel="noopener">Mistral AI OCR 4：Mistral OCR 4 将 bounding boxes、block types 与 confidence 输出给企业 RAG 和 agentic workflows</a> <span class="source-tier">官方发布</span></li><li><a href="https://www.mintmcp.com/blog/" target="_blank" rel="noopener">MintMCP：MintMCP 7 月 3 日连续发布 agent governance / control plane / gateway 内容，市场语言开始围绕控制面收敛</a> <span class="source-tier">公司博客</span></li></ol></section>
  </main>
+<!-- site:issue-footer:start -->
+<footer class="report-sitefooter">
+  <nav class="issue-nav" aria-label="历史归档"><a rel="prev" href="/2026/07/02/">← 上一期</a><a rel="next" href="/2026/07/04/">下一期 →</a></nav>
+  <a href="/">ALUX AI智能体情报日报 · 2026-07-03</a>
+</footer>
+<!-- site:issue-footer:end -->
 </body>
 </html>

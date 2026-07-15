@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>2026-07-09 ALUX AI Agent Intelligence Daily</title>
+ <style>
+ :root{--ink:#111827;--muted:#5b6575;--subtle:#7a8493;--bg:#f5f7fa;--panel:#ffffff;--panel-2:#edf3f6;--line:#d9e0e7;--line-strong:#aeb9c6;--indigo:#22356f;--teal:#0f766e;--green:#166049;--amber:#9a6a16;--graphite:#202632;--soft:#e7edf2;--ice:#f9fbfc;}
+ *{box-sizing:border-box} html{overflow-x:hidden} body{margin:0;background:linear-gradient(180deg,#eef3f7 0%,#f8fafc 38%,#f3f6f8 100%);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;line-height:1.66;letter-spacing:0;word-break:normal;overflow-wrap:break-word;overflow-x:hidden;} a{color:var(--indigo);text-decoration:none;border-bottom:1px solid rgba(34,53,111,.26)} a:hover{border-bottom-color:var(--indigo)} .nowrap{white-space:nowrap;word-break:keep-all}.page{max-width:1240px;margin:0 auto;padding:26px 22px 56px}.hero{min-height:78vh;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(360px,.98fr);gap:28px;align-items:stretch;border-bottom:1px solid var(--line-strong);padding:10px 0 34px}.hero-copy{display:flex;flex-direction:column;justify-content:center;min-width:0}.eyebrow{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;color:var(--subtle);font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}.eyebrow span{white-space:nowrap}.hero h1{font-family:"Songti SC","Noto Serif CJK SC","SimSun",Georgia,serif;font-size:clamp(40px,6.1vw,74px);line-height:1.05;margin:16px 0 18px;color:#121722;font-weight:700;text-wrap:balance}.title-en{display:block;font-family:Georgia,"Times New Roman",serif;color:#18264f}.title-cn{display:block;margin-top:12px;font-size:clamp(28px,4.35vw,50px);line-height:1.2;white-space:nowrap;word-break:keep-all;letter-spacing:0;color:#10201d}.lead{font-size:clamp(17px,1.75vw,20px);line-height:1.58;color:#374151;max-width:700px;margin:0;text-wrap:pretty}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:26px 0 0}.stat{border:1px solid var(--line);background:rgba(255,255,255,.72);padding:12px 14px;min-height:76px}.stat b{display:block;font-size:22px;line-height:1.1;color:#18264f;font-variant-numeric:tabular-nums}.stat span{display:block;margin-top:7px;color:var(--muted);font-size:12px;white-space:nowrap;word-break:keep-all}.judgment{margin-top:18px;padding:20px 22px;background:#fff;border:1px solid var(--line-strong)}.judgment strong{color:#0f4f44}.intel-panel{align-self:stretch;background:#fff;border:1px solid var(--line-strong);padding:20px;display:grid;grid-template-rows:auto auto minmax(0,1fr) auto;gap:14px;min-height:0}.panel-head{display:flex;justify-content:space-between;gap:18px;align-items:start;border-bottom:1px solid var(--line);padding-bottom:14px}.panel-head strong{font-size:18px;color:#13203a;white-space:nowrap}.panel-head span{font-size:12.5px;color:var(--muted);text-align:right}.heat-summary{background:#f7fafb;border:1px solid var(--line);padding:13px 14px}.heat-summary b{display:block;font-size:13px;color:#0f5e55;margin-bottom:3px}.heat-summary p{margin:0;font-size:13px;line-height:1.5;color:#3e4856}.heat-list{display:grid;grid-template-rows:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.heat-row{display:grid;grid-template-columns:76px minmax(0,1fr);gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}.heat-row:last-child{border-bottom:0}.heat-row strong{display:block;font-size:15px;line-height:1.25;color:#172033;white-space:nowrap}.heat-row .strength{display:inline-flex;width:max-content;margin-top:7px;padding:2px 7px;border:1px solid #b8c7de;background:#eef4ff;color:#22356f;font-size:11px;font-weight:800;line-height:1.2;white-space:nowrap}.heat-row p{margin:0;color:#3e4856;font-size:13px;line-height:1.45}.heat-row em{display:block;margin-top:4px;color:#0f5e55;font-size:12.5px;line-height:1.38;font-style:normal}.priority-note{background:#eef5f2;border:1px solid #c6d9d1;padding:13px 14px}.priority-note span{display:block;color:#0f766e;font-weight:800;font-size:12px;margin-bottom:4px}.priority-note strong{display:block;color:#172033;font-size:14px;line-height:1.45}.priority-note strong .nowrap{display:inline;color:#172033;font-size:inherit;font-weight:inherit;margin:0;white-space:nowrap;word-break:keep-all}.priority-note .priority-brand{display:inline;color:#111827;font-size:inherit;font-weight:inherit;margin:0;white-space:nowrap;word-break:keep-all}.section{padding:38px 0;border-bottom:1px solid var(--line)}.section:last-child{border-bottom:0;padding-bottom:0}.section h2{font-family:"Songti SC","Noto Serif CJK SC","SimSun",Georgia,serif;font-size:clamp(25px,3vw,38px);line-height:1.18;margin:0 0 20px;color:#172033;text-wrap:balance}.radar{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.item{background:#fff;border:1px solid var(--line);padding:18px;min-height:164px}.tag{display:inline-flex;align-items:center;font-size:12px;font-weight:800;color:#22356f;background:#e8edf8;padding:4px 9px;border-radius:999px;white-space:nowrap;word-break:keep-all}.tag.green{color:#166049;background:#dcefe8}.tag.amber{color:#805711;background:#efe5ce}.item,.signal,.note,.side,.judgment,.intel-panel,.risc-primer{min-width:0;max-width:100%}.item h3,.signal h3{font-size:19px;line-height:1.28;margin:12px 0 8px;color:#172033;text-wrap:balance}.item p,.signal p{margin:7px 0;color:#3e4856;min-width:0}.risc-primer{background:#fff;border:1px solid var(--line-strong);padding:22px}.risc-primer-intro{display:grid;grid-template-columns:minmax(0,.95fr) minmax(260px,.55fr);gap:18px;align-items:end;margin-bottom:16px}.risc-equation{margin:0 0 8px;color:#10201d;font-weight:900;font-size:16px;line-height:1.35;word-break:keep-all}.risc-primer p{margin:0;color:#3e4856}.risc-primer-line{border-left:3px solid #0f766e;padding-left:14px;color:#172033;font-weight:800;line-height:1.55}.risc-primer-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.risc-primer-card{background:#f7fafb;border:1px solid var(--line);padding:14px;min-width:0}.risc-primer-card b{display:block;color:#172033;font-size:15px;line-height:1.28;white-space:nowrap;word-break:keep-all}.risc-primer-card span{display:block;margin-top:6px;color:#3e4856;font-size:13px;line-height:1.48}.risc-primer-close{display:block;margin-top:14px;color:#0f5e55;font-weight:800}.signals{display:grid;gap:12px}.signal{background:#fff;border:1px solid var(--line);padding:20px;display:grid;grid-template-columns:minmax(0,1fr) 292px;gap:20px}.signal > div{min-width:0}.meta{font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:7px 12px;min-width:0}.meta span{white-space:nowrap}.side{border-left:1px solid var(--line);padding-left:18px;background:linear-gradient(90deg,#f7fafb,transparent);padding-top:2px}.side strong{display:block;color:#0f5e55;margin:7px 0 2px;font-size:13px;white-space:nowrap}.side p{font-size:14px;line-height:1.55}.risc-scorecard{margin-top:12px;border:1px solid var(--line);background:#f7fafb;padding:12px 13px}.risc-head{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:8px;color:#172033;font-weight:800;font-size:12.5px}.risc-head span{color:#0f5e55;white-space:nowrap}.risc-check{display:grid;grid-template-columns:minmax(106px,.7fr) 58px minmax(0,1.4fr);gap:8px;align-items:start;padding:7px 0;border-top:1px solid #e1e7ee;font-size:12.5px;line-height:1.42}.risc-check:first-of-type{border-top:0}.risc-key{color:#22356f;font-weight:800;word-break:keep-all}.risc-value{display:inline-flex;width:max-content;min-width:48px;justify-content:center;border:1px solid #b8c7de;background:#eef4ff;color:#22356f;font-size:11px;font-weight:900;line-height:1.15;padding:3px 6px;border-radius:999px;white-space:nowrap}.risc-value.yes{border-color:#bdd8d0;background:#e4f2ee;color:#0f5e55}.risc-value.no{border-color:#c8cfd8;background:#edf1f5;color:#4b5563}.risc-value.partial{border-color:#d8c79a;background:#f5efe2;color:#805711}.risc-evidence{color:#3e4856;min-width:0}.matrix{display:grid;grid-template-columns:1fr 1fr;gap:12px}.note{background:#eef5f2;border:1px solid #c6d9d1;padding:20px}.note.amber{background:#f5efe2;border-color:#d8c79a}.sources{columns:2;column-gap:34px}.sources li{break-inside:avoid;margin:0 0 10px;color:#4b5563}.source-tier{color:#0f766e;font-weight:800;white-space:nowrap}
+ @media (max-width:920px){.page{padding:18px 14px 44px}.hero{grid-template-columns:1fr;min-height:auto;padding:12px 0 28px}.intel-panel{min-height:auto}.stats{grid-template-columns:repeat(2,1fr)}.radar,.matrix{grid-template-columns:1fr}.risc-primer-intro{grid-template-columns:1fr;align-items:start}.risc-primer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.signal{grid-template-columns:minmax(0,1fr)}.side{border-left:0;border-top:1px solid var(--line);padding-left:0;padding-top:14px;background:transparent}.sources{columns:1}.hero h1{font-size:clamp(36px,10vw,56px)}.title-cn{font-size:clamp(26px,7.2vw,38px);line-height:1.24}}
+ @media (max-width:520px){.page{padding-left:12px;padding-right:12px}.stats{grid-template-columns:1fr 1fr}.stat{padding:10px 11px}.heat-row{grid-template-columns:68px minmax(0,1fr)}.section{padding:34px 0}.risc-primer{padding:16px}.risc-primer-grid{grid-template-columns:1fr}.risc-primer-card b{white-space:normal}.signal{padding:16px;gap:14px}.meta{gap:6px 10px;line-height:1.35}.meta span{white-space:normal;word-break:keep-all;overflow-wrap:anywhere}.item h3,.signal h3{font-size:18px;line-height:1.32}.item p,.signal p{font-size:15.5px;line-height:1.72;overflow-wrap:anywhere}.side p{font-size:14.5px;line-height:1.62}.risc-check{grid-template-columns:minmax(0,1fr);gap:4px}.risc-value{min-width:54px}}
+ .panel-head > *,.heat-row > *,.risc-head > *{min-width:0}.panel-head span,.heat-row p,.heat-row em,.priority-note strong,.risc-evidence{overflow-wrap:anywhere}.title-en{overflow-wrap:anywhere}
+ @media (max-width:920px){.intel-panel{padding:18px}.panel-head{flex-direction:column;align-items:flex-start;gap:6px}.panel-head span{text-align:left;line-height:1.45}.title-cn{white-space:normal;overflow-wrap:anywhere}.risc-head{align-items:flex-start}.risc-head span{white-space:normal;text-align:left}}
+ @media (max-width:520px){.page{padding-left:10px;padding-right:10px}.intel-panel{padding:14px;gap:12px}.panel-head strong{white-space:normal}.heat-list{grid-template-rows:none}.heat-row{grid-template-columns:1fr;gap:6px;align-items:start;padding:13px 0}.heat-row strong{display:inline;margin-right:8px}.heat-row .strength{margin-top:0;vertical-align:middle}.priority-note strong .nowrap,.priority-note .priority-brand,.nowrap{white-space:normal;overflow-wrap:anywhere}.risc-head{flex-direction:column;gap:4px}.stat span{white-space:normal}.sources li{overflow-wrap:anywhere}}
+ </style>
+<!-- site:i18n-head:start -->
+<link rel="canonical" href="https://ai-agent-daily.alux.network/en/2026/07/09/">
+<link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/2026/07/09/">
+<link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/2026/07/09/">
+<link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/2026/07/09/">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://ai-agent-daily.alux.network/en/2026/07/09/">
+<link rel="icon" type="image/png" href="/assets/alux-mark.png">
+<link rel="apple-touch-icon" href="/assets/alux-mark.png">
+<link rel="stylesheet" href="/assets/report-site.css">
+<!-- site:i18n-head:end -->
+</head>
+<body>
+<!-- site:i18n-nav:start -->
+<header class="report-sitebar">
+  <a class="report-sitebrand" href="/en/">ALUX AI Agent Intelligence Daily</a>
+  <nav class="report-sitenav" aria-label="Archive">
+    <a href="/en/latest/">Latest</a>
+    <a href="/en/#archive">Archive</a>
+    <span class="language-switch" aria-label="Language switcher">
+      <a href="/2026/07/09/" lang="zh-CN">中文</a>
+      <a href="/en/2026/07/09/" lang="en" aria-current="page">EN</a>
+    </span>
+  </nav>
+</header>
+<!-- site:i18n-nav:end -->
+<main class="page">
+ <section class="hero">
+ <div class="hero-copy">
+ <div class="eyebrow">
+<span>ALUX AI Agent Daily</span>
+<span>2026-07-09</span>
+<span>Infrastructure Brief</span>
+</div>
+ <h1>
+<span class="title-en">AI Agent</span>
+<span class="title-cn">Entering the Distributable, Isolated, and Auditable Phase</span>
+</h1>
+ <p class="lead">Today’s primary signal is that agents are no longer merely “running” inside IDEs, chat boxes, or internal automation. Across marketplaces, registries, runtime security, observability exports, and team sessions, they are becoming enterprise objects. The market is pushing agents beyond the feature layer and into the accountability boundary of the <span class="nowrap">production-grade runtime</span>.</p>
+ <div class="stats" aria-label="Today’s intelligence summary">
+<div class="stat">
+<b>9</b>
+<span>Key Signals</span>
+</div>
+<div class="stat">
+<b>15</b>
+<span>Candidate Signals</span>
+</div>
+<div class="stat">
+<b>8</b>
+<span>Official / Open-Source Sources</span>
+</div>
+<div class="stat">
+<b>1</b>
+<span>Top-Priority Action</span>
+</div>
+</div>
+ <div class="judgment">
+<strong>Today’s Take:</strong> The highest-value signal is Google’s opening of Gemini Enterprise and Marketplace distribution to third-party agents. It shows agents entering enterprise procurement, deployment, and collaborative distribution. Yet what remains missing is <span class="nowrap">long-running transaction</span> state, capability boundaries, failure recovery, and replayable evidence. <span class="nowrap">ALUX</span> should position itself as the trusted execution machine that comes after the marketplace and registry.</div>
+ </div>
+ <aside class="intel-panel" aria-label="Today’s industry heat map">
+<div class="panel-head">
+<strong>Today’s Heat Matrix</strong>
+<span>Marketplaces, registries, runtime security, trace exports, and team sessions are all heating up</span>
+</div>
+<div class="heat-summary">
+<b>Primary axis: from tool discovery to execution accountability</b>
+<p>In today’s RISC mix, C — Connectivity / Society and S — Security / Immune System are strongest. R — Resilience / Body is reinforced by AWS runtime troubleshooting, while I — Intelligence / Brain continues to advance through the open-source Qwen Code harness.</p>
+</div>
+<div class="heat-list">
+<div class="heat-row">
+<div>
+<strong>Opportunity</strong>
+<span class="strength">High</span>
+</div>
+<div>
+<p>Google Marketplace, AWS Agent Registry, and Claude Tag collectively turn agents into objects that organizations can distribute, name, and collaborate around.</p>
+<em>Action: create a Marketplace -&gt; Runtime trust map.</em>
+</div>
+</div>
+<div class="heat-row">
+<div>
+<strong>Defense</strong>
+<span class="strength">High</span>
+</div>
+<div>
+<p>AWS security guidance and Microsoft approval hooks show access governance moving down into development frameworks and cloud runtimes.</p>
+<em>Action: add a policy gate / OCAP comparison.</em>
+</div>
+</div>
+<div class="heat-row">
+<div>
+<strong>Asset</strong>
+<span class="strength">Medium-High</span>
+</div>
+<div>
+<p>Langfuse API/MCP experiments and Parquet trace exports bring evaluation and audit data into agent-readable and data-warehouse layers.</p>
+<em>Action: upgrade the Agent Trace schema.</em>
+</div>
+</div>
+<div class="heat-row">
+<div>
+<strong>Risk</strong>
+<span class="strength">Medium</span>
+</div>
+<div>
+<p>Cloud vendors will bundle registries, marketplaces, security roles, and observability into closed platform loops, creating cloud lock-in risk.</p>
+<em>Action: emphasize a neutral, verifiable execution layer.</em>
+</div>
+</div>
+</div>
+<div class="priority-note">
+<span>Top-Priority Action</span>
+<strong>Create an <span class="priority-brand">ALUX</span> three-layer <span class="nowrap">Marketplace / Registry / Runtime</span> diagram: the marketplace handles discovery and distribution; the registry handles identity and versioning; <span class="priority-brand">ALUX</span> manages <span class="nowrap">long-running transaction</span> state, capability grants, recovery, and replayable evidence.</strong>
+</div>
+</aside>
+ </section>
+ <section class="section">
+<h2>How the RISC Machine Works</h2>
+<div class="risc-primer">
+<div class="risc-primer-intro">
+<div>
+<p class="risc-equation">RISC = the four systems of a production-grade agent / robotic body</p>
+<p>A truly production-grade agent needs more than a brain. It must run continuously, reason and act, withstand errors, attacks, and poisoning, and participate in real-world networks of collaboration.</p>
+</div>
+<div class="risc-primer-line">The industry has delivered an excellent brain, but a production-grade agent still needs a body, an immune system, and a society.<span class="risc-primer-close">
+<span class="nowrap">ALUX</span> is building the complete machine.</span>
+</div>
+</div>
+<div class="risc-primer-grid">
+<article class="risc-primer-card">
+<b>R｜Resilience / Body</b>
+<span>Fault tolerance, durable execution, failover, and horizontal scaling. Without a resilient body, one crash can erase all work.</span>
+</article>
+<article class="risc-primer-card">
+<b>I｜Intelligence / Brain</b>
+<span>Reasoning loops, memory, tool use, and task orchestration. This is the most crowded—and most mature—competitive layer across today’s agent frameworks.</span>
+</article>
+<article class="risc-primer-card">
+<b>S｜Security / Immune System</b>
+<span>Object capabilities, policy constraints, rollback mechanisms, and audit trails. Without a security immune system, one poisoned instruction can cause real-world harm.</span>
+</article>
+<article class="risc-primer-card">
+<b>C｜Connectivity / Society</b>
+<span>Cross-company authorization, a neutral substrate, session types, and collaboration boundaries. Without a connective network, every company’s agents remain trapped on their own islands.</span>
+</article>
+</div>
+</div>
+</section>
+ <section class="section">
+<h2>
+<span class="nowrap">ALUX</span> Daily Radar</h2>
+<div class="radar">
+<article class="item">
+<span class="tag green">Opportunity</span>
+<h3>Agents Enter the Marketplace / Registry Phase</h3>
+<p>Google and AWS show that enterprises need to discover, purchase, name, isolate, and deploy agents; <span class="nowrap">ALUX</span> can provide the trusted execution layer that follows.</p>
+</article>
+<article class="item">
+<span class="tag amber">Risk</span>
+<h3>Closed Cloud Loops Will Absorb the Runtime Vocabulary</h3>
+<p>If <span class="nowrap">ALUX</span> speaks only of an “agent platform,” cloud vendors will subsume the story within bundled marketplaces, security roles, and observability.</p>
+</article>
+<article class="item">
+<span class="tag">Actionable Asset</span>
+<h3>Agent Execution Evidence v0</h3>
+<p>Recommended fields: agentName, alias, sessionType, capabilityGrant, toolAction, checkpoint, evalScore, traceExport, and replayVerdict.</p>
+</article>
+</div>
+</section>
+ <section class="section">
+<h2>Key Signals</h2>
+<div class="signals">
+<article class="signal">
+<div>
+<div class="meta">
+<span>01</span>
+<span>Google Cloud / Gemini Enterprise Agent Platform</span>
+<span>United States / Global</span>
+<span>2026-07-08</span>
+<span class="source-tier">Official Blog</span>
+</div>
+<h3>Google Cloud Opens Gemini Enterprise and Google Cloud Marketplace to Agents Built with Vertex AI and Third-Party Frameworks</h3>
+<p>
+<strong>What happened:</strong> Google Cloud says developers can publish agents built with Vertex AI, ADK, LangGraph, CrewAI, LlamaIndex, or third-party frameworks to the Gemini Enterprise Agent Platform and distribute them to enterprise customers through Google Cloud Marketplace.</p>
+<p>
+<strong>Why it matters to <span class="nowrap">ALUX</span>:</strong> This signals the shift from agents as internal tools within one company to distributable products and enterprise entry points. Marketplace solves discovery and purchasing; <span class="nowrap">ALUX</span> can provide the deeper <span class="nowrap">long-running transactions</span>, capability grants, recovery, and verifiable evidence required for execution across enterprises.</p>
+<p>
+<strong>Recommended action and deliverable:</strong> Produce an “Agent Marketplace Discovery / <span class="nowrap">ALUX</span> Runtime Execution Proof” comparison page that separates publication, authorization, execution, failure recovery, and auditing into five stages.</p>
+<div class="risc-scorecard">
+<div class="risc-head">
+<strong>RISC: C Primary · Connectivity / Society</strong>
+<span>S Secondary · Security / Immune System</span>
+</div>
+<p>The primary axis is cross-platform agent publication, enterprise discovery, and Marketplace distribution, placing this signal in Connectivity / Society. Enterprise deployment and permission boundaries make Security / Immune System the secondary dimension.</p>
+<div class="risc-check">
+<span class="risc-key">Ecosystem Connectivity</span>
+<span class="risc-value yes">Yes</span>
+<span class="risc-evidence">The official blog lists publication paths for Vertex AI, ADK, LangGraph, CrewAI, LlamaIndex, and third-party agents.</span>
+</div>
+<div class="risc-check">
+<span class="risc-key">Cross-Company Delegation</span>
+<span class="risc-value partial">Partial</span>
+<span class="risc-evidence">Marketplace enables enterprise customers to discover and deploy third-party agents but does not demonstrate a cross-company delegation protocol.</span>
+</div>
+</div>
+</div>
+<aside class="side">
+<strong>Partnership / Learning Opportunity</strong>
+<p>Engage enterprise-agent marketplaces, cloud-channel teams, and ISV ecosystems around layered runtime accountability.</p>
+<strong>Risk Boundary</strong>
+<p>Google Marketplace should not be described as a neutral cross-company runtime; it is a distribution and deployment path within the Google Cloud and Gemini Enterprise control plane.</p>
+<strong>What Changed Today</strong>
+<p>The July 8 official blog brings third-party frameworks, Gemini Enterprise, and Marketplace distribution into a single product action.</p>
+</aside>
+</article>
+<article class="signal">
+<div>
+<div class="meta">
+<span>02</span>
+<span>Amazon Bedrock AgentCore</span>
+<span>United States / Global</span>
+<span>Reviewed 2026-07-09</span>
+<span class="source-tier">Official Documentation</span>
+</div>
+<h3>AWS Bedrock AgentCore Documentation Requires Agent Runtime Migration to Agent Registry namespace/agentName/aliasName Ahead of the August Deadline</h3>
+<p>
+<strong>What happened:</strong> AWS AgentCore release notes state that, by August 6, 2026, all Agent Runtime customers must adopt Agent Registry, use name-based URIs, and expand session isolation from agentRuntimeId to the full namespace / agentName / aliasName combination.</p>
+<p>
+<strong>Why it matters to <span class="nowrap">ALUX</span>:</strong> Agent Registry shows cloud vendors beginning to treat agents as production objects with namespaces, aliases, session isolation, and lifecycles rather than as temporary scripts. <span class="nowrap">ALUX</span> should define stronger execution traces, permission attenuation, and state recovery after the registry layer.</p>
+<p>
+<strong>Recommended action and deliverable:</strong> Add an object-model diagram for “Agent Registry -&gt; Capability Grant -&gt; Long Transaction Trace.”</p>
+<div class="risc-scorecard">
+<div class="risc-head">
+<strong>RISC: C Primary · Connectivity / Society</strong>
+<span>S Secondary · Security / Immune System</span>
+</div>
+<p>The primary axis is registry, namespace, alias, and session isolation—an agent’s social identity and connection structure. Security boundaries are the secondary dimension.</p>
+<div class="risc-check">
+<span class="risc-key">Session Types</span>
+<span class="risc-value yes">Yes</span>
+<span class="risc-evidence">The documentation explicitly expands session isolation to the namespace / agentName / aliasName combination.</span>
+</div>
+<div class="risc-check">
+<span class="risc-key">Ecosystem Connectivity</span>
+<span class="risc-value partial">Partial</span>
+<span class="risc-evidence">Agent Registry unifies runtime access paths but is not a multi-vendor connector marketplace.</span>
+</div>
+</div>
+</div>
+<aside class="side">
+<strong>Partnership / Learning Opportunity</strong>
+<p>Monitor product teams designing cloud-agent registries, namespaces, aliases, versions, and session isolation.</p>
+<strong>Risk Boundary</strong>
+<p>This is an AWS in-platform migration requirement, not evidence of a neutral cross-company execution layer or bit-for-bit replay auditing.</p>
+<strong>What Changed Today</strong>
+<p>As of the July 9 review, the August 6 migration milestone remained an important near-term deadline for moving AgentCore into production.</p>
+</aside>
+</article>
+<article class="signal">
+<div>
+<div class="meta">
+<span>03</span>
+<span>Amazon Bedrock AgentCore Runtime</span>
+<span>United States / Global</span>
+<span>Reviewed 2026-07-09</span>
+<span class="source-tier">Official Documentation</span>
+</div>
+<h3>AWS AgentCore Runtime Security Best Practices Define IMDSv2, Confused-Deputy Protection, and Least Privilege as Runtime Boundaries</h3>
+<p>
+<strong>What happened:</strong> AWS AgentCore Runtime security guidance emphasizes least privilege, IAM roles, resource policies, confused-deputy protection, IMDSv2, and the need to avoid exposing iam:PassRole in the execution role.</p>
+<p>
+<strong>Why it matters to <span class="nowrap">ALUX</span>:</strong> Cloud vendors have moved agent runtime security beyond prompt safety and into execution roles, metadata services, and service-to-service permissions. <span class="nowrap">ALUX</span> can elevate these controls into unforgeable capabilities, per-operation policies, and replayable auditing.</p>
+<p>
+<strong>Recommended action and deliverable:</strong> Create an “Agent Runtime Security Checklist” comparing AWS controls with <span class="nowrap">ALUX</span> OCAP, policy gates, and replay verdicts.</p>
+<div class="risc-scorecard">
+<div class="risc-head">
+<strong>RISC: S Primary · Security / Immune System</strong>
+<span>R Secondary · Resilience / Body</span>
+</div>
+<p>This signal centers on least privilege, execution roles, metadata boundaries, and confused-deputy protection, placing it in Security / Immune System. Reliable runtime deployment is the secondary dimension.</p>
+<div class="risc-check">
+<span class="risc-key">Policy Approval</span>
+<span class="risc-value yes">Yes</span>
+<span class="risc-evidence">The guidance requires least-privilege IAM roles, resource policies, and access boundaries.</span>
+</div>
+<div class="risc-check">
+<span class="risc-key">Isolation Boundary</span>
+<span class="risc-value yes">Yes</span>
+<span class="risc-evidence">IMDSv2, the execution role, and confused-deputy protection all define isolation boundaries.</span>
+</div>
+</div>
+</div>
+<aside class="side">
+<strong>Partnership / Learning Opportunity</strong>
+<p>Build a shared vocabulary with teams working on cloud security, IAM, agent runtime hardening, and enterprise compliance.</p>
+<strong>Risk Boundary</strong>
+<p>AWS guidance demonstrates cloud IAM and platform boundaries, not decentralized capability security or replay of cross-system state transitions.</p>
+<strong>What Changed Today</strong>
+<p>The July 9 review adds this as the day’s primary security-boundary signal, balancing the stronger emphasis on connectivity and financing in previous days.</p>
+</aside>
+</article>
+<article class="signal">
+<div>
+<div class="meta">
+<span>04</span>
+<span>Amazon Bedrock AgentCore Runtime</span>
+<span>United States / Global</span>
+<span>Reviewed 2026-07-09</span>
+<span class="source-tier">Official Documentation</span>
+</div>
+<h3>AWS AgentCore Runtime Troubleshooting Treats Long-Running Work, Session IDs, Async Timeouts, and S3 Large-File Handling as Production Operations</h3>
+<p>
+<strong>What happened:</strong> AWS troubleshooting guidance covers runtime timeouts, long-running invocations, sessionId conventions, waits for asynchronous execution, JWT tokens, S3 handling of large files, memory, gateways, and other common production issues.</p>
+<p>
+<strong>Why it matters to <span class="nowrap">ALUX</span>:</strong> This is not launch news, but it is highly valuable: real failures in production-grade agents now occur where sessions, long-running execution, timeouts, files, identity, and gateways intersect. <span class="nowrap">ALUX</span> should translate these operational pain points into <span class="nowrap">long-running transaction</span> recovery and replayable evidence.</p>
+<p>
+<strong>Recommended action and deliverable:</strong> Turn runtime timeout / sessionId / S3 large-file / async wait scenarios from the troubleshooting guide into <span class="nowrap">ALUX</span> failure-demo scripts.</p>
+<div class="risc-scorecard">
+<div class="risc-head">
+<strong>RISC: R Primary · Resilience / Body</strong>
+<span>S Secondary · Security / Immune System</span>
+</div>
+<p>The signal centers on timeouts, long-running execution, asynchronous waits, and session troubleshooting, placing it in Resilience / Body. Identity-token and gateway issues add a secondary security dimension.</p>
+<div class="risc-check">
+<span class="risc-key">Durable Execution</span>
+<span class="risc-value partial">Partial</span>
+<span class="risc-evidence">The guidance explicitly addresses long-running invocations, async invocation, and related long-execution issues.</span>
+</div>
+<div class="risc-check">
+<span class="risc-key">Failure Recovery</span>
+<span class="risc-value partial">Partial</span>
+<span class="risc-evidence">Troubleshooting provides paths for timeouts, waits, sessionId, and file handling, but not complete automatic recovery.</span>
+</div>
+</div>
+</div>
+<aside class="side">
+<strong>Partnership / Learning Opportunity</strong>
+<p>A strong product demo would deliberately trigger a timeout, token expiration, and large-file failure, then show how <span class="nowrap">ALUX</span> recovers and proves the result.</p>
+<strong>Risk Boundary</strong>
+<p>A troubleshooting guide is a platform-operations checklist. It does not demonstrate cross-step atomic rollback or bit-for-bit replay in AgentCore.</p>
+<strong>What Changed Today</strong>
+<p>In the July 9 review, long-running and asynchronous invocation issues mapped closely enough to the <span class="nowrap">ALUX</span> Resilience / Body narrative to warrant inclusion.</p>
+</aside>
+</article>
+<article class="signal">
+<div>
+<div class="meta">
+<span>05</span>
+<span>Langfuse</span>
+<span>Germany / Global Developers</span>
+<span>2026-07-07</span>
+<span class="source-tier">Official Changelog</span>
+</div>
+<h3>Langfuse Adds API/MCP Experiment Queries on July 7, Making Evaluation and Observability Data Directly Readable by Agents</h3>
+<p>
+<strong>What happened:</strong> Langfuse adds the ability to query experiments through its API and MCP, enabling agents and automated workflows to read experiments, scores, and observability results for quality decisions before and after deployment.</p>
+<p>
+<strong>Why it matters to <span class="nowrap">ALUX</span>:</strong> Observability systems are no longer just dashboards for humans; they are becoming decision inputs read by agents themselves. <span class="nowrap">ALUX</span> should connect evals, traces, and replay verdicts so that agent self-improvement operates within a trustworthy evidence boundary.</p>
+<p>
+<strong>Recommended action and deliverable:</strong> Add “eval result via MCP” to the Agent Trace schema: evalId, score, datasetHash, decisionGate, and humanOverride.</p>
+<div class="risc-scorecard">
+<div class="risc-head">
+<strong>RISC: S Primary · Security / Immune System</strong>
+<span>I Secondary · Intelligence / Brain</span>
+</div>
+<p>Once experiment queries enter the API and MCP, observability data becomes evidence for deployment and behavioral constraints, making Security / Immune System the primary axis. Agents reading evaluation results adds a secondary Intelligence dimension.</p>
+<div class="risc-check">
+<span class="risc-key">Rollback &amp; Audit</span>
+<span class="risc-value yes">Yes</span>
+<span class="risc-evidence">Langfuse experiments, scores, and traces provide sources of audit and evaluation evidence.</span>
+</div>
+<div class="risc-check">
+<span class="risc-key">Policy Approval</span>
+<span class="risc-value partial">Partial</span>
+<span class="risc-evidence">Experiment queries can inform a deployment gate, but the source does not claim a complete approval system.</span>
+</div>
+</div>
+</div>
+<aside class="side">
+<strong>Partnership / Learning Opportunity</strong>
+<p>Engage teams working on AI observability, evaluation, LLMOps, and MCP toolchains.</p>
+<strong>Risk Boundary</strong>
+<p>Langfuse provides queryable observability and evaluation data, not runtime rollback or permission controls.</p>
+<strong>What Changed Today</strong>
+<p>The July 7 capability exposes experiment queries through the API and MCP, moving beyond the earlier configuration-only evaluator model.</p>
+</aside>
+</article>
+<article class="signal">
+<div>
+<div class="meta">
+<span>06</span>
+<span>Langfuse</span>
+<span>Germany / Global Developers</span>
+<span>2026-07-08</span>
+<span class="source-tier">Official Changelog</span>
+</div>
+<h3>Langfuse Adds Parquet Trace Exports on July 8, Moving Agent Evidence Chains into Data Warehouses and Offline Auditing</h3>
+<p>
+<strong>What happened:</strong> Langfuse released trace exports in Parquet format, allowing teams to move traces, metadata, and scoring data into data lakes, offline analysis, compliance retention, or custom BI pipelines.</p>
+<p>
+<strong>Why it matters to <span class="nowrap">ALUX</span>:</strong> Agent behavior records are evolving from debugging logs into portable, analyzable, retainable evidence assets. <span class="nowrap">ALUX</span> needs to define replayable traces at a deeper layer rather than merely exporting post-execution logs as tables.</p>
+<p>
+<strong>Recommended action and deliverable:</strong> Extend the <span class="nowrap">ALUX</span> Trace schema’s export format with eventHash, capabilityGrant, stateTransition, checkpoint, replayVerdict, and warehousePartition.</p>
+<div class="risc-scorecard">
+<div class="risc-head">
+<strong>RISC: S Primary · Security / Immune System</strong>
+<span>R Secondary · Resilience / Body</span>
+</div>
+<p>Trace exports as audit and compliance evidence make Security / Immune System the primary signal. Offline retention and analysis at scale add secondary value for Resilience.</p>
+<div class="risc-check">
+<span class="risc-key">Rollback &amp; Audit</span>
+<span class="risc-value yes">Yes</span>
+<span class="risc-evidence">Trace export directly supports auditing, analysis, and evidence retention.</span>
+</div>
+<div class="risc-check">
+<span class="risc-key">Policy Approval</span>
+<span class="risc-value partial">Partial</span>
+<span class="risc-evidence">Exported data can support compliance review, but the source does not provide an approval mechanism.</span>
+</div>
+</div>
+</div>
+<aside class="side">
+<strong>Partnership / Learning Opportunity</strong>
+<p>Explain the distinction between replay and trace export to buyers in data platforms, compliance and auditing, and AI observability.</p>
+<strong>Risk Boundary</strong>
+<p>Parquet export improves evidence portability, but the source does not demonstrate that execution can recover from a trace or be replayed bit for bit.</p>
+<strong>What Changed Today</strong>
+<p>The July 8 Parquet export moves observability records into enterprise data infrastructure.</p>
+</aside>
+</article>
+<article class="signal">
+<div>
+<div class="meta">
+<span>07</span>
+<span>Alibaba Qwen / Qwen Code</span>
+<span>China / Open Source</span>
+<span>2026-07-08</span>
+<span class="source-tier">Official GitHub Release</span>
+</div>
+<h3>Qwen Code v0.19.8 Adds Multi-Workspace Support, Runtime Hot Reload, DM Policy, and External Split Commands, Pushing the Open-Source Coding Agent Toward Production</h3>
+<p>
+<strong>What happened:</strong> Qwen Code v0.19.8 release notes include multi-workspace session routing, runtime hot reload, dmPolicy, memory forget, external split command, direct messaging, and frontend and CLI improvements.</p>
+<p>
+<strong>Why it matters to <span class="nowrap">ALUX</span>:</strong> Qwen Code is moving the open-source coding agent from a CLI tool toward a multi-session, multi-workspace work system that can be updated at runtime. <span class="nowrap">ALUX</span> can become the permissions, recovery, auditing, and <span class="nowrap">long-running transaction</span> runtime behind open-source harnesses of this kind.</p>
+<p>
+<strong>Recommended action and deliverable:</strong> Create a one-page “Qwen Code harness + <span class="nowrap">ALUX</span> runtime” integration sketch covering workspace, session, tool call, memory mutation, and policy verdict.</p>
+<div class="risc-scorecard">
+<div class="risc-head">
+<strong>RISC: I Primary · Intelligence / Brain</strong>
+<span>R Secondary · Resilience / Body</span>
+</div>
+<p>Qwen Code primarily advances tools, memory, sessions, and multi-workspace orchestration for coding agents, placing it in Intelligence / Brain. Runtime hot reload adds a secondary Resilience dimension.</p>
+<div class="risc-check">
+<span class="risc-key">Tool Orchestration</span>
+<span class="risc-value yes">Yes</span>
+<span class="risc-evidence">The release notes continue iterating across the CLI, commands, workspace, external split, and the tool surface.</span>
+</div>
+<div class="risc-check">
+<span class="risc-key">Memory Use</span>
+<span class="risc-value yes">Yes</span>
+<span class="risc-evidence">Version 0.19.8 includes changes related to memory forget, indicating that memory management has entered the product surface.</span>
+</div>
+</div>
+</div>
+<aside class="side">
+<strong>Partnership / Learning Opportunity</strong>
+<p>Explore partnerships with China’s open-source community, coding-agent tools, and multi-model CLI ecosystems.</p>
+<strong>Risk Boundary</strong>
+<p>The Qwen Code release demonstrates feature iteration in an open-source agent harness; it does not establish enterprise-grade replay, OCAP, or cross-company collaboration.</p>
+<strong>What Changed Today</strong>
+<p>Following yesterday’s observation of v0.19.7, v0.19.8 adds multi-workspace support and runtime hot reload, making it a relevant increment for today.</p>
+</aside>
+</article>
+<article class="signal">
+<div>
+<div class="meta">
+<span>08</span>
+<span>Microsoft Agent Framework</span>
+<span>United States / Developer Ecosystem</span>
+<span>2026-07-03 / Reviewed 2026-07-09</span>
+<span class="source-tier">Official GitHub Release</span>
+</div>
+<h3>Microsoft Agent Framework .NET 1.13.0 Adds Per-User Session Isolation, Approval Configuration, and Tool-Security Controls</h3>
+<p>
+<strong>What happened:</strong> Microsoft Agent Framework .NET 1.13.0 release notes mention per-user session isolation, approval options, file-editing tools, approval hooks/filters, and related changes, while continuing to advance the enterprise developer experience for the agent runtime.</p>
+<p>
+<strong>Why it matters to <span class="nowrap">ALUX</span>:</strong> Microsoft is bringing session isolation and tool approval into routine agent-framework releases, showing that security is no longer peripheral documentation but a default development interface. <span class="nowrap">ALUX</span> should elevate these approval and isolation interfaces into strong runtime semantics.</p>
+<p>
+<strong>Recommended action and deliverable:</strong> Add a “Framework approval hook vs <span class="nowrap">ALUX</span> policy gate” comparison, using the same tool call to show the difference between the framework and runtime layers.</p>
+<div class="risc-scorecard">
+<div class="risc-head">
+<strong>RISC: S Primary · Security / Immune System</strong>
+<span>I Secondary · Intelligence / Brain</span>
+</div>
+<p>Approval options, per-user session isolation, and tool-security controls define the Security / Immune System axis. Framework-level tool orchestration is the secondary Intelligence dimension.</p>
+<div class="risc-check">
+<span class="risc-key">Policy Approval</span>
+<span class="risc-value yes">Yes</span>
+<span class="risc-evidence">The release notes explicitly include approval options and approval hooks/filters.</span>
+</div>
+<div class="risc-check">
+<span class="risc-key">Isolation Boundary</span>
+<span class="risc-value yes">Yes</span>
+<span class="risc-evidence">Per-user session isolation directly defines a session-isolation boundary.</span>
+</div>
+</div>
+</div>
+<aside class="side">
+<strong>Partnership / Learning Opportunity</strong>
+<p>Engage .NET enterprise developers, agent-framework integrators, and tool-approval product teams.</p>
+<strong>Risk Boundary</strong>
+<p>A GitHub release is a record of framework features; it does not establish unforgeable capability keys, cross-company authorization, or replay auditing.</p>
+<strong>What Changed Today</strong>
+<p>The July 9 review identified per-user session isolation and approval options in the recent .NET 1.13.0 release.</p>
+</aside>
+</article>
+<article class="signal">
+<div>
+<div class="meta">
+<span>09</span>
+<span>Anthropic Claude Team / Enterprise</span>
+<span>United States / Global</span>
+<span>2026-06-23 / Reviewed 2026-07-09</span>
+<span class="source-tier">Official Announcement</span>
+</div>
+<h3>Anthropic Claude Tag Enables Team Collaboration Inside Claude through @ Mentions, with Admin Logs, Usage Controls, and Data Boundaries</h3>
+<p>
+<strong>What happened:</strong> Anthropic launched Claude Tag, allowing team members to @ colleagues inside a conversation to share context and collaborate. The announcement also emphasizes administrator access, activity logs, usage controls, and data-handling boundaries.</p>
+<p>
+<strong>Why it matters to <span class="nowrap">ALUX</span>:</strong> Agent collaboration is moving into team sessions rather than remaining in personal chat. <span class="nowrap">ALUX</span> should look beneath “shared team context” and ask: who gave which capability to whom, can it be revoked, and how is the resulting execution proven?</p>
+<p>
+<strong>Recommended action and deliverable:</strong> Create a small “Team mention -&gt; delegated capability -&gt; auditable action” diagram to help nontechnical investors understand the dual C/S requirement.</p>
+<div class="risc-scorecard">
+<div class="risc-head">
+<strong>RISC: C Primary · Connectivity / Society</strong>
+<span>S Secondary · Security / Immune System</span>
+</div>
+<p>Team @ mentions, shared context, and organizational collaboration define the Connectivity / Society axis. Admin logs and usage controls add a secondary Security / Immune System dimension.</p>
+<div class="risc-check">
+<span class="risc-key">Session Types</span>
+<span class="risc-value yes">Yes</span>
+<span class="risc-evidence">Claude Tag brings team members into the same working conversation and shared context.</span>
+</div>
+<div class="risc-check">
+<span class="risc-key">Ecosystem Connectivity</span>
+<span class="risc-value partial">Partial</span>
+<span class="risc-evidence">It connects team members and a Claude workspace, but it is not an external SaaS connector.</span>
+</div>
+</div>
+</div>
+<aside class="side">
+<strong>Partnership / Learning Opportunity</strong>
+<p>Use this signal to explain the permission and audit gaps that emerge when enterprise agents move from personal tools into organizational collaboration.</p>
+<strong>Risk Boundary</strong>
+<p>Claude Tag is a product collaboration feature, not a cross-company neutral runtime. Admin logs also do not provide bit-for-bit replay.</p>
+<strong>What Changed Today</strong>
+<p>Although released on June 23, the July 9 review places Claude Tag alongside Marketplace and Registry signals pointing toward organizational sessions.</p>
+</aside>
+</article>
+</div>
+</section>
+ <section class="section">
+<h2>Funding / Partnership Opportunities</h2>
+<div class="matrix">
+<div class="note">
+<strong>Most direct opportunities:</strong> Agent marketplaces, registries, runtime security, AI observability, MCP/eval tools, and open-source coding-agent teams. They are all addressing the same problem today: once an agent enters an organization, it needs identity, boundaries, recovery, and evidence.</div>
+<div class="note">
+<strong>Funding narrative:</strong> Connect Google Marketplace, AWS Agent Registry, Langfuse trace exports, and Microsoft approval hooks into one line: brains and distribution layers will proliferate, but a neutral runtime that can prove who authorized an action, how it executed, and how it recovered after failure will remain scarce.</div>
+</div>
+</section>
+ <section class="section">
+<h2>Technical / Product Implications</h2>
+<div class="matrix">
+<div class="note amber">
+<strong>Priority product:</strong> Agent Execution Evidence v0. This is not a log table; it is an execution-evidence structure organized around capability grants, state progression, checkpoints, evaluation scores, source-data hashes, and replay verdicts.</div>
+<div class="note amber">
+<strong>Priority demo:</strong> After a Marketplace agent is deployed by an enterprise, have it execute across a CRM, documents, approvals, and external retrieval. Trigger token expiration and a large-file failure midway, then show how <span class="nowrap">ALUX</span> rejects overreach, restores progress, and produces a replay verdict.</div>
+</div>
+</section>
+ <section class="section">
+<h2>Risk Boundaries</h2>
+<p>
+<span class="nowrap">ALUX</span> should not be described as a fully delivered agent platform. More precisely, the underlying TVM already provides key foundations including concurrency, durable execution, capability security, execution records, and bit-for-bit replay auditing. The agent product layer, observability, dashboards, tracing, and evaluation tools remain priorities for development and financing.</p>
+<p>Nor should TVM be said to make the LLM itself deterministic. More precisely, TVM records model outputs and inputs from the runtime environment, making orchestration, permissions, state transitions, and auditing replayable and verifiable.</p>
+</section>
+ <section class="section">
+<h2>Sources</h2>
+<ol class="sources">
+<li>
+<a href="https://cloud.google.com/blog/topics/developers-practitioners/publish-agents-in-gemini-enterprise-and-google-cloud-marketplace" target="_blank" rel="noopener">Google Cloud / Gemini Enterprise Agent Platform: Google Cloud Opens Gemini Enterprise and Google Cloud Marketplace to Agents Built with Vertex AI and Third-Party Frameworks</a> <span class="source-tier">Official Blog</span>
+</li>
+<li>
+<a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/release-notes.html" target="_blank" rel="noopener">Amazon Bedrock AgentCore: AWS Bedrock AgentCore Documentation Requires Agent Runtime Migration to Agent Registry namespace/agentName/aliasName Ahead of the August Deadline</a> <span class="source-tier">Official Documentation</span>
+</li>
+<li>
+<a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-security.html" target="_blank" rel="noopener">Amazon Bedrock AgentCore Runtime: AWS AgentCore Runtime Security Best Practices Define IMDSv2, Confused-Deputy Protection, and Least Privilege as Runtime Boundaries</a> <span class="source-tier">Official Documentation</span>
+</li>
+<li>
+<a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-troubleshooting.html" target="_blank" rel="noopener">Amazon Bedrock AgentCore Runtime: AWS AgentCore Runtime Troubleshooting Treats Long-Running Work, Session IDs, Async Timeouts, and S3 Large-File Handling as Production Operations</a> <span class="source-tier">Official Documentation</span>
+</li>
+<li>
+<a href="https://langfuse.com/changelog/2026-07-07-query-experiments-via-api-and-mcp" target="_blank" rel="noopener">Langfuse: Langfuse Adds API/MCP Experiment Queries on July 7, Making Evaluation and Observability Data Directly Readable by Agents</a> <span class="source-tier">Official Changelog</span>
+</li>
+<li>
+<a href="https://langfuse.com/changelog/2026-07-08-export-traces-as-parquet" target="_blank" rel="noopener">Langfuse: Langfuse Adds Parquet Trace Exports on July 8, Moving Agent Evidence Chains into Data Warehouses and Offline Auditing</a> <span class="source-tier">Official Changelog</span>
+</li>
+<li>
+<a href="https://github.com/QwenLM/qwen-code/releases" target="_blank" rel="noopener">Alibaba Qwen / Qwen Code: Qwen Code v0.19.8 Adds Multi-Workspace Support, Runtime Hot Reload, DM Policy, and External Split Commands, Pushing the Open-Source Coding Agent Toward Production</a> <span class="source-tier">Official GitHub Release</span>
+</li>
+<li>
+<a href="https://github.com/microsoft/agent-framework/releases" target="_blank" rel="noopener">Microsoft Agent Framework: Microsoft Agent Framework .NET 1.13.0 Adds Per-User Session Isolation, Approval Configuration, and Tool-Security Controls</a> <span class="source-tier">Official GitHub Release</span>
+</li>
+<li>
+<a href="https://www.anthropic.com/news/claude-tag" target="_blank" rel="noopener">Anthropic Claude Team / Enterprise: Anthropic Claude Tag Enables Team Collaboration Inside Claude through @ Mentions, with Admin Logs, Usage Controls, and Data Boundaries</a> <span class="source-tier">Official Announcement</span>
+</li>
+</ol>
+</section>
+ </main>
+<!-- site:issue-footer:start -->
+<footer class="report-sitefooter">
+  <nav class="issue-nav" aria-label="Archive"><a rel="prev" href="/en/2026/07/08/">← Previous Issue</a><a rel="next" href="/en/2026/07/10/">Next Issue →</a></nav>
+  <a href="/en/">ALUX AI Agent Intelligence Daily · 2026-07-09</a>
+</footer>
+<!-- site:issue-footer:end -->
+</body>
+</html>

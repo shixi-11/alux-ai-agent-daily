@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>2026-07-06 ALUX AI Agent Intelligence Daily</title>
+ <style>
+ :root{--ink:#111827;--muted:#5b6575;--subtle:#7a8493;--bg:#f5f7fa;--panel:#ffffff;--panel-2:#edf3f6;--line:#d9e0e7;--line-strong:#aeb9c6;--indigo:#22356f;--teal:#0f766e;--green:#166049;--amber:#9a6a16;--graphite:#202632;--soft:#e7edf2;--ice:#f9fbfc;}
+ *{box-sizing:border-box} html{overflow-x:hidden} body{margin:0;background:linear-gradient(180deg,#eef3f7 0%,#f8fafc 38%,#f3f6f8 100%);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;line-height:1.66;letter-spacing:0;word-break:normal;overflow-wrap:break-word;overflow-x:hidden;} a{color:var(--indigo);text-decoration:none;border-bottom:1px solid rgba(34,53,111,.26)} a:hover{border-bottom-color:var(--indigo)} .nowrap{white-space:nowrap;word-break:keep-all}.page{max-width:1240px;margin:0 auto;padding:26px 22px 56px}.hero{min-height:78vh;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(360px,.98fr);gap:28px;align-items:stretch;border-bottom:1px solid var(--line-strong);padding:10px 0 34px}.hero-copy{display:flex;flex-direction:column;justify-content:center;min-width:0}.eyebrow{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;color:var(--subtle);font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}.eyebrow span{white-space:nowrap}.hero h1{font-family:"Songti SC","Noto Serif CJK SC","SimSun",Georgia,serif;font-size:clamp(40px,6.1vw,74px);line-height:1.05;margin:16px 0 18px;color:#121722;font-weight:700;text-wrap:balance}.title-en{display:block;font-family:Georgia,"Times New Roman",serif;color:#18264f}.title-cn{display:block;margin-top:12px;font-size:clamp(28px,4.35vw,50px);line-height:1.2;white-space:nowrap;word-break:keep-all;letter-spacing:0;color:#10201d}.lead{font-size:clamp(17px,1.75vw,20px);line-height:1.58;color:#374151;max-width:700px;margin:0;text-wrap:pretty}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:26px 0 0}.stat{border:1px solid var(--line);background:rgba(255,255,255,.72);padding:12px 14px;min-height:76px}.stat b{display:block;font-size:22px;line-height:1.1;color:#18264f;font-variant-numeric:tabular-nums}.stat span{display:block;margin-top:7px;color:var(--muted);font-size:12px;white-space:nowrap;word-break:keep-all}.judgment{margin-top:18px;padding:20px 22px;background:#fff;border:1px solid var(--line-strong)}.judgment strong{color:#0f4f44}.intel-panel{align-self:stretch;background:#fff;border:1px solid var(--line-strong);padding:20px;display:grid;grid-template-rows:auto auto minmax(0,1fr) auto;gap:14px;min-height:0}.panel-head{display:flex;justify-content:space-between;gap:18px;align-items:start;border-bottom:1px solid var(--line);padding-bottom:14px}.panel-head strong{font-size:18px;color:#13203a;white-space:nowrap}.panel-head span{font-size:12.5px;color:var(--muted);text-align:right}.heat-summary{background:#f7fafb;border:1px solid var(--line);padding:13px 14px}.heat-summary b{display:block;font-size:13px;color:#0f5e55;margin-bottom:3px}.heat-summary p{margin:0;font-size:13px;line-height:1.5;color:#3e4856}.heat-list{display:grid;grid-template-rows:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.heat-row{display:grid;grid-template-columns:76px minmax(0,1fr);gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}.heat-row:last-child{border-bottom:0}.heat-row strong{display:block;font-size:15px;line-height:1.25;color:#172033;white-space:nowrap}.heat-row .strength{display:inline-flex;width:max-content;margin-top:7px;padding:2px 7px;border:1px solid #b8c7de;background:#eef4ff;color:#22356f;font-size:11px;font-weight:800;line-height:1.2;white-space:nowrap}.heat-row p{margin:0;color:#3e4856;font-size:13px;line-height:1.45}.heat-row em{display:block;margin-top:4px;color:#0f5e55;font-size:12.5px;line-height:1.38;font-style:normal}.priority-note{background:#eef5f2;border:1px solid #c6d9d1;padding:13px 14px}.priority-note span{display:block;color:#0f766e;font-weight:800;font-size:12px;margin-bottom:4px}.priority-note strong{display:block;color:#172033;font-size:14px;line-height:1.45}.priority-note strong .nowrap{display:inline;color:#172033;font-size:inherit;font-weight:inherit;margin:0;white-space:nowrap;word-break:keep-all}.priority-note .priority-brand{display:inline;color:#111827;font-size:inherit;font-weight:inherit;margin:0;white-space:nowrap;word-break:keep-all}.section{padding:38px 0;border-bottom:1px solid var(--line)}.section:last-child{border-bottom:0;padding-bottom:0}.section h2{font-family:"Songti SC","Noto Serif CJK SC","SimSun",Georgia,serif;font-size:clamp(25px,3vw,38px);line-height:1.18;margin:0 0 20px;color:#172033;text-wrap:balance}.radar{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.item{background:#fff;border:1px solid var(--line);padding:18px;min-height:164px}.tag{display:inline-flex;align-items:center;font-size:12px;font-weight:800;color:#22356f;background:#e8edf8;padding:4px 9px;border-radius:999px;white-space:nowrap;word-break:keep-all}.tag.green{color:#166049;background:#dcefe8}.tag.amber{color:#805711;background:#efe5ce}.item,.signal,.note,.side,.judgment,.intel-panel,.risc-primer{min-width:0;max-width:100%}.item h3,.signal h3{font-size:19px;line-height:1.28;margin:12px 0 8px;color:#172033;text-wrap:balance}.item p,.signal p{margin:7px 0;color:#3e4856;min-width:0}.risc-primer{background:#fff;border:1px solid var(--line-strong);padding:22px}.risc-primer-intro{display:grid;grid-template-columns:minmax(0,.95fr) minmax(260px,.55fr);gap:18px;align-items:end;margin-bottom:16px}.risc-equation{margin:0 0 8px;color:#10201d;font-weight:900;font-size:16px;line-height:1.35;word-break:keep-all}.risc-primer p{margin:0;color:#3e4856}.risc-primer-line{border-left:3px solid #0f766e;padding-left:14px;color:#172033;font-weight:800;line-height:1.55}.risc-primer-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.risc-primer-card{background:#f7fafb;border:1px solid var(--line);padding:14px;min-width:0}.risc-primer-card b{display:block;color:#172033;font-size:15px;line-height:1.28;white-space:nowrap;word-break:keep-all}.risc-primer-card span{display:block;margin-top:6px;color:#3e4856;font-size:13px;line-height:1.48}.risc-primer-close{display:block;margin-top:14px;color:#0f5e55;font-weight:800}.signals{display:grid;gap:12px}.signal{background:#fff;border:1px solid var(--line);padding:20px;display:grid;grid-template-columns:minmax(0,1fr) 292px;gap:20px}.signal > div{min-width:0}.meta{font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:7px 12px;min-width:0}.meta span{white-space:nowrap}.side{border-left:1px solid var(--line);padding-left:18px;background:linear-gradient(90deg,#f7fafb,transparent);padding-top:2px}.side strong{display:block;color:#0f5e55;margin:7px 0 2px;font-size:13px;white-space:nowrap}.side p{font-size:14px;line-height:1.55}.risc-scorecard{margin-top:12px;border:1px solid var(--line);background:#f7fafb;padding:12px 13px}.risc-head{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:8px;color:#172033;font-weight:800;font-size:12.5px}.risc-head span{color:#0f5e55;white-space:nowrap}.risc-check{display:grid;grid-template-columns:minmax(106px,.7fr) 58px minmax(0,1.4fr);gap:8px;align-items:start;padding:7px 0;border-top:1px solid #e1e7ee;font-size:12.5px;line-height:1.42}.risc-check:first-of-type{border-top:0}.risc-key{color:#22356f;font-weight:800;word-break:keep-all}.risc-value{display:inline-flex;width:max-content;min-width:48px;justify-content:center;border:1px solid #b8c7de;background:#eef4ff;color:#22356f;font-size:11px;font-weight:900;line-height:1.15;padding:3px 6px;border-radius:999px;white-space:nowrap}.risc-value.yes{border-color:#bdd8d0;background:#e4f2ee;color:#0f5e55}.risc-value.no{border-color:#c8cfd8;background:#edf1f5;color:#4b5563}.risc-value.partial{border-color:#d8c79a;background:#f5efe2;color:#805711}.risc-evidence{color:#3e4856;min-width:0}.matrix{display:grid;grid-template-columns:1fr 1fr;gap:12px}.note{background:#eef5f2;border:1px solid #c6d9d1;padding:20px}.note.amber{background:#f5efe2;border-color:#d8c79a}.sources{columns:2;column-gap:34px}.sources li{break-inside:avoid;margin:0 0 10px;color:#4b5563}.source-tier{color:#0f766e;font-weight:800;white-space:nowrap}
+ @media (max-width:920px){.page{padding:18px 14px 44px}.hero{grid-template-columns:1fr;min-height:auto;padding:12px 0 28px}.intel-panel{min-height:auto}.stats{grid-template-columns:repeat(2,1fr)}.radar,.matrix{grid-template-columns:1fr}.risc-primer-intro{grid-template-columns:1fr;align-items:start}.risc-primer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.signal{grid-template-columns:minmax(0,1fr)}.side{border-left:0;border-top:1px solid var(--line);padding-left:0;padding-top:14px;background:transparent}.sources{columns:1}.hero h1{font-size:clamp(36px,10vw,56px)}.title-cn{font-size:clamp(26px,7.2vw,38px);line-height:1.24}}
+ @media (max-width:520px){.page{padding-left:12px;padding-right:12px}.stats{grid-template-columns:1fr 1fr}.stat{padding:10px 11px}.heat-row{grid-template-columns:68px minmax(0,1fr)}.section{padding:34px 0}.risc-primer{padding:16px}.risc-primer-grid{grid-template-columns:1fr}.risc-primer-card b{white-space:normal}.signal{padding:16px;gap:14px}.meta{gap:6px 10px;line-height:1.35}.meta span{white-space:normal;word-break:keep-all;overflow-wrap:anywhere}.item h3,.signal h3{font-size:18px;line-height:1.32}.item p,.signal p{font-size:15.5px;line-height:1.72;overflow-wrap:anywhere}.side p{font-size:14.5px;line-height:1.62}.risc-check{grid-template-columns:minmax(0,1fr);gap:4px}.risc-value{min-width:54px}}
+ .panel-head > *,.heat-row > *,.risc-head > *{min-width:0}.panel-head span,.heat-row p,.heat-row em,.priority-note strong,.risc-evidence{overflow-wrap:anywhere}.title-en{overflow-wrap:anywhere}
+ @media (max-width:920px){.intel-panel{padding:18px}.panel-head{flex-direction:column;align-items:flex-start;gap:6px}.panel-head span{text-align:left;line-height:1.45}.title-cn{white-space:normal;overflow-wrap:anywhere}.risc-head{align-items:flex-start}.risc-head span{white-space:normal;text-align:left}}
+ @media (max-width:520px){.page{padding-left:10px;padding-right:10px}.intel-panel{padding:14px;gap:12px}.panel-head strong{white-space:normal}.heat-list{grid-template-rows:none}.heat-row{grid-template-columns:1fr;gap:6px;align-items:start;padding:13px 0}.heat-row strong{display:inline;margin-right:8px}.heat-row .strength{margin-top:0;vertical-align:middle}.priority-note strong .nowrap,.priority-note .priority-brand,.nowrap{white-space:normal;overflow-wrap:anywhere}.risc-head{flex-direction:column;gap:4px}.stat span{white-space:normal}.sources li{overflow-wrap:anywhere}}
+ </style>
+<!-- site:i18n-head:start -->
+<link rel="canonical" href="https://ai-agent-daily.alux.network/en/2026/07/06/">
+<link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/2026/07/06/">
+<link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/2026/07/06/">
+<link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/2026/07/06/">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://ai-agent-daily.alux.network/en/2026/07/06/">
+<link rel="icon" type="image/png" href="/assets/alux-mark.png">
+<link rel="apple-touch-icon" href="/assets/alux-mark.png">
+<link rel="stylesheet" href="/assets/report-site.css">
+<!-- site:i18n-head:end -->
+</head>
+<body>
+<!-- site:i18n-nav:start -->
+<header class="report-sitebar">
+  <a class="report-sitebrand" href="/en/">ALUX AI Agent Intelligence Daily</a>
+  <nav class="report-sitenav" aria-label="Archive">
+    <a href="/en/latest/">Latest</a>
+    <a href="/en/#archive">Archive</a>
+    <span class="language-switch" aria-label="Language switcher">
+      <a href="/2026/07/06/" lang="zh-CN">中文</a>
+      <a href="/en/2026/07/06/" lang="en" aria-current="page">EN</a>
+    </span>
+  </nav>
+</header>
+<!-- site:i18n-nav:end -->
+<main class="page">
+ <section class="hero">
+ <div class="hero-copy">
+ <div class="eyebrow">
+<span>ALUX AI Agent Daily</span>
+<span>2026-07-06</span>
+<span>Infrastructure Brief</span>
+</div>
+ <h1>
+<span class="title-en">AI Agent</span>
+<span class="title-cn">Production Readiness Converges at the Runtime Layer</span>
+</h1>
+ <p class="lead">Today’s primary signal is a shift from “which agent can think better” to “which agent can organizations trust with real work.” Workspace Agents have reached their billing milestone; ADK 2.0 emphasizes deterministic workflows; and AgentCore, MCP, Qwen Code, and Cloudflare Agents are all pushing action, connectivity, state, and governance into production.</p>
+ <div class="stats" aria-label="Today’s intelligence summary">
+<div class="stat">
+<b>7</b>
+<span>Key Signals</span>
+</div>
+<div class="stat">
+<b>14</b>
+<span>Candidate Signals</span>
+</div>
+<div class="stat">
+<b>13</b>
+<span>Official / Open-Source Sources</span>
+</div>
+<div class="stat">
+<b>1</b>
+<span>Top-Priority Action</span>
+</div>
+</div>
+ <div class="judgment">
+<strong>Today’s Take:</strong> The strongest signal today is not a leap by any single model, but the simultaneous emergence of all four body systems required by a production-grade agent: the brain is becoming less expensive; the body must execute continuously; the immune system must protect permissions and auditing; and the social interface must support collaboration across tools. <span class="nowrap">ALUX</span> is positioned to consolidate these actions into authorized, recoverable, and replayable <span class="nowrap">long-running transactions</span>.</div>
+ </div>
+ <aside class="intel-panel" aria-label="Today’s industry heat map">
+<div class="panel-head">
+<strong>Today’s Heat Matrix</strong>
+<span>Billing, deterministic execution, MCP, open-source harnesses, and the agentic cloud are all heating up</span>
+</div>
+<div class="heat-summary">
+<b>Primary axis: from agent capabilities to the runtime chain of accountability</b>
+<p>Today’s RISC mix shows external signals across all four systems: R — Resilience / Body, I — Intelligence / Brain, S — Security / Immune System, and C — Connectivity / Society. Of these, R and C are most critical to <span class="nowrap">ALUX</span>’s positioning.</p>
+</div>
+<div class="heat-list">
+<div class="heat-row">
+<div>
+<strong>Opportunity</strong>
+<span class="strength">High</span>
+</div>
+<div>
+<p>ADK, AgentCore, Cloudflare, and MCP are all moving agents beyond prompts and into runtime architecture.</p>
+<em>Action: map the RISC accountability layers.</em>
+</div>
+</div>
+<div class="heat-row">
+<div>
+<strong>Defense</strong>
+<span class="strength">High</span>
+</div>
+<div>
+<p>Cloud providers will bundle execution, connectivity, identity, and observability; <span class="nowrap">ALUX</span> must emphasize its neutral substrate and replayable evidence.</p>
+<em>Action: add a cloud-runtime battlecard.</em>
+</div>
+</div>
+<div class="heat-row">
+<div>
+<strong>Asset</strong>
+<span class="strength">Medium-High</span>
+</div>
+<div>
+<p>The rapid iteration of Qwen Code and MCP shows that harnesses and protocols will proliferate, making the underlying long-running transaction ledger even scarcer.</p>
+<em>Action: develop an MCP capability adapter.</em>
+</div>
+</div>
+<div class="heat-row">
+<div>
+<strong>Risk</strong>
+<span class="strength">Medium</span>
+</div>
+<div>
+<p>More powerful brains will generate more real-world actions. Without a body and an immune system, the more capable an agent becomes, the greater the risk it creates.</p>
+<em>Action: sharpen the runtime-gap narrative.</em>
+</div>
+</div>
+</div>
+<div class="priority-note">
+<span>Top-Priority Action</span>
+<strong>Build <span class="priority-brand">ALUX</span>’s <span class="nowrap">RISC Runtime Map</span>: models and harnesses manage the brain; cloud platforms provide deployment entry points; and <span class="priority-brand">ALUX</span> manages <span class="nowrap">long-running transaction</span> state, capability grants, failure recovery, and replayable evidence.</strong>
+</div>
+</aside>
+ </section>
+ <section class="section">
+<h2>How the RISC Machine Works</h2>
+<div class="risc-primer">
+<div class="risc-primer-intro">
+<div>
+<p class="risc-equation">RISC = the four systems of a production-grade agent / robotic body</p>
+<p>A truly production-grade agent needs more than a brain. It must run continuously, reason and act, withstand errors, attacks, and poisoning, and participate in real-world networks of collaboration.</p>
+</div>
+<div class="risc-primer-line">The industry has delivered an excellent brain, but a production-grade agent still needs a body, an immune system, and a society.<span class="risc-primer-close">
+<span class="nowrap">ALUX</span> is building the complete machine.</span>
+</div>
+</div>
+<div class="risc-primer-grid">
+<article class="risc-primer-card">
+<b>R｜Resilience / Body</b>
+<span>Fault tolerance, durable execution, failover, and horizontal scaling. Without a resilient body, one crash can erase all work.</span>
+</article>
+<article class="risc-primer-card">
+<b>I｜Intelligence / Brain</b>
+<span>Reasoning loops, memory, tool use, and task orchestration. This is the most crowded—and most mature—competitive layer across today’s agent frameworks.</span>
+</article>
+<article class="risc-primer-card">
+<b>S｜Security / Immune System</b>
+<span>Object capabilities, policy constraints, rollback mechanisms, and audit trails. Without a security immune system, one poisoned instruction can cause real-world harm.</span>
+</article>
+<article class="risc-primer-card">
+<b>C｜Connectivity / Society</b>
+<span>Cross-company authorization, a neutral substrate, session types, and collaboration boundaries. Without a connective network, every company’s agents remain trapped on their own islands.</span>
+</article>
+</div>
+</div>
+</section>
+ <section class="section">
+<h2>
+<span class="nowrap">ALUX</span> Daily Radar</h2>
+<div class="radar">
+<article class="item">
+<span class="tag green">Opportunity</span>
+<h3>The Runtime Accountability Layer Comes into View</h3>
+<p>Google, AWS, and Cloudflare are all decomposing agent production readiness into workflows, environments, memory, identity, observability, and durable execution.</p>
+</article>
+<article class="item">
+<span class="tag amber">Risk</span>
+<h3>Cloud Platforms Will Absorb the Narrative</h3>
+<p>If <span class="nowrap">ALUX</span> speaks only of “tool connectivity” or “security permissions,” its story will be absorbed by AgentCore, MCP gateways, and workspace admin consoles.</p>
+</article>
+<article class="item">
+<span class="tag">Actionable Asset</span>
+<h3>RISC Runtime Map</h3>
+<p>Map every news signal to R/I/S/C—the brain, body, immune system, or society—and identify the long-running transaction accountability that <span class="nowrap">ALUX</span> truly assumes.</p>
+</article>
+</div>
+</section>
+ <section class="section">
+<h2>Key Signals</h2>
+<div class="signals">
+<article class="signal">
+<div>
+<div class="meta">
+<span>01</span>
+<span>OpenAI Workspace Agents</span>
+<span>United States / Global</span>
+<span>2026-05-22 / Billing Milestone 2026-07-06</span>
+<span class="source-tier">Official Release</span>
+</div>
+<h3>Free Access to OpenAI Workspace Agents Ends Today as Shared Team Agents Enter Billing and Governance</h3>
+<p>
+<strong>What happened:</strong> OpenAI’s release notes state that Workspace Agents are generally available (GA) for Business, Enterprise, and Edu. Teams can share agents, set safeguards by app, and give administrators visibility into activity and usage. The free period was extended through 2026-07-06, after which usage is billed in credits.</p>
+<p>
+<strong>Why it matters to <span class="nowrap">ALUX</span>:</strong> This is not a model upgrade; it marks the transition of shared agents from preview to organizational budgets and governance. ALUX belongs at a deeper layer: once teams can entrust work to a Workspace Agent, they still need long-running transaction state, capability grants, and audit evidence across tools, organizations, and models.</p>
+<p>
+<strong>Recommended action and deliverable:</strong> Create a one-page “Workspace Agent vs. ALUX Runtime” comparison: the former manages team access, sharing, and app safeguards; ALUX manages long-running transactions, capability objects, state recovery, and audit replay.</p>
+<div class="risc-scorecard">
+<div class="risc-head">
+<strong>RISC: C Primary · Connectivity / Society</strong>
+<span>S Secondary · Security / Immune System</span>
+</div>
+<p>This signal primarily affects Connectivity / Society: team sharing, Slack and tool connections, workspace directories, and administrative visibility are changing how agents operate in organizational sessions. Security / Immune System is secondary because the product includes safeguards and administrator governance.</p>
+<div class="risc-check">
+<span class="risc-key">Session Types</span>
+<span class="risc-value yes">Yes</span>
+<span class="risc-evidence">Workspace Agents can be shared with teams, used in ChatGPT and Slack, and configured to run recurring workflows.</span>
+</div>
+<div class="risc-check">
+<span class="risc-key">Ecosystem Connectivity</span>
+<span class="risc-value yes">Yes</span>
+<span class="risc-evidence">The official documentation covers connected apps, Slack, Google Drive, SharePoint, skills, custom MCP servers, and other tools.</span>
+</div>
+</div>
+</div>
+<aside class="side">
+<strong>Partnership / Learning Opportunity</strong>
+<p>Explain to enterprise AI platform, IT administration, and agent governance teams that a workspace agent is the entry point, while ALUX is the runtime accountability layer.</p>
+<strong>Risk Boundary</strong>
+<p>Public information demonstrates sharing and governance within OpenAI’s product; it does not establish a neutral cross-company runtime or bit-for-bit replay.</p>
+<strong>What Changed Today</strong>
+<p>The free period ends on 2026-07-06 and credit-based billing begins, marking the shift from preview access to a production budget.</p>
+</aside>
+</article>
+<article class="signal">
+<div>
+<div class="meta">
+<span>02</span>
+<span>Google ADK 2.0</span>
+<span>United States / Global</span>
+<span>2026-07-01</span>
+<span class="source-tier">Official Developer Blog</span>
+</div>
+<h3>Google ADK 2.0 Shifts Agent Workflows from LLM Orchestration Back toward Deterministic Execution</h3>
+<p>
+<strong>What happened:</strong> Google explains that the core of ADK 2.0 is the combination of agents and workflows: deterministic workflows handle routing, scheduling, error handling, and strict business steps, while LLMs are reserved for nodes that genuinely require cognitive judgment.</p>
+<p>
+<strong>Why it matters to <span class="nowrap">ALUX</span>:</strong> Google’s assessment closely aligns with ALUX: a production-grade agent cannot leave execution order, failure handling, and business constraints for the model to guess. ALUX should extend this determinism into a long-running transaction ledger, state transitions, capability boundaries, and replay auditing.</p>
+<p>
+<strong>Recommended action and deliverable:</strong> Create an “ADK workflow boundary vs. ALUX transaction boundary” comparison: ADK manages the workflow graph and nodes; ALUX manages authorization, state progression, failure recovery, and audit proof.</p>
+<div class="risc-scorecard">
+<div class="risc-head">
+<strong>RISC: R Primary · Resilience / Body</strong>
+<span>I Secondary · Intelligence / Brain</span>
+</div>
+<p>This signal primarily affects Resilience / Body: it asks whether workflows are predictable, failures are handled, and business steps execute reliably. Intelligence / Brain is secondary because LLM nodes still make cognitive judgments.</p>
+<div class="risc-check">
+<span class="risc-key">Fault Tolerance</span>
+<span class="risc-value yes">Yes</span>
+<span class="risc-evidence">Google explicitly treats clean exceptions, error handling, and deterministic control as production concerns.</span>
+</div>
+<div class="risc-check">
+<span class="risc-key">Durable Execution</span>
+<span class="risc-value partial">Partial</span>
+<span class="risc-evidence">ADK 2.0 emphasizes a workflow runtime and explicit paths, but the public blog does not demonstrate durable checkpoints or replay.</span>
+</div>
+</div>
+</div>
+<aside class="side">
+<strong>Partnership / Learning Opportunity</strong>
+<p>Explore a conceptual interface with the ADK and Google Cloud ecosystem: upper-layer orchestration paired with the ALUX runtime accountability chain.</p>
+<strong>Risk Boundary</strong>
+<p>ADK 2.0 is not a substitute for ALUX. It primarily addresses the developer framework and workflow orchestration; it does not claim cross-company capability objects or bit-for-bit replay.</p>
+<strong>What Changed Today</strong>
+<p>On 2026-07-01, Google formally explained ADK 2.0’s production-oriented design.</p>
+</aside>
+</article>
+<article class="signal">
+<div>
+<div class="meta">
+<span>03</span>
+<span>Amazon Bedrock AgentCore</span>
+<span>United States / Global</span>
+<span>Observed 2026-07 / Effective Milestone 2026-07-30</span>
+<span class="source-tier">Official Documentation</span>
+</div>
+<h3>AWS Bedrock Agents Classic Will Enter Maintenance Mode, Making AgentCore the Migration Path</h3>
+<p>
+<strong>What happened:</strong> AWS documentation states that Bedrock Agents Classic will no longer be available to new customers beginning 2026-07-30 and recommends migration to AgentCore. AgentCore manages the environment, compute, memory, identity, and observability, while action groups can be exposed as MCP tools through Gateway.</p>
+<p>
+<strong>Why it matters to <span class="nowrap">ALUX</span>:</strong> AWS is consolidating its legacy “Managed Agent” path around AgentCore, showing that cloud providers also recognize that agents need body components such as environments, compute, memory, identity, observability, and gateways. ALUX has an opening at a more neutral and verifiable runtime accountability layer than an in-cloud harness.</p>
+<p>
+<strong>Recommended action and deliverable:</strong> Develop an “AWS AgentCore Mapping to RISC” table showing which capabilities belong to the body, which belong to the immune system, and where a neutral substrate and cross-company authorization are still missing.</p>
+<div class="risc-scorecard">
+<div class="risc-head">
+<strong>RISC: R Primary · Resilience / Body</strong>
+<span>S Secondary · Security / Immune System</span>
+</div>
+<p>This signal primarily affects Resilience / Body: AWS is making environments, compute, memory, observability, and a managed harness the migration destination. Security / Immune System is secondary because identity, guardrails, gateways, and tracing are included in the same stack.</p>
+<div class="risc-check">
+<span class="risc-key">Durable Execution</span>
+<span class="risc-value partial">Partial</span>
+<span class="risc-evidence">AgentCore manages the environment, compute, memory, and managed infrastructure, but the cited documentation does not demonstrate complete durable replay.</span>
+</div>
+<div class="risc-check">
+<span class="risc-key">Horizontal Scaling</span>
+<span class="risc-value yes">Yes</span>
+<span class="risc-evidence">AgentCore is defined as the migration target, manages compute and environments, and is built for managed infrastructure.</span>
+</div>
+</div>
+</div>
+<aside class="side">
+<strong>Partnership / Learning Opportunity</strong>
+<p>For agent builders in the AWS ecosystem, position AgentCore as the deployment and connectivity layer, with ALUX providing capability security, a state ledger, and cross-cloud and cross-company audit proof.</p>
+<strong>Risk Boundary</strong>
+<p>AWS documentation establishes the recommended AgentCore migration path and its capability scope. It does not make AgentCore a neutral cross-cloud layer or demonstrate ALUX-style bit-for-bit replay.</p>
+<strong>What Changed Today</strong>
+<p>The 2026-07-30 Classic maintenance-mode milestone now creates migration and procurement pressure; this is not a repetition of the original AgentCore launch.</p>
+</aside>
+</article>
+<article class="signal">
+<div>
+<div class="meta">
+<span>04</span>
+<span>Anthropic Claude Sonnet 5</span>
+<span>United States / Global</span>
+<span>2026-06-30</span>
+<span class="source-tier">Official Release</span>
+</div>
+<h3>Anthropic Claude Sonnet 5 Brings Stronger Agentic Execution to the Sonnet Price Tier</h3>
+<p>
+<strong>What happened:</strong> Anthropic describes Sonnet 5 as its most agentic Sonnet yet. It can plan, use browsers and terminals, and run automated tasks at a lower-cost tier, and is available in Claude Code and on the Claude Platform. The safety evaluation cites improved refusal of malicious requests and stronger resistance to prompt injection.</p>
+<p>
+<strong>Why it matters to <span class="nowrap">ALUX</span>:</strong> Model brains continue to become both more capable and less expensive, which will increase the number of agents and amplify execution-chain risk. ALUX should not compete with models over the “brain”; it should provide the body, immune system, and social interfaces those stronger brains need when they enter the real world of tools.</p>
+<p>
+<strong>Recommended action and deliverable:</strong> Produce a short “Runtime Gaps after the Brain Upgrade” brief: the more capable a model becomes at taking action, the more important it is for ALUX to record where it acted, why it acted, and who authorized the action.</p>
+<div class="risc-scorecard">
+<div class="risc-head">
+<strong>RISC: I Primary · Intelligence / Brain</strong>
+<span>S Secondary · Security / Immune System</span>
+</div>
+<p>This signal primarily affects Intelligence / Brain: the model has improved at planning, using browser and terminal tools, coding, and knowledge work. Security / Immune System is secondary because the announcement also discusses agentic safety and resistance to prompt injection.</p>
+<div class="risc-check">
+<span class="risc-key">Model Loops</span>
+<span class="risc-value yes">Yes</span>
+<span class="risc-evidence">Anthropic explicitly says Sonnet 5 can plan, use browsers and terminals, and run automated tasks.</span>
+</div>
+<div class="risc-check">
+<span class="risc-key">Tool Orchestration</span>
+<span class="risc-value yes">Yes</span>
+<span class="risc-evidence">The announcement emphasizes browser and terminal use, Claude Code, and agentic tool use on the Claude Platform.</span>
+</div>
+</div>
+</div>
+<aside class="side">
+<strong>Partnership / Learning Opportunity</strong>
+<p>For Claude Code and Agent SDK users, keep Sonnet 5 as the brain and position ALUX as the layer that defines action boundaries and provides verifiable execution.</p>
+<strong>Risk Boundary</strong>
+<p>Anthropic’s announcement demonstrates model capabilities and safety evaluations; it does not establish durable execution, capability objects, or a neutral cross-company substrate.</p>
+<strong>What Changed Today</strong>
+<p>This RISC framing places Sonnet 5 in the brain layer; for ALUX, the actionable implication is to strengthen the body and immune-system narrative.</p>
+</aside>
+</article>
+<article class="signal">
+<div>
+<div class="meta">
+<span>05</span>
+<span>Model Context Protocol</span>
+<span>Global / Open Source</span>
+<span>2026-06-30 / 2026-07-02 / 2026-07-04</span>
+<span class="source-tier">Official GitHub</span>
+</div>
+<h3>MCP v2 Beta and Reference Servers 2026.7.4 Advance in Parallel, Shifting the Protocol from Long-Lived Sessions toward a Scalable Connectivity Layer</h3>
+<p>
+<strong>What happened:</strong> The MCP Python SDK v2 beta supports the 2026-07-28 specification, including a stateless core, server/discover, header-based routing and caching, enterprise authentication, OpenTelemetry, and conformance. TypeScript SDK beta.2 adds CJS/ESM compatibility and HTTP 400 responses for capability errors. Reference servers 2026.7.4 update packages including filesystem, memory, and sequential-thinking.</p>
+<p>
+<strong>Why it matters to <span class="nowrap">ALUX</span>:</strong> MCP is evolving from a “tool-connection protocol” into a connectivity layer on which enterprises, SDKs, server packages, and agent ecosystems can broadly depend. ALUX should integrate this layer but cannot stop at MCP: authorization, state, failure recovery, and auditing after a connection is established remain runtime responsibilities.</p>
+<p>
+<strong>Recommended action and deliverable:</strong> Create an “MCP Adapter to ALUX Capability Object” sketch: MCP discovery and routing enter the system; ALUX generates scope, attenuation, state transitions, and replay verdicts.</p>
+<div class="risc-scorecard">
+<div class="risc-head">
+<strong>RISC: C Primary · Connectivity / Society</strong>
+<span>S Secondary · Security / Immune System</span>
+</div>
+<p>This signal primarily affects Connectivity / Society: MCP standardizes how tools, resources, servers, SDKs, routing, and discovery connect. Security / Immune System is secondary because enterprise authentication, sealed request state, header validation, and tracing are entering the protocol layer.</p>
+<div class="risc-check">
+<span class="risc-key">Ecosystem Connectivity</span>
+<span class="risc-value yes">Yes</span>
+<span class="risc-evidence">MCP SDKs, server packages, and reference implementations are preparing in parallel for the 2026-07-28 specification.</span>
+</div>
+<div class="risc-check">
+<span class="risc-key">Neutral Substrate</span>
+<span class="risc-value partial">Partial</span>
+<span class="risc-evidence">MCP is moving toward a cross-vendor protocol, but its implementations and extensions are still changing rapidly.</span>
+</div>
+</div>
+</div>
+<aside class="side">
+<strong>Partnership / Learning Opportunity</strong>
+<p>Use MCP as the ALUX adapter layer: map every MCP tool call to a capability object and a replayable action.</p>
+<strong>Risk Boundary</strong>
+<p>MCP v2 remains in beta and pre-release. Its APIs may change; an unstable specification should not be presented as an established enterprise standard.</p>
+<strong>What Changed Today</strong>
+<p>This update combines MCP servers 2026.7.4 with the v2 beta, highlighting ecosystem preparations ahead of the late-July specification.</p>
+</aside>
+</article>
+<article class="signal">
+<div>
+<div class="meta">
+<span>06</span>
+<span>Alibaba Qwen / Qwen Code</span>
+<span>China / Open Source</span>
+<span>2026-07-06</span>
+<span class="source-tier">Official GitHub</span>
+</div>
+<h3>Qwen Code’s July 6 Nightly Strengthens the Web Shell, Daemon Status, Session Management, and Concurrency Controls</h3>
+<p>
+<strong>What happened:</strong> Qwen Code v0.19.6 nightly release notes include a daemon status API, a daemon status page, MCP mentions, session-sidebar management, session export, a foreground sub-agent concurrency cap, a tool-call budget, a PR gate, and secure autofix workflows.</p>
+<p>
+<strong>Why it matters to <span class="nowrap">ALUX</span>:</strong> Qwen Code’s updates show that China’s open-source coding agents are moving beyond CLI functionality toward web shells, status dashboards, session management, sub-agent concurrency, and secure pipelines. This reinforces ALUX’s thesis: agent harnesses will proliferate rapidly, while unified runtime ledgers and permission boundaries will remain scarce.</p>
+<p>
+<strong>Recommended action and deliverable:</strong> Add a one-page “Qwen Code Harness on ALUX Runtime” concept: the CLI and web shell handle authoring; ALUX handles tool actions, capability grants, checkpoints, and replay verdicts.</p>
+<div class="risc-scorecard">
+<div class="risc-head">
+<strong>RISC: I Primary · Intelligence / Brain</strong>
+<span>R Secondary · Resilience / Body</span>
+</div>
+<p>This signal primarily affects Intelligence / Brain: Qwen Code is a coding-agent harness that strengthens tool orchestration, sessions, and sub-agents. Resilience / Body is secondary because daemon status, session export, and concurrency caps are beginning to address runtime resilience.</p>
+<div class="risc-check">
+<span class="risc-key">Tool Orchestration</span>
+<span class="risc-value yes">Yes</span>
+<span class="risc-evidence">The release notes explicitly include MCP mentions, the web shell, skills, a tool-call budget, and sub-agent concurrency controls.</span>
+</div>
+<div class="risc-check">
+<span class="risc-key">Memory Use</span>
+<span class="risc-value partial">Partial</span>
+<span class="risc-evidence">The Qwen Code ecosystem includes Auto-Memory, but this nightly focuses more heavily on the daemon, sessions, and the web shell.</span>
+</div>
+</div>
+</div>
+<aside class="side">
+<strong>Partnership / Learning Opportunity</strong>
+<p>Position Qwen Code as an open-source agent-authoring surface from China, with ALUX as the auditable runtime substrate.</p>
+<strong>Risk Boundary</strong>
+<p>A nightly build is a pre-release, not a stable enterprise capability. Its release notes demonstrate product direction but do not establish complete security, auditing, and recovery semantics.</p>
+<strong>What Changed Today</strong>
+<p>The 2026-07-06 nightly explicitly adds production-oriented details including the daemon, sessions, MCP mentions, and concurrency caps.</p>
+</aside>
+</article>
+<article class="signal">
+<div>
+<div class="meta">
+<span>07</span>
+<span>Cloudflare Agents / Project Think</span>
+<span>United States / Global</span>
+<span>2026-06-22 / 2026-04-15</span>
+<span class="source-tier">Official Release</span>
+</div>
+<h3>Cloudflare Lets Agents Temporarily Deploy Websites and APIs, while Project Think Adds Long-Running Primitives</h3>
+<p>
+<strong>What happened:</strong> Cloudflare Temporary Accounts allow agents to deploy a Worker directly with `wrangler deploy --temporary`; each temporary deployment remains live for 60 minutes. Project Think provides long-running agent primitives including durable execution, sub-agents, sandboxed code execution, and persistent sessions.</p>
+<p>
+<strong>Why it matters to <span class="nowrap">ALUX</span>:</strong> Cloudflare connects “agents directly deploying outputs” with “long-running primitives,” showing how the agentic cloud is reducing friction across the action surface. ALUX can add the missing chain of accountability: who authorized an action, when authorization expires, whether execution can recover, and how the outcome is audited.</p>
+<p>
+<strong>Recommended action and deliverable:</strong> Build an “Agent Deployment Transaction” demo that records temporary deployment, claim and expiration, permission attenuation, rollback, and audit evidence as one long-running transaction.</p>
+<div class="risc-scorecard">
+<div class="risc-head">
+<strong>RISC: R Primary · Resilience / Body</strong>
+<span>C Secondary · Connectivity / Society</span>
+</div>
+<p>This signal primarily affects Resilience / Body: durable execution, persistent sessions, sandboxed code, and temporary deployments all help agents run, recover, and deliver outputs. Connectivity / Society is secondary because Workers, APIs, and agent deployment lower the barrier to entering the real world.</p>
+<div class="risc-check">
+<span class="risc-key">Durable Execution</span>
+<span class="risc-value yes">Yes</span>
+<span class="risc-evidence">Project Think explicitly lists durable execution with fibers, crash recovery, checkpointing, and automatic keepalive.</span>
+</div>
+<div class="risc-check">
+<span class="risc-key">Fault Tolerance</span>
+<span class="risc-value partial">Partial</span>
+<span class="risc-evidence">Cloudflare cites crash recovery and checkpointing, but Temporary Account deployments themselves have a 60-minute lifetime.</span>
+</div>
+</div>
+</div>
+<aside class="side">
+<strong>Partnership / Learning Opportunity</strong>
+<p>Use Cloudflare Workers and Agents as a runtime-environment case study: ALUX records permissions, expiration, rollback, and access evidence for temporary deployments.</p>
+<strong>Risk Boundary</strong>
+<p>Temporary Accounts provide a 60-minute temporary-deployment capability, while Project Think supplies primitives within Cloudflare’s own Agents SDK. Neither should be described as a general-purpose cross-company runtime.</p>
+<strong>What Changed Today</strong>
+<p>This review combines temporary deployments with Project Think’s durable primitives as one signal about the agentic cloud’s expanding action surface.</p>
+</aside>
+</article>
+</div>
+</section>
+ <section class="section">
+<h2>Funding / Partnership Opportunities</h2>
+<div class="matrix">
+<div class="note">
+<strong>Most direct opportunities:</strong> Enterprise agent governance, MCP adapters, cloud agent runtimes, open-source coding harnesses, agentic deployment, and observability teams. They are all trying to answer the same question: after an agent acts, how is the chain of accountability recorded, recovered, and proven?</div>
+<div class="note">
+<strong>Funding narrative:</strong> Connect OpenAI, Google, AWS, MCP, Qwen Code, and Cloudflare into one line: brains and entry points will proliferate, but runtimes that can turn actions into authorized, recoverable, auditable <span class="nowrap">long-running transactions</span> will remain scarce.</div>
+</div>
+</section>
+ <section class="section">
+<h2>Technical / Product Implications</h2>
+<div class="matrix">
+<div class="note amber">
+<strong>Priority product:</strong> RISC Runtime Map + MCP capability adapter. Map every external tool call to a capability grant, scope, state transition, checkpoint, and replay verdict.</div>
+<div class="note amber">
+<strong>Priority demo:</strong> A Workspace Agent initiates a cross-tool workflow; Qwen Code or Claude Code executes it; an MCP tool calls an external service; and permission attenuation and failure recovery are triggered midway. <span class="nowrap">ALUX</span> then produces a complete audit trail.</div>
+</div>
+</section>
+ <section class="section">
+<h2>Risk Boundaries</h2>
+<p>
+<span class="nowrap">ALUX</span> should not be described as a fully delivered agent platform. More precisely, the underlying TVM already provides key foundations including concurrency, durable execution, capability security, execution records, and bit-for-bit replay auditing. The agent product layer, observability, dashboards, tracing, and evaluation tools remain priorities for development and financing.</p>
+<p>Nor should TVM be said to make the LLM itself deterministic. More precisely, TVM records model outputs and inputs from the runtime environment, making orchestration, permissions, state transitions, and auditing replayable and verifiable.</p>
+</section>
+ <section class="section">
+<h2>Sources</h2>
+<ol class="sources">
+<li>
+<a href="https://help.openai.com/en/articles/11391654-chatgpt-business-release-notes" target="_blank" rel="noopener">OpenAI Workspace Agents: Free Access to OpenAI Workspace Agents Ends Today as Shared Team Agents Enter Billing and Governance</a> <span class="source-tier">Official Release</span>
+</li>
+<li>
+<a href="https://developers.googleblog.com/why-we-built-adk-20/" target="_blank" rel="noopener">Google ADK 2.0: Google ADK 2.0 Shifts Agent Workflows from LLM Orchestration Back toward Deterministic Execution</a> <span class="source-tier">Official Developer Blog</span>
+</li>
+<li>
+<a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-classic-maintenance-mode.html" target="_blank" rel="noopener">Amazon Bedrock AgentCore: AWS Bedrock Agents Classic Will Enter Maintenance Mode, Making AgentCore the Migration Path</a> <span class="source-tier">Official Documentation</span>
+</li>
+<li>
+<a href="https://www.anthropic.com/news/claude-sonnet-5" target="_blank" rel="noopener">Anthropic Claude Sonnet 5: Anthropic Claude Sonnet 5 Brings Stronger Agentic Execution to the Sonnet Price Tier</a> <span class="source-tier">Official Release</span>
+</li>
+<li>
+<a href="https://github.com/modelcontextprotocol/python-sdk/releases/tag/v2.0.0b1" target="_blank" rel="noopener">Model Context Protocol: MCP v2 Beta and Reference Servers 2026.7.4 Advance in Parallel, Shifting the Protocol from Long-Lived Sessions toward a Scalable Connectivity Layer</a> <span class="source-tier">Official GitHub</span>
+</li>
+<li>
+<a href="https://github.com/QwenLM/qwen-code/releases/tag/v0.19.6-nightly.20260706.47f62a466" target="_blank" rel="noopener">Alibaba Qwen / Qwen Code: Qwen Code’s July 6 Nightly Strengthens the Web Shell, Daemon Status, Session Management, and Concurrency Controls</a> <span class="source-tier">Official GitHub</span>
+</li>
+<li>
+<a href="https://blog.cloudflare.com/temporary-accounts/" target="_blank" rel="noopener">Cloudflare Agents / Project Think: Cloudflare Lets Agents Temporarily Deploy Websites and APIs, while Project Think Adds Long-Running Primitives</a> <span class="source-tier">Official Release</span>
+</li>
+</ol>
+</section>
+ </main>
+<!-- site:issue-footer:start -->
+<footer class="report-sitefooter">
+  <nav class="issue-nav" aria-label="Archive"><a rel="prev" href="/en/2026/07/05/">← Previous Issue</a><a rel="next" href="/en/2026/07/07/">Next Issue →</a></nav>
+  <a href="/en/">ALUX AI Agent Intelligence Daily · 2026-07-06</a>
+</footer>
+<!-- site:issue-footer:end -->
+</body>
+</html>
