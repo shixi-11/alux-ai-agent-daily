@@ -1,8 +1,8 @@
 # ALUX AI Agent Intelligence Daily · Agent 接班说明
 
-本文件是所有继续维护者的第一入口。克隆或同步仓库后，先读本文件，再读 `README.md`、`AUTOMATION.md` 与 `docs/OPERATIONS.md`。OpenClaw Agent 还必须读 `automation/OPENCLAW_DAILY_TASK.md`，并用该合同升级现有定时任务的正文。
+本文件是所有继续维护者的第一入口。克隆或同步仓库后，先读本文件，再读 `README.md`、`AUTOMATION.md`、`docs/OPERATIONS.md` 与 `docs/RESPONSIVE_LAYOUT_STANDARD.md`。OpenClaw Agent 还必须读 `automation/OPENCLAW_DAILY_TASK.md`，并用该合同升级现有定时任务的正文。
 
-当前自动化合同版本为 `2.0.0`。OpenClaw 发现现有日报任务没有 `[ALUX_DAILY_CONTRACT_VERSION: 2.0.0]` 时，必须保留原任务 ID、执行时间、时区和凭据，只替换任务正文并完成一次 dry run；不得另建一个重复任务。
+当前自动化合同版本为 `2.1.0`。OpenClaw 发现现有日报任务没有 `[ALUX_DAILY_CONTRACT_VERSION: 2.1.0]` 时，必须保留原任务 ID、执行时间、时区和凭据，只替换任务正文并完成一次 dry run；不得另建一个重复任务。
 
 ## 任务目标
 
@@ -61,6 +61,9 @@
 - 清单中的中文源哈希、英文母稿哈希与当前文件一致，状态为 `reviewed`。
 - 中英两版的外链集合、重点信号数、章节数和来源数一致。
 - 首页、最新页、最早/中间/最新日期页在 1920、1440、1024、768、620、430、390、320 px 下无横向溢出、裁切、单字孤行或导航遮挡。
+- 英文热区矩阵不得沿用中文版的窄固定标签列。宽屏标签列至少 `172px`，长标签允许自然换行；`620px` 及以下改为单列。标签和强度徽章不得越过自身网格单元、遮住右栏正文，`render-check.cjs` 的 `heat-row` 重叠检测必须通过。
+- 英文 `.panel-head` 的标题与右侧说明不得相互覆盖，`920px` 及以下必须上下排列。自动验收必须读取真实文字边界，不得只检查元素外框。
+- 顶栏 Logo 外框与语言切换外框统一为 `44px` 高并垂直对齐，每个语言按钮保留至少 `44px` 点击高度。
 - 语言切换必须指向同一期；`canonical` 与 `hreflang` 必须正确。
 - 中文站名固定为 `ALUX AI智能体情报日报`，不在 `AI` 与 `智能体` 之间加空格。
 

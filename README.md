@@ -67,9 +67,10 @@ AUTOMATION.md                        自动化与各类 Agent 的接续说明
 1. [`AGENTS.md`](./AGENTS.md)
 2. [`AUTOMATION.md`](./AUTOMATION.md)
 3. [`docs/REPORT_STYLE_GUIDE.md`](./docs/REPORT_STYLE_GUIDE.md)
-4. [`docs/DAILY_PUBLISH_CHECKLIST.md`](./docs/DAILY_PUBLISH_CHECKLIST.md)
-5. [`.baoyu-skills/baoyu-translate/EXTEND.md`](./.baoyu-skills/baoyu-translate/EXTEND.md)
-6. [`automation/OPENCLAW_DAILY_TASK.md`](./automation/OPENCLAW_DAILY_TASK.md)
+4. [`docs/RESPONSIVE_LAYOUT_STANDARD.md`](./docs/RESPONSIVE_LAYOUT_STANDARD.md)
+5. [`docs/DAILY_PUBLISH_CHECKLIST.md`](./docs/DAILY_PUBLISH_CHECKLIST.md)
+6. [`.baoyu-skills/baoyu-translate/EXTEND.md`](./.baoyu-skills/baoyu-translate/EXTEND.md)
+7. [`automation/OPENCLAW_DAILY_TASK.md`](./automation/OPENCLAW_DAILY_TASK.md)
 
 保留原自动化任务的执行时间和时区，只替换任务正文。可直接采用 [`automation/OPENCLAW_DAILY_TASK.md`](./automation/OPENCLAW_DAILY_TASK.md)，或让 Agent 读取 [`automation/task-contract.json`](./automation/task-contract.json) 更新自己的任务。
 

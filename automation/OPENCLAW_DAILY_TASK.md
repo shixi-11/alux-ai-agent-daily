@@ -2,18 +2,18 @@
 
 这个文件不替你改变原有定时执行时间。同步仓库后，请保留你当前自动化的 schedule 和时区，将任务正文升级为下面的完整流程。
 
-当前合同版本为 `2.0.0`。如果现有任务正文没有 `[ALUX_DAILY_CONTRACT_VERSION: 2.0.0]`，先完成一次任务升级并手动 dry run，再等待下一次定时执行；不要新建一个重复的定时任务。
+当前合同版本为 `2.1.0`。如果现有任务正文没有 `[ALUX_DAILY_CONTRACT_VERSION: 2.1.0]`，先完成一次任务升级并手动 dry run，再等待下一次定时执行；不要新建一个重复的定时任务。
 
 ## 应写入自动化的任务正文
 
 ```text
-[ALUX_DAILY_CONTRACT_VERSION: 2.0.0]
+[ALUX_DAILY_CONTRACT_VERSION: 2.1.0]
 
 你负责生成、翻译、验收并发布当日的 ALUX AI智能体情报日报。
 
 开始前：
 1. 拉取 GitHub 仓库 main 的最新内容。
-2. 完整阅读根目录 AGENTS.md、AUTOMATION.md、docs/REPORT_STYLE_GUIDE.md、docs/DAILY_PUBLISH_CHECKLIST.md 和 .baoyu-skills/baoyu-translate/EXTEND.md。
+2. 完整阅读根目录 AGENTS.md、AUTOMATION.md、docs/REPORT_STYLE_GUIDE.md、docs/RESPONSIVE_LAYOUT_STANDARD.md、docs/DAILY_PUBLISH_CHECKLIST.md 和 .baoyu-skills/baoyu-translate/EXTEND.md。
 3. 查看 git status、content/zh/ 最新日期、content/en/translation-manifest.json 与现有未完工作。如有未完的当期英文或审核，先续完，不新开日期。
 
 内容生成：
@@ -29,7 +29,7 @@
 
 构建与验收：
 11. 运行 scripts/sync-reports.ps1。不手工编辑 public/index.html 或 public/latest/。脚本必须一次性更新中英首页的日期、标题、摘要、统计和最近更新时间，同时更新 /latest/、/en/latest/、日期页、归档清单和 sitemap。
-12. 运行 scripts/verify-site.ps1 与 scripts/render-check.cjs。检查 1920、1440、1024、768、620、430、390、320 px；布局必须与当前已验收站点保持一致，英文页不得因文字变长而溢出。
+12. 运行 scripts/verify-site.ps1 与 scripts/render-check.cjs。检查 1920、1440、1024、768、620、430、390、320 px，并检查 621、920、921 px 断点；布局必须与当前已验收站点保持一致。英文热区矩阵宽屏标签列不得低于 172px，620px 及以下改为单列；`.panel-head` 在 920px 及以下上下排列；Logo 与语言切换外框保持 44px 等高。任何文字越过所属单元、与相邻元素重叠或控件错位都必须停止发布。
 13. 确认语言切换往返同一期，上一期/下一期正确，ALUX 三角 favicon 正常，canonical 和 hreflang 正确。
 
 发布：
@@ -39,6 +39,7 @@
 
 硬性规则：
 - 中文或英文任何一侧缺失、未 reviewed、哈希过期、验证失败或布局溢出时，整次发布停止。
+- 不得删除、绕过或降级 `render-check.cjs` 的 `heat-row` 重叠检测来让发布通过。
 - 首页最新日期、最近更新时间、/latest/ 与 /en/latest/ 必须在同一次构建和同一次 Git 提交中更新，不得半套发布。
 ```
 

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contractVersion": "2.0.0",
+  "contractVersion": "2.1.0",
   "task": "ALUX AI Agent Intelligence Daily bilingual publish",
   "schedulePolicy": "Preserve the existing OpenClaw schedule and timezone; replace only the task workflow.",
   "automationTimezone": "preserve-existing",
@@ -16,6 +16,7 @@
     "AGENTS.md",
     "AUTOMATION.md",
     "docs/REPORT_STYLE_GUIDE.md",
+    "docs/RESPONSIVE_LAYOUT_STANDARD.md",
     "docs/DAILY_PUBLISH_CHECKLIST.md",
     ".baoyu-skills/baoyu-translate/EXTEND.md"
   ],
@@ -47,6 +48,11 @@
     "Chinese and English external source URL sets and structural counts must match.",
     "No unhandled Chinese text may remain in English content.",
     "No horizontal overflow or clipped content at the required viewport matrix.",
+    "Every visible label, badge, heading, URL and control stays inside its owning grid or flex cell and does not intersect a non-ancestor sibling; validation uses rendered text ranges rather than element boxes alone.",
+    "English heat-row labels use at least a 172px column above 620px, stack at 620px and below, and never cross into or overlap the content column.",
+    "English panel headings and their context labels never overlap, and stack at 920px and below.",
+    "The visible logo control and language switch are vertically aligned at 44px high, with language targets at least 44px high.",
+    "The rendered heat-row overlap gate must pass and must not be bypassed or weakened.",
     "Do not push when any validation fails."
   ],
   "commands": [

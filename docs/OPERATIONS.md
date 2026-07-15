@@ -72,7 +72,7 @@ node .\scripts\render-check.cjs
 - 站内导航、语言切换和上一期/下一期链接
 - 与翻译审核记录绑定的中英首页“最近更新”时间
 
-`verify-site.ps1` 负责内容、哈希、路径、链接和 SEO 属性验证。`render-check.cjs` 负责真实 Chrome 中的桌面、平板、手机和窄屏渲染验收。
+`verify-site.ps1` 负责内容、哈希、路径、链接和 SEO 属性验证。`render-check.cjs` 负责真实 Chrome 中的桌面、平板、手机、窄屏和关键断点渲染验收，并用真实文字边界硬性检测英文热区、面板标题、相邻单元重叠、整页裁切以及 Logo/语言切换对齐。
 
 ## 4. 提交与部署
 

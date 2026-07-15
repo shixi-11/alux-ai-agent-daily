@@ -17,6 +17,7 @@ const archiveZh = JSON.parse(fs.readFileSync(path.join(publicRoot, 'archive.json
 const archiveEn = JSON.parse(fs.readFileSync(path.join(publicRoot, 'en', 'archive.json'), 'utf8'));
 const reportCount = archiveZh.reports.length;
 const latestDate = archiveZh.latest.date;
+const fixedLayoutRegressionDates = ['2026-07-15'];
 
 const viewports = [
   { name: 'wide', width: 1920, height: 1080 },
@@ -90,6 +91,35 @@ async function inspectCommon(page, options = {}) {
   return page.evaluate(({ checkOrphans, reportPage }) => {
     const width = document.documentElement.clientWidth;
     const bodyWidth = document.body.scrollWidth;
+    const rectSnapshot = (rect) => ({
+      left: Math.round(rect.left * 10) / 10,
+      right: Math.round(rect.right * 10) / 10,
+      top: Math.round(rect.top * 10) / 10,
+      bottom: Math.round(rect.bottom * 10) / 10,
+      width: Math.round(rect.width * 10) / 10,
+      height: Math.round(rect.height * 10) / 10,
+    });
+    const textRects = (root) => {
+      if (!root) return [];
+      const rects = [];
+      const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+      while (walker.nextNode()) {
+        const textNode = walker.currentNode;
+        if (!textNode.data.trim()) continue;
+        const range = document.createRange();
+        range.selectNodeContents(textNode);
+        for (const rect of range.getClientRects()) {
+          if (rect.width > 0 && rect.height > 0) rects.push(rectSnapshot(rect));
+        }
+      }
+      return rects;
+    };
+    const rectsIntersect = (a, b, tolerance = 1) =>
+      Math.min(a.right, b.right) - Math.max(a.left, b.left) > tolerance &&
+      Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top) > tolerance;
+    const rectEscapesHorizontally = (rect, owner, tolerance = 1) =>
+      rect.left < owner.left - tolerance ||
+      rect.right > owner.right + tolerance;
     const offenders = [...document.querySelectorAll('body *')]
       .map((node) => {
         const rect = node.getBoundingClientRect();
@@ -149,6 +179,69 @@ async function inspectCommon(page, options = {}) {
     }
 
     const favicon = document.querySelector('link[rel="icon"]');
+    const heatRowBleeds = [...document.querySelectorAll('.heat-row')]
+      .flatMap((row, index) => {
+        const labelCell = row.children[0];
+        const contentCell = row.children[1];
+        if (!labelCell || !contentCell) return [];
+        const labelRect = rectSnapshot(labelCell.getBoundingClientRect());
+        const contentRect = rectSnapshot(contentCell.getBoundingClientRect());
+        const escapedText = textRects(labelCell).filter(
+          (rect) => rectEscapesHorizontally(rect, labelRect) || rectsIntersect(rect, contentRect),
+        );
+        const scrollOverflow = labelCell.clientWidth > 0 && labelCell.scrollWidth > labelCell.clientWidth + 2;
+        return escapedText.length || scrollOverflow
+          ? [{
+              index,
+              label: labelCell.textContent.replace(/\s+/g, ' ').trim(),
+              labelRect,
+              contentRect,
+              escapedText: escapedText.slice(0, 8),
+              scrollWidth: labelCell.scrollWidth,
+              clientWidth: labelCell.clientWidth,
+            }]
+          : [];
+      })
+      .slice(0, 12);
+    const panelHeadBleeds = [...document.querySelectorAll('.panel-head')]
+      .flatMap((head, index) => {
+        const title = head.querySelector('strong');
+        const context = head.querySelector('span');
+        if (!title || !context) return [];
+        const titleOwner = rectSnapshot(title.getBoundingClientRect());
+        const contextOwner = rectSnapshot(context.getBoundingClientRect());
+        const titleText = textRects(title);
+        const contextText = textRects(context);
+        // Text glyphs can optically overhang their flex item by a few pixels even when
+        // there is still a clean gap. Allow that font overhang, but never allow real
+        // title/context intersections or material overflow.
+        const escapedTitle = titleText.filter((rect) => rectEscapesHorizontally(rect, titleOwner, 6));
+        const escapedContext = contextText.filter((rect) => rectEscapesHorizontally(rect, contextOwner, 6));
+        const intersections = titleText.flatMap((titleRect) =>
+          contextText
+            .filter((contextRect) => rectsIntersect(titleRect, contextRect))
+            .map((contextRect) => ({ titleRect, contextRect })),
+        );
+        const scrollOverflow =
+          (title.clientWidth > 0 && title.scrollWidth > title.clientWidth + 6) ||
+          (context.clientWidth > 0 && context.scrollWidth > context.clientWidth + 6);
+        return escapedTitle.length || escapedContext.length || intersections.length || scrollOverflow
+          ? [{
+              index,
+              title: title.textContent.replace(/\s+/g, ' ').trim().slice(0, 100),
+              context: context.textContent.replace(/\s+/g, ' ').trim().slice(0, 100),
+              titleOwner,
+              contextOwner,
+              escapedTitle: escapedTitle.slice(0, 6),
+              escapedContext: escapedContext.slice(0, 6),
+              intersections: intersections.slice(0, 6),
+              scrollOverflow,
+            }]
+          : [];
+      })
+      .slice(0, 12);
+    const brandControl = document.querySelector('.brand-mark') || document.querySelector('.report-sitebrand');
+    const languageSwitch = document.querySelector('.language-switch');
     return {
       bodyWidth,
       viewportWidth: width,
@@ -159,8 +252,12 @@ async function inspectCommon(page, options = {}) {
       monthLines: [...document.querySelectorAll('.month-strip h3')].map(countLines),
       dateLines: countLines(document.querySelector('.fact:last-child b')),
       reportCount: document.querySelectorAll('.report-row').length,
-      navHeight: document.querySelector('.nav-latest')?.getBoundingClientRect().height || 0,
+      navHeight: document.querySelector('.nav-latest, .report-sitenav > a')?.getBoundingClientRect().height || 0,
       languageHeight: document.querySelector('.language-switch a')?.getBoundingClientRect().height || 0,
+      brandControlHeight: brandControl?.getBoundingClientRect().height || 0,
+      languageSwitchHeight: languageSwitch?.getBoundingClientRect().height || 0,
+      heatRowBleeds,
+      panelHeadBleeds,
     };
   }, options);
 }
@@ -187,6 +284,9 @@ async function inspectHomepage(browser, locale, viewport) {
   if (result.currentLang !== locale.currentLang) throw new Error(`${locale.key}/${viewport.name}: language state mismatch ${result.currentLang}`);
   if (result.navHeight < 43) throw new Error(`${locale.key}/${viewport.name}: latest nav target too short ${result.navHeight}`);
   if (result.languageHeight < 43) throw new Error(`${locale.key}/${viewport.name}: language target too short ${result.languageHeight}`);
+  if (Math.abs(result.brandControlHeight - result.languageSwitchHeight) > 1) {
+    throw new Error(`${locale.key}/${viewport.name}: logo/language controls misaligned ${result.brandControlHeight}/${result.languageSwitchHeight}`);
+  }
   if (result.orphanBlocks.length) throw new Error(`${locale.key}/${viewport.name}: Chinese orphan lines ${JSON.stringify(result.orphanBlocks)}`);
   if (viewport.capture) await page.screenshot({ path: path.join(artifactRoot, `homepage-${locale.key}-${viewport.name}.png`), fullPage: true });
   await page.close();
@@ -196,7 +296,58 @@ async function inspectHomepage(browser, locale, viewport) {
 function sampleReportUrls(locale) {
   const reports = locale.archive.reports;
   const indexes = [0, Math.floor((reports.length - 1) / 2), reports.length - 1];
-  return [...new Set(indexes.map((index) => reports[index].url))];
+  const fixedUrls = fixedLayoutRegressionDates
+    .map((date) => reports.find((report) => report.date === date)?.url)
+    .filter(Boolean);
+  return [...new Set([...indexes.map((index) => reports[index].url), ...fixedUrls])];
+}
+
+async function auditAllEnglishLayouts(browser) {
+  const auditViewports = [
+    ...viewports,
+    { name: 'heat-breakpoint-above', width: 621, height: 900 },
+    { name: 'panel-breakpoint-below', width: 920, height: 900 },
+    { name: 'panel-breakpoint-above', width: 921, height: 900 },
+  ];
+  const results = {};
+  const page = await browser.newPage({ viewport: { width: 1440, height: 1000 }, deviceScaleFactor: 1 });
+  try {
+    for (const viewport of auditViewports) {
+      await page.setViewportSize({ width: viewport.width, height: viewport.height });
+      let heatRowsChecked = 0;
+      for (const report of archiveEn.reports) {
+        await page.goto(`http://127.0.0.1:${port}${report.url}`, { waitUntil: 'networkidle' });
+        const common = await inspectCommon(page, { checkOrphans: false, reportPage: true });
+        const heatRowCount = await page.locator('.heat-row').count();
+        if (heatRowCount !== 4) throw new Error(`en/${viewport.name}${report.url}: expected 4 heat rows, got ${heatRowCount}`);
+        if (common.bodyWidth > common.viewportWidth) {
+          throw new Error(`en/${viewport.name}${report.url}: horizontal overflow ${common.bodyWidth}/${common.viewportWidth}`);
+        }
+        if (common.offenders.length) {
+          throw new Error(`en/${viewport.name}${report.url}: clipped elements ${JSON.stringify(common.offenders)}`);
+        }
+        if (common.heatRowBleeds.length) {
+          throw new Error(`en/${viewport.name}${report.url}: heat-row label overlap ${JSON.stringify(common.heatRowBleeds)}`);
+        }
+        if (common.panelHeadBleeds.length) {
+          throw new Error(`en/${viewport.name}${report.url}: panel-head overlap ${JSON.stringify(common.panelHeadBleeds)}`);
+        }
+        if (Math.abs(common.brandControlHeight - common.languageSwitchHeight) > 1) {
+          throw new Error(`en/${viewport.name}${report.url}: logo/language controls misaligned ${common.brandControlHeight}/${common.languageSwitchHeight}`);
+        }
+        heatRowsChecked += heatRowCount;
+      }
+      results[viewport.name] = {
+        width: viewport.width,
+        reportsChecked: archiveEn.reports.length,
+        heatRowsChecked,
+        failures: 0,
+      };
+    }
+  } finally {
+    await page.close();
+  }
+  return results;
 }
 
 async function inspectReport(browser, locale, viewport, url, capture) {
@@ -219,6 +370,15 @@ async function inspectReport(browser, locale, viewport, url, capture) {
   if (!result.canonical?.startsWith('https://ai-agent-daily.alux.network/')) throw new Error(`${locale.key}/${viewport.name}${url}: canonical mismatch`);
   if (result.externalLinks === 0) throw new Error(`${locale.key}/${viewport.name}${url}: external sources missing`);
   if (result.favicon !== '/assets/alux-mark.png') throw new Error(`${locale.key}/${viewport.name}${url}: favicon missing`);
+  if (result.heatRowBleeds.length) throw new Error(`${locale.key}/${viewport.name}${url}: heat-row label overlap ${JSON.stringify(result.heatRowBleeds)}`);
+  if (result.panelHeadBleeds.length) throw new Error(`${locale.key}/${viewport.name}${url}: panel-head overlap ${JSON.stringify(result.panelHeadBleeds)}`);
+  if (result.viewportWidth > 620 && result.navHeight < 43) {
+    throw new Error(`${locale.key}/${viewport.name}${url}: latest nav target too short ${result.navHeight}`);
+  }
+  if (result.languageHeight < 43) throw new Error(`${locale.key}/${viewport.name}${url}: language target too short ${result.languageHeight}`);
+  if (Math.abs(result.brandControlHeight - result.languageSwitchHeight) > 1) {
+    throw new Error(`${locale.key}/${viewport.name}${url}: logo/language controls misaligned ${result.brandControlHeight}/${result.languageSwitchHeight}`);
+  }
   if (result.orphanBlocks.length) throw new Error(`${locale.key}/${viewport.name}${url}: Chinese orphan lines ${JSON.stringify(result.orphanBlocks)}`);
   if (capture) {
     const date = url.split('/').filter(Boolean).slice(-3).join('-');
@@ -233,7 +393,7 @@ async function inspectReport(browser, locale, viewport, url, capture) {
   await new Promise((resolve) => server.listen(port, '127.0.0.1', resolve));
   if (!chromeExecutable) throw new Error('Google Chrome executable was not found');
   const browser = await chromium.launch({ headless: true, executablePath: chromeExecutable });
-  const results = { latestDate, reportCount, homepages: {}, reports: {} };
+  const results = { latestDate, reportCount, homepages: {}, reports: {}, allEnglishLayouts: {} };
   try {
     for (const locale of locales) {
       results.homepages[locale.key] = {};
@@ -250,6 +410,7 @@ async function inspectReport(browser, locale, viewport, url, capture) {
         }
       }
     }
+    results.allEnglishLayouts = await auditAllEnglishLayouts(browser);
     process.stdout.write(`${JSON.stringify(results, null, 2)}\n`);
   } finally {
     await browser.close();

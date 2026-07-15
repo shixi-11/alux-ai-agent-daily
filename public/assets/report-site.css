@@ -43,15 +43,16 @@
   content: "";
   display: grid;
   place-items: center;
-  width: 30px;
-  height: 30px;
-  flex: 0 0 30px;
+  box-sizing: border-box;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
   border: 1px solid #d7dfe5;
   background-color: #fff;
   background-image: url("/assets/alux-mark.png");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 21px 21px;
+  background-size: 26px 26px;
 }
 
 .report-sitenav {
@@ -75,10 +76,12 @@
 
 .language-switch {
   display: inline-flex;
-  align-items: center;
-  padding: 2px;
-  border: 1px solid #aeb9c6;
+  align-items: stretch;
+  height: 44px;
+  padding: 0;
+  border: 0;
   background: rgba(255, 255, 255, .86);
+  box-shadow: inset 0 0 0 1px #aeb9c6;
 }
 
 .language-switch a {
@@ -173,6 +176,61 @@ html[lang="en-US"] .section h2 {
   text-wrap: balance;
 }
 
+html[lang="en-US"] .heat-row {
+  grid-template-columns: minmax(172px, .62fr) minmax(0, 1.38fr);
+  gap: 18px;
+  align-items: start;
+}
+
+html[lang="en-US"] .heat-row > div:first-child {
+  min-width: 0;
+}
+
+html[lang="en-US"] .heat-row strong {
+  white-space: normal;
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+
+html[lang="en-US"] .heat-row .strength {
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: break-word;
+  text-align: center;
+}
+
+html[lang="en-US"] .intel-panel,
+html[lang="en-US"] .panel-head,
+html[lang="en-US"] .panel-head > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+html[lang="en-US"] .panel-head strong {
+  flex: 0 1 48%;
+  white-space: normal;
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+
+html[lang="en-US"] .panel-head span {
+  flex: 1 1 52%;
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 920px) {
+  html[lang="en-US"] .panel-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  html[lang="en-US"] .panel-head span {
+    width: 100%;
+    text-align: left;
+  }
+}
+
 @media (max-width: 620px) {
   .report-sitebar,
   .report-sitefooter {
@@ -199,6 +257,24 @@ html[lang="en-US"] .section h2 {
 
   .language-switch a {
     min-width: 44px;
+  }
+
+  html[lang="en-US"] .heat-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+    align-items: start;
+  }
+
+  html[lang="en-US"] .heat-row > div:first-child {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 10px;
+  }
+
+  html[lang="en-US"] .heat-row strong,
+  html[lang="en-US"] .heat-row .strength {
+    margin: 0;
   }
 
   .report-sitefooter {
