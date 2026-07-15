@@ -81,8 +81,9 @@ node .\scripts\render-check.cjs
 - 新增或修正后的中文母稿
 - 对应英文精修母稿
 - 翻译清单
-- 如有改动的术语表、模板、脚本和说明
 - 重建后的 `public/`
+
+日常日报发布不得顺带提交术语表、模板、脚本、说明或任何内部工作文件；这些仓库维护改动应单独审查、单独提交。OpenClaw prompt、research packet、本地 manifest/ledger、工作日志、截图、工具输出和本地路径永远不属于正式站点发布物。
 
 提交消息使用：
 
@@ -90,7 +91,7 @@ node .\scripts\render-check.cjs
 发布 YYYY-MM-DD 中英双语日报
 ```
 
-推送 `main` 后 Vercel 自动部署。验收时以正式域名为准，检查中英首页、最新页、最早/中间/最新三期日期页、语言往返切换、归档清单与 sitemap。
+推送 `main` 后 Vercel 自动部署。运行 `node scripts/verify-official-deployment.cjs YYYY-MM-DD`，以正式域名检查中英首页、最新页、当期中英日期页、语言往返切换和部署成品哈希；通过前不得向 Telegram 宣布发布完成。
 
 ## 5. 新电脑或新 Agent 接班
 

@@ -62,21 +62,13 @@ $latestReviewedAt = @(
             throw "$($_.date) 缺少有效的 reviewedAt。"
         }
         try {
-            [datetimeoffset]::Parse(
-                [string]$_.reviewedAt,
-                [System.Globalization.CultureInfo]::InvariantCulture,
-                [System.Globalization.DateTimeStyles]::RoundtripKind
-            ).UtcDateTime
+            Convert-ToUtcDateTime -Value $_.reviewedAt
         } catch {
             throw "$($_.date) reviewedAt 不是有效的 ISO 8601 时间。"
         }
     } | Sort-Object -Descending
 )[0]
-$archiveGeneratedAt = [datetimeoffset]::Parse(
-    [string]$chineseArchive.generatedAt,
-    [System.Globalization.CultureInfo]::InvariantCulture,
-    [System.Globalization.DateTimeStyles]::RoundtripKind
-).UtcDateTime
+$archiveGeneratedAt = Convert-ToUtcDateTime -Value $chineseArchive.generatedAt
 if ($archiveGeneratedAt -ne $latestReviewedAt) {
     throw '首页、归档的最近更新时间没有与最新审核状态一起更新。'
 }

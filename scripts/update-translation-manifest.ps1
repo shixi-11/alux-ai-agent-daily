@@ -79,7 +79,7 @@ foreach ($sourceFile in $sourceFiles) {
     $reviewedAt = $null
     if ($MarkReviewed) {
         $sameReviewed = $old -and $old.status -eq 'reviewed' -and [string]$old.sourceSha256 -eq $sourceHash -and [string]$old.translationSha256 -eq $translationHash
-        $reviewedAt = if ($sameReviewed) { [string]$old.reviewedAt } else { [datetime]::UtcNow.ToString('o') }
+        $reviewedAt = if ($sameReviewed) { Convert-ToUtcIsoString -Value $old.reviewedAt } else { [datetime]::UtcNow.ToString('o') }
     }
     $existingByDate[$dateIso] = [pscustomobject][ordered]@{
         date = $dateIso

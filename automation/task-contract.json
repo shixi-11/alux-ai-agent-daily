@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contractVersion": "2.2.0",
+  "contractVersion": "2.3.0",
   "task": "ALUX AI Agent Intelligence Daily bilingual publish",
   "schedulePolicy": "Preserve the existing OpenClaw schedule and timezone; replace only the task workflow.",
   "automationTimezone": "preserve-existing",
@@ -41,9 +41,32 @@
     "Mark the translation reviewed and refresh source/translation hashes.",
     "Build both locales and update both homepages, latest routes, dated routes, archives and sitemap together.",
     "Run structural, hash, link, SEO and multi-viewport rendering checks.",
-    "Commit Chinese source, English source, manifest and public output together; push main.",
-    "Verify the official domain after Vercel finishes deployment."
+    "Reject every daily change outside the official release allowlist.",
+    "Commit Chinese source, English source, translation manifest and public output together; push main.",
+    "Verify the official domain and deployed file hashes after Vercel finishes deployment.",
+    "Only after official-domain verification, send the matching Chinese HTML attachment and the fixed multiline Telegram message."
   ],
+  "repositoryPublishAllowlist": [
+    "content/zh/YYYYMMDD_ALUX_AI智能体情报日报.html",
+    "content/en/YYYYMMDD.body.html",
+    "content/en/translation-manifest.json",
+    "public/**"
+  ],
+  "repositoryPublishDenyExamples": [
+    "OpenClaw prompts",
+    "research packets",
+    "local manifests and ledgers",
+    "work logs and tool output",
+    "screenshots and render artifacts",
+    "local paths, credentials and self-talk"
+  ],
+  "telegramDelivery": {
+    "target": "configured-private-recipient",
+    "attachment": "content/zh/YYYYMMDD_ALUX_AI智能体情报日报.html",
+    "sendAfter": "official deployment verification passes",
+    "preserveBlankLines": true,
+    "messageTemplate": "【ALUX AI智能体情报日报】\n\n中文站：\nhttps://ai-agent-daily.alux.network/\n\n英文站：\nhttps://ai-agent-daily.alux.network/en/\n\nYYYY-MM-DD：\nhttps://ai-agent-daily.alux.network/YYYY/MM/DD/"
+  },
   "atomicReleaseFields": [
     "homepage latest date",
     "homepage latest title and summary",
@@ -67,13 +90,16 @@
     "English panel headings and their context labels never overlap, and stack at 920px and below.",
     "The visible logo control and language switch are vertically aligned at 44px high, with language targets at least 44px high.",
     "The rendered heat-row overlap gate must pass and must not be bypassed or weakened.",
+    "No file outside repositoryPublishAllowlist may enter a daily release commit.",
+    "Telegram delivery is blocked until the official domain serves byte-equivalent current home, latest and dated pages.",
     "Do not push when any validation fails."
   ],
   "commands": [
-    "powershell -NoProfile -ExecutionPolicy Bypass -File .\\scripts\\update-translation-manifest.ps1 -Date YYYY-MM-DD -MarkReviewed",
-    "powershell -NoProfile -ExecutionPolicy Bypass -File .\\scripts\\sync-reports.ps1",
-    "powershell -NoProfile -ExecutionPolicy Bypass -File .\\scripts\\verify-site.ps1",
-    "node .\\scripts\\render-check.cjs",
-    "powershell -NoProfile -ExecutionPolicy Bypass -File .\\scripts\\publish.ps1"
+    "pwsh -NoProfile -File ./scripts/update-translation-manifest.ps1 -Date YYYY-MM-DD -MarkReviewed",
+    "pwsh -NoProfile -File ./scripts/sync-reports.ps1",
+    "pwsh -NoProfile -File ./scripts/verify-site.ps1",
+    "node ./scripts/render-check.cjs",
+    "pwsh -NoProfile -File ./scripts/publish.ps1",
+    "node ./scripts/verify-official-deployment.cjs YYYY-MM-DD"
   ]
 }

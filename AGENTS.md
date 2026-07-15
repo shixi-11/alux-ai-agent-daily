@@ -2,7 +2,7 @@
 
 本文件是所有继续维护者的第一入口。克隆或同步仓库后，先读本文件，再读 `README.md`、`AUTOMATION.md`、`docs/OPERATIONS.md`、`docs/RESPONSIVE_LAYOUT_STANDARD.md` 与 `docs/SHARE_CARD_STANDARD.md`。OpenClaw Agent 还必须读 `automation/OPENCLAW_DAILY_TASK.md`，并用该合同升级现有定时任务的正文。
 
-当前自动化合同版本为 `2.2.0`。OpenClaw 发现现有日报任务没有 `[ALUX_DAILY_CONTRACT_VERSION: 2.2.0]` 时，必须保留原任务 ID、执行时间、时区和凭据，只替换任务正文并完成一次 dry run；不得另建一个重复任务。
+当前自动化合同版本为 `2.3.0`。OpenClaw 发现现有日报任务没有 `[ALUX_DAILY_CONTRACT_VERSION: 2.3.0]` 时，必须保留原任务 ID、执行时间、时区和凭据，只替换任务正文并完成一次 dry run；不得另建一个重复任务。
 
 ## 任务目标
 
@@ -47,7 +47,8 @@
    node .\scripts\render-check.cjs
    ```
 
-7. 检查生成截图和验证输出；只有全部通过后才可提交和推送。
+7. 检查生成截图和验证输出；只有全部通过后才可提交和推送。日常发布使用 `scripts/publish.ps1`，它只允许当期中英文母稿、翻译清单和脚本生成的 `public/` 进入提交。
+8. 推送 `main` 后运行 `node scripts/verify-official-deployment.cjs YYYY-MM-DD`；只有正式域名的中英首页、最新页、日期页与本地成品哈希一致，才算发布完成。
 
 ## 翻译标准
 
@@ -81,6 +82,26 @@
 - 不在英文未审校、验证脚本失败或 Git 工作区含不明变更时发布。
 - 不修改、删除或覆盖历史日期链接。
 - 不把密钥、OAuth、`.env.local` 或 `.vercel/` 提交到 GitHub。
+- 不把 OpenClaw prompt、manifest、research packet、ledger、工作日志、质量门禁日志、截图、工具输出、自言自语或本地路径提交到 GitHub。日常提交白名单只有当期 `content/zh/`、`content/en/`、`content/en/translation-manifest.json` 与脚本重建的 `public/`。
+
+## OpenClaw Telegram 交付
+
+OpenClaw 只能在正式域名通过部署验证后发送当期中文 HTML 附件。正文固定为以下格式，空行必须保留：
+
+```text
+【ALUX AI智能体情报日报】
+
+中文站：
+https://ai-agent-daily.alux.network/
+
+英文站：
+https://ai-agent-daily.alux.network/en/
+
+YYYY-MM-DD：
+https://ai-agent-daily.alux.network/YYYY/MM/DD/
+```
+
+附件、中文站、英文站和日期页必须是同一期；不得发送 Vercel 预览域名、临时隧道或尚未部署完成的链接。
 
 ## 接续已有任务
 

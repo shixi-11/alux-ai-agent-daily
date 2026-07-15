@@ -53,6 +53,9 @@
 
 - [ ] Git 变更中包含中英母稿、翻译清单和重建后的 `public/`。
 - [ ] 没有提交 `.env.local`、`.vercel/`、密钥、缓存或截图临时文件。
+- [ ] 日常提交只包含当期 `content/zh/`、`content/en/`、翻译清单和 `public/`；没有 OpenClaw prompt、research packet、manifest、ledger、工作日志、工具输出、自言自语或本地路径。
 - [ ] 提交信息为 `发布 YYYY-MM-DD 中英双语日报`或清晰的站点修改说明。
 - [ ] 推送 `main` 后等待 Vercel 完成部署。
-- [ ] 在 <https://ai-agent-daily.alux.network/> 而不只是 Vercel 预览域名上完成线上验收。
+- [ ] 运行 `node scripts/verify-official-deployment.cjs YYYY-MM-DD`，确认正式域名的中英首页、最新页和日期页与本地成品哈希一致。
+- [ ] 在 <https://ai-agent-daily.alux.network/> 而不只是 Vercel 预览域名上完成线上验收；通过前不发 Telegram。
+- [ ] Telegram 中文 HTML 附件与官网是同一期，固定正文保留标题、中文站、英文站和日期页之间的空行。

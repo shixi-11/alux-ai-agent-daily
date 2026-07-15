@@ -130,11 +130,7 @@ foreach ($file in $sourceFiles) {
         throw "$dateIso 英文母稿缺少 reviewedAt，不能确定原子发布时间。"
     }
     try {
-        $reviewedAtUtc = [datetimeoffset]::Parse(
-            [string]$translationEntry.reviewedAt,
-            [System.Globalization.CultureInfo]::InvariantCulture,
-            [System.Globalization.DateTimeStyles]::RoundtripKind
-        ).UtcDateTime
+        $reviewedAtUtc = Convert-ToUtcDateTime -Value $translationEntry.reviewedAt
     } catch {
         throw "$dateIso reviewedAt 不是有效的 ISO 8601 时间：$($translationEntry.reviewedAt)"
     }
@@ -262,7 +258,7 @@ function New-ArchiveMarkup {
         [Parameter(Mandatory)] [string]$LatestDateIso
     )
     $builder = [System.Text.StringBuilder]::new()
-    $monthGroups = $Items | Group-Object { $_.date.ToString('yyyy-MM') }
+    $monthGroups = $Items | Group-Object { $_.date.ToString('yyyy-MM') } | Sort-Object Name -Descending
     foreach ($group in $monthGroups) {
         $monthDate = [datetime]::ParseExact($group.Name + '-01', 'yyyy-MM-dd', [System.Globalization.CultureInfo]::InvariantCulture)
         $monthLabel = if ($Language -eq 'zh-CN') { $monthDate.ToString('yyyy年M月') } else { $monthDate.ToString('MMMM yyyy', $EnglishCulture) }

@@ -6,11 +6,17 @@ const { chromium } = require('playwright');
 const siteRoot = path.resolve(__dirname, '..');
 const publicRoot = path.join(siteRoot, 'public');
 const artifactRoot = path.join(siteRoot, 'artifacts');
-const port = 8765;
+let port = Number.parseInt(process.env.RENDER_CHECK_PORT || '0', 10);
 const chromeCandidates = [
   process.env.CHROME_EXECUTABLE,
+  '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+  '/Applications/Chromium.app/Contents/MacOS/Chromium',
+  '/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge',
   'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
   'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe',
+  '/usr/bin/google-chrome',
+  '/usr/bin/chromium',
+  '/usr/bin/chromium-browser',
 ].filter(Boolean);
 const chromeExecutable = chromeCandidates.find((candidate) => fs.existsSync(candidate));
 const archiveZh = JSON.parse(fs.readFileSync(path.join(publicRoot, 'archive.json'), 'utf8'));
@@ -426,11 +432,14 @@ async function inspectReport(browser, locale, viewport, url, capture) {
 
 (async () => {
   fs.mkdirSync(artifactRoot, { recursive: true });
-  await new Promise((resolve) => server.listen(port, '127.0.0.1', resolve));
   if (!chromeExecutable) throw new Error('Google Chrome executable was not found');
-  const browser = await chromium.launch({ headless: true, executablePath: chromeExecutable });
-  const results = { latestDate, reportCount, homepages: {}, archiveHashCleanup: {}, reports: {}, allEnglishLayouts: {} };
+  await new Promise((resolve) => server.listen(port, '127.0.0.1', resolve));
+  const address = server.address();
+  if (address && typeof address === 'object') port = address.port;
+  let browser;
   try {
+    browser = await chromium.launch({ headless: true, executablePath: chromeExecutable });
+    const results = { latestDate, reportCount, homepages: {}, archiveHashCleanup: {}, reports: {}, allEnglishLayouts: {} };
     for (const locale of locales) {
       results.homepages[locale.key] = {};
       results.reports[locale.key] = {};
@@ -450,8 +459,8 @@ async function inspectReport(browser, locale, viewport, url, capture) {
     results.allEnglishLayouts = await auditAllEnglishLayouts(browser);
     process.stdout.write(`${JSON.stringify(results, null, 2)}\n`);
   } finally {
-    await browser.close();
-    await new Promise((resolve) => server.close(resolve));
+    if (browser) await browser.close();
+    if (server.listening) await new Promise((resolve) => server.close(resolve));
   }
 })().catch((error) => {
   process.stderr.write(`${error.stack || error.message}\n`);

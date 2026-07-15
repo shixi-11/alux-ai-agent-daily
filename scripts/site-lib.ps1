@@ -1,5 +1,35 @@
 ﻿Set-StrictMode -Version Latest
 
+function Convert-ToUtcDateTime {
+    param([Parameter(Mandatory)] [object]$Value)
+
+    if ($Value -is [datetimeoffset]) {
+        return ([datetimeoffset]$Value).UtcDateTime
+    }
+    if ($Value -is [datetime]) {
+        $dateTime = [datetime]$Value
+        if ($dateTime.Kind -eq [System.DateTimeKind]::Unspecified) {
+            return [datetime]::SpecifyKind($dateTime, [System.DateTimeKind]::Utc)
+        }
+        return $dateTime.ToUniversalTime()
+    }
+
+    $text = [string]$Value
+    if ([string]::IsNullOrWhiteSpace($text)) {
+        throw '时间值不能为空。'
+    }
+    return ([datetimeoffset]::Parse(
+        $text,
+        [System.Globalization.CultureInfo]::InvariantCulture,
+        [System.Globalization.DateTimeStyles]::RoundtripKind
+    )).UtcDateTime
+}
+
+function Convert-ToUtcIsoString {
+    param([Parameter(Mandatory)] [object]$Value)
+    return (Convert-ToUtcDateTime -Value $Value).ToString('o')
+}
+
 function Write-Utf8NoBom {
     param(
         [Parameter(Mandatory)] [string]$Path,

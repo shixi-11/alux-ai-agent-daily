@@ -2,18 +2,18 @@
 
 这个文件不替你改变原有定时执行时间。同步仓库后，请保留你当前自动化的 schedule 和时区，将任务正文升级为下面的完整流程。
 
-当前合同版本为 `2.2.0`。如果现有任务正文没有 `[ALUX_DAILY_CONTRACT_VERSION: 2.2.0]`，先完成一次任务升级并手动 dry run，再等待下一次定时执行；不要新建一个重复的定时任务。
+当前合同版本为 `2.3.0`。如果现有任务正文没有 `[ALUX_DAILY_CONTRACT_VERSION: 2.3.0]`，先完成一次任务升级并手动 dry run，再等待下一次定时执行；不要新建一个重复的定时任务。
 
 ## 应写入自动化的任务正文
 
 ```text
-[ALUX_DAILY_CONTRACT_VERSION: 2.2.0]
+[ALUX_DAILY_CONTRACT_VERSION: 2.3.0]
 
 你负责生成、翻译、验收并发布当日的 ALUX AI智能体情报日报。
 
 开始前：
 1. 拉取 GitHub 仓库 main 的最新内容。
-2. 完整阅读根目录 AGENTS.md、AUTOMATION.md、docs/REPORT_STYLE_GUIDE.md、docs/RESPONSIVE_LAYOUT_STANDARD.md、docs/DAILY_PUBLISH_CHECKLIST.md 和 .baoyu-skills/baoyu-translate/EXTEND.md。
+2. 完整阅读根目录 AGENTS.md、AUTOMATION.md、docs/OPERATIONS.md、docs/REPORT_STYLE_GUIDE.md、docs/RESPONSIVE_LAYOUT_STANDARD.md、docs/DAILY_PUBLISH_CHECKLIST.md、automation/task-contract.json 和 .baoyu-skills/baoyu-translate/EXTEND.md。
 3. 查看 git status、content/zh/ 最新日期、content/en/translation-manifest.json 与现有未完工作。如有未完的当期英文或审核，先续完，不新开日期。
 
 内容生成：
@@ -28,25 +28,39 @@
 10. 只有完成精修复核后，运行 scripts/update-translation-manifest.ps1 -Date YYYY-MM-DD -MarkReviewed。
 
 构建与验收：
-11. 运行 scripts/sync-reports.ps1。不手工编辑 public/index.html 或 public/latest/。脚本必须一次性更新中英首页的日期、标题、摘要、统计和最近更新时间，同时更新 /latest/、/en/latest/、日期页、归档清单和 sitemap。
+11. 使用当前系统可用的 PowerShell 7（macOS/Linux 用 `pwsh`）运行 scripts/sync-reports.ps1。不手工编辑 public/index.html 或 public/latest/。脚本必须一次性更新中英首页的日期、标题、摘要、统计和最近更新时间，同时更新 /latest/、/en/latest/、日期页、归档清单和 sitemap。
 12. 运行 scripts/verify-site.ps1 与 scripts/render-check.cjs。检查 1920、1440、1024、768、620、430、390、320 px，并检查 621、920、921 px 断点；布局必须与当前已验收站点保持一致。英文热区矩阵宽屏标签列不得低于 172px，620px 及以下改为单列；`.panel-head` 在 920px 及以下上下排列；Logo 与语言切换外框保持 44px 等高。任何文字越过所属单元、与相邻元素重叠或控件错位都必须停止发布。
 13. 确认语言切换往返同一期，上一期/下一期正确，ALUX 三角 favicon 正常，canonical 和 hreflang 正确。
 
 发布：
-14. 只有所有验收通过才能提交。同一次提交必须包含中文母稿、英文母稿、翻译清单和重建后的 public/。
+14. 只有所有验收通过才能提交。同一次提交必须包含中文母稿、英文母稿、翻译清单和重建后的 public/。日常发布白名单之外的任何文件出现改动都要停止，不得把研究包、manifest、ledger、prompt、日志、截图、工具输出或本地路径带进 GitHub。
 15. 提交信息使用“发布 YYYY-MM-DD 中英双语日报”，推送 main。
-16. 等待 Vercel 部署完成，在 https://ai-agent-daily.alux.network/ 验证中英首页、最新入口、当日中英日期页与语言切换。
+16. 等待 Vercel 部署完成，运行 `node scripts/verify-official-deployment.cjs YYYY-MM-DD`，在 https://ai-agent-daily.alux.network/ 验证中英首页、最新入口、当日中英日期页、语言切换和成品哈希。验证失败时不得发送 Telegram。
+17. 正式域名通过验证后，将当期中文 HTML 作为 `.html` 附件发送给 Telegram `configured-private-recipient`，正文必须严格使用以下格式并保留空行：
+
+【ALUX AI智能体情报日报】
+
+中文站：
+https://ai-agent-daily.alux.network/
+
+英文站：
+https://ai-agent-daily.alux.network/en/
+
+YYYY-MM-DD：
+https://ai-agent-daily.alux.network/YYYY/MM/DD/
 
 硬性规则：
 - 中文或英文任何一侧缺失、未 reviewed、哈希过期、验证失败或布局溢出时，整次发布停止。
 - 英文未完整通过分析、初译、审校和润色，或文风退化为逐字直译时，整次发布停止。
 - 不得删除、绕过或降级 `render-check.cjs` 的 `heat-row` 重叠检测来让发布通过。
 - 首页最新日期、最近更新时间、/latest/ 与 /en/latest/ 必须在同一次构建和同一次 Git 提交中更新，不得半套发布。
+- 不得使用临时隧道、Vercel 预览域名或旧公网链接替代正式域名；不得在正式域名验证通过前发 Telegram。
+- Telegram 文案中的空行是固定格式，不得压成一段，不得增添问候、工作过程、摘要或解释。
 ```
 
 ## 自动化修改后的验收
 
 - 任务定时和时区与原任务一致。
 - 任务正文已包含中英双语、精修审校、响应式验收、GitHub 推送和正式域名验收。
-- 失败时保留工作区和日志，不推送半成品。
+- 失败时保留本地工作区和日志，不推送半成品，也不把这些内部文件提交到 GitHub。
 - 下一次定时执行前，先用一次手动 dry run 确认新合同可执行。
