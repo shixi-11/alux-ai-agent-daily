@@ -2,7 +2,7 @@
 param(
     [string]$SourceRoot,
     [string]$SiteRoot,
-    [string]$BaseUrl = 'https://report.alux.network'
+    [string]$BaseUrl = 'https://ai-agent-daily.alux.network'
 )
 
 $ErrorActionPreference = 'Stop'

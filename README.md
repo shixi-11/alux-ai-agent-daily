@@ -32,5 +32,5 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\publish.ps1
 
 - 日报源文件：上一级 `AI智能体情报日报` 目录。
 - 日报站点仓库：当前 `日报站点` 目录。
-- 正式域名：`https://report.alux.network/`。
+- 正式域名：`https://ai-agent-daily.alux.network/`。
 - 不修改 `F:\shixi\ALUX\alux.network`，不复用官网仓库或官网 Vercel 项目。
