@@ -7,7 +7,7 @@
 持续追踪全球 AI Agent 的产品、技术、安全、融资与基础设施演进，<br>
 并将关键信号映射到生产级运行时、长交易、能力安全与可重放证据链。
 
-[中文首页](https://ai-agent-daily.alux.network/) · [English](https://ai-agent-daily.alux.network/en/) · [中文最新一期](https://ai-agent-daily.alux.network/latest/) · [English Latest](https://ai-agent-daily.alux.network/en/latest/) · [ALUX](https://alux.network/)
+[中文首页](https://ai.alux.network/daily/) · [English](https://ai.alux.network/daily/en/) · [中文最新一期](https://ai.alux.network/daily/latest/) · [English Latest](https://ai.alux.network/daily/en/latest/) · [ALUX](https://alux.network/)
 
 </div>
 
@@ -29,10 +29,10 @@
 
 | 内容 | 中文 | English |
 | --- | --- | --- |
-| 首页与完整归档 | [中文站](https://ai-agent-daily.alux.network/) | [English Site](https://ai-agent-daily.alux.network/en/) |
-| 始终指向最新一期 | [中文最新一期](https://ai-agent-daily.alux.network/latest/) | [English Latest](https://ai-agent-daily.alux.network/en/latest/) |
-| 固定日期地址 | `/YYYY/MM/DD/` | `/en/YYYY/MM/DD/` |
-| 机器可读归档 | [中文归档数据](https://ai-agent-daily.alux.network/archive.json) | [English Archive Data](https://ai-agent-daily.alux.network/en/archive.json) |
+| 首页与完整归档 | [中文站](https://ai.alux.network/daily/) | [English Site](https://ai.alux.network/daily/en/) |
+| 始终指向最新一期 | [中文最新一期](https://ai.alux.network/daily/latest/) | [English Latest](https://ai.alux.network/daily/en/latest/) |
+| 固定日期地址 | `/daily/YYYY/MM/DD/` | `/daily/en/YYYY/MM/DD/` |
+| 机器可读归档 | [中文归档数据](https://ai.alux.network/daily/archive.json) | [English Archive Data](https://ai.alux.network/daily/en/archive.json) |
 
 每期固定日期地址长期保留，不被后续日报覆盖。首页可以直接查看最新一期，也可以按日期查阅全部历史日报。
 
@@ -46,7 +46,7 @@
 
 ## 公开仓库
 
-本仓库持续保存中英文日报内容、站点文件与历史发布记录，便于长期归档、版本追踪和公开查阅。正式对外入口始终使用 [ai-agent-daily.alux.network](https://ai-agent-daily.alux.network/)。
+本仓库持续保存中英文日报内容、站点文件与历史发布记录，便于长期归档、版本追踪和公开查阅。正式对外主地址为 [ai.alux.network/daily](https://ai.alux.network/daily/)；原地址 [ai-agent-daily.alux.network](https://ai-agent-daily.alux.network/) 作为永久兼容入口保留，既有收藏、历史链接与二维码仍可继续使用。
 
 ## 维护与自动化
 

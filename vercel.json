@@ -6,6 +6,62 @@
   "outputDirectory": "public",
   "cleanUrls": true,
   "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/daily",
+      "has": [
+        {
+          "type": "host",
+          "value": "ai-agent-daily.alux.network"
+        }
+      ],
+      "destination": "https://ai.alux.network/daily/",
+      "permanent": true
+    },
+    {
+      "source": "/daily/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "ai-agent-daily.alux.network"
+        }
+      ],
+      "destination": "https://ai.alux.network/daily/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "ai-agent-daily.alux.network"
+        }
+      ],
+      "destination": "https://ai.alux.network/daily/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "ai.alux.network"
+        }
+      ],
+      "destination": "https://ai.alux.network/daily/",
+      "permanent": false
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/daily",
+      "destination": "/"
+    },
+    {
+      "source": "/daily/:path*",
+      "destination": "/:path*"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",

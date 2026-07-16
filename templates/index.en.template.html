@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/png" href="/assets/alux-mark.png">
-  <link rel="apple-touch-icon" href="/assets/alux-mark.png">
+  <link rel="icon" type="image/png" href="{{BASE_PATH}}/assets/alux-mark.png">
+  <link rel="apple-touch-icon" href="{{BASE_PATH}}/assets/alux-mark.png">
   <title>ALUX AI Agent Intelligence Daily</title>
   <meta name="description" content="ALUX AI Agent Intelligence Daily tracks the products, infrastructure, security, capital and production-runtime signals shaping AI agents worldwide.">
-  <link rel="canonical" href="{{BASE_URL}}/en/">
-  <link rel="alternate" hreflang="zh-CN" href="{{BASE_URL}}/">
-  <link rel="alternate" hreflang="en" href="{{BASE_URL}}/en/">
-  <link rel="alternate" hreflang="x-default" href="{{BASE_URL}}/">
+  <link rel="canonical" href="{{BASE_URL}}{{BASE_PATH}}/en/">
+  <link rel="alternate" hreflang="zh-CN" href="{{BASE_URL}}{{BASE_PATH}}/">
+  <link rel="alternate" hreflang="en" href="{{BASE_URL}}{{BASE_PATH}}/en/">
+  <link rel="alternate" hreflang="x-default" href="{{BASE_URL}}{{BASE_PATH}}/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="ALUX AI Agent Intelligence Daily">
   <meta property="og:description" content="The latest issue and the complete permanent archive.">
-  <meta property="og:url" content="{{BASE_URL}}/en/">
+  <meta property="og:url" content="{{BASE_URL}}{{BASE_PATH}}/en/">
   <meta name="theme-color" content="#14213d">
   <style>
     :root{--ink:#111827;--muted:#5d6877;--paper:#f4f7f8;--panel:#ffffff;--line:#d7dfe5;--navy:#14213d;--indigo:#22356f;--teal:#0f766e;--teal-soft:#e6f1ee;--amber:#9a6a16;--shadow:0 22px 60px rgba(20,33,61,.11)}
@@ -74,11 +74,11 @@
 </head>
 <body>
   <header class="shell topbar">
-    <a class="brand" href="/en/" aria-label="ALUX AI Agent Intelligence Daily home">
-      <span class="brand-mark"><img src="/assets/alux-mark.png" alt="" width="23" height="23"></span>
+    <a class="brand" href="{{BASE_PATH}}/en/" aria-label="ALUX AI Agent Intelligence Daily home">
+      <span class="brand-mark"><img src="{{BASE_PATH}}/assets/alux-mark.png" alt="" width="23" height="23"></span>
       <span class="brand-copy">ALUX AI Agent Intelligence Daily<small>Signals for Agent Infrastructure</small></span>
     </a>
-    <nav class="topnav" aria-label="Primary navigation"><a class="nav-latest" href="/en/latest/">Latest</a><a class="nav-archive" href="#archive">Archive</a><span class="language-switch" aria-label="Language switcher"><a href="/" lang="zh-CN">中</a><a href="/en/" lang="en" aria-current="page">EN</a></span></nav>
+    <nav class="topnav" aria-label="Primary navigation"><a class="nav-latest" href="{{BASE_PATH}}/en/latest/">Latest</a><a class="nav-archive" href="#archive">Archive</a><span class="language-switch" aria-label="Language switcher"><a href="{{BASE_PATH}}/" lang="zh-CN">中</a><a href="{{BASE_PATH}}/en/" lang="en" aria-current="page">EN</a></span></nav>
   </header>
 
   <main class="shell">
@@ -102,7 +102,7 @@
         </div>
         <div class="latest-actions">
           <a class="button" href="{{LATEST_URL}}">Read the Latest Issue&nbsp;↗</a>
-          <a class="text-link" href="/en/latest/">Permanent Latest URL</a>
+          <a class="text-link" href="{{BASE_PATH}}/en/latest/">Permanent Latest URL</a>
         </div>
       </article>
     </section>
@@ -119,7 +119,7 @@
 
   <footer class="shell">
     <span>ALUX AI Agent Intelligence Daily</span>
-    <span>Last updated (China Standard Time): {{GENERATED_AT}} · <a href="/en/archive.json">Archive Manifest</a></span>
+    <span>Last updated (China Standard Time): {{GENERATED_AT}} · <a href="{{BASE_PATH}}/en/archive.json">Archive Manifest</a></span>
   </footer>
   <script>
     (() => {

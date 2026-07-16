@@ -23,6 +23,7 @@ const archiveZh = JSON.parse(fs.readFileSync(path.join(publicRoot, 'archive.json
 const archiveEn = JSON.parse(fs.readFileSync(path.join(publicRoot, 'en', 'archive.json'), 'utf8'));
 const reportCount = archiveZh.reports.length;
 const latestDate = archiveZh.latest.date;
+const publicationPath = '/daily';
 const fixedLayoutRegressionDates = ['2026-07-15'];
 
 const viewports = [
@@ -39,7 +40,7 @@ const viewports = [
 const locales = [
   {
     key: 'zh',
-    home: '/',
+    home: `${publicationPath}/`,
     title: 'ALUX AI智能体情报日报',
     latestHref: archiveZh.latest.url,
     currentLang: 'zh-CN',
@@ -47,7 +48,7 @@ const locales = [
   },
   {
     key: 'en',
-    home: '/en/',
+    home: `${publicationPath}/en/`,
     title: 'ALUX AI Agent Intelligence Daily',
     latestHref: archiveEn.latest.url,
     currentLang: 'en',
@@ -65,7 +66,9 @@ const mimeTypes = {
 };
 
 function resolveRequest(urlPath) {
-  const clean = decodeURIComponent(urlPath.split('?')[0]);
+  let clean = decodeURIComponent(urlPath.split('?')[0]);
+  if (clean === publicationPath || clean === `${publicationPath}/`) clean = '/';
+  else if (clean.startsWith(`${publicationPath}/`)) clean = clean.slice(publicationPath.length);
   const relative = clean.replace(/^\/+/, '');
   let candidate = path.resolve(publicRoot, relative);
   if (!candidate.toLowerCase().startsWith(publicRoot.toLowerCase())) return null;
@@ -286,7 +289,7 @@ async function inspectHomepage(browser, locale, viewport) {
   if (result.offenders.length) throw new Error(`${locale.key}/${viewport.name}: clipped elements ${JSON.stringify(result.offenders)}`);
   if (result.monthLines.some((lines) => lines !== 1)) throw new Error(`${locale.key}/${viewport.name}: month heading wrapped ${result.monthLines}`);
   if (result.dateLines !== 1) throw new Error(`${locale.key}/${viewport.name}: archive range wrapped to ${result.dateLines} lines`);
-  if (!result.logoLoaded || result.favicon !== '/assets/alux-mark.png') throw new Error(`${locale.key}/${viewport.name}: ALUX logo/favicon missing`);
+  if (!result.logoLoaded || result.favicon !== '/daily/assets/alux-mark.png') throw new Error(`${locale.key}/${viewport.name}: ALUX logo/favicon missing`);
   if (result.currentLang !== locale.currentLang) throw new Error(`${locale.key}/${viewport.name}: language state mismatch ${result.currentLang}`);
   if (result.navHeight < 43) throw new Error(`${locale.key}/${viewport.name}: latest nav target too short ${result.navHeight}`);
   if (result.languageHeight < 43) throw new Error(`${locale.key}/${viewport.name}: language target too short ${result.languageHeight}`);
@@ -409,9 +412,9 @@ async function inspectReport(browser, locale, viewport, url, capture) {
   if (result.offenders.length) throw new Error(`${locale.key}/${viewport.name}${url}: clipped elements ${JSON.stringify(result.offenders)}`);
   if (result.sitebar !== 1 || result.footer !== 1) throw new Error(`${locale.key}/${viewport.name}${url}: site navigation missing`);
   if (!result.alternate) throw new Error(`${locale.key}/${viewport.name}${url}: language alternate missing`);
-  if (!result.canonical?.startsWith('https://ai-agent-daily.alux.network/')) throw new Error(`${locale.key}/${viewport.name}${url}: canonical mismatch`);
+  if (!result.canonical?.startsWith('https://ai.alux.network/daily/')) throw new Error(`${locale.key}/${viewport.name}${url}: canonical mismatch`);
   if (result.externalLinks === 0) throw new Error(`${locale.key}/${viewport.name}${url}: external sources missing`);
-  if (result.favicon !== '/assets/alux-mark.png') throw new Error(`${locale.key}/${viewport.name}${url}: favicon missing`);
+  if (result.favicon !== '/daily/assets/alux-mark.png') throw new Error(`${locale.key}/${viewport.name}${url}: favicon missing`);
   if (result.heatRowBleeds.length) throw new Error(`${locale.key}/${viewport.name}${url}: heat-row label overlap ${JSON.stringify(result.heatRowBleeds)}`);
   if (result.panelHeadBleeds.length) throw new Error(`${locale.key}/${viewport.name}${url}: panel-head overlap ${JSON.stringify(result.panelHeadBleeds)}`);
   if (result.viewportWidth > 620 && result.navHeight < 43) {

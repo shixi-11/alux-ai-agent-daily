@@ -63,10 +63,10 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\verify-site.ps1
 node .\scripts\render-check.cjs
 ```
 
-`sync-reports.ps1` 会同时生成：
+`sync-reports.ps1` 会同时生成下列内容，并统一发布在正式路径 `/daily/` 下：
 
 - 中英首页和全部日期页
-- `/latest/` 与 `/en/latest/`
+- `/daily/latest/` 与 `/daily/en/latest/`
 - 中英 `archive.json`
 - 带双语 alternate 的 `sitemap.xml`
 - 站内导航、语言切换和上一期/下一期链接
@@ -91,12 +91,18 @@ node .\scripts\render-check.cjs
 发布 YYYY-MM-DD 中英双语日报
 ```
 
-推送 `main` 后 Vercel 自动部署。运行 `node scripts/verify-official-deployment.cjs YYYY-MM-DD`，以正式域名检查中英首页、最新页、当期中英日期页、语言往返切换和部署成品哈希；通过前不得向 Telegram 宣布发布完成。
+推送 `main` 后 Vercel 自动部署。运行 `node scripts/verify-official-deployment.cjs YYYY-MM-DD`，在 <https://ai.alux.network/daily/> 检查中英首页、最新页、当期中英日期页、语言往返切换和部署成品哈希，并检查旧域名对应路径只经过一次 `308` 到新主地址；通过前不得向 Telegram 宣布发布完成。
 
-## 5. 新电脑或新 Agent 接班
+## 5. 域名与路由
+
+正式主地址为 <https://ai.alux.network/daily/>，<https://ai-agent-daily.alux.network/> 仅作为永久兼容入口。DNS 已完成配置，日常发布不需要也不得修改 DNS；公开路由、旧链接映射、验证门槛与 2026-07-16 迁移记录统一见 `docs/DOMAIN_ROUTING.md`。
+
+新生成页面的 canonical、hreflang、sitemap、二维码、分享卡和消息链接只允许使用新主地址。旧域名的中文、英文、最新与日期路径必须保持单次永久重定向，不得产生跳转链、`/daily/daily/` 或 404。
+
+## 6. 新电脑或新 Agent 接班
 
 1. 克隆仓库并进入仓库根目录。
-2. 阅读 `AGENTS.md`、`README.md`、本手册和翻译清单。
+2. 阅读 `AGENTS.md`、`README.md`、本手册、`docs/DOMAIN_ROUTING.md` 和翻译清单。
 3. 执行 `git status` 与验证脚本，确认仓库是已发布状态还是未完中间状态。
 4. 以 `content/zh/` 的最新日期为基准，检查英文母稿和翻译清单是否已对应。
 5. 如果三者已对齐，下一任务就是新增下一期；如果未对齐，先完成现有日期的翻译或审核，不开新期数。

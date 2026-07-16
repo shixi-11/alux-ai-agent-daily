@@ -1,212 +1,214 @@
 {
-  "schemaVersion": 2,
-  "locale": "en-US",
-  "generatedAt": "2026-07-15T10:54:58.3863787Z",
-  "baseUrl": "https://ai-agent-daily.alux.network/en",
-  "latest": {
-    "date": "2026-07-15",
-    "url": "/en/2026/07/15/",
-    "latestUrl": "/en/latest/",
-    "alternateUrl": "/2026/07/15/"
-  },
-  "reports": [
-    {
-      "date": "2026-07-15",
-      "title": "AI Agent — Identity and Recovery Converge",
-      "lead": "Today’s strongest new evidence comes from real execution boundaries: agent requests are beginning to carry verifiable machine identity, research tasks that run for ten hours depend on persistent logs and checkpoints, and multi-workspace products must recover the correct state after authorization expires or a daemon restarts.",
-      "url": "/en/2026/07/15/",
-      "alternateUrl": "/2026/07/15/",
-      "publicPath": "en/2026/07/15/index.html",
-      "sourceFile": "20260715.body.html",
-      "sha256": "3014a4f06c4c708ee4d3ab7dc633411ffa7014d6e1a415fa0706d42fe9d9c415",
-      "publicSha256": "3c609ec8ff409b98ffd302867a216011c07fe0de3fcb60cad752a54e14a793e7"
-    },
-    {
-      "date": "2026-07-14",
-      "title": "AI Agent — Recovery and Permission Controls Move Down the Stack",
-      "lead": "Today’s strongest new evidence comes from runtime mechanics: whether an agent can restore the correct capabilities after hibernation, preserve approval boundaries while unattended, and keep browser activity within authorized domains is becoming a production threshold.",
-      "url": "/en/2026/07/14/",
-      "alternateUrl": "/2026/07/14/",
-      "publicPath": "en/2026/07/14/index.html",
-      "sourceFile": "20260714.body.html",
-      "sha256": "2b872d6a302040b9b85b5ce36f719bf7ebf2f6041c20b2af4a954e8a474629a7",
-      "publicSha256": "fa54751f8fef8744c0bb1d408a952584574096267205311fc57c069f22b32864"
-    },
-    {
-      "date": "2026-07-13",
-      "title": "AI Agent — From Work Entry Points to Accountability Chains",
-      "lead": "The most important signal today is not a model score. Agents are entering corporate strategy, regulatory boundaries, device entry points, and hardware control paths at the same time. The brain keeps expanding, but the body, immune system, and social interfaces increasingly determine what can truly reach production.",
-      "url": "/en/2026/07/13/",
-      "alternateUrl": "/2026/07/13/",
-      "publicPath": "en/2026/07/13/index.html",
-      "sourceFile": "20260713.body.html",
-      "sha256": "d6ab16ca6e124099a3f79b349dfb03160098bc53142e3e3ba596c0c3bd208c0b",
-      "publicSha256": "42f0e8291c30d315de74bddcdb7df03e99b0cfca8b709d926888751b2dfa281b"
-    },
-    {
-      "date": "2026-07-12",
-      "title": "AI Agent — Parallel Brains Need an Accountable Body",
-      "lead": "Today’s high-value shift is not the arrival of yet another agent. It is the formal entry of parallel agents into model, SDK, and session products. At the same time, OAuth, system cards, and full-stack financing are driving the industry toward the same questions: who authorizes, how work is isolated, how execution recovers after failure, and how results are proven.",
-      "url": "/en/2026/07/12/",
-      "alternateUrl": "/2026/07/12/",
-      "publicPath": "en/2026/07/12/index.html",
-      "sourceFile": "20260712.body.html",
-      "sha256": "49413f841579ffbcee8f4dab8537c24dd101b23f74740f8c8a310a4a80f1584f",
-      "publicSha256": "00b10c0fd523c17980f2e4dbfbd02f29a23231b0cb31ec32fcf682cbde4174d9"
-    },
-    {
-      "date": "2026-07-11",
-      "title": "AI Agent — The Body and Its Boundaries Take Shape",
-      "lead": "AWS is turning isolation, state retention, and pause-and-resume into cloud primitives, while Tencent is productizing dedicated state spaces for agents at massive scale. Today’s strongest momentum is not in a new brain, but in R · Resilience / Body and S · Security / Immune System.",
-      "url": "/en/2026/07/11/",
-      "alternateUrl": "/2026/07/11/",
-      "publicPath": "en/2026/07/11/index.html",
-      "sourceFile": "20260711.body.html",
-      "sha256": "0f17270a2ba621aad5a5ea54fcfc757bb63f8b495bb9be000f5f09eea85975e6",
-      "publicSha256": "bd87b36edb49889cfc335937598fba2418fc816c1df119784cfbb4937ad32e33"
-    },
-    {
-      "date": "2026-07-10",
-      "title": "AI Agent — Production Accountability Moves into the Runtime",
-      "lead": "Today’s signals do not rely on grand narratives: frameworks are adding nested-state recovery, progressive tool disclosure, session TTL, execution graphs, and resource validation. For ALUX, the clearest opportunity is to consolidate these scattered fixes into a verifiable chain of accountability for long-running transactions.",
-      "url": "/en/2026/07/10/",
-      "alternateUrl": "/2026/07/10/",
-      "publicPath": "en/2026/07/10/index.html",
-      "sourceFile": "20260710.body.html",
-      "sha256": "d82a13664a0993473b1888264305dcfe2661ba021e9de4dac6f4ac04f11aa8a6",
-      "publicSha256": "47e2e54f98c38c7ca16f115f840cac437d55017b46ac929f76b34ed045f2a422"
-    },
-    {
-      "date": "2026-07-09",
-      "title": "AI Agent — Entering the Distributable, Isolated, and Auditable Phase",
-      "lead": "Today’s primary signal is that agents are no longer merely “running” inside IDEs, chat boxes, or internal automation. Across marketplaces, registries, runtime security, observability exports, and team sessions, they are becoming enterprise objects. The market is pushing agents beyond the feature layer and into the accountability boundary of the production-grade runtime.",
-      "url": "/en/2026/07/09/",
-      "alternateUrl": "/2026/07/09/",
-      "publicPath": "en/2026/07/09/index.html",
-      "sourceFile": "20260709.body.html",
-      "sha256": "d0ae2e51c9e9746fab18b3ffb476e88910ae11861566aa671da25f5f1d388741",
-      "publicSha256": "baf34d06af72646ddce61c4e267a4381a96883e6124bf4b6ea6dd2a325031d44"
-    },
-    {
-      "date": "2026-07-08",
-      "title": "AI Agent — The Connectivity Layer Is Standardizing",
-      "lead": "Today’s central signal is that competition in the agent industry continues to shift away from “How intelligent is the model?” and toward “Who controls the tools, resources, authorization, and runtime state?” Microsoft, GitHub, AAIF-adjacent gateway work, Qwen Code, and Arcade.dev all point to the same conclusion: a production-grade agent needs a production-grade runtime capable of handling long-running transactions, permissions, recovery, and audits.",
-      "url": "/en/2026/07/08/",
-      "alternateUrl": "/2026/07/08/",
-      "publicPath": "en/2026/07/08/index.html",
-      "sourceFile": "20260708.body.html",
-      "sha256": "03ff58bb6d486dfff3e0a29b8bbd30aaac8d769742d6c492379b5e4e16d0dab6",
-      "publicSha256": "8794a87d78baa2012a1e3d86670f923cbde6cc96423f75f33aa7020e71aadb77"
-    },
-    {
-      "date": "2026-07-07",
-      "title": "AI Agent — Recovery Takes Center Stage",
-      "lead": "Today’s dominant signal is that agents moving into production are colliding with real failures, real payments, real identities, and real connectivity. Codex is fixing remote recovery; AgentCore is adding payment governance; Gemini Enterprise is managing Agent Registry and egress policies; and LangGraph, Qwen Code, Cloudflare, and MCP are all tightening state, recovery, and capability boundaries.",
-      "url": "/en/2026/07/07/",
-      "alternateUrl": "/2026/07/07/",
-      "publicPath": "en/2026/07/07/index.html",
-      "sourceFile": "20260707.body.html",
-      "sha256": "3e09de2fa02f5fa311048fd5eccfb84d6cc4d5022b86af84f1f43f01b3eae4af",
-      "publicSha256": "0a0ba2141602248db2125b06172470daf9c9aaf1ea1db70a0bf0fcef050424b2"
-    },
-    {
-      "date": "2026-07-06",
-      "title": "AI Agent — Production Readiness Converges at the Runtime Layer",
-      "lead": "Today’s primary signal is a shift from “which agent can think better” to “which agent can organizations trust with real work.” Workspace Agents have reached their billing milestone; ADK 2.0 emphasizes deterministic workflows; and AgentCore, MCP, Qwen Code, and Cloudflare Agents are all pushing action, connectivity, state, and governance into production.",
-      "url": "/en/2026/07/06/",
-      "alternateUrl": "/2026/07/06/",
-      "publicPath": "en/2026/07/06/index.html",
-      "sourceFile": "20260706.body.html",
-      "sha256": "8277667e4f71c2cb23c1beb38e6be8c23ab2ec03d256dc71f36b5398cb2db0ad",
-      "publicSha256": "e57e03e025103fdbc6c2802f27d15d0c9edc85133fab25486cebf302ce0bdd3f"
-    },
-    {
-      "date": "2026-07-05",
-      "title": "AI Agent — The Immune System and Body Become the Main Battleground",
-      "lead": "Today’s central signal is that agent-platform risk is shifting away from model output and into the runtime chain of responsibility spanning credentials, tools, sandboxes, gateways, and team sessions. The broader ecosystem has already connected agents to real execution environments. ALUX should pursue not a smarter brain, but a complete machine that can recover, operate under explicit authorization, remain auditable, and collaborate across organizations.",
-      "url": "/en/2026/07/05/",
-      "alternateUrl": "/2026/07/05/",
-      "publicPath": "en/2026/07/05/index.html",
-      "sourceFile": "20260705.body.html",
-      "sha256": "ed8c88b74ca212bfedaccb497cf146dceb9d59d3e680d16eb204021409d9c1da",
-      "publicSha256": "6e69dfed2377f1cdfcc0beaaa4775cda4a3bf5c6012ab60810155dece03d3a65"
-    },
-    {
-      "date": "2026-07-04",
-      "title": "AI Agent — The Runtime Chain of Accountability Takes Shape",
-      "lead": "Today’s dominant signal is that agent work is moving beyond conversations into team channels, terminals, and cloud workflows. The brain keeps getting stronger; what remains scarce is a production-grade runtime that makes long-running transactions recoverable, explicitly authorized, replayable, and collaborative across organizations.",
-      "url": "/en/2026/07/04/",
-      "alternateUrl": "/2026/07/04/",
-      "publicPath": "en/2026/07/04/index.html",
-      "sourceFile": "20260704.body.html",
-      "sha256": "69e346ea5cb05b15163898dd20db4730e4320f4107a7e44d246439c9942387c4",
-      "publicSha256": "6a1fd8f12b5ec7c896138d115108fd14f41c783d83f84a2ddbadbd778e571360"
-    },
-    {
-      "date": "2026-07-03",
-      "title": "AI Agent — The Control Plane Moves Down into the Runtime",
-      "lead": "Today’s central signal is the shift from agents that “can do the work” to agents that enterprises can trust with the work. Multi-agent orchestration, connector governance, durable task queues, open-source coding agents, and Agent Gateway discussions are all intensifying, showing that the market is looking for a production-grade runtime capable of carrying long-running transactions, permissions, recovery, and audits.",
-      "url": "/en/2026/07/03/",
-      "alternateUrl": "/2026/07/03/",
-      "publicPath": "en/2026/07/03/index.html",
-      "sourceFile": "20260703.body.html",
-      "sha256": "a01238c30836467d971207a688edc32c94ab053777a44f53333676a86bbd57e8",
-      "publicSha256": "0f8713d508eecaabaa44a0909799c7f10cc8d31e4d715ea860b4415d5b99a45e"
-    },
-    {
-      "date": "2026-07-02",
-      "title": "AI Agent — From Workbench to Runtime",
-      "lead": "Today’s strongest signal is not a leap by any single model. It is the convergence of shared workspaces, long-horizon CLIs, browser agents, enterprise model permissions, and security funding—all pushing agents into the production chain of accountability. ALUX should focus on the two most critical elements of RISC: R | Resilience and S | Security.",
-      "url": "/en/2026/07/02/",
-      "alternateUrl": "/2026/07/02/",
-      "publicPath": "en/2026/07/02/index.html",
-      "sourceFile": "20260702.body.html",
-      "sha256": "0ae41b6bcef28d9772c49353a8f7842f8d62d97dbd26ce3c84d8a87fbb0251ee",
-      "publicSha256": "f9eccdbb61158af3d39fc59c9d179b916beb4ae9cd56a0367bc59b86624eb1da"
-    },
-    {
-      "date": "2026-07-01",
-      "title": "AI Agent — The Access Layer Starts Charging",
-      "lead": "Today’s central signal is clear: agents are no longer merely being tested inside tools. They are beginning to connect to cloud resources, enterprise knowledge bases, paid content, payment authorization, and security boundaries. The market is rapidly commoditizing “getting connected.” ALUX should claim the production-grade runtime that comes after connection: reliable execution, secure permissions, replayable audits, and future collaboration across companies.",
-      "url": "/en/2026/07/01/",
-      "alternateUrl": "/2026/07/01/",
-      "publicPath": "en/2026/07/01/index.html",
-      "sourceFile": "20260701.body.html",
-      "sha256": "8bb53bb55072a450692736930f50ce1f18cf71e903cb4a0a93c9c3ba7dceef91",
-      "publicSha256": "3f22527c0ba29ae71beae9e64fc074dac4bac5b30c2c69e9f7de5e5cd9322ff6"
-    },
-    {
-      "date": "2026-06-30",
-      "title": "AI Agent — Runtime Boundaries Come Into Focus",
-      "lead": "Today’s defining signal is that once agents connect to real economic actions and enterprise control planes, runtime boundaries are forced into view. Payments, gateways, persistent workspaces, local control-plane vulnerabilities, checkpoints, and observability all point to one conclusion: what enterprises actually need to buy is a production-grade runtime.",
-      "url": "/en/2026/06/30/",
-      "alternateUrl": "/2026/06/30/",
-      "publicPath": "en/2026/06/30/index.html",
-      "sourceFile": "20260630.body.html",
-      "sha256": "e2a908d890d99a255343593f459782728bd026732117f42a03f614363453880d",
-      "publicSha256": "aa44d243edb25fc86ebb18da70dbbbd3f1fc605155b28adbca69059cac184d41"
-    },
-    {
-      "date": "2026-06-29",
-      "title": "AI Agent — Long-Horizon Execution Becomes the Main Battleground",
-      "lead": "Today’s central signal is that AI agents are moving beyond “completing one task” toward working continuously under traceable constraints with recoverable state. OpenAI, Microsoft, AWS, LangChain, Langfuse, xAI, and Chinese open-source models all point to the same conclusion: model brains keep improving, but what enterprises truly want to buy is a production-grade runtime.",
-      "url": "/en/2026/06/29/",
-      "alternateUrl": "/2026/06/29/",
-      "publicPath": "en/2026/06/29/index.html",
-      "sourceFile": "20260629.body.html",
-      "sha256": "76c76489d7e630aaeea8e47daf57c05bb94fa97e6c2bd54a5691a77f8bf91689",
-      "publicSha256": "bf8b956bfb40904beca9601c8ded84d972eef57796686416cc966ab09e35d2d5"
-    },
-    {
-      "date": "2026-06-28",
-      "title": "AI Agent — Production Readiness Begins to Converge",
-      "lead": "Today’s central signal is not that models keep getting smarter, but that competition in enterprise agents is moving down into runtime governance. Web retrieval, identity and permissions, state recovery, evaluation and observability, and long-horizon execution are all being priced simultaneously by cloud providers, open-source frameworks, and capital markets.",
-      "url": "/en/2026/06/28/",
-      "alternateUrl": "/2026/06/28/",
-      "publicPath": "en/2026/06/28/index.html",
-      "sourceFile": "20260628.body.html",
-      "sha256": "6a2754e8e3aa062915812daa608256b063d5e686fd2bbe7fd34bb253e5394464",
-      "publicSha256": "1ccde461cf275e6f28b80cece175c8c077e605284f9cb7378e8fd1a33db09f76"
-    }
-  ]
+    "schemaVersion":  3,
+    "locale":  "en-US",
+    "generatedAt":  "2026-07-15T10:54:58.3863787Z",
+    "baseUrl":  "https://ai.alux.network",
+    "publicationPath":  "/daily/en",
+    "publicationUrl":  "https://ai.alux.network/daily/en/",
+    "latest":  {
+                   "date":  "2026-07-15",
+                   "url":  "/daily/en/2026/07/15/",
+                   "latestUrl":  "/daily/en/latest/",
+                   "alternateUrl":  "/daily/2026/07/15/"
+               },
+    "reports":  [
+                    {
+                        "date":  "2026-07-15",
+                        "title":  "AI Agent — Identity and Recovery Converge",
+                        "lead":  "Today’s strongest new evidence comes from real execution boundaries: agent requests are beginning to carry verifiable machine identity, research tasks that run for ten hours depend on persistent logs and checkpoints, and multi-workspace products must recover the correct state after authorization expires or a daemon restarts.",
+                        "url":  "/daily/en/2026/07/15/",
+                        "alternateUrl":  "/daily/2026/07/15/",
+                        "publicPath":  "en/2026/07/15/index.html",
+                        "sourceFile":  "20260715.body.html",
+                        "sha256":  "3014a4f06c4c708ee4d3ab7dc633411ffa7014d6e1a415fa0706d42fe9d9c415",
+                        "publicSha256":  "b448e1f4a8a89121675a4f97068e634519d3c97e7c4bb1848177eb6506c18bfe"
+                    },
+                    {
+                        "date":  "2026-07-14",
+                        "title":  "AI Agent — Recovery and Permission Controls Move Down the Stack",
+                        "lead":  "Today’s strongest new evidence comes from runtime mechanics: whether an agent can restore the correct capabilities after hibernation, preserve approval boundaries while unattended, and keep browser activity within authorized domains is becoming a production threshold.",
+                        "url":  "/daily/en/2026/07/14/",
+                        "alternateUrl":  "/daily/2026/07/14/",
+                        "publicPath":  "en/2026/07/14/index.html",
+                        "sourceFile":  "20260714.body.html",
+                        "sha256":  "2b872d6a302040b9b85b5ce36f719bf7ebf2f6041c20b2af4a954e8a474629a7",
+                        "publicSha256":  "35ccbc4dc6aba2303fb8728d22b9fa43af7ee693c4d6820b70f1dfee80be86c8"
+                    },
+                    {
+                        "date":  "2026-07-13",
+                        "title":  "AI Agent — From Work Entry Points to Accountability Chains",
+                        "lead":  "The most important signal today is not a model score. Agents are entering corporate strategy, regulatory boundaries, device entry points, and hardware control paths at the same time. The brain keeps expanding, but the body, immune system, and social interfaces increasingly determine what can truly reach production.",
+                        "url":  "/daily/en/2026/07/13/",
+                        "alternateUrl":  "/daily/2026/07/13/",
+                        "publicPath":  "en/2026/07/13/index.html",
+                        "sourceFile":  "20260713.body.html",
+                        "sha256":  "d6ab16ca6e124099a3f79b349dfb03160098bc53142e3e3ba596c0c3bd208c0b",
+                        "publicSha256":  "056446df4d59937d9ecb725b6f7bd8434c5c4e21e62c56b39bf2829a1e1a8bad"
+                    },
+                    {
+                        "date":  "2026-07-12",
+                        "title":  "AI Agent — Parallel Brains Need an Accountable Body",
+                        "lead":  "Today’s high-value shift is not the arrival of yet another agent. It is the formal entry of parallel agents into model, SDK, and session products. At the same time, OAuth, system cards, and full-stack financing are driving the industry toward the same questions: who authorizes, how work is isolated, how execution recovers after failure, and how results are proven.",
+                        "url":  "/daily/en/2026/07/12/",
+                        "alternateUrl":  "/daily/2026/07/12/",
+                        "publicPath":  "en/2026/07/12/index.html",
+                        "sourceFile":  "20260712.body.html",
+                        "sha256":  "49413f841579ffbcee8f4dab8537c24dd101b23f74740f8c8a310a4a80f1584f",
+                        "publicSha256":  "05622f043236f3497edb8a9e146c66ffcf48bbda6ccac5acf5626eb7d995d909"
+                    },
+                    {
+                        "date":  "2026-07-11",
+                        "title":  "AI Agent — The Body and Its Boundaries Take Shape",
+                        "lead":  "AWS is turning isolation, state retention, and pause-and-resume into cloud primitives, while Tencent is productizing dedicated state spaces for agents at massive scale. Today’s strongest momentum is not in a new brain, but in R · Resilience / Body and S · Security / Immune System.",
+                        "url":  "/daily/en/2026/07/11/",
+                        "alternateUrl":  "/daily/2026/07/11/",
+                        "publicPath":  "en/2026/07/11/index.html",
+                        "sourceFile":  "20260711.body.html",
+                        "sha256":  "0f17270a2ba621aad5a5ea54fcfc757bb63f8b495bb9be000f5f09eea85975e6",
+                        "publicSha256":  "a2e24f9741fe334f618d0f0559d6234eb10b1d3147b91898b2d7e633ffec234a"
+                    },
+                    {
+                        "date":  "2026-07-10",
+                        "title":  "AI Agent — Production Accountability Moves into the Runtime",
+                        "lead":  "Today’s signals do not rely on grand narratives: frameworks are adding nested-state recovery, progressive tool disclosure, session TTL, execution graphs, and resource validation. For ALUX, the clearest opportunity is to consolidate these scattered fixes into a verifiable chain of accountability for long-running transactions.",
+                        "url":  "/daily/en/2026/07/10/",
+                        "alternateUrl":  "/daily/2026/07/10/",
+                        "publicPath":  "en/2026/07/10/index.html",
+                        "sourceFile":  "20260710.body.html",
+                        "sha256":  "d82a13664a0993473b1888264305dcfe2661ba021e9de4dac6f4ac04f11aa8a6",
+                        "publicSha256":  "11819ecd1aba2f24311aee112ac43c1f9dad17d151c58f686354990c3b92bfdd"
+                    },
+                    {
+                        "date":  "2026-07-09",
+                        "title":  "AI Agent — Entering the Distributable, Isolated, and Auditable Phase",
+                        "lead":  "Today’s primary signal is that agents are no longer merely “running” inside IDEs, chat boxes, or internal automation. Across marketplaces, registries, runtime security, observability exports, and team sessions, they are becoming enterprise objects. The market is pushing agents beyond the feature layer and into the accountability boundary of the production-grade runtime.",
+                        "url":  "/daily/en/2026/07/09/",
+                        "alternateUrl":  "/daily/2026/07/09/",
+                        "publicPath":  "en/2026/07/09/index.html",
+                        "sourceFile":  "20260709.body.html",
+                        "sha256":  "d0ae2e51c9e9746fab18b3ffb476e88910ae11861566aa671da25f5f1d388741",
+                        "publicSha256":  "83620df7d0d0b28a180784c7471939e2c5fb6131c93b6cdea2c9f661691c5ece"
+                    },
+                    {
+                        "date":  "2026-07-08",
+                        "title":  "AI Agent — The Connectivity Layer Is Standardizing",
+                        "lead":  "Today’s central signal is that competition in the agent industry continues to shift away from “How intelligent is the model?” and toward “Who controls the tools, resources, authorization, and runtime state?” Microsoft, GitHub, AAIF-adjacent gateway work, Qwen Code, and Arcade.dev all point to the same conclusion: a production-grade agent needs a production-grade runtime capable of handling long-running transactions, permissions, recovery, and audits.",
+                        "url":  "/daily/en/2026/07/08/",
+                        "alternateUrl":  "/daily/2026/07/08/",
+                        "publicPath":  "en/2026/07/08/index.html",
+                        "sourceFile":  "20260708.body.html",
+                        "sha256":  "03ff58bb6d486dfff3e0a29b8bbd30aaac8d769742d6c492379b5e4e16d0dab6",
+                        "publicSha256":  "ab12952151be7a4a97800290d6e5a9a5e6d86d5434b60be3d931b8dcce1f6f38"
+                    },
+                    {
+                        "date":  "2026-07-07",
+                        "title":  "AI Agent — Recovery Takes Center Stage",
+                        "lead":  "Today’s dominant signal is that agents moving into production are colliding with real failures, real payments, real identities, and real connectivity. Codex is fixing remote recovery; AgentCore is adding payment governance; Gemini Enterprise is managing Agent Registry and egress policies; and LangGraph, Qwen Code, Cloudflare, and MCP are all tightening state, recovery, and capability boundaries.",
+                        "url":  "/daily/en/2026/07/07/",
+                        "alternateUrl":  "/daily/2026/07/07/",
+                        "publicPath":  "en/2026/07/07/index.html",
+                        "sourceFile":  "20260707.body.html",
+                        "sha256":  "3e09de2fa02f5fa311048fd5eccfb84d6cc4d5022b86af84f1f43f01b3eae4af",
+                        "publicSha256":  "b918099f3b00ada9aa4af69c4d85612374fb253f8e40c19ab7f09b70f2769ca5"
+                    },
+                    {
+                        "date":  "2026-07-06",
+                        "title":  "AI Agent — Production Readiness Converges at the Runtime Layer",
+                        "lead":  "Today’s primary signal is a shift from “which agent can think better” to “which agent can organizations trust with real work.” Workspace Agents have reached their billing milestone; ADK 2.0 emphasizes deterministic workflows; and AgentCore, MCP, Qwen Code, and Cloudflare Agents are all pushing action, connectivity, state, and governance into production.",
+                        "url":  "/daily/en/2026/07/06/",
+                        "alternateUrl":  "/daily/2026/07/06/",
+                        "publicPath":  "en/2026/07/06/index.html",
+                        "sourceFile":  "20260706.body.html",
+                        "sha256":  "8277667e4f71c2cb23c1beb38e6be8c23ab2ec03d256dc71f36b5398cb2db0ad",
+                        "publicSha256":  "9e0a83656ba15288aaf2377f8b4b94cd4cc310a7e07637b3a65ce06ab582e5f2"
+                    },
+                    {
+                        "date":  "2026-07-05",
+                        "title":  "AI Agent — The Immune System and Body Become the Main Battleground",
+                        "lead":  "Today’s central signal is that agent-platform risk is shifting away from model output and into the runtime chain of responsibility spanning credentials, tools, sandboxes, gateways, and team sessions. The broader ecosystem has already connected agents to real execution environments. ALUX should pursue not a smarter brain, but a complete machine that can recover, operate under explicit authorization, remain auditable, and collaborate across organizations.",
+                        "url":  "/daily/en/2026/07/05/",
+                        "alternateUrl":  "/daily/2026/07/05/",
+                        "publicPath":  "en/2026/07/05/index.html",
+                        "sourceFile":  "20260705.body.html",
+                        "sha256":  "ed8c88b74ca212bfedaccb497cf146dceb9d59d3e680d16eb204021409d9c1da",
+                        "publicSha256":  "b6c24f6d5e3635a459efd933c4a046758a376301b327541cb55d642099eeac91"
+                    },
+                    {
+                        "date":  "2026-07-04",
+                        "title":  "AI Agent — The Runtime Chain of Accountability Takes Shape",
+                        "lead":  "Today’s dominant signal is that agent work is moving beyond conversations into team channels, terminals, and cloud workflows. The brain keeps getting stronger; what remains scarce is a production-grade runtime that makes long-running transactions recoverable, explicitly authorized, replayable, and collaborative across organizations.",
+                        "url":  "/daily/en/2026/07/04/",
+                        "alternateUrl":  "/daily/2026/07/04/",
+                        "publicPath":  "en/2026/07/04/index.html",
+                        "sourceFile":  "20260704.body.html",
+                        "sha256":  "69e346ea5cb05b15163898dd20db4730e4320f4107a7e44d246439c9942387c4",
+                        "publicSha256":  "98bb033304c75b84df33f7c250e51ee9c60e7390fadfec10374e4aa60b2638ab"
+                    },
+                    {
+                        "date":  "2026-07-03",
+                        "title":  "AI Agent — The Control Plane Moves Down into the Runtime",
+                        "lead":  "Today’s central signal is the shift from agents that “can do the work” to agents that enterprises can trust with the work. Multi-agent orchestration, connector governance, durable task queues, open-source coding agents, and Agent Gateway discussions are all intensifying, showing that the market is looking for a production-grade runtime capable of carrying long-running transactions, permissions, recovery, and audits.",
+                        "url":  "/daily/en/2026/07/03/",
+                        "alternateUrl":  "/daily/2026/07/03/",
+                        "publicPath":  "en/2026/07/03/index.html",
+                        "sourceFile":  "20260703.body.html",
+                        "sha256":  "a01238c30836467d971207a688edc32c94ab053777a44f53333676a86bbd57e8",
+                        "publicSha256":  "b6d93dca754d9e172c100fbb70eaf10f56eb8f5cf638ad3f0f66d3d8475729f7"
+                    },
+                    {
+                        "date":  "2026-07-02",
+                        "title":  "AI Agent — From Workbench to Runtime",
+                        "lead":  "Today’s strongest signal is not a leap by any single model. It is the convergence of shared workspaces, long-horizon CLIs, browser agents, enterprise model permissions, and security funding—all pushing agents into the production chain of accountability. ALUX should focus on the two most critical elements of RISC: R | Resilience and S | Security.",
+                        "url":  "/daily/en/2026/07/02/",
+                        "alternateUrl":  "/daily/2026/07/02/",
+                        "publicPath":  "en/2026/07/02/index.html",
+                        "sourceFile":  "20260702.body.html",
+                        "sha256":  "0ae41b6bcef28d9772c49353a8f7842f8d62d97dbd26ce3c84d8a87fbb0251ee",
+                        "publicSha256":  "a5a09bf0d8674320561e02a3d29c4d91e5af3a960b340ac800924796284d4d22"
+                    },
+                    {
+                        "date":  "2026-07-01",
+                        "title":  "AI Agent — The Access Layer Starts Charging",
+                        "lead":  "Today’s central signal is clear: agents are no longer merely being tested inside tools. They are beginning to connect to cloud resources, enterprise knowledge bases, paid content, payment authorization, and security boundaries. The market is rapidly commoditizing “getting connected.” ALUX should claim the production-grade runtime that comes after connection: reliable execution, secure permissions, replayable audits, and future collaboration across companies.",
+                        "url":  "/daily/en/2026/07/01/",
+                        "alternateUrl":  "/daily/2026/07/01/",
+                        "publicPath":  "en/2026/07/01/index.html",
+                        "sourceFile":  "20260701.body.html",
+                        "sha256":  "8bb53bb55072a450692736930f50ce1f18cf71e903cb4a0a93c9c3ba7dceef91",
+                        "publicSha256":  "67e4048f271bca38bac2bd42ca61933fe077e7cfb7461a1ecb4541d578aeb2d5"
+                    },
+                    {
+                        "date":  "2026-06-30",
+                        "title":  "AI Agent — Runtime Boundaries Come Into Focus",
+                        "lead":  "Today’s defining signal is that once agents connect to real economic actions and enterprise control planes, runtime boundaries are forced into view. Payments, gateways, persistent workspaces, local control-plane vulnerabilities, checkpoints, and observability all point to one conclusion: what enterprises actually need to buy is a production-grade runtime.",
+                        "url":  "/daily/en/2026/06/30/",
+                        "alternateUrl":  "/daily/2026/06/30/",
+                        "publicPath":  "en/2026/06/30/index.html",
+                        "sourceFile":  "20260630.body.html",
+                        "sha256":  "e2a908d890d99a255343593f459782728bd026732117f42a03f614363453880d",
+                        "publicSha256":  "4dd8674ef8a62881c58513df2097f1bc8be6a47d204e08637985c1a86eddd182"
+                    },
+                    {
+                        "date":  "2026-06-29",
+                        "title":  "AI Agent — Long-Horizon Execution Becomes the Main Battleground",
+                        "lead":  "Today’s central signal is that AI agents are moving beyond “completing one task” toward working continuously under traceable constraints with recoverable state. OpenAI, Microsoft, AWS, LangChain, Langfuse, xAI, and Chinese open-source models all point to the same conclusion: model brains keep improving, but what enterprises truly want to buy is a production-grade runtime.",
+                        "url":  "/daily/en/2026/06/29/",
+                        "alternateUrl":  "/daily/2026/06/29/",
+                        "publicPath":  "en/2026/06/29/index.html",
+                        "sourceFile":  "20260629.body.html",
+                        "sha256":  "76c76489d7e630aaeea8e47daf57c05bb94fa97e6c2bd54a5691a77f8bf91689",
+                        "publicSha256":  "f4d7d03f5d20f4261ffd774b368786b68cf34a21c5a0f9e9c56ef0618a0da3fa"
+                    },
+                    {
+                        "date":  "2026-06-28",
+                        "title":  "AI Agent — Production Readiness Begins to Converge",
+                        "lead":  "Today’s central signal is not that models keep getting smarter, but that competition in enterprise agents is moving down into runtime governance. Web retrieval, identity and permissions, state recovery, evaluation and observability, and long-horizon execution are all being priced simultaneously by cloud providers, open-source frameworks, and capital markets.",
+                        "url":  "/daily/en/2026/06/28/",
+                        "alternateUrl":  "/daily/2026/06/28/",
+                        "publicPath":  "en/2026/06/28/index.html",
+                        "sourceFile":  "20260628.body.html",
+                        "sha256":  "6a2754e8e3aa062915812daa608256b063d5e686fd2bbe7fd34bb253e5394464",
+                        "publicSha256":  "d71ec8ca4739df4689abfc5645dddf4a71c5548014a6dca8fc115519c253c05c"
+                    }
+                ]
 }

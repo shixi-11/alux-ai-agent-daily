@@ -73,7 +73,7 @@
   flex: 0 0 44px;
   border: 1px solid #d7dfe5;
   background-color: #fff;
-  background-image: url("/assets/alux-mark.png");
+  background-image: url("./alux-mark.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 26px 26px;

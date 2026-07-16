@@ -4,13 +4,13 @@ import cv2
 import numpy as np
 
 
-URL = "https://ai-agent-daily.alux.network/"
+URL = "https://ai.alux.network/daily/"
 OUTPUT = Path(__file__).with_name("qr.png")
 
 
 def main() -> None:
     params = cv2.QRCodeEncoder_Params()
-    params.correction_level = cv2.QRCodeEncoder_CORRECT_LEVEL_Q
+    params.correction_level = cv2.QRCodeEncoder_CORRECT_LEVEL_H
     params.mode = cv2.QRCodeEncoder_MODE_BYTE
 
     matrix = cv2.QRCodeEncoder_create(params).encode(URL)

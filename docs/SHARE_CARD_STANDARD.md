@@ -11,8 +11,9 @@
 - 对外只交付 JPG。渲染过程允许产生临时 PNG，但验证完成后必须自动删除。
 - 本机成品统一输出到仓库根目录的 `output/`；该目录不提交 GitHub。
 - 经确认的正式成品另存到 `assets/share-cards/` 并提交 GitHub；不提交中间稿或临时 PNG。
-- 中文站二维码和公开网址固定为 `https://ai-agent-daily.alux.network/`。
-- 英文站公开地址固定为 `https://ai-agent-daily.alux.network/en/`。
+- 中文站二维码和公开网址固定为 `https://ai.alux.network/daily/`。
+- 英文站公开地址固定为 `https://ai.alux.network/daily/en/`。
+- `https://ai-agent-daily.alux.network/` 只作为永久兼容入口；已发布的旧扫码卡可继续使用，但新生成或重新导出的扫码卡不得再编码或展示旧域名。
 - 不得使用 Vercel 预览域名制作对外物料。
 
 ## 版式与信息层级

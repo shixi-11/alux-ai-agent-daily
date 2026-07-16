@@ -1,212 +1,214 @@
 {
-  "schemaVersion": 2,
-  "locale": "zh-CN",
-  "generatedAt": "2026-07-15T10:54:58.3863787Z",
-  "baseUrl": "https://ai-agent-daily.alux.network",
-  "latest": {
-    "date": "2026-07-15",
-    "url": "/2026/07/15/",
-    "latestUrl": "/latest/",
-    "alternateUrl": "/en/2026/07/15/"
-  },
-  "reports": [
-    {
-      "date": "2026-07-15",
-      "title": "AI Agent身份与恢复合流",
-      "lead": "今天最强的新证据来自真实执行边界：Agent 请求开始携带可验证机器身份，持续十小时的研究任务依赖持久日志与检查点，多工作区产品则必须在授权过期或守护进程重启后恢复到正确状态。",
-      "url": "/2026/07/15/",
-      "alternateUrl": "/en/2026/07/15/",
-      "publicPath": "2026/07/15/index.html",
-      "sourceFile": "20260715_ALUX_AI智能体情报日报.html",
-      "sha256": "d03a3f396311bf5c2a8db373286f312d222fa25cbf79d797685d8db62585650c",
-      "publicSha256": "0e99061e388bed26675c1dbd9dd69e34858b5e3cbcee3e9c41d55277c637597a"
-    },
-    {
-      "date": "2026-07-14",
-      "title": "AI Agent恢复与权限进入底层",
-      "lead": "今天最强的新证据来自运行时细节：Agent 在休眠后能否恢复正确能力、无人值守时能否守住审批、浏览器能否被限制在已授权域名内，正在成为生产门槛。",
-      "url": "/2026/07/14/",
-      "alternateUrl": "/en/2026/07/14/",
-      "publicPath": "2026/07/14/index.html",
-      "sourceFile": "20260714_ALUX_AI智能体情报日报.html",
-      "sha256": "436d7ff772c8a9797c26a6a9af9ad4b8815cf133381e63f9b38486b23151ba0e",
-      "publicSha256": "3e5af337fa65820ea2b7e962a18092e5866cd2661a5cef7f39c3b8a04e5af177"
-    },
-    {
-      "date": "2026-07-13",
-      "title": "AI Agent工作入口转向责任链",
-      "lead": "今天最值得看的不是模型分数，而是 Agent 正同时进入公司战略、监管边界、设备入口与硬件控制路径。大脑继续扩张，机体、免疫和社会接口开始决定谁能真正进入生产。",
-      "url": "/2026/07/13/",
-      "alternateUrl": "/en/2026/07/13/",
-      "publicPath": "2026/07/13/index.html",
-      "sourceFile": "20260713_ALUX_AI智能体情报日报.html",
-      "sha256": "ed58353c6f4ba65967d9f13bdeff2aed02e90303f297b6b15057bc5bc7dec5d7",
-      "publicSha256": "7e71cad05813f082ddb7460bd7ecf9047e4b1a492278d23dc183ec18af5aa88d"
-    },
-    {
-      "date": "2026-07-12",
-      "title": "AI Agent并行大脑需要责任机体",
-      "lead": "今天的高价值变化不是又多一个 Agent，而是并行智能体正式进入模型、SDK 和会话产品。与此同时，OAuth、系统卡与全栈融资把问题推向同一处：谁授权、怎样隔离、失败后如何恢复、结果如何证明。",
-      "url": "/2026/07/12/",
-      "alternateUrl": "/en/2026/07/12/",
-      "publicPath": "2026/07/12/index.html",
-      "sourceFile": "20260712_ALUX_AI智能体情报日报.html",
-      "sha256": "ed6e42e47cb01c0963430f646955ac7bb47971ef4dadc7e56299bc7cc0dd0064",
-      "publicSha256": "b1d311cc7cd0670f704f21368df3cb1fc06f1133ce029d0df5d4cdf8606e8771"
-    },
-    {
-      "date": "2026-07-11",
-      "title": "AI Agent身体与边界加速成形",
-      "lead": "AWS 把隔离、状态保留与暂停恢复做成云原语，腾讯把海量 Agent 的独立状态空间产品化；今天最强的不是新大脑，而是 R｜强韧/机体 与 S｜安全/免疫。",
-      "url": "/2026/07/11/",
-      "alternateUrl": "/en/2026/07/11/",
-      "publicPath": "2026/07/11/index.html",
-      "sourceFile": "20260711_ALUX_AI智能体情报日报.html",
-      "sha256": "4d2ca426e41daff3e65add8b372ab00059a32ce66cfd280e0abe241c5ae2952f",
-      "publicSha256": "a3bdd45eb192c30977687ed611599d370b2506caca39d058e9c30b3b2d9f08e5"
-    },
-    {
-      "date": "2026-07-10",
-      "title": "AI Agent生产责任下沉到运行时",
-      "lead": "今天的新信号不靠宏大叙事取胜：框架开始补嵌套状态恢复、渐进式工具披露、会话 TTL、执行图与资源校验。对 ALUX 而言，最值得抓住的是把这些分散修补收束成一条可验证的长交易责任链。",
-      "url": "/2026/07/10/",
-      "alternateUrl": "/en/2026/07/10/",
-      "publicPath": "2026/07/10/index.html",
-      "sourceFile": "20260710_ALUX_AI智能体情报日报.html",
-      "sha256": "4eb0c74ebd648fbe20dad6360b9a7b31684ddba4ff890c0521bd6331793821b1",
-      "publicSha256": "0b105e254ae5560b1289edc5a95cfe01c4483aa5508f95c87245cd58767bf0ef"
-    },
-    {
-      "date": "2026-07-09",
-      "title": "AI Agent进入可分发、可隔离、可审计阶段",
-      "lead": "今天的主信号是：Agent 不再只是在 IDE、聊天框或内部自动化里“跑起来”，而是在 marketplace、registry、runtime security、observability export 和 team session 里变成企业对象。市场正在把智能体从功能层推向生产级运行时的责任边界。",
-      "url": "/2026/07/09/",
-      "alternateUrl": "/en/2026/07/09/",
-      "publicPath": "2026/07/09/index.html",
-      "sourceFile": "20260709_ALUX_AI智能体情报日报.html",
-      "sha256": "75a138b69c5e3d89e9b04c912a813aaf47349ef15f8b573ba66e65f3de4357ef",
-      "publicSha256": "bee43828f3e6e2b14dc784ed8e0c998dd8b0d129df7a27c94323021f5cb2a0f7"
-    },
-    {
-      "date": "2026-07-08",
-      "title": "AI Agent连接层正在标准化",
-      "lead": "今天的主信号是：Agent 行业的竞争焦点继续从“模型多聪明”转向“谁能管住工具、资源、授权和运行状态”。Microsoft、GitHub、AAIF 相关网关、Qwen Code 与 Arcade.dev 指向同一件事：生产级 Agent 需要一层能承接长交易、权限、恢复和审计的生产级运行时。",
-      "url": "/2026/07/08/",
-      "alternateUrl": "/en/2026/07/08/",
-      "publicPath": "2026/07/08/index.html",
-      "sourceFile": "20260708_ALUX_AI智能体情报日报.html",
-      "sha256": "bc0f1fbd1a8011658152f5b19b706d474a354b979ab6c5a9cbc5502b29ae1fe5",
-      "publicSha256": "5c1434957596666bc80f5ed3f3f1298dee1924ce2cea6f3ae797c68716f49adc"
-    },
-    {
-      "date": "2026-07-07",
-      "title": "AI Agent恢复能力成为主线",
-      "lead": "今天的主信号是：Agent 生产化正在逼近真实故障、真实支付、真实身份和真实连接。Codex 修远程恢复，AgentCore 加入支付治理，Gemini Enterprise 管 Agent Registry 和出站策略，LangGraph、Qwen Code、Cloudflare、MCP 都在修状态、恢复和能力边界。",
-      "url": "/2026/07/07/",
-      "alternateUrl": "/en/2026/07/07/",
-      "publicPath": "2026/07/07/index.html",
-      "sourceFile": "20260707_ALUX_AI智能体情报日报.html",
-      "sha256": "57207203e446b4782cb86318e9865863fee9f5d7691d74e02bb44ef09aa6d60b",
-      "publicSha256": "e8cd128f9d7463c1519c79a2ebc8970317a1e4372fdc04995f05545f6406c007"
-    },
-    {
-      "date": "2026-07-06",
-      "title": "AI Agent生产化收口到运行时",
-      "lead": "今天的主信号是：智能体正在从“谁更会想”转向“谁能被组织托付”。Workspace Agents 进入计费节点，ADK 2.0 强调确定性流程，AgentCore、MCP、Qwen Code 和 Cloudflare Agents 都在把行动、连接、状态和治理推向生产层。",
-      "url": "/2026/07/06/",
-      "alternateUrl": "/en/2026/07/06/",
-      "publicPath": "2026/07/06/index.html",
-      "sourceFile": "20260706_ALUX_AI智能体情报日报.html",
-      "sha256": "64619242852b3a83aca5bf2d7ebe354cce1c737fd0763b9d32b0697a15fd6ee1",
-      "publicSha256": "c0400f1b2025c59c3a99ae61676884da4ef235bf325178522867ae49dbfa5a0f"
-    },
-    {
-      "date": "2026-07-05",
-      "title": "AI Agent免疫与机体成主战场",
-      "lead": "今天的主信号是：智能体平台的风险开始从模型输出，转向带凭据、工具、沙箱、网关和团队会话的运行时责任链。外部生态已经把 Agent 接进真实执行环境，ALUX 要抓住的不是更聪明的大脑，而是可恢复、可授权、可审计、可跨组织协作的完整机器。",
-      "url": "/2026/07/05/",
-      "alternateUrl": "/en/2026/07/05/",
-      "publicPath": "2026/07/05/index.html",
-      "sourceFile": "20260705_ALUX_AI智能体情报日报.html",
-      "sha256": "7e4454422ce170e81c6aff9bbf5bd16a57a82371076d6d7a10934fe9da6d780b",
-      "publicSha256": "46a784a4ccb33c3a555dc966e2e4a714c50360d57bb4782d6dbd554f0b0099cc"
-    },
-    {
-      "date": "2026-07-04",
-      "title": "AI Agent运行时责任链成形",
-      "lead": "今天的主信号是：Agent 工作正在从会话进入团队频道、终端和云工作流。大脑继续变强，真正稀缺的是让长交易可恢复、可授权、可重放、可跨组织协作的生产级运行时。",
-      "url": "/2026/07/04/",
-      "alternateUrl": "/en/2026/07/04/",
-      "publicPath": "2026/07/04/index.html",
-      "sourceFile": "20260704_ALUX_AI智能体情报日报.html",
-      "sha256": "2b71ed8cb40e30261d0921359cea087e54421f2b1bbb262f705d86e94b095937",
-      "publicSha256": "9ac41893e58abb063e7a125621a62a75c857f885a0b0eb19fe21d956e632e0c4"
-    },
-    {
-      "date": "2026-07-03",
-      "title": "AI Agent控制面下沉到运行时",
-      "lead": "今天的主信号是：智能体产品从“会做事”转向“可被企业托付”。多智能体编排、连接器治理、持久任务队列、开源编码智能体和 Agent Gateway 相关讨论同时升温，说明市场正在寻找一层能承接长交易、权限、恢复和审计的生产级运行时。",
-      "url": "/2026/07/03/",
-      "alternateUrl": "/en/2026/07/03/",
-      "publicPath": "2026/07/03/index.html",
-      "sourceFile": "20260703_ALUX_AI智能体情报日报.html",
-      "sha256": "a739476a917bc57f6a94713dd73083f0ae9c8076c96c2a73dc3ec354ebbfff3c",
-      "publicSha256": "0c340938a250aa58fa78c8e3aabc7088e2ef34060ae8a5142ce0638cc324f5c5"
-    },
-    {
-      "date": "2026-07-02",
-      "title": "AI Agent工作台变运行时",
-      "lead": "今天最强信号不是某个模型单点跃升，而是共享工作台、长程 CLI、浏览器 Agent、企业模型权限和安全融资一起把智能体推到生产责任链上。ALUX 应抓住 RISC 中最关键的两项：R｜强韧与 S｜安全。",
-      "url": "/2026/07/02/",
-      "alternateUrl": "/en/2026/07/02/",
-      "publicPath": "2026/07/02/index.html",
-      "sourceFile": "20260702_ALUX_AI智能体情报日报.html",
-      "sha256": "b1fbf92dc370d01bd8e6646cc4c0141968cf3635718503ff480c58c45fb03741",
-      "publicSha256": "024cee7e2489e23448c3f6a9c3f45f68d4a28804cdfa490403fa8175f12a03a6"
-    },
-    {
-      "date": "2026-07-01",
-      "title": "AI Agent接入层开始收费",
-      "lead": "今天的主信号很清楚：智能体不再只是在工具里试跑，它开始连接云资源、企业知识库、内容访问、支付授权和安全边界。市场正在把“能连上”快速商品化，ALUX 要抢的是连接之后的生产级运行时：可靠执行、安全权限、可重放审计，以及未来跨公司协作。",
-      "url": "/2026/07/01/",
-      "alternateUrl": "/en/2026/07/01/",
-      "publicPath": "2026/07/01/index.html",
-      "sourceFile": "20260701_ALUX_AI智能体情报日报.html",
-      "sha256": "0fcef64a8ebe184b8e15ae83946826e1895a99765ffb3bf696e3a55ccd0325ba",
-      "publicSha256": "42825db37e844483bf9579f2957485c4ff4f0975495ca4c595d12a7e3637dd49"
-    },
-    {
-      "date": "2026-06-30",
-      "title": "AI Agent运行时边界显形",
-      "lead": "今天的主信号是：智能体开始接入真实经济动作和企业控制面后，运行时边界被迫显形。支付、网关、持久工作空间、本地控制面漏洞、检查点与可观测性，都在指向同一件事：企业真正要买的是生产级运行时。",
-      "url": "/2026/06/30/",
-      "alternateUrl": "/en/2026/06/30/",
-      "publicPath": "2026/06/30/index.html",
-      "sourceFile": "20260630_ALUX_AI智能体情报日报.html",
-      "sha256": "4ad8a6758bb8986d35907fe972ac58db1364496b053572d559f3faa13d974401",
-      "publicSha256": "e42522b1b6b8878a61d1c24844df8ab21bd15424a66158b899d720f6f2198250"
-    },
-    {
-      "date": "2026-06-29",
-      "title": "AI Agent长程执行成为主战场",
-      "lead": "今天的主信号是：AI Agent 正从“能完成一次任务”进入“能连续工作、被追踪、被约束、可恢复”的阶段。OpenAI、Microsoft、AWS、LangChain、Langfuse、xAI 和中国开源模型的动作都在指向同一件事：模型大脑继续增强，但企业真正要买的是生产级运行时。",
-      "url": "/2026/06/29/",
-      "alternateUrl": "/en/2026/06/29/",
-      "publicPath": "2026/06/29/index.html",
-      "sourceFile": "20260629_ALUX_AI智能体情报日报.html",
-      "sha256": "0fd59b90fd546d0c854b9985aec32c26ae7a4e2a9e98c9c493acf23296d99ac5",
-      "publicSha256": "27141bed3fdbd4fabb3bd4faf7b1fdd567bc20abf4a6610c45a8adb4226a0421"
-    },
-    {
-      "date": "2026-06-28",
-      "title": "AI Agent生产化开始收口",
-      "lead": "今天的主信号不是模型继续变聪明，而是企业级 Agent 的竞争焦点正在下沉到运行时治理。联网检索、身份权限、状态恢复、评估观测和长程执行，开始被云厂商、开源框架与融资市场同时定价。",
-      "url": "/2026/06/28/",
-      "alternateUrl": "/en/2026/06/28/",
-      "publicPath": "2026/06/28/index.html",
-      "sourceFile": "20260628_ALUX_AI智能体情报日报.html",
-      "sha256": "6ff2861a7bf06fa3afe7e12afc97b302834d61bd6526dd080524247f6c50fd6d",
-      "publicSha256": "b40189ffec7ee8040f98b77b4ab787f198048338a6218e4e1262b54868ade05b"
-    }
-  ]
+    "schemaVersion":  3,
+    "locale":  "zh-CN",
+    "generatedAt":  "2026-07-15T10:54:58.3863787Z",
+    "baseUrl":  "https://ai.alux.network",
+    "publicationPath":  "/daily",
+    "publicationUrl":  "https://ai.alux.network/daily/",
+    "latest":  {
+                   "date":  "2026-07-15",
+                   "url":  "/daily/2026/07/15/",
+                   "latestUrl":  "/daily/latest/",
+                   "alternateUrl":  "/daily/en/2026/07/15/"
+               },
+    "reports":  [
+                    {
+                        "date":  "2026-07-15",
+                        "title":  "AI Agent身份与恢复合流",
+                        "lead":  "今天最强的新证据来自真实执行边界：Agent 请求开始携带可验证机器身份，持续十小时的研究任务依赖持久日志与检查点，多工作区产品则必须在授权过期或守护进程重启后恢复到正确状态。",
+                        "url":  "/daily/2026/07/15/",
+                        "alternateUrl":  "/daily/en/2026/07/15/",
+                        "publicPath":  "2026/07/15/index.html",
+                        "sourceFile":  "20260715_ALUX_AI智能体情报日报.html",
+                        "sha256":  "d03a3f396311bf5c2a8db373286f312d222fa25cbf79d797685d8db62585650c",
+                        "publicSha256":  "ff5656e4cd6b84ea29379608cfb7d18a188e3ef35a701c8890325578458a555c"
+                    },
+                    {
+                        "date":  "2026-07-14",
+                        "title":  "AI Agent恢复与权限进入底层",
+                        "lead":  "今天最强的新证据来自运行时细节：Agent 在休眠后能否恢复正确能力、无人值守时能否守住审批、浏览器能否被限制在已授权域名内，正在成为生产门槛。",
+                        "url":  "/daily/2026/07/14/",
+                        "alternateUrl":  "/daily/en/2026/07/14/",
+                        "publicPath":  "2026/07/14/index.html",
+                        "sourceFile":  "20260714_ALUX_AI智能体情报日报.html",
+                        "sha256":  "436d7ff772c8a9797c26a6a9af9ad4b8815cf133381e63f9b38486b23151ba0e",
+                        "publicSha256":  "aee12bfa05308b3af82462770c1ebc485f35b0787994225718c71e8fe26e217f"
+                    },
+                    {
+                        "date":  "2026-07-13",
+                        "title":  "AI Agent工作入口转向责任链",
+                        "lead":  "今天最值得看的不是模型分数，而是 Agent 正同时进入公司战略、监管边界、设备入口与硬件控制路径。大脑继续扩张，机体、免疫和社会接口开始决定谁能真正进入生产。",
+                        "url":  "/daily/2026/07/13/",
+                        "alternateUrl":  "/daily/en/2026/07/13/",
+                        "publicPath":  "2026/07/13/index.html",
+                        "sourceFile":  "20260713_ALUX_AI智能体情报日报.html",
+                        "sha256":  "ed58353c6f4ba65967d9f13bdeff2aed02e90303f297b6b15057bc5bc7dec5d7",
+                        "publicSha256":  "03376ce30df561cec32342000b6d5e387bb76593cd3d91b4f02bbb2454205db5"
+                    },
+                    {
+                        "date":  "2026-07-12",
+                        "title":  "AI Agent并行大脑需要责任机体",
+                        "lead":  "今天的高价值变化不是又多一个 Agent，而是并行智能体正式进入模型、SDK 和会话产品。与此同时，OAuth、系统卡与全栈融资把问题推向同一处：谁授权、怎样隔离、失败后如何恢复、结果如何证明。",
+                        "url":  "/daily/2026/07/12/",
+                        "alternateUrl":  "/daily/en/2026/07/12/",
+                        "publicPath":  "2026/07/12/index.html",
+                        "sourceFile":  "20260712_ALUX_AI智能体情报日报.html",
+                        "sha256":  "ed6e42e47cb01c0963430f646955ac7bb47971ef4dadc7e56299bc7cc0dd0064",
+                        "publicSha256":  "656649c2e71f86bbac48abc210aab65cffebede6718de3a70d36e0dbe65b765b"
+                    },
+                    {
+                        "date":  "2026-07-11",
+                        "title":  "AI Agent身体与边界加速成形",
+                        "lead":  "AWS 把隔离、状态保留与暂停恢复做成云原语，腾讯把海量 Agent 的独立状态空间产品化；今天最强的不是新大脑，而是 R｜强韧/机体 与 S｜安全/免疫。",
+                        "url":  "/daily/2026/07/11/",
+                        "alternateUrl":  "/daily/en/2026/07/11/",
+                        "publicPath":  "2026/07/11/index.html",
+                        "sourceFile":  "20260711_ALUX_AI智能体情报日报.html",
+                        "sha256":  "4d2ca426e41daff3e65add8b372ab00059a32ce66cfd280e0abe241c5ae2952f",
+                        "publicSha256":  "e1e6d060c6967df13c4afcf9261fa914795d8248108ce1c060d9d737bdbc1a66"
+                    },
+                    {
+                        "date":  "2026-07-10",
+                        "title":  "AI Agent生产责任下沉到运行时",
+                        "lead":  "今天的新信号不靠宏大叙事取胜：框架开始补嵌套状态恢复、渐进式工具披露、会话 TTL、执行图与资源校验。对 ALUX 而言，最值得抓住的是把这些分散修补收束成一条可验证的长交易责任链。",
+                        "url":  "/daily/2026/07/10/",
+                        "alternateUrl":  "/daily/en/2026/07/10/",
+                        "publicPath":  "2026/07/10/index.html",
+                        "sourceFile":  "20260710_ALUX_AI智能体情报日报.html",
+                        "sha256":  "4eb0c74ebd648fbe20dad6360b9a7b31684ddba4ff890c0521bd6331793821b1",
+                        "publicSha256":  "ce7ef27267779a81644fbe9746e6545b314ae68ad4f50efda29b3291ff4d7996"
+                    },
+                    {
+                        "date":  "2026-07-09",
+                        "title":  "AI Agent进入可分发、可隔离、可审计阶段",
+                        "lead":  "今天的主信号是：Agent 不再只是在 IDE、聊天框或内部自动化里“跑起来”，而是在 marketplace、registry、runtime security、observability export 和 team session 里变成企业对象。市场正在把智能体从功能层推向生产级运行时的责任边界。",
+                        "url":  "/daily/2026/07/09/",
+                        "alternateUrl":  "/daily/en/2026/07/09/",
+                        "publicPath":  "2026/07/09/index.html",
+                        "sourceFile":  "20260709_ALUX_AI智能体情报日报.html",
+                        "sha256":  "75a138b69c5e3d89e9b04c912a813aaf47349ef15f8b573ba66e65f3de4357ef",
+                        "publicSha256":  "58db51d87aaac229d0bad21817864f646f8e05e9ef666ed3d216e6a652f4391c"
+                    },
+                    {
+                        "date":  "2026-07-08",
+                        "title":  "AI Agent连接层正在标准化",
+                        "lead":  "今天的主信号是：Agent 行业的竞争焦点继续从“模型多聪明”转向“谁能管住工具、资源、授权和运行状态”。Microsoft、GitHub、AAIF 相关网关、Qwen Code 与 Arcade.dev 指向同一件事：生产级 Agent 需要一层能承接长交易、权限、恢复和审计的生产级运行时。",
+                        "url":  "/daily/2026/07/08/",
+                        "alternateUrl":  "/daily/en/2026/07/08/",
+                        "publicPath":  "2026/07/08/index.html",
+                        "sourceFile":  "20260708_ALUX_AI智能体情报日报.html",
+                        "sha256":  "bc0f1fbd1a8011658152f5b19b706d474a354b979ab6c5a9cbc5502b29ae1fe5",
+                        "publicSha256":  "f3d9f26601e98b10d09abab4c68197da93cb8680e09f5b9f2c071b7040ad3360"
+                    },
+                    {
+                        "date":  "2026-07-07",
+                        "title":  "AI Agent恢复能力成为主线",
+                        "lead":  "今天的主信号是：Agent 生产化正在逼近真实故障、真实支付、真实身份和真实连接。Codex 修远程恢复，AgentCore 加入支付治理，Gemini Enterprise 管 Agent Registry 和出站策略，LangGraph、Qwen Code、Cloudflare、MCP 都在修状态、恢复和能力边界。",
+                        "url":  "/daily/2026/07/07/",
+                        "alternateUrl":  "/daily/en/2026/07/07/",
+                        "publicPath":  "2026/07/07/index.html",
+                        "sourceFile":  "20260707_ALUX_AI智能体情报日报.html",
+                        "sha256":  "57207203e446b4782cb86318e9865863fee9f5d7691d74e02bb44ef09aa6d60b",
+                        "publicSha256":  "d7f46dbc4175e9effff393d6879afceec4d5df81c10ab84c09153f1fc6195cb3"
+                    },
+                    {
+                        "date":  "2026-07-06",
+                        "title":  "AI Agent生产化收口到运行时",
+                        "lead":  "今天的主信号是：智能体正在从“谁更会想”转向“谁能被组织托付”。Workspace Agents 进入计费节点，ADK 2.0 强调确定性流程，AgentCore、MCP、Qwen Code 和 Cloudflare Agents 都在把行动、连接、状态和治理推向生产层。",
+                        "url":  "/daily/2026/07/06/",
+                        "alternateUrl":  "/daily/en/2026/07/06/",
+                        "publicPath":  "2026/07/06/index.html",
+                        "sourceFile":  "20260706_ALUX_AI智能体情报日报.html",
+                        "sha256":  "64619242852b3a83aca5bf2d7ebe354cce1c737fd0763b9d32b0697a15fd6ee1",
+                        "publicSha256":  "531cf0e691a5f9e5c0231b230ce0da0e8e94d9c1051c453689af53d8b732e015"
+                    },
+                    {
+                        "date":  "2026-07-05",
+                        "title":  "AI Agent免疫与机体成主战场",
+                        "lead":  "今天的主信号是：智能体平台的风险开始从模型输出，转向带凭据、工具、沙箱、网关和团队会话的运行时责任链。外部生态已经把 Agent 接进真实执行环境，ALUX 要抓住的不是更聪明的大脑，而是可恢复、可授权、可审计、可跨组织协作的完整机器。",
+                        "url":  "/daily/2026/07/05/",
+                        "alternateUrl":  "/daily/en/2026/07/05/",
+                        "publicPath":  "2026/07/05/index.html",
+                        "sourceFile":  "20260705_ALUX_AI智能体情报日报.html",
+                        "sha256":  "7e4454422ce170e81c6aff9bbf5bd16a57a82371076d6d7a10934fe9da6d780b",
+                        "publicSha256":  "e6dcbcdbaf1f693a96d7d5f045059120b024aa57f91e9df78d3205a6b91c9f3c"
+                    },
+                    {
+                        "date":  "2026-07-04",
+                        "title":  "AI Agent运行时责任链成形",
+                        "lead":  "今天的主信号是：Agent 工作正在从会话进入团队频道、终端和云工作流。大脑继续变强，真正稀缺的是让长交易可恢复、可授权、可重放、可跨组织协作的生产级运行时。",
+                        "url":  "/daily/2026/07/04/",
+                        "alternateUrl":  "/daily/en/2026/07/04/",
+                        "publicPath":  "2026/07/04/index.html",
+                        "sourceFile":  "20260704_ALUX_AI智能体情报日报.html",
+                        "sha256":  "2b71ed8cb40e30261d0921359cea087e54421f2b1bbb262f705d86e94b095937",
+                        "publicSha256":  "b8e0001d7bbe23e03cbc6951396ac72f83bb997a0d7eba15a04c9f86c8d15a5e"
+                    },
+                    {
+                        "date":  "2026-07-03",
+                        "title":  "AI Agent控制面下沉到运行时",
+                        "lead":  "今天的主信号是：智能体产品从“会做事”转向“可被企业托付”。多智能体编排、连接器治理、持久任务队列、开源编码智能体和 Agent Gateway 相关讨论同时升温，说明市场正在寻找一层能承接长交易、权限、恢复和审计的生产级运行时。",
+                        "url":  "/daily/2026/07/03/",
+                        "alternateUrl":  "/daily/en/2026/07/03/",
+                        "publicPath":  "2026/07/03/index.html",
+                        "sourceFile":  "20260703_ALUX_AI智能体情报日报.html",
+                        "sha256":  "a739476a917bc57f6a94713dd73083f0ae9c8076c96c2a73dc3ec354ebbfff3c",
+                        "publicSha256":  "f17a59dccd7ad5d6552fc385a0ca0feba15cc2305e96744b0e6923509c4d3739"
+                    },
+                    {
+                        "date":  "2026-07-02",
+                        "title":  "AI Agent工作台变运行时",
+                        "lead":  "今天最强信号不是某个模型单点跃升，而是共享工作台、长程 CLI、浏览器 Agent、企业模型权限和安全融资一起把智能体推到生产责任链上。ALUX 应抓住 RISC 中最关键的两项：R｜强韧与 S｜安全。",
+                        "url":  "/daily/2026/07/02/",
+                        "alternateUrl":  "/daily/en/2026/07/02/",
+                        "publicPath":  "2026/07/02/index.html",
+                        "sourceFile":  "20260702_ALUX_AI智能体情报日报.html",
+                        "sha256":  "b1fbf92dc370d01bd8e6646cc4c0141968cf3635718503ff480c58c45fb03741",
+                        "publicSha256":  "935cd9159d5d1af10d970504a74f03120d4f9da676665bf19b71c678925c3713"
+                    },
+                    {
+                        "date":  "2026-07-01",
+                        "title":  "AI Agent接入层开始收费",
+                        "lead":  "今天的主信号很清楚：智能体不再只是在工具里试跑，它开始连接云资源、企业知识库、内容访问、支付授权和安全边界。市场正在把“能连上”快速商品化，ALUX 要抢的是连接之后的生产级运行时：可靠执行、安全权限、可重放审计，以及未来跨公司协作。",
+                        "url":  "/daily/2026/07/01/",
+                        "alternateUrl":  "/daily/en/2026/07/01/",
+                        "publicPath":  "2026/07/01/index.html",
+                        "sourceFile":  "20260701_ALUX_AI智能体情报日报.html",
+                        "sha256":  "0fcef64a8ebe184b8e15ae83946826e1895a99765ffb3bf696e3a55ccd0325ba",
+                        "publicSha256":  "68c5c76aee7131b932cbcfda252206adc8c32f85e97a9cd9c624fcba222323cc"
+                    },
+                    {
+                        "date":  "2026-06-30",
+                        "title":  "AI Agent运行时边界显形",
+                        "lead":  "今天的主信号是：智能体开始接入真实经济动作和企业控制面后，运行时边界被迫显形。支付、网关、持久工作空间、本地控制面漏洞、检查点与可观测性，都在指向同一件事：企业真正要买的是生产级运行时。",
+                        "url":  "/daily/2026/06/30/",
+                        "alternateUrl":  "/daily/en/2026/06/30/",
+                        "publicPath":  "2026/06/30/index.html",
+                        "sourceFile":  "20260630_ALUX_AI智能体情报日报.html",
+                        "sha256":  "4ad8a6758bb8986d35907fe972ac58db1364496b053572d559f3faa13d974401",
+                        "publicSha256":  "a4e925edc577c213980d159aa473e68744419f6cfb63d28367022321182c9ae1"
+                    },
+                    {
+                        "date":  "2026-06-29",
+                        "title":  "AI Agent长程执行成为主战场",
+                        "lead":  "今天的主信号是：AI Agent 正从“能完成一次任务”进入“能连续工作、被追踪、被约束、可恢复”的阶段。OpenAI、Microsoft、AWS、LangChain、Langfuse、xAI 和中国开源模型的动作都在指向同一件事：模型大脑继续增强，但企业真正要买的是生产级运行时。",
+                        "url":  "/daily/2026/06/29/",
+                        "alternateUrl":  "/daily/en/2026/06/29/",
+                        "publicPath":  "2026/06/29/index.html",
+                        "sourceFile":  "20260629_ALUX_AI智能体情报日报.html",
+                        "sha256":  "0fd59b90fd546d0c854b9985aec32c26ae7a4e2a9e98c9c493acf23296d99ac5",
+                        "publicSha256":  "64465376690fb73f8f34c828aeb8b4cfded3e4e225586f28366e9387c6e9f1bc"
+                    },
+                    {
+                        "date":  "2026-06-28",
+                        "title":  "AI Agent生产化开始收口",
+                        "lead":  "今天的主信号不是模型继续变聪明，而是企业级 Agent 的竞争焦点正在下沉到运行时治理。联网检索、身份权限、状态恢复、评估观测和长程执行，开始被云厂商、开源框架与融资市场同时定价。",
+                        "url":  "/daily/2026/06/28/",
+                        "alternateUrl":  "/daily/en/2026/06/28/",
+                        "publicPath":  "2026/06/28/index.html",
+                        "sourceFile":  "20260628_ALUX_AI智能体情报日报.html",
+                        "sha256":  "6ff2861a7bf06fa3afe7e12afc97b302834d61bd6526dd080524247f6c50fd6d",
+                        "publicSha256":  "9ce19ace3a73a8e67747196ce528b60e067081acb2d008c04c47d4c77f0956ef"
+                    }
+                ]
 }

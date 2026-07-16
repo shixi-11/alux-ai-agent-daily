@@ -1,243 +1,231 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://ai-agent-daily.alux.network/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/" />
+    <loc>https://ai.alux.network/daily/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai.alux.network/daily/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.alux.network/daily/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.alux.network/daily/" />
   </url>
   <url>
-    <loc>https://ai-agent-daily.alux.network/en/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/" />
+    <loc>https://ai.alux.network/daily/en/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai.alux.network/daily/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.alux.network/daily/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.alux.network/daily/" />
   </url>
   <url>
-    <loc>https://ai-agent-daily.alux.network/latest/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/latest/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/latest/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/latest/" />
+    <loc>https://ai.alux.network/daily/2026/07/15/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai.alux.network/daily/2026/07/15/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.alux.network/daily/en/2026/07/15/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.alux.network/daily/2026/07/15/" />
   </url>
   <url>
-    <loc>https://ai-agent-daily.alux.network/en/latest/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/latest/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/latest/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/latest/" />
+    <loc>https://ai.alux.network/daily/en/2026/07/15/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai.alux.network/daily/2026/07/15/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.alux.network/daily/en/2026/07/15/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.alux.network/daily/2026/07/15/" />
   </url>
   <url>
-    <loc>https://ai-agent-daily.alux.network/2026/07/15/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/2026/07/15/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/2026/07/15/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/2026/07/15/" />
+    <loc>https://ai.alux.network/daily/2026/07/14/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai.alux.network/daily/2026/07/14/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.alux.network/daily/en/2026/07/14/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.alux.network/daily/2026/07/14/" />
   </url>
   <url>
-    <loc>https://ai-agent-daily.alux.network/en/2026/07/15/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/2026/07/15/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/2026/07/15/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/2026/07/15/" />
+    <loc>https://ai.alux.network/daily/en/2026/07/14/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai.alux.network/daily/2026/07/14/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.alux.network/daily/en/2026/07/14/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.alux.network/daily/2026/07/14/" />
   </url>
   <url>
-    <loc>https://ai-agent-daily.alux.network/2026/07/14/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/2026/07/14/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/2026/07/14/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/2026/07/14/" />
+    <loc>https://ai.alux.network/daily/2026/07/13/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai.alux.network/daily/2026/07/13/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.alux.network/daily/en/2026/07/13/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.alux.network/daily/2026/07/13/" />
   </url>
   <url>
-    <loc>https://ai-agent-daily.alux.network/en/2026/07/14/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/2026/07/14/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/2026/07/14/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/2026/07/14/" />
+    <loc>https://ai.alux.network/daily/en/2026/07/13/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai.alux.network/daily/2026/07/13/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.alux.network/daily/en/2026/07/13/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.alux.network/daily/2026/07/13/" />
   </url>
   <url>
-    <loc>https://ai-agent-daily.alux.network/2026/07/13/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/2026/07/13/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/2026/07/13/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/2026/07/13/" />
+    <loc>https://ai.alux.network/daily/2026/07/12/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai.alux.network/daily/2026/07/12/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.alux.network/daily/en/2026/07/12/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.alux.network/daily/2026/07/12/" />
   </url>
   <url>
-    <loc>https://ai-agent-daily.alux.network/en/2026/07/13/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/2026/07/13/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/2026/07/13/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/2026/07/13/" />
+    <loc>https://ai.alux.network/daily/en/2026/07/12/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai.alux.network/daily/2026/07/12/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.alux.network/daily/en/2026/07/12/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.alux.network/daily/2026/07/12/" />
   </url>
   <url>
-    <loc>https://ai-agent-daily.alux.network/2026/07/12/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/2026/07/12/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/2026/07/12/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/2026/07/12/" />
+    <loc>https://ai.alux.network/daily/2026/07/11/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai.alux.network/daily/2026/07/11/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.alux.network/daily/en/2026/07/11/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.alux.network/daily/2026/07/11/" />
   </url>
   <url>
-    <loc>https://ai-agent-daily.alux.network/en/2026/07/12/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/2026/07/12/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/2026/07/12/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/2026/07/12/" />
+    <loc>https://ai.alux.network/daily/en/2026/07/11/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai.alux.network/daily/2026/07/11/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.alux.network/daily/en/2026/07/11/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.alux.network/daily/2026/07/11/" />
   </url>
   <url>
-    <loc>https://ai-agent-daily.alux.network/2026/07/11/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/2026/07/11/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/2026/07/11/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/2026/07/11/" />
+    <loc>https://ai.alux.network/daily/2026/07/10/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai.alux.network/daily/2026/07/10/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.alux.network/daily/en/2026/07/10/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.alux.network/daily/2026/07/10/" />
   </url>
   <url>
-    <loc>https://ai-agent-daily.alux.network/en/2026/07/11/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/2026/07/11/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/2026/07/11/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/2026/07/11/" />
+    <loc>https://ai.alux.network/daily/en/2026/07/10/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai.alux.network/daily/2026/07/10/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.alux.network/daily/en/2026/07/10/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.alux.network/daily/2026/07/10/" />
   </url>
   <url>
-    <loc>https://ai-agent-daily.alux.network/2026/07/10/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/2026/07/10/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/2026/07/10/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/2026/07/10/" />
+    <loc>https://ai.alux.network/daily/2026/07/09/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai.alux.network/daily/2026/07/09/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.alux.network/daily/en/2026/07/09/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.alux.network/daily/2026/07/09/" />
   </url>
   <url>
-    <loc>https://ai-agent-daily.alux.network/en/2026/07/10/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/2026/07/10/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/2026/07/10/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/2026/07/10/" />
+    <loc>https://ai.alux.network/daily/en/2026/07/09/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai.alux.network/daily/2026/07/09/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.alux.network/daily/en/2026/07/09/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.alux.network/daily/2026/07/09/" />
   </url>
   <url>
-    <loc>https://ai-agent-daily.alux.network/2026/07/09/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/2026/07/09/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/2026/07/09/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/2026/07/09/" />
+    <loc>https://ai.alux.network/daily/2026/07/08/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai.alux.network/daily/2026/07/08/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.alux.network/daily/en/2026/07/08/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.alux.network/daily/2026/07/08/" />
   </url>
   <url>
-    <loc>https://ai-agent-daily.alux.network/en/2026/07/09/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/2026/07/09/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/2026/07/09/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/2026/07/09/" />
+    <loc>https://ai.alux.network/daily/en/2026/07/08/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai.alux.network/daily/2026/07/08/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.alux.network/daily/en/2026/07/08/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.alux.network/daily/2026/07/08/" />
   </url>
   <url>
-    <loc>https://ai-agent-daily.alux.network/2026/07/08/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/2026/07/08/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/2026/07/08/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/2026/07/08/" />
+    <loc>https://ai.alux.network/daily/2026/07/07/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai.alux.network/daily/2026/07/07/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.alux.network/daily/en/2026/07/07/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.alux.network/daily/2026/07/07/" />
   </url>
   <url>
-    <loc>https://ai-agent-daily.alux.network/en/2026/07/08/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/2026/07/08/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/2026/07/08/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/2026/07/08/" />
+    <loc>https://ai.alux.network/daily/en/2026/07/07/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai.alux.network/daily/2026/07/07/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.alux.network/daily/en/2026/07/07/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.alux.network/daily/2026/07/07/" />
   </url>
   <url>
-    <loc>https://ai-agent-daily.alux.network/2026/07/07/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/2026/07/07/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/2026/07/07/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/2026/07/07/" />
+    <loc>https://ai.alux.network/daily/2026/07/06/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai.alux.network/daily/2026/07/06/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.alux.network/daily/en/2026/07/06/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.alux.network/daily/2026/07/06/" />
   </url>
   <url>
-    <loc>https://ai-agent-daily.alux.network/en/2026/07/07/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/2026/07/07/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/2026/07/07/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/2026/07/07/" />
+    <loc>https://ai.alux.network/daily/en/2026/07/06/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai.alux.network/daily/2026/07/06/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.alux.network/daily/en/2026/07/06/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.alux.network/daily/2026/07/06/" />
   </url>
   <url>
-    <loc>https://ai-agent-daily.alux.network/2026/07/06/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/2026/07/06/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/2026/07/06/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/2026/07/06/" />
+    <loc>https://ai.alux.network/daily/2026/07/05/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai.alux.network/daily/2026/07/05/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.alux.network/daily/en/2026/07/05/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.alux.network/daily/2026/07/05/" />
   </url>
   <url>
-    <loc>https://ai-agent-daily.alux.network/en/2026/07/06/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/2026/07/06/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/2026/07/06/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/2026/07/06/" />
+    <loc>https://ai.alux.network/daily/en/2026/07/05/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai.alux.network/daily/2026/07/05/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.alux.network/daily/en/2026/07/05/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.alux.network/daily/2026/07/05/" />
   </url>
   <url>
-    <loc>https://ai-agent-daily.alux.network/2026/07/05/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/2026/07/05/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/2026/07/05/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/2026/07/05/" />
+    <loc>https://ai.alux.network/daily/2026/07/04/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai.alux.network/daily/2026/07/04/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.alux.network/daily/en/2026/07/04/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.alux.network/daily/2026/07/04/" />
   </url>
   <url>
-    <loc>https://ai-agent-daily.alux.network/en/2026/07/05/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/2026/07/05/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/2026/07/05/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/2026/07/05/" />
+    <loc>https://ai.alux.network/daily/en/2026/07/04/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai.alux.network/daily/2026/07/04/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.alux.network/daily/en/2026/07/04/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.alux.network/daily/2026/07/04/" />
   </url>
   <url>
-    <loc>https://ai-agent-daily.alux.network/2026/07/04/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/2026/07/04/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/2026/07/04/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/2026/07/04/" />
+    <loc>https://ai.alux.network/daily/2026/07/03/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai.alux.network/daily/2026/07/03/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.alux.network/daily/en/2026/07/03/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.alux.network/daily/2026/07/03/" />
   </url>
   <url>
-    <loc>https://ai-agent-daily.alux.network/en/2026/07/04/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/2026/07/04/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/2026/07/04/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/2026/07/04/" />
+    <loc>https://ai.alux.network/daily/en/2026/07/03/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai.alux.network/daily/2026/07/03/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.alux.network/daily/en/2026/07/03/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.alux.network/daily/2026/07/03/" />
   </url>
   <url>
-    <loc>https://ai-agent-daily.alux.network/2026/07/03/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/2026/07/03/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/2026/07/03/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/2026/07/03/" />
+    <loc>https://ai.alux.network/daily/2026/07/02/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai.alux.network/daily/2026/07/02/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.alux.network/daily/en/2026/07/02/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.alux.network/daily/2026/07/02/" />
   </url>
   <url>
-    <loc>https://ai-agent-daily.alux.network/en/2026/07/03/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/2026/07/03/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/2026/07/03/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/2026/07/03/" />
+    <loc>https://ai.alux.network/daily/en/2026/07/02/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai.alux.network/daily/2026/07/02/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.alux.network/daily/en/2026/07/02/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.alux.network/daily/2026/07/02/" />
   </url>
   <url>
-    <loc>https://ai-agent-daily.alux.network/2026/07/02/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/2026/07/02/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/2026/07/02/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/2026/07/02/" />
+    <loc>https://ai.alux.network/daily/2026/07/01/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai.alux.network/daily/2026/07/01/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.alux.network/daily/en/2026/07/01/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.alux.network/daily/2026/07/01/" />
   </url>
   <url>
-    <loc>https://ai-agent-daily.alux.network/en/2026/07/02/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/2026/07/02/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/2026/07/02/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/2026/07/02/" />
+    <loc>https://ai.alux.network/daily/en/2026/07/01/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai.alux.network/daily/2026/07/01/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.alux.network/daily/en/2026/07/01/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.alux.network/daily/2026/07/01/" />
   </url>
   <url>
-    <loc>https://ai-agent-daily.alux.network/2026/07/01/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/2026/07/01/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/2026/07/01/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/2026/07/01/" />
+    <loc>https://ai.alux.network/daily/2026/06/30/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai.alux.network/daily/2026/06/30/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.alux.network/daily/en/2026/06/30/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.alux.network/daily/2026/06/30/" />
   </url>
   <url>
-    <loc>https://ai-agent-daily.alux.network/en/2026/07/01/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/2026/07/01/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/2026/07/01/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/2026/07/01/" />
+    <loc>https://ai.alux.network/daily/en/2026/06/30/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai.alux.network/daily/2026/06/30/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.alux.network/daily/en/2026/06/30/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.alux.network/daily/2026/06/30/" />
   </url>
   <url>
-    <loc>https://ai-agent-daily.alux.network/2026/06/30/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/2026/06/30/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/2026/06/30/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/2026/06/30/" />
+    <loc>https://ai.alux.network/daily/2026/06/29/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai.alux.network/daily/2026/06/29/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.alux.network/daily/en/2026/06/29/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.alux.network/daily/2026/06/29/" />
   </url>
   <url>
-    <loc>https://ai-agent-daily.alux.network/en/2026/06/30/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/2026/06/30/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/2026/06/30/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/2026/06/30/" />
+    <loc>https://ai.alux.network/daily/en/2026/06/29/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai.alux.network/daily/2026/06/29/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.alux.network/daily/en/2026/06/29/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.alux.network/daily/2026/06/29/" />
   </url>
   <url>
-    <loc>https://ai-agent-daily.alux.network/2026/06/29/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/2026/06/29/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/2026/06/29/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/2026/06/29/" />
+    <loc>https://ai.alux.network/daily/2026/06/28/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai.alux.network/daily/2026/06/28/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.alux.network/daily/en/2026/06/28/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.alux.network/daily/2026/06/28/" />
   </url>
   <url>
-    <loc>https://ai-agent-daily.alux.network/en/2026/06/29/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/2026/06/29/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/2026/06/29/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/2026/06/29/" />
-  </url>
-  <url>
-    <loc>https://ai-agent-daily.alux.network/2026/06/28/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/2026/06/28/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/2026/06/28/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/2026/06/28/" />
-  </url>
-  <url>
-    <loc>https://ai-agent-daily.alux.network/en/2026/06/28/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai-agent-daily.alux.network/2026/06/28/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai-agent-daily.alux.network/en/2026/06/28/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai-agent-daily.alux.network/2026/06/28/" />
+    <loc>https://ai.alux.network/daily/en/2026/06/28/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ai.alux.network/daily/2026/06/28/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.alux.network/daily/en/2026/06/28/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.alux.network/daily/2026/06/28/" />
   </url>
 </urlset>

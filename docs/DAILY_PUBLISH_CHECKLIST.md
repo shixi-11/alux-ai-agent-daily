@@ -22,7 +22,7 @@
 - [ ] 运行 `scripts/sync-reports.ps1` 成功。
 - [ ] 中英首页的最新日期、标题、摘要、归档数量和月份数正确。
 - [ ] 中英首页“最近更新”相同，使用最新审核记录对应的中国标准时间。
-- [ ] `/latest/` 与 `/en/latest/` 指向同一日期。
+- [ ] `/daily/latest/` 与 `/daily/en/latest/` 指向同一日期。
 - [ ] 每个日期页的“中文 / EN”切换保持同一期。
 - [ ] 上一期/下一期、返回首页和最新一期链接可用。
 - [ ] 浏览器页签显示 ALUX 三角标，不再显示默认小地球。
@@ -45,7 +45,7 @@
 
 - [ ] 使用 `tools/share-card/` 的固定生成流程，未手工拼接或裁剪成品。
 - [ ] 成品严格为 3072×4096、3:4、RGB JPG；没有额外交付 PNG。
-- [ ] 二维码解码结果严格为 `https://ai-agent-daily.alux.network/`。
+- [ ] 二维码解码结果严格为 `https://ai.alux.network/daily/`。
 - [ ] 4K 原图以及 1080、720、540、360 像素宽的 JPEG 压缩模拟均可解码。
 - [ ] 全部文字完整显示，二维码静区未被 Logo、纹理、边框或阴影侵入。
 
@@ -57,5 +57,8 @@
 - [ ] 提交信息为 `发布 YYYY-MM-DD 中英双语日报`或清晰的站点修改说明。
 - [ ] 推送 `main` 后等待 Vercel 完成部署。
 - [ ] 运行 `node scripts/verify-official-deployment.cjs YYYY-MM-DD`，确认正式域名的中英首页、最新页和日期页与本地成品哈希一致。
-- [ ] 在 <https://ai-agent-daily.alux.network/> 而不只是 Vercel 预览域名上完成线上验收；通过前不发 Telegram。
+- [ ] 在 <https://ai.alux.network/daily/> 而不只是 Vercel 预览域名上完成线上验收；通过前不发 Telegram。
+- [ ] 旧域名的 `/`、`/en/`、`/latest/`、`/en/latest/`、中英日期页均以一次 `308` 精确跳转到新主地址的对应路径。
+- [ ] 旧 `/daily/` 不会跳到 `/daily/daily/`，带查询参数的旧链接仍保留查询参数。
+- [ ] canonical、hreflang、sitemap、二维码、分享卡和固定消息只使用 `https://ai.alux.network/daily/`；旧域名仅作为永久兼容入口。
 - [ ] Telegram 中文 HTML 附件与官网是同一期，固定正文保留标题、中文站、英文站和日期页之间的空行。

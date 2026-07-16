@@ -3,7 +3,8 @@ param(
     [string]$SourceRoot,
     [string]$SiteRoot,
     [string]$TranslationRoot,
-    [string]$BaseUrl = 'https://ai-agent-daily.alux.network'
+    [string]$BaseUrl = 'https://ai.alux.network',
+    [string]$BasePath = '/daily'
 )
 
 $ErrorActionPreference = 'Stop'
@@ -23,6 +24,8 @@ if ([string]::IsNullOrWhiteSpace($TranslationRoot)) {
 $SiteRoot = [System.IO.Path]::GetFullPath($SiteRoot)
 $SourceRoot = [System.IO.Path]::GetFullPath($SourceRoot)
 $TranslationRoot = [System.IO.Path]::GetFullPath($TranslationRoot)
+$BaseUrl = $BaseUrl.TrimEnd('/')
+$BasePath = '/' + $BasePath.Trim('/')
 $PublicRoot = Join-Path $SiteRoot 'public'
 $TemplateRoot = Join-Path $SiteRoot 'templates'
 $AssetRoot = Join-Path $SiteRoot 'assets'
@@ -170,8 +173,8 @@ foreach ($file in $sourceFiles) {
     }
 
     $relativeDirectory = Join-Path (Join-Path $date.ToString('yyyy') $date.ToString('MM')) $date.ToString('dd')
-    $url = '/' + ($relativeDirectory -replace '\\', '/') + '/'
-    $englishUrl = '/en' + $url
+    $url = $BasePath + '/' + ($relativeDirectory -replace '\\', '/') + '/'
+    $englishUrl = $BasePath + '/en/' + ($relativeDirectory -replace '\\', '/') + '/'
     $reports.Add([pscustomobject][ordered]@{
         date = $date
         dateIso = $dateIso
@@ -204,13 +207,13 @@ for ($index = 0; $index -lt $reportsAscending.Count; $index++) {
     $report = $reportsAscending[$index]
     $previousZh = if ($index -gt 0) { $reportsAscending[$index - 1].url } else { '' }
     $nextZh = if ($index -lt ($reportsAscending.Count - 1)) { $reportsAscending[$index + 1].url } else { '' }
-    $previousEn = if ($previousZh) { '/en' + $previousZh } else { '' }
-    $nextEn = if ($nextZh) { '/en' + $nextZh } else { '' }
+    $previousEn = if ($index -gt 0) { $reportsAscending[$index - 1].englishUrl } else { '' }
+    $nextEn = if ($index -lt ($reportsAscending.Count - 1)) { $reportsAscending[$index + 1].englishUrl } else { '' }
 
-    $chinesePage = Add-ReportSiteChrome -Html $report.sourceHtml -Language 'zh-CN' -BaseUrl $BaseUrl -DateIso $report.dateIso -ChinesePath $report.url -EnglishPath $report.englishUrl -PreviousPath $previousZh -NextPath $nextZh
+    $chinesePage = Add-ReportSiteChrome -Html $report.sourceHtml -Language 'zh-CN' -BaseUrl $BaseUrl -BasePath $BasePath -DateIso $report.dateIso -ChinesePath $report.url -EnglishPath $report.englishUrl -PreviousPath $previousZh -NextPath $nextZh
     $englishPage = Set-DocumentBody -Html $report.sourceHtml -BodyFragment $report.englishBody
     $englishPage = Set-HtmlTitle -Html $englishPage -Title ($report.dateIso + ' ALUX AI Agent Intelligence Daily')
-    $englishPage = Add-ReportSiteChrome -Html $englishPage -Language 'en-US' -BaseUrl $BaseUrl -DateIso $report.dateIso -ChinesePath $report.url -EnglishPath $report.englishUrl -PreviousPath $previousEn -NextPath $nextEn
+    $englishPage = Add-ReportSiteChrome -Html $englishPage -Language 'en-US' -BaseUrl $BaseUrl -BasePath $BasePath -DateIso $report.dateIso -ChinesePath $report.url -EnglishPath $report.englishUrl -PreviousPath $previousEn -NextPath $nextEn
 
     $chineseDestination = Join-Path $PublicRoot ($report.publicPath -replace '/', '\\')
     $englishDestination = Join-Path $PublicRoot ($report.englishPublicPath -replace '/', '\\')
@@ -295,7 +298,8 @@ $monthGroups = $reportsDescending | Group-Object { $_.date.ToString('yyyy-MM') }
 
 $chineseIndex = Get-Content -LiteralPath (Join-Path $TemplateRoot 'index.template.html') -Raw -Encoding UTF8
 $chineseReplacementMap = [ordered]@{
-    '{{BASE_URL}}' = $BaseUrl.TrimEnd('/')
+    '{{BASE_URL}}' = $BaseUrl
+    '{{BASE_PATH}}' = $BasePath
     '{{LATEST_DATE_ISO}}' = $latest.dateIso
     '{{LATEST_DATE_ZH}}' = $latest.dateZh
     '{{LATEST_URL}}' = $latest.url
@@ -314,7 +318,8 @@ Write-Utf8NoBom -Path (Join-Path $PublicRoot 'index.html') -Content $chineseInde
 
 $englishIndex = Get-Content -LiteralPath (Join-Path $TemplateRoot 'index.en.template.html') -Raw -Encoding UTF8
 $englishReplacementMap = [ordered]@{
-    '{{BASE_URL}}' = $BaseUrl.TrimEnd('/')
+    '{{BASE_URL}}' = $BaseUrl
+    '{{BASE_PATH}}' = $BasePath
     '{{LATEST_DATE_ISO}}' = $latest.dateIso
     '{{LATEST_DATE_EN}}' = $latest.dateEn
     '{{LATEST_URL}}' = $latest.englishUrl
@@ -332,11 +337,13 @@ foreach ($entry in $englishReplacementMap.GetEnumerator()) {
 Write-Utf8NoBom -Path (Join-Path $PublicRoot 'en\index.html') -Content $englishIndex
 
 $chineseArchivePayload = [ordered]@{
-    schemaVersion = 2
+    schemaVersion = 3
     locale = 'zh-CN'
     generatedAt = $generatedAtUtc.ToString('o')
-    baseUrl = $BaseUrl.TrimEnd('/')
-    latest = [ordered]@{ date = $latest.dateIso; url = $latest.url; latestUrl = '/latest/'; alternateUrl = $latest.englishUrl }
+    baseUrl = $BaseUrl
+    publicationPath = $BasePath
+    publicationUrl = $BaseUrl + $BasePath + '/'
+    latest = [ordered]@{ date = $latest.dateIso; url = $latest.url; latestUrl = $BasePath + '/latest/'; alternateUrl = $latest.englishUrl }
     reports = @($reportsDescending | ForEach-Object {
         [ordered]@{
             date = $_.dateIso; title = $_.title; lead = $_.lead; url = $_.url; alternateUrl = $_.englishUrl
@@ -347,11 +354,13 @@ $chineseArchivePayload = [ordered]@{
 Write-Utf8NoBom -Path (Join-Path $PublicRoot 'archive.json') -Content ($chineseArchivePayload | ConvertTo-Json -Depth 6)
 
 $englishArchivePayload = [ordered]@{
-    schemaVersion = 2
+    schemaVersion = 3
     locale = 'en-US'
     generatedAt = $generatedAtUtc.ToString('o')
-    baseUrl = $BaseUrl.TrimEnd('/') + '/en'
-    latest = [ordered]@{ date = $latest.dateIso; url = $latest.englishUrl; latestUrl = '/en/latest/'; alternateUrl = $latest.url }
+    baseUrl = $BaseUrl
+    publicationPath = $BasePath + '/en'
+    publicationUrl = $BaseUrl + $BasePath + '/en/'
+    latest = [ordered]@{ date = $latest.dateIso; url = $latest.englishUrl; latestUrl = $BasePath + '/en/latest/'; alternateUrl = $latest.url }
     reports = @($reportsDescending | ForEach-Object {
         [ordered]@{
             date = $_.dateIso; title = $_.titleEn; lead = $_.leadEn; url = $_.englishUrl; alternateUrl = $_.url
@@ -361,10 +370,9 @@ $englishArchivePayload = [ordered]@{
 }
 Write-Utf8NoBom -Path (Join-Path $PublicRoot 'en\archive.json') -Content ($englishArchivePayload | ConvertTo-Json -Depth 6)
 
-$base = $BaseUrl.TrimEnd('/')
+$base = $BaseUrl
 $sitemapPairs = New-Object System.Collections.Generic.List[object]
-$sitemapPairs.Add([pscustomobject]@{ zh = $base + '/'; en = $base + '/en/' })
-$sitemapPairs.Add([pscustomobject]@{ zh = $base + '/latest/'; en = $base + '/en/latest/' })
+$sitemapPairs.Add([pscustomobject]@{ zh = $base + $BasePath + '/'; en = $base + $BasePath + '/en/' })
 foreach ($report in $reportsDescending) {
     $sitemapPairs.Add([pscustomobject]@{ zh = $base + $report.url; en = $base + $report.englishUrl })
 }
@@ -386,11 +394,12 @@ $sitemap = @(
     '</urlset>'
 ) -join "`n"
 Write-Utf8NoBom -Path (Join-Path $PublicRoot 'sitemap.xml') -Content $sitemap
-Write-Utf8NoBom -Path (Join-Path $PublicRoot 'robots.txt') -Content ("User-agent: *`nAllow: /`nSitemap: $base/sitemap.xml`n")
+Write-Utf8NoBom -Path (Join-Path $PublicRoot 'robots.txt') -Content ("User-agent: *`nAllow: $BasePath/`nSitemap: $base$BasePath/sitemap.xml`n")
 
 $notFoundTemplate = Get-Content -LiteralPath (Join-Path $TemplateRoot '404.template.html') -Raw -Encoding UTF8
+$notFoundTemplate = $notFoundTemplate.Replace('{{BASE_PATH}}', $BasePath)
 Write-Utf8NoBom -Path (Join-Path $PublicRoot '404.html') -Content $notFoundTemplate
 
 Write-Host ('已同步 {0} 期中英双语日报：{1} 至 {2}' -f $reports.Count, $earliest.dateIso, $latest.dateIso) -ForegroundColor Green
 Write-Host ('最新固定归档：{0} / {1}' -f $latest.url, $latest.englishUrl)
-Write-Host '最新入口：/latest/ / /en/latest/'
+Write-Host ('最新入口：{0}/latest/ / {0}/en/latest/' -f $BasePath)

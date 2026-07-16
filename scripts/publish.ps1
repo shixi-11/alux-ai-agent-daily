@@ -131,7 +131,7 @@ if (-not $NoPush) {
     Write-Host ('已直接提交并推送 main，无需 PR 或人工合并：{0}' -f $commitMessage) -ForegroundColor Green
     & $nodeExecutable (Join-Path $PSScriptRoot 'verify-official-deployment.cjs') $releaseDate
     if ($LASTEXITCODE -ne 0) {
-        throw 'Vercel 正式域名尚未部署当前中英版本；已停止 Telegram 交付。'
+        throw 'Vercel 新主地址内容或旧域名永久兼容尚未通过完整验收；已停止 Telegram 交付。'
     }
-    Write-Host '正式域名已部署并通过中英首页、最新页、日期页与内容哈希验收。' -ForegroundColor Green
+    Write-Host '新主地址已部署，且中英首页、最新页、日期页、内容哈希与旧域名单次 308 兼容均已通过验收。' -ForegroundColor Green
 }

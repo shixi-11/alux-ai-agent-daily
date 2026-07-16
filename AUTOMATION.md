@@ -6,10 +6,11 @@
 2. `docs/REPORT_STYLE_GUIDE.md`
 3. `docs/RESPONSIVE_LAYOUT_STANDARD.md`
 4. `docs/DAILY_PUBLISH_CHECKLIST.md`
-5. `docs/PUBLIC_REPOSITORY_BOUNDARY.md`
-6. `docs/SHARE_CARD_STANDARD.md`
-7. `.baoyu-skills/baoyu-translate/EXTEND.md`
-8. `automation/OPENCLAW_DAILY_TASK.md`
+5. `docs/DOMAIN_ROUTING.md`
+6. `docs/PUBLIC_REPOSITORY_BOUNDARY.md`
+7. `docs/SHARE_CARD_STANDARD.md`
+8. `.baoyu-skills/baoyu-translate/EXTEND.md`
+9. `automation/OPENCLAW_DAILY_TASK.md`
 
 读完后，保留你原有自动化的执行时间和时区，按 `automation/OPENCLAW_DAILY_TASK.md` 替换任务正文。`automation/task-contract.json` 是供 Agent 和脚本读取的机器可读合同。
 
@@ -18,7 +19,7 @@
 1. 读取 `automation/task-contract.json` 的 `contractVersion`。
 2. 找到你已经存在的日报自动化任务，不新建重复任务。
 3. 保留原任务 ID、schedule、时区、通知对象和凭据配置，只用 `automation/OPENCLAW_DAILY_TASK.md` 替换任务正文。
-4. 确认正文含当前版本标记 `[ALUX_DAILY_CONTRACT_VERSION: 2.3.1]`。
+4. 确认正文含当前版本标记 `[ALUX_DAILY_CONTRACT_VERSION: 2.4.0]`。
 5. 先手动执行一次 dry run；只有中英生成、构建和验收都通过，才让升级后的任务进入下一次定时运行。
 
 ## 你的完整任务
@@ -51,10 +52,14 @@
 
 `scripts/sync-reports.ps1` 会扫描 `content/zh/` 中日期最新的母稿，找到同日期的已审英文母稿，然后自动更新：
 
-- <https://ai-agent-daily.alux.network/> 的最新一期卡片、日期、摘要、数量和历史归档
-- `/latest/` 与 `/en/latest/`
+- <https://ai.alux.network/daily/> 的最新一期卡片、日期、摘要、数量和历史归档
+- `/daily/latest/` 与 `/daily/en/latest/`
 - 中英日期页和同期语言切换
-- `/archive.json`、`/en/archive.json` 和 `sitemap.xml`
+- `/daily/archive.json`、`/daily/en/archive.json` 和 `/daily/sitemap.xml`
+
+正式部署后还必须验证 `https://ai-agent-daily.alux.network/` 及其 `/en/`、`/latest/`、日期路径均以单次永久重定向到 `https://ai.alux.network/daily/` 下的对应路径。旧域名只承担兼容，不得继续写入 canonical、hreflang、sitemap 或新生成的对外物料。
+
+公开域名、重定向与故障排查的当前权威规则见 `docs/DOMAIN_ROUTING.md`。其他电脑上的日报专用 Agent 每次发现合同版本升级时都必须重读该文件；正常日报发布不需要、也不得修改 DNS。
 
 只要母稿、英文翻译和审核清单正确，首页最新内容就会在生成时自动跟随。
 

@@ -1,11 +1,20 @@
 {
   "schemaVersion": 1,
-  "contractVersion": "2.3.1",
+  "contractVersion": "2.4.0",
   "task": "ALUX AI Agent Intelligence Daily bilingual publish",
   "schedulePolicy": "Preserve the existing OpenClaw schedule and timezone; replace only the task workflow.",
   "automationTimezone": "preserve-existing",
   "siteDisplayTimezone": "Asia/Shanghai",
-  "officialSite": "https://ai-agent-daily.alux.network/",
+  "officialSite": "https://ai.alux.network/daily/",
+  "permanentCompatibilitySite": "https://ai-agent-daily.alux.network/",
+  "routeContract": {
+    "zhHome": "/daily/",
+    "enHome": "/daily/en/",
+    "zhLatest": "/daily/latest/",
+    "enLatest": "/daily/en/latest/",
+    "zhDated": "/daily/YYYY/MM/DD/",
+    "enDated": "/daily/en/YYYY/MM/DD/"
+  },
   "sourceOfTruth": {
     "zh": "content/zh",
     "en": "content/en",
@@ -30,6 +39,7 @@
     "AUTOMATION.md",
     "docs/REPORT_STYLE_GUIDE.md",
     "docs/RESPONSIVE_LAYOUT_STANDARD.md",
+    "docs/DOMAIN_ROUTING.md",
     "docs/DAILY_PUBLISH_CHECKLIST.md",
     "docs/PUBLIC_REPOSITORY_BOUNDARY.md",
     "docs/SHARE_CARD_STANDARD.md",
@@ -46,7 +56,7 @@
     "Run the public release boundary scanner and reject private identity, credentials, local paths, internal artifacts and process narration.",
     "Reject every daily change outside the official release allowlist.",
     "Commit Chinese source, English source, translation manifest and public output together; push the official main branch directly without a pull request or manual merge.",
-    "Verify the official domain and deployed file hashes after Vercel finishes deployment.",
+    "Verify the new official domain and deployed file hashes after Vercel finishes deployment, then verify every legacy route uses exactly one permanent redirect to the matching new route.",
     "Only after official-domain verification, send the matching Chinese HTML attachment and the fixed multiline Telegram message."
   ],
   "repositoryPublishAllowlist": [
@@ -69,15 +79,15 @@
     "attachment": "content/zh/YYYYMMDD_ALUX_AI智能体情报日报.html",
     "sendAfter": "official deployment verification passes",
     "preserveBlankLines": true,
-    "messageTemplate": "【ALUX AI智能体情报日报】\n\n中文站：\nhttps://ai-agent-daily.alux.network/\n\n英文站：\nhttps://ai-agent-daily.alux.network/en/\n\nYYYY-MM-DD：\nhttps://ai-agent-daily.alux.network/YYYY/MM/DD/"
+    "messageTemplate": "【ALUX AI智能体情报日报】\n\n中文站：\nhttps://ai.alux.network/daily/\n\n英文站：\nhttps://ai.alux.network/daily/en/\n\nYYYY-MM-DD：\nhttps://ai.alux.network/daily/YYYY/MM/DD/"
   },
   "atomicReleaseFields": [
     "homepage latest date",
     "homepage latest title and summary",
     "homepage archive counts",
     "homepage last-updated time derived from the newest reviewedAt",
-    "/latest/",
-    "/en/latest/",
+    "/daily/latest/",
+    "/daily/en/latest/",
     "Chinese and English dated routes",
     "archive manifests",
     "sitemap"
@@ -98,7 +108,10 @@
     "No file outside repositoryPublishAllowlist may enter a daily release commit.",
     "No private identity, credential, local path, internal artifact, work log, tool output or process narration may enter public release content.",
     "Daily publication must commit and push the official main branch directly; it must not stop at a pull request or wait for a manual merge.",
-    "Telegram delivery is blocked until the official domain serves byte-equivalent current home, latest and dated pages.",
+    "Telegram delivery is blocked until the new official domain serves byte-equivalent current home, latest and dated pages and every legacy route passes the single-308 compatibility gate.",
+    "All canonical, hreflang, sitemap, QR-code, share-card and newly published public links must use https://ai.alux.network/daily/ rather than the compatibility domain.",
+    "The compatibility domain home, English, latest and dated routes must use exactly one 308 redirect to the matching new route, preserve query parameters, and never produce /daily/daily/.",
+    "Routine daily publication must not modify DNS; only the public routing contract belongs in this repository, while provider account and verification data must remain private.",
     "Do not push when any validation fails."
   ],
   "commands": [

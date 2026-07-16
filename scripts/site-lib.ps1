@@ -189,6 +189,7 @@ function Add-ReportSiteChrome {
         [Parameter(Mandatory)] [string]$Html,
         [Parameter(Mandatory)] [ValidateSet('zh-CN', 'en-US')] [string]$Language,
         [Parameter(Mandatory)] [string]$BaseUrl,
+        [Parameter(Mandatory)] [string]$BasePath,
         [Parameter(Mandatory)] [string]$DateIso,
         [Parameter(Mandatory)] [string]$ChinesePath,
         [Parameter(Mandatory)] [string]$EnglishPath,
@@ -198,6 +199,7 @@ function Add-ReportSiteChrome {
     $Html = Remove-SiteInjection -Html $Html
     $Html = Set-HtmlLanguage -Html $Html -Language $Language
     $base = $BaseUrl.TrimEnd('/')
+    $sitePath = '/' + $BasePath.Trim('/')
     $canonicalPath = if ($Language -eq 'zh-CN') { $ChinesePath } else { $EnglishPath }
     $canonicalUrl = $base + $canonicalPath
     $head = @"
@@ -208,9 +210,9 @@ function Add-ReportSiteChrome {
 <link rel="alternate" hreflang="x-default" href="$(Encode-Html ($base + $ChinesePath))">
 <meta property="og:locale" content="$(if ($Language -eq 'zh-CN') { 'zh_CN' } else { 'en_US' })">
 <meta property="og:url" content="$(Encode-Html $canonicalUrl)">
-<link rel="icon" type="image/png" href="/assets/alux-mark.png">
-<link rel="apple-touch-icon" href="/assets/alux-mark.png">
-<link rel="stylesheet" href="/assets/report-site.css">
+<link rel="icon" type="image/png" href="$sitePath/assets/alux-mark.png">
+<link rel="apple-touch-icon" href="$sitePath/assets/alux-mark.png">
+<link rel="stylesheet" href="$sitePath/assets/report-site.css">
 <!-- site:i18n-head:end -->
 "@
     if ($Html -notmatch '(?i)</head>') {
@@ -219,8 +221,8 @@ function Add-ReportSiteChrome {
     $Html = [regex]::Replace($Html, '(?i)</head>', ($head + "`n</head>"), 1)
 
     if ($Language -eq 'zh-CN') {
-        $homePath = '/'
-        $latestPath = '/latest/'
+        $homePath = $sitePath + '/'
+        $latestPath = $sitePath + '/latest/'
         $brand = 'ALUX AI智能体情报日报'
         $brandTagline = 'AI Agent Intelligence Daily'
         $latestLabel = '最新一期'
@@ -232,8 +234,8 @@ function Add-ReportSiteChrome {
         $nextLabel = '下一期 →'
         $footerBrand = 'ALUX AI智能体情报日报'
     } else {
-        $homePath = '/en/'
-        $latestPath = '/en/latest/'
+        $homePath = $sitePath + '/en/'
+        $latestPath = $sitePath + '/en/latest/'
         $brand = 'ALUX AI Agent Intelligence Daily'
         $brandTagline = 'Signals for Agent Infrastructure'
         $latestLabel = 'Latest'
