@@ -1,168 +1,177 @@
 {
-    "schemaVersion":  1,
-    "locale":  "en-US",
-    "reports":  [
-                    {
-                        "date":  "2026-06-28",
-                        "sourceFile":  "20260628_ALUX_AI智能体情报日报.html",
-                        "translationFile":  "20260628.body.html",
-                        "sourceSha256":  "6ff2861a7bf06fa3afe7e12afc97b302834d61bd6526dd080524247f6c50fd6d",
-                        "translationSha256":  "6a2754e8e3aa062915812daa608256b063d5e686fd2bbe7fd34bb253e5394464",
-                        "status":  "reviewed",
-                        "reviewedAt":  "2026-07-15T10:53:21.6582502Z"
-                    },
-                    {
-                        "date":  "2026-06-29",
-                        "sourceFile":  "20260629_ALUX_AI智能体情报日报.html",
-                        "translationFile":  "20260629.body.html",
-                        "sourceSha256":  "0fd59b90fd546d0c854b9985aec32c26ae7a4e2a9e98c9c493acf23296d99ac5",
-                        "translationSha256":  "76c76489d7e630aaeea8e47daf57c05bb94fa97e6c2bd54a5691a77f8bf91689",
-                        "status":  "reviewed",
-                        "reviewedAt":  "2026-07-15T10:53:22.2572304Z"
-                    },
-                    {
-                        "date":  "2026-06-30",
-                        "sourceFile":  "20260630_ALUX_AI智能体情报日报.html",
-                        "translationFile":  "20260630.body.html",
-                        "sourceSha256":  "4ad8a6758bb8986d35907fe972ac58db1364496b053572d559f3faa13d974401",
-                        "translationSha256":  "e2a908d890d99a255343593f459782728bd026732117f42a03f614363453880d",
-                        "status":  "reviewed",
-                        "reviewedAt":  "2026-07-15T10:53:22.2640513Z"
-                    },
-                    {
-                        "date":  "2026-07-01",
-                        "sourceFile":  "20260701_ALUX_AI智能体情报日报.html",
-                        "translationFile":  "20260701.body.html",
-                        "sourceSha256":  "0fcef64a8ebe184b8e15ae83946826e1895a99765ffb3bf696e3a55ccd0325ba",
-                        "translationSha256":  "8bb53bb55072a450692736930f50ce1f18cf71e903cb4a0a93c9c3ba7dceef91",
-                        "status":  "reviewed",
-                        "reviewedAt":  "2026-07-15T10:35:30.8216094Z"
-                    },
-                    {
-                        "date":  "2026-07-02",
-                        "sourceFile":  "20260702_ALUX_AI智能体情报日报.html",
-                        "translationFile":  "20260702.body.html",
-                        "sourceSha256":  "b1fbf92dc370d01bd8e6646cc4c0141968cf3635718503ff480c58c45fb03741",
-                        "translationSha256":  "0ae41b6bcef28d9772c49353a8f7842f8d62d97dbd26ce3c84d8a87fbb0251ee",
-                        "status":  "reviewed",
-                        "reviewedAt":  "2026-07-15T10:51:55.2215421Z"
-                    },
-                    {
-                        "date":  "2026-07-03",
-                        "sourceFile":  "20260703_ALUX_AI智能体情报日报.html",
-                        "translationFile":  "20260703.body.html",
-                        "sourceSha256":  "a739476a917bc57f6a94713dd73083f0ae9c8076c96c2a73dc3ec354ebbfff3c",
-                        "translationSha256":  "a01238c30836467d971207a688edc32c94ab053777a44f53333676a86bbd57e8",
-                        "status":  "reviewed",
-                        "reviewedAt":  "2026-07-15T10:31:50.9138095Z"
-                    },
-                    {
-                        "date":  "2026-07-04",
-                        "sourceFile":  "20260704_ALUX_AI智能体情报日报.html",
-                        "translationFile":  "20260704.body.html",
-                        "sourceSha256":  "2b71ed8cb40e30261d0921359cea087e54421f2b1bbb262f705d86e94b095937",
-                        "translationSha256":  "69e346ea5cb05b15163898dd20db4730e4320f4107a7e44d246439c9942387c4",
-                        "status":  "reviewed",
-                        "reviewedAt":  "2026-07-15T10:53:22.2863047Z"
-                    },
-                    {
-                        "date":  "2026-07-05",
-                        "sourceFile":  "20260705_ALUX_AI智能体情报日报.html",
-                        "translationFile":  "20260705.body.html",
-                        "sourceSha256":  "7e4454422ce170e81c6aff9bbf5bd16a57a82371076d6d7a10934fe9da6d780b",
-                        "translationSha256":  "ed8c88b74ca212bfedaccb497cf146dceb9d59d3e680d16eb204021409d9c1da",
-                        "status":  "reviewed",
-                        "reviewedAt":  "2026-07-15T10:53:22.2915864Z"
-                    },
-                    {
-                        "date":  "2026-07-06",
-                        "sourceFile":  "20260706_ALUX_AI智能体情报日报.html",
-                        "translationFile":  "20260706.body.html",
-                        "sourceSha256":  "64619242852b3a83aca5bf2d7ebe354cce1c737fd0763b9d32b0697a15fd6ee1",
-                        "translationSha256":  "8277667e4f71c2cb23c1beb38e6be8c23ab2ec03d256dc71f36b5398cb2db0ad",
-                        "status":  "reviewed",
-                        "reviewedAt":  "2026-07-15T10:54:58.3863787Z"
-                    },
-                    {
-                        "date":  "2026-07-07",
-                        "sourceFile":  "20260707_ALUX_AI智能体情报日报.html",
-                        "translationFile":  "20260707.body.html",
-                        "sourceSha256":  "57207203e446b4782cb86318e9865863fee9f5d7691d74e02bb44ef09aa6d60b",
-                        "translationSha256":  "3e09de2fa02f5fa311048fd5eccfb84d6cc4d5022b86af84f1f43f01b3eae4af",
-                        "status":  "reviewed",
-                        "reviewedAt":  "2026-07-15T10:53:22.3020923Z"
-                    },
-                    {
-                        "date":  "2026-07-08",
-                        "sourceFile":  "20260708_ALUX_AI智能体情报日报.html",
-                        "translationFile":  "20260708.body.html",
-                        "sourceSha256":  "bc0f1fbd1a8011658152f5b19b706d474a354b979ab6c5a9cbc5502b29ae1fe5",
-                        "translationSha256":  "03ff58bb6d486dfff3e0a29b8bbd30aaac8d769742d6c492379b5e4e16d0dab6",
-                        "status":  "reviewed",
-                        "reviewedAt":  "2026-07-15T10:14:51.9164533Z"
-                    },
-                    {
-                        "date":  "2026-07-09",
-                        "sourceFile":  "20260709_ALUX_AI智能体情报日报.html",
-                        "translationFile":  "20260709.body.html",
-                        "sourceSha256":  "75a138b69c5e3d89e9b04c912a813aaf47349ef15f8b573ba66e65f3de4357ef",
-                        "translationSha256":  "d0ae2e51c9e9746fab18b3ffb476e88910ae11861566aa671da25f5f1d388741",
-                        "status":  "reviewed",
-                        "reviewedAt":  "2026-07-15T10:18:47.4565277Z"
-                    },
-                    {
-                        "date":  "2026-07-10",
-                        "sourceFile":  "20260710_ALUX_AI智能体情报日报.html",
-                        "translationFile":  "20260710.body.html",
-                        "sourceSha256":  "4eb0c74ebd648fbe20dad6360b9a7b31684ddba4ff890c0521bd6331793821b1",
-                        "translationSha256":  "d82a13664a0993473b1888264305dcfe2661ba021e9de4dac6f4ac04f11aa8a6",
-                        "status":  "reviewed",
-                        "reviewedAt":  "2026-07-15T10:18:11.8151183Z"
-                    },
-                    {
-                        "date":  "2026-07-11",
-                        "sourceFile":  "20260711_ALUX_AI智能体情报日报.html",
-                        "translationFile":  "20260711.body.html",
-                        "sourceSha256":  "4d2ca426e41daff3e65add8b372ab00059a32ce66cfd280e0abe241c5ae2952f",
-                        "translationSha256":  "0f17270a2ba621aad5a5ea54fcfc757bb63f8b495bb9be000f5f09eea85975e6",
-                        "status":  "reviewed",
-                        "reviewedAt":  "2026-07-15T10:10:01.6529702Z"
-                    },
-                    {
-                        "date":  "2026-07-12",
-                        "sourceFile":  "20260712_ALUX_AI智能体情报日报.html",
-                        "translationFile":  "20260712.body.html",
-                        "sourceSha256":  "ed6e42e47cb01c0963430f646955ac7bb47971ef4dadc7e56299bc7cc0dd0064",
-                        "translationSha256":  "49413f841579ffbcee8f4dab8537c24dd101b23f74740f8c8a310a4a80f1584f",
-                        "status":  "reviewed",
-                        "reviewedAt":  "2026-07-15T10:09:23.7620565Z"
-                    },
-                    {
-                        "date":  "2026-07-13",
-                        "sourceFile":  "20260713_ALUX_AI智能体情报日报.html",
-                        "translationFile":  "20260713.body.html",
-                        "sourceSha256":  "ed58353c6f4ba65967d9f13bdeff2aed02e90303f297b6b15057bc5bc7dec5d7",
-                        "translationSha256":  "d6ab16ca6e124099a3f79b349dfb03160098bc53142e3e3ba596c0c3bd208c0b",
-                        "status":  "reviewed",
-                        "reviewedAt":  "2026-07-15T10:09:23.3520838Z"
-                    },
-                    {
-                        "date":  "2026-07-14",
-                        "sourceFile":  "20260714_ALUX_AI智能体情报日报.html",
-                        "translationFile":  "20260714.body.html",
-                        "sourceSha256":  "436d7ff772c8a9797c26a6a9af9ad4b8815cf133381e63f9b38486b23151ba0e",
-                        "translationSha256":  "2b872d6a302040b9b85b5ce36f719bf7ebf2f6041c20b2af4a954e8a474629a7",
-                        "status":  "reviewed",
-                        "reviewedAt":  "2026-07-15T10:04:25.5506067Z"
-                    },
-                    {
-                        "date":  "2026-07-15",
-                        "sourceFile":  "20260715_ALUX_AI智能体情报日报.html",
-                        "translationFile":  "20260715.body.html",
-                        "sourceSha256":  "d03a3f396311bf5c2a8db373286f312d222fa25cbf79d797685d8db62585650c",
-                        "translationSha256":  "3014a4f06c4c708ee4d3ab7dc633411ffa7014d6e1a415fa0706d42fe9d9c415",
-                        "status":  "reviewed",
-                        "reviewedAt":  "2026-07-15T10:27:27.3764500Z"
-                    }
-                ]
+  "schemaVersion": 1,
+  "locale": "en-US",
+  "reports": [
+    {
+      "date": "2026-06-28",
+      "sourceFile": "20260628_ALUX_AI智能体情报日报.html",
+      "translationFile": "20260628.body.html",
+      "sourceSha256": "6ff2861a7bf06fa3afe7e12afc97b302834d61bd6526dd080524247f6c50fd6d",
+      "translationSha256": "6a2754e8e3aa062915812daa608256b063d5e686fd2bbe7fd34bb253e5394464",
+      "status": "reviewed",
+      "reviewedAt": "2026-07-15T10:53:21.6582502Z"
+    },
+    {
+      "date": "2026-06-29",
+      "sourceFile": "20260629_ALUX_AI智能体情报日报.html",
+      "translationFile": "20260629.body.html",
+      "sourceSha256": "0fd59b90fd546d0c854b9985aec32c26ae7a4e2a9e98c9c493acf23296d99ac5",
+      "translationSha256": "76c76489d7e630aaeea8e47daf57c05bb94fa97e6c2bd54a5691a77f8bf91689",
+      "status": "reviewed",
+      "reviewedAt": "2026-07-15T10:53:22.2572304Z"
+    },
+    {
+      "date": "2026-06-30",
+      "sourceFile": "20260630_ALUX_AI智能体情报日报.html",
+      "translationFile": "20260630.body.html",
+      "sourceSha256": "4ad8a6758bb8986d35907fe972ac58db1364496b053572d559f3faa13d974401",
+      "translationSha256": "e2a908d890d99a255343593f459782728bd026732117f42a03f614363453880d",
+      "status": "reviewed",
+      "reviewedAt": "2026-07-15T10:53:22.2640513Z"
+    },
+    {
+      "date": "2026-07-01",
+      "sourceFile": "20260701_ALUX_AI智能体情报日报.html",
+      "translationFile": "20260701.body.html",
+      "sourceSha256": "0fcef64a8ebe184b8e15ae83946826e1895a99765ffb3bf696e3a55ccd0325ba",
+      "translationSha256": "8bb53bb55072a450692736930f50ce1f18cf71e903cb4a0a93c9c3ba7dceef91",
+      "status": "reviewed",
+      "reviewedAt": "2026-07-15T10:35:30.8216094Z"
+    },
+    {
+      "date": "2026-07-02",
+      "sourceFile": "20260702_ALUX_AI智能体情报日报.html",
+      "translationFile": "20260702.body.html",
+      "sourceSha256": "b1fbf92dc370d01bd8e6646cc4c0141968cf3635718503ff480c58c45fb03741",
+      "translationSha256": "0ae41b6bcef28d9772c49353a8f7842f8d62d97dbd26ce3c84d8a87fbb0251ee",
+      "status": "reviewed",
+      "reviewedAt": "2026-07-15T10:51:55.2215421Z"
+    },
+    {
+      "date": "2026-07-03",
+      "sourceFile": "20260703_ALUX_AI智能体情报日报.html",
+      "translationFile": "20260703.body.html",
+      "sourceSha256": "a739476a917bc57f6a94713dd73083f0ae9c8076c96c2a73dc3ec354ebbfff3c",
+      "translationSha256": "a01238c30836467d971207a688edc32c94ab053777a44f53333676a86bbd57e8",
+      "status": "reviewed",
+      "reviewedAt": "2026-07-15T10:31:50.9138095Z"
+    },
+    {
+      "date": "2026-07-04",
+      "sourceFile": "20260704_ALUX_AI智能体情报日报.html",
+      "translationFile": "20260704.body.html",
+      "sourceSha256": "2b71ed8cb40e30261d0921359cea087e54421f2b1bbb262f705d86e94b095937",
+      "translationSha256": "69e346ea5cb05b15163898dd20db4730e4320f4107a7e44d246439c9942387c4",
+      "status": "reviewed",
+      "reviewedAt": "2026-07-15T10:53:22.2863047Z"
+    },
+    {
+      "date": "2026-07-05",
+      "sourceFile": "20260705_ALUX_AI智能体情报日报.html",
+      "translationFile": "20260705.body.html",
+      "sourceSha256": "7e4454422ce170e81c6aff9bbf5bd16a57a82371076d6d7a10934fe9da6d780b",
+      "translationSha256": "ed8c88b74ca212bfedaccb497cf146dceb9d59d3e680d16eb204021409d9c1da",
+      "status": "reviewed",
+      "reviewedAt": "2026-07-15T10:53:22.2915864Z"
+    },
+    {
+      "date": "2026-07-06",
+      "sourceFile": "20260706_ALUX_AI智能体情报日报.html",
+      "translationFile": "20260706.body.html",
+      "sourceSha256": "64619242852b3a83aca5bf2d7ebe354cce1c737fd0763b9d32b0697a15fd6ee1",
+      "translationSha256": "8277667e4f71c2cb23c1beb38e6be8c23ab2ec03d256dc71f36b5398cb2db0ad",
+      "status": "reviewed",
+      "reviewedAt": "2026-07-15T10:54:58.3863787Z"
+    },
+    {
+      "date": "2026-07-07",
+      "sourceFile": "20260707_ALUX_AI智能体情报日报.html",
+      "translationFile": "20260707.body.html",
+      "sourceSha256": "57207203e446b4782cb86318e9865863fee9f5d7691d74e02bb44ef09aa6d60b",
+      "translationSha256": "3e09de2fa02f5fa311048fd5eccfb84d6cc4d5022b86af84f1f43f01b3eae4af",
+      "status": "reviewed",
+      "reviewedAt": "2026-07-15T10:53:22.3020923Z"
+    },
+    {
+      "date": "2026-07-08",
+      "sourceFile": "20260708_ALUX_AI智能体情报日报.html",
+      "translationFile": "20260708.body.html",
+      "sourceSha256": "bc0f1fbd1a8011658152f5b19b706d474a354b979ab6c5a9cbc5502b29ae1fe5",
+      "translationSha256": "03ff58bb6d486dfff3e0a29b8bbd30aaac8d769742d6c492379b5e4e16d0dab6",
+      "status": "reviewed",
+      "reviewedAt": "2026-07-15T10:14:51.9164533Z"
+    },
+    {
+      "date": "2026-07-09",
+      "sourceFile": "20260709_ALUX_AI智能体情报日报.html",
+      "translationFile": "20260709.body.html",
+      "sourceSha256": "75a138b69c5e3d89e9b04c912a813aaf47349ef15f8b573ba66e65f3de4357ef",
+      "translationSha256": "d0ae2e51c9e9746fab18b3ffb476e88910ae11861566aa671da25f5f1d388741",
+      "status": "reviewed",
+      "reviewedAt": "2026-07-15T10:18:47.4565277Z"
+    },
+    {
+      "date": "2026-07-10",
+      "sourceFile": "20260710_ALUX_AI智能体情报日报.html",
+      "translationFile": "20260710.body.html",
+      "sourceSha256": "4eb0c74ebd648fbe20dad6360b9a7b31684ddba4ff890c0521bd6331793821b1",
+      "translationSha256": "d82a13664a0993473b1888264305dcfe2661ba021e9de4dac6f4ac04f11aa8a6",
+      "status": "reviewed",
+      "reviewedAt": "2026-07-15T10:18:11.8151183Z"
+    },
+    {
+      "date": "2026-07-11",
+      "sourceFile": "20260711_ALUX_AI智能体情报日报.html",
+      "translationFile": "20260711.body.html",
+      "sourceSha256": "4d2ca426e41daff3e65add8b372ab00059a32ce66cfd280e0abe241c5ae2952f",
+      "translationSha256": "0f17270a2ba621aad5a5ea54fcfc757bb63f8b495bb9be000f5f09eea85975e6",
+      "status": "reviewed",
+      "reviewedAt": "2026-07-15T10:10:01.6529702Z"
+    },
+    {
+      "date": "2026-07-12",
+      "sourceFile": "20260712_ALUX_AI智能体情报日报.html",
+      "translationFile": "20260712.body.html",
+      "sourceSha256": "ed6e42e47cb01c0963430f646955ac7bb47971ef4dadc7e56299bc7cc0dd0064",
+      "translationSha256": "49413f841579ffbcee8f4dab8537c24dd101b23f74740f8c8a310a4a80f1584f",
+      "status": "reviewed",
+      "reviewedAt": "2026-07-15T10:09:23.7620565Z"
+    },
+    {
+      "date": "2026-07-13",
+      "sourceFile": "20260713_ALUX_AI智能体情报日报.html",
+      "translationFile": "20260713.body.html",
+      "sourceSha256": "ed58353c6f4ba65967d9f13bdeff2aed02e90303f297b6b15057bc5bc7dec5d7",
+      "translationSha256": "d6ab16ca6e124099a3f79b349dfb03160098bc53142e3e3ba596c0c3bd208c0b",
+      "status": "reviewed",
+      "reviewedAt": "2026-07-15T10:09:23.3520838Z"
+    },
+    {
+      "date": "2026-07-14",
+      "sourceFile": "20260714_ALUX_AI智能体情报日报.html",
+      "translationFile": "20260714.body.html",
+      "sourceSha256": "436d7ff772c8a9797c26a6a9af9ad4b8815cf133381e63f9b38486b23151ba0e",
+      "translationSha256": "2b872d6a302040b9b85b5ce36f719bf7ebf2f6041c20b2af4a954e8a474629a7",
+      "status": "reviewed",
+      "reviewedAt": "2026-07-15T10:04:25.5506067Z"
+    },
+    {
+      "date": "2026-07-15",
+      "sourceFile": "20260715_ALUX_AI智能体情报日报.html",
+      "translationFile": "20260715.body.html",
+      "sourceSha256": "d03a3f396311bf5c2a8db373286f312d222fa25cbf79d797685d8db62585650c",
+      "translationSha256": "3014a4f06c4c708ee4d3ab7dc633411ffa7014d6e1a415fa0706d42fe9d9c415",
+      "status": "reviewed",
+      "reviewedAt": "2026-07-15T10:27:27.37645Z"
+    },
+    {
+      "date": "2026-07-16",
+      "sourceFile": "20260716_ALUX_AI智能体情报日报.html",
+      "translationFile": "20260716.body.html",
+      "sourceSha256": "5f13d9fb664f01f31d6eb5b8b01d79e6416e90188656d84fb8a10a81ff5b5114",
+      "translationSha256": "c6e2dbc4d4f3628f6990d823b5ea58cd0ddc5668dc4ea0559364d9ece3df93a2",
+      "status": "reviewed",
+      "reviewedAt": "2026-07-16T03:34:34.1266370Z"
+    }
+  ]
 }
