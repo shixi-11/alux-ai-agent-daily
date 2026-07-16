@@ -6,17 +6,17 @@
   <title>ALUX AI智能体情报日报中文站分享卡</title>
   <style>
     :root {
-      --ink: #111827;
-      --muted: #5b6575;
-      --paper: #f5f7fa;
-      --paper-2: #eef3f7;
+      --ink: #101a2d;
+      --muted: #5b6677;
+      --paper: #f2f6f8;
+      --paper-2: #eaf0f4;
       --panel: #ffffff;
-      --line: #d9e0e7;
-      --line-strong: #aeb9c6;
-      --navy: #14213d;
-      --navy-2: #18264f;
-      --teal: #0f766e;
-      --teal-soft: #c6d9d1;
+      --line: #ced8e1;
+      --line-strong: #9eacba;
+      --navy: #13213e;
+      --navy-2: #15304a;
+      --teal: #087b71;
+      --mint: #b9ddd3;
     }
 
     * { box-sizing: border-box; }
@@ -41,27 +41,27 @@
     .sheet {
       position: relative;
       display: grid;
-      grid-template-rows: 76px 180px minmax(0, 1fr) 44px;
-      gap: 20px;
+      grid-template-rows: 72px 180px minmax(0, 1fr) 74px;
+      gap: 16px;
       width: 768px;
       height: 1024px;
-      padding: 36px 48px 30px 58px;
+      padding: 30px 42px 26px 52px;
       background:
-        linear-gradient(180deg, rgba(238, 243, 247, .98) 0%, rgba(249, 251, 252, 1) 43%, rgba(243, 246, 248, 1) 100%);
+        linear-gradient(180deg, rgba(235, 241, 245, .98) 0%, #f8fafb 40%, #f1f5f7 100%);
     }
 
     .sheet::before {
       content: "";
       position: absolute;
       inset: 0 auto 0 0;
-      width: 10px;
+      width: 9px;
       background: var(--navy);
     }
 
     .sheet::after {
       content: "";
       position: absolute;
-      inset: 0 auto 0 10px;
+      inset: 0 auto 0 9px;
       width: 4px;
       background: var(--teal);
     }
@@ -69,9 +69,10 @@
     .masthead {
       display: flex;
       align-items: center;
+      justify-content: space-between;
       min-width: 0;
-      padding-bottom: 16px;
-      border-bottom: 1px solid rgba(20, 33, 61, .22);
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(19, 33, 62, .22);
     }
 
     .brand {
@@ -83,9 +84,9 @@
 
     .mark {
       display: grid;
-      width: 54px;
-      height: 54px;
-      flex: 0 0 54px;
+      width: 52px;
+      height: 52px;
+      flex: 0 0 52px;
       place-items: center;
       border: 1px solid var(--line);
       background: #fff;
@@ -93,8 +94,8 @@
 
     .mark img {
       display: block;
-      width: 36px;
-      height: 36px;
+      width: 35px;
+      height: 35px;
       object-fit: contain;
     }
 
@@ -103,7 +104,7 @@
       color: var(--navy);
       font-size: 18px;
       font-weight: 850;
-      line-height: 1.2;
+      line-height: 1.15;
       letter-spacing: .01em;
       white-space: nowrap;
     }
@@ -115,126 +116,281 @@
       font-size: 9px;
       font-weight: 800;
       letter-spacing: .16em;
-      line-height: 1.2;
+      line-height: 1.15;
       text-transform: uppercase;
       white-space: nowrap;
     }
 
-    .intro {
+    .mast-code {
+      color: var(--teal);
+      font-size: 9px;
+      font-weight: 850;
+      line-height: 1;
+      letter-spacing: .14em;
+      text-align: right;
+      text-transform: uppercase;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 176px;
+      align-items: stretch;
+      gap: 28px;
+      min-width: 0;
+    }
+
+    .hero-copy {
       display: flex;
       flex-direction: column;
       justify-content: center;
       min-width: 0;
-      padding-left: 2px;
+    }
+
+    .eyebrow {
+      margin-bottom: 10px;
+      color: var(--teal);
+      font-size: 10px;
+      font-weight: 850;
+      line-height: 1;
+      letter-spacing: .14em;
+      text-transform: uppercase;
     }
 
     h1 {
       margin: 0;
-      color: #121722;
+      color: #111722;
       font-family: "Songti SC", "Noto Serif CJK SC", SimSun, Georgia, serif;
-      font-size: 61px;
+      font-size: 52px;
       font-weight: 700;
-      line-height: .98;
+      line-height: .97;
       letter-spacing: -.035em;
     }
 
     h1 span { display: block; }
 
-    .promise {
-      margin: 18px 0 0;
-      color: #354052;
-      font-size: 18px;
-      font-weight: 650;
+    .coverage {
+      margin: 14px 0 0;
+      color: #3d495b;
+      font-size: 13px;
+      font-weight: 700;
       line-height: 1.35;
-      letter-spacing: .01em;
+      letter-spacing: .025em;
+    }
+
+    .edition-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-width: 0;
+      padding: 18px 16px 16px;
+      border: 1px solid var(--line);
+      border-top: 6px solid var(--teal);
+      background: rgba(255, 255, 255, .72);
+    }
+
+    .edition-card small {
+      color: var(--muted);
+      font-size: 9px;
+      font-weight: 850;
+      line-height: 1;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .edition-card strong {
+      color: var(--navy);
+      font-family: "Songti SC", "Noto Serif CJK SC", SimSun, Georgia, serif;
+      font-size: 25px;
+      font-weight: 700;
+      line-height: 1.14;
+    }
+
+    .edition-list {
+      display: grid;
+      gap: 7px;
+      padding-top: 11px;
+      border-top: 1px solid var(--line);
+    }
+
+    .edition-list span {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #445166;
+      font-size: 10px;
+      font-weight: 750;
+      line-height: 1;
+    }
+
+    .edition-list b {
+      color: var(--teal);
+      font-size: 9px;
+      letter-spacing: .08em;
     }
 
     .scan-panel {
       position: relative;
       display: grid;
-      grid-template-rows: 24px minmax(0, 1fr) 34px 20px;
-      justify-items: center;
+      grid-template-columns: 438px minmax(0, 1fr);
+      align-items: center;
+      gap: 20px;
       min-height: 0;
-      padding: 22px 26px 20px;
+      padding: 22px;
       overflow: hidden;
       border: 1px solid #263653;
       border-top: 7px solid var(--teal);
       background:
-        repeating-linear-gradient(135deg, rgba(255, 255, 255, .022) 0 1px, transparent 1px 28px),
-        linear-gradient(145deg, var(--navy) 0%, #132641 54%, #123c48 100%);
-    }
-
-    .panel-label {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #c5e3df;
-      font-size: 12px;
-      font-weight: 850;
-      line-height: 1;
-      letter-spacing: .1em;
-    }
-
-    .panel-label strong {
-      color: #fff;
-      font-size: inherit;
-      letter-spacing: inherit;
+        repeating-linear-gradient(135deg, rgba(255, 255, 255, .022) 0 1px, transparent 1px 26px),
+        linear-gradient(145deg, var(--navy) 0%, #132742 56%, #103e49 100%);
     }
 
     .qr-frame {
-      align-self: center;
       display: grid;
-      width: 450px;
-      height: 450px;
+      width: 438px;
+      height: 438px;
       place-items: center;
       border: 1px solid var(--line-strong);
       background: #fff;
-      box-shadow: 0 18px 42px rgba(5, 14, 32, .28);
+      box-shadow: 0 18px 42px rgba(5, 14, 32, .3);
     }
 
     .qr-frame img {
       display: block;
-      width: 414px;
-      height: 414px;
+      width: 404px;
+      height: 404px;
       image-rendering: pixelated;
     }
 
-    .scan-title {
-      align-self: end;
-      color: #fff;
-      font-size: 25px;
-      font-weight: 850;
-      line-height: 1.2;
-      letter-spacing: .02em;
+    .scan-copy {
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      padding: 3px 0 3px 18px;
+      border-left: 1px solid rgba(185, 221, 211, .36);
     }
 
+    .serial {
+      color: rgba(185, 221, 211, .52);
+      font-family: Georgia, serif;
+      font-size: 52px;
+      font-weight: 700;
+      line-height: .9;
+    }
+
+    .panel-label {
+      margin-top: 12px;
+      color: var(--mint);
+      font-size: 10px;
+      font-weight: 850;
+      line-height: 1;
+      letter-spacing: .12em;
+    }
+
+    .scan-title {
+      margin-top: 14px;
+      color: #fff;
+      font-family: "Songti SC", "Noto Serif CJK SC", SimSun, Georgia, serif;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.05;
+    }
+
+    .scan-title span { display: block; }
+
     .scan-sub {
-      align-self: end;
-      color: #c9d5df;
-      font-size: 13px;
-      font-weight: 550;
+      margin-top: 13px;
+      color: #c8d6df;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.55;
+    }
+
+    .signal-list {
+      display: grid;
+      gap: 9px;
+      margin-top: auto;
+      padding: 16px 0;
+      border-top: 1px solid rgba(185, 221, 211, .25);
+      border-bottom: 1px solid rgba(185, 221, 211, .25);
+    }
+
+    .signal-list span {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #e7eef2;
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .signal-list i {
+      width: 5px;
+      height: 5px;
+      flex: 0 0 5px;
+      background: var(--mint);
+    }
+
+    .scan-action {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 15px;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 850;
       line-height: 1.2;
-      letter-spacing: .02em;
+    }
+
+    .scan-action b {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, .58);
+      color: var(--mint);
+      font-size: 20px;
+      font-weight: 500;
     }
 
     footer {
       display: flex;
-      align-items: end;
-      justify-content: flex-start;
+      align-items: center;
+      justify-content: space-between;
       min-width: 0;
-      border-top: 1px solid rgba(20, 33, 61, .22);
+      padding-top: 12px;
+      border-top: 1px solid rgba(19, 33, 62, .22);
+    }
+
+    .url-block small,
+    .footer-note small {
+      display: block;
+      margin-bottom: 6px;
       color: var(--muted);
-      font-size: 11px;
-      line-height: 1;
-    }
-
-    footer strong {
-      color: var(--teal);
-      font-size: 15px;
+      font-size: 9px;
       font-weight: 800;
-      letter-spacing: .015em;
+      line-height: 1;
+      letter-spacing: .11em;
+      text-transform: uppercase;
     }
 
+    .url-block strong {
+      color: var(--teal);
+      font-size: 18px;
+      font-weight: 850;
+      line-height: 1;
+      letter-spacing: .01em;
+    }
+
+    .footer-note {
+      color: #374457;
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 1.2;
+      text-align: right;
+    }
   </style>
 </head>
 <body>
@@ -247,22 +403,51 @@
           <span class="brand-en">AI Agent Intelligence Daily</span>
         </span>
       </div>
+      <span class="mast-code">RISC × AI AGENT<br>INTELLIGENCE</span>
     </header>
 
-    <section class="intro">
-      <h1><span>AI智能体</span><span>情报日报</span></h1>
-      <p class="promise">每日更新 · 中英双语 · 历史归档</p>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">ALUX Intelligence · Daily Edition</div>
+        <h1><span>AI智能体</span><span>情报日报</span></h1>
+        <p class="coverage">产品 · 技术 · 安全 · 融资 · 基础设施</p>
+      </div>
+      <aside class="edition-card" aria-label="站点特性">
+        <small>固定入口</small>
+        <strong>一个地址<br>持续更新</strong>
+        <div class="edition-list">
+          <span>中文站 <b>ZH</b></span>
+          <span>英文站 <b>EN</b></span>
+          <span>历史归档 <b>ALL</b></span>
+        </div>
+      </aside>
     </section>
 
     <section class="scan-panel">
-      <div class="panel-label"><strong>中文站</strong></div>
       <div class="qr-frame"><img src="qr.png" alt="中文站二维码"></div>
-      <div class="scan-title">微信扫码查看</div>
-      <div class="scan-sub">最新一期与全部历史日报</div>
+      <div class="scan-copy">
+        <div class="serial">01</div>
+        <div class="panel-label">中文站 · OFFICIAL SITE</div>
+        <div class="scan-title"><span>微信</span><span>扫码查看</span></div>
+        <div class="scan-sub">进入最新一期<br>查阅全部历史日报</div>
+        <div class="signal-list">
+          <span><i></i>每日持续更新</span>
+          <span><i></i>中英双语阅读</span>
+          <span><i></i>按日期长期归档</span>
+        </div>
+        <div class="scan-action"><span>扫码或长按识别</span><b>↗</b></div>
+      </div>
     </section>
 
     <footer>
-      <strong>ai.alux.network/daily</strong>
+      <div class="url-block">
+        <small>Official Daily Address</small>
+        <strong>ai.alux.network/daily</strong>
+      </div>
+      <div class="footer-note">
+        <small>ALUX Network</small>
+        收藏一次 · 持续更新
+      </div>
     </footer>
   </article>
 </body>
