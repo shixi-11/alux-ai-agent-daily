@@ -37,6 +37,8 @@
 
 Vercel 在外部以 `/daily/...` 提供页面，内部再 rewrite 到 `public/` 的对应成品。不要为迁移复制第二套 `public/daily/`，也不要直接编辑 `public/`。
 
+站点启用了结尾斜杠规范化。2026-07-16 首次部署验收发现普通 `:path*` 写法没有覆盖带结尾 `/` 的正式路径，因此路由已改用同时覆盖目录首页与深层路径的显式正则。维护者不得把它退回为只匹配无结尾斜杠的规则；每次改动都必须在真实域名上同时验证 `/daily/`、`/daily/en/`、最新页和日期页。
+
 ## 其他电脑上的日报专用 Agent 应如何工作
 
 1. 拉取正式仓库 `main`，完整阅读 `AGENTS.md`、`AUTOMATION.md`、本文件与 `automation/OPENCLAW_DAILY_TASK.md`。

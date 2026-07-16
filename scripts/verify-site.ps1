@@ -257,9 +257,9 @@ if ($vercelConfig.outputDirectory -ne 'public' -or $null -ne $vercelConfig.frame
     throw 'Vercel 配置必须以 public 为输出目录，并使用 Other（framework: null）。'
 }
 foreach ($spec in @(
-    @{ source = '/daily'; destination = 'https://ai.alux.network/daily/' },
-    @{ source = '/daily/:path*'; destination = 'https://ai.alux.network/daily/:path*' },
-    @{ source = '/:path*'; destination = 'https://ai.alux.network/daily/:path*' }
+    @{ source = '/'; destination = 'https://ai.alux.network/daily/' },
+    @{ source = '/daily/(.*)'; destination = 'https://ai.alux.network/daily/$1' },
+    @{ source = '/(.*)'; destination = 'https://ai.alux.network/daily/$1' }
 )) {
     $matches = @($vercelConfig.redirects) | Where-Object {
         $_.source -eq $spec.source -and $_.destination -eq $spec.destination -and $_.permanent -eq $true -and
@@ -268,8 +268,7 @@ foreach ($spec in @(
     if (@($matches).Count -ne 1) { throw "Vercel 缺少旧域名兼容规则：$($spec.source)" }
 }
 foreach ($spec in @(
-    @{ source = '/daily'; destination = '/' },
-    @{ source = '/daily/:path*'; destination = '/:path*' }
+    @{ source = '/daily/(.*)'; destination = '/$1' }
 )) {
     $matches = @($vercelConfig.rewrites) | Where-Object { $_.source -eq $spec.source -and $_.destination -eq $spec.destination }
     if (@($matches).Count -ne 1) { throw "Vercel 缺少 /daily 内部映射：$($spec.source)" }

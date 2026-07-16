@@ -8,7 +8,7 @@
   "trailingSlash": true,
   "redirects": [
     {
-      "source": "/daily",
+      "source": "/",
       "has": [
         {
           "type": "host",
@@ -19,25 +19,25 @@
       "permanent": true
     },
     {
-      "source": "/daily/:path*",
+      "source": "/daily/(.*)",
       "has": [
         {
           "type": "host",
           "value": "ai-agent-daily.alux.network"
         }
       ],
-      "destination": "https://ai.alux.network/daily/:path*",
+      "destination": "https://ai.alux.network/daily/$1",
       "permanent": true
     },
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "has": [
         {
           "type": "host",
           "value": "ai-agent-daily.alux.network"
         }
       ],
-      "destination": "https://ai.alux.network/daily/:path*",
+      "destination": "https://ai.alux.network/daily/$1",
       "permanent": true
     },
     {
@@ -54,12 +54,8 @@
   ],
   "rewrites": [
     {
-      "source": "/daily",
-      "destination": "/"
-    },
-    {
-      "source": "/daily/:path*",
-      "destination": "/:path*"
+      "source": "/daily/(.*)",
+      "destination": "/$1"
     }
   ],
   "headers": [
