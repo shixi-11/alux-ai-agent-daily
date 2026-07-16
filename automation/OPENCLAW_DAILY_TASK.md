@@ -2,14 +2,16 @@
 
 这个文件不替你改变原有定时执行时间。同步仓库后，请保留你当前自动化的 schedule 和时区，将任务正文升级为下面的完整流程。
 
-当前合同版本为 `2.5.0`。如果现有任务正文没有 `[ALUX_DAILY_CONTRACT_VERSION: 2.5.0]`，保留原任务 ID、执行时间、时区和凭据，只替换任务正文，完成一次手动 dry run 后再等待下一次定时执行；不要新建一个重复的定时任务。
+当前合同版本为 `2.6.0`。如果现有任务正文没有 `[ALUX_DAILY_CONTRACT_VERSION: 2.6.0]`，保留原任务 ID、执行时间、时区和凭据，只替换任务正文，完成一次手动 dry run 后再等待下一次定时执行；不要新建一个重复的定时任务。
 
 ## 应写入自动化的任务正文
 
 ```text
-[ALUX_DAILY_CONTRACT_VERSION: 2.5.0]
+[ALUX_DAILY_CONTRACT_VERSION: 2.6.0]
 
 你负责生成、翻译、验收并发布当日的 ALUX AI智能体情报日报。
+
+运行配置固定为 `model=openai/gpt-5.6-sol`、`thinking=high`、`speed=standard`、`fallbacks=[]`；不得自行改成 Ultra、快速档或备用模型。
 
 开始前：
 1. 拉取 GitHub 仓库 main 的最新内容。
@@ -40,11 +42,8 @@
 
 【ALUX AI智能体情报日报】
 
-中文站：
+固定入口：
 https://ai.alux.network/daily/
-
-英文站：
-https://ai.alux.network/daily/en/
 
 YYYY-MM-DD：
 https://ai.alux.network/daily/YYYY/MM/DD/

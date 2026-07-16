@@ -1,10 +1,16 @@
 {
   "schemaVersion": 1,
-  "contractVersion": "2.5.0",
+  "contractVersion": "2.6.0",
   "task": "ALUX AI Agent Intelligence Daily bilingual publish",
   "schedulePolicy": "Preserve the existing OpenClaw schedule and timezone; replace only the task workflow.",
   "automationTimezone": "preserve-existing",
   "siteDisplayTimezone": "Asia/Shanghai",
+  "runtimeProfile": {
+    "model": "openai/gpt-5.6-sol",
+    "thinking": "high",
+    "speed": "standard",
+    "fallbacks": []
+  },
   "officialSite": "https://ai.alux.network/daily/",
   "permanentCompatibilitySite": "https://ai-agent-daily.alux.network/",
   "routeContract": {
@@ -80,7 +86,7 @@
     "attachmentsAllowed": false,
     "sendAfter": "official deployment verification passes",
     "preserveBlankLines": true,
-    "messageTemplate": "【ALUX AI智能体情报日报】\n\n中文站：\nhttps://ai.alux.network/daily/\n\n英文站：\nhttps://ai.alux.network/daily/en/\n\nYYYY-MM-DD：\nhttps://ai.alux.network/daily/YYYY/MM/DD/"
+    "messageTemplate": "【ALUX AI智能体情报日报】\n\n固定入口：\nhttps://ai.alux.network/daily/\n\nYYYY-MM-DD：\nhttps://ai.alux.network/daily/YYYY/MM/DD/"
   },
   "atomicReleaseFields": [
     "homepage latest date",

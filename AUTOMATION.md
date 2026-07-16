@@ -18,8 +18,8 @@
 
 1. 读取 `automation/task-contract.json` 的 `contractVersion`。
 2. 找到你已经存在的日报自动化任务，不新建重复任务。
-3. 保留原任务 ID、schedule、时区、通知对象和凭据配置，只用 `automation/OPENCLAW_DAILY_TASK.md` 替换任务正文。
-4. 确认正文含当前版本标记 `[ALUX_DAILY_CONTRACT_VERSION: 2.5.0]`。
+3. 保留原任务 ID、schedule、时区、通知对象和凭据配置，只用 `automation/OPENCLAW_DAILY_TASK.md` 替换任务正文；运行档固定为 `openai/gpt-5.6-sol`、`thinking=high`、标准速度、无 fallback。
+4. 确认正文含当前版本标记 `[ALUX_DAILY_CONTRACT_VERSION: 2.6.0]`。
 5. 先手动执行一次 dry run；只有中英生成、构建和验收都通过，才让升级后的任务进入下一次定时运行。
 
 ## 你的完整任务

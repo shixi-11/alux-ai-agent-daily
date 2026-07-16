@@ -42,7 +42,7 @@ Vercel 在外部以 `/daily/...` 提供页面，内部再 rewrite 到 `public/` 
 ## 其他电脑上的日报专用 Agent 应如何工作
 
 1. 拉取正式仓库 `main`，完整阅读 `AGENTS.md`、`AUTOMATION.md`、本文件与 `automation/OPENCLAW_DAILY_TASK.md`。
-2. 如果自动化正文没有 `[ALUX_DAILY_CONTRACT_VERSION: 2.5.0]`，保留原任务 ID、执行时间、时区和凭据，只替换任务正文并完成一次 dry run；不得新建重复任务。
+2. 如果自动化正文没有 `[ALUX_DAILY_CONTRACT_VERSION: 2.6.0]`，保留原任务 ID、执行时间、时区和凭据，只替换任务正文并完成一次 dry run；不得新建重复任务。三个日报任务统一为 `openai/gpt-5.6-sol`、`thinking=high`、标准速度、无 fallback。
 3. 生成中文母稿、完成美式英语精译与独立审校、更新翻译清单。
 4. 运行构建、结构验证、响应式渲染、公开边界和发布白名单检查。
 5. 由 `scripts/publish.ps1` 直接提交并推送正式仓库 `main`；Vercel 会自动部署。
