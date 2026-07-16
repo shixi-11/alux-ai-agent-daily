@@ -2,12 +2,12 @@
 
 这个文件不替你改变原有定时执行时间。同步仓库后，请保留你当前自动化的 schedule 和时区，将任务正文升级为下面的完整流程。
 
-当前合同版本为 `2.4.0`。如果现有任务正文没有 `[ALUX_DAILY_CONTRACT_VERSION: 2.4.0]`，保留原任务 ID、执行时间、时区和凭据，只替换任务正文，完成一次手动 dry run 后再等待下一次定时执行；不要新建一个重复的定时任务。
+当前合同版本为 `2.5.0`。如果现有任务正文没有 `[ALUX_DAILY_CONTRACT_VERSION: 2.5.0]`，保留原任务 ID、执行时间、时区和凭据，只替换任务正文，完成一次手动 dry run 后再等待下一次定时执行；不要新建一个重复的定时任务。
 
 ## 应写入自动化的任务正文
 
 ```text
-[ALUX_DAILY_CONTRACT_VERSION: 2.4.0]
+[ALUX_DAILY_CONTRACT_VERSION: 2.5.0]
 
 你负责生成、翻译、验收并发布当日的 ALUX AI智能体情报日报。
 
@@ -36,7 +36,7 @@
 14. 只有所有验收以及 `scripts/verify-release-boundary.cjs YYYY-MM-DD` 通过才能提交。同一次提交必须包含中文母稿、英文母稿、翻译清单和重建后的 public/。日常发布白名单之外的任何文件出现改动都要停止，不得把研究包、manifest、ledger、prompt、日志、截图、工具输出、本地路径、私人身份或凭据带进 GitHub。
 15. 提交信息使用“发布 YYYY-MM-DD 中英双语日报”，由 `scripts/publish.ps1` 直接提交并推送正式仓库 main；不创建 PR、不等待人工合并，也不要求用户手动操作 GitHub。
 16. 等待 Vercel 部署完成，运行 `node scripts/verify-official-deployment.cjs YYYY-MM-DD`，在 https://ai.alux.network/daily/ 验证中英首页、最新入口、当日中英日期页、语言切换和成品哈希；同时验证 https://ai-agent-daily.alux.network/ 及其英文、最新和日期路径均只经过一次永久重定向到新主地址。验证失败时不得发送 Telegram。
-17. 正式域名通过验证后，将当期中文 HTML 作为 `.html` 附件发送给本机私密配置中的 Telegram 接收者；私人 chat ID 不得写入公开仓库。正文必须严格使用以下格式并保留空行：
+17. 正式域名通过验证后，只向本机私密配置中的 Telegram 接收者发送纯文字链接通知，不发送 HTML、ZIP、图片或其他日报附件；私人 chat ID 不得写入公开仓库。正文必须严格使用以下格式并保留空行：
 
 【ALUX AI智能体情报日报】
 
@@ -57,6 +57,7 @@ https://ai.alux.network/daily/YYYY/MM/DD/
 - 不得使用临时隧道、Vercel 预览域名或旧兼容域名替代新主地址；不得在新主地址内容哈希与旧域名单次 308 兼容验证全部通过前发 Telegram。
 - DNS 已完成配置；正常日报发布不得修改 DNS。公开域名与路由操作以 `docs/DOMAIN_ROUTING.md` 为准，服务商账号、验证信息和控制台数据不得写入仓库。
 - Telegram 文案中的空行是固定格式，不得压成一段，不得增添问候、工作过程、摘要或解释。
+- 固定域名承担日报长期存储、双语切换与历史归档；Telegram 不再重复发送日报附件。
 ```
 
 ## 自动化修改后的验收

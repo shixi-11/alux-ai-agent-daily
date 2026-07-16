@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contractVersion": "2.4.0",
+  "contractVersion": "2.5.0",
   "task": "ALUX AI Agent Intelligence Daily bilingual publish",
   "schedulePolicy": "Preserve the existing OpenClaw schedule and timezone; replace only the task workflow.",
   "automationTimezone": "preserve-existing",
@@ -57,7 +57,7 @@
     "Reject every daily change outside the official release allowlist.",
     "Commit Chinese source, English source, translation manifest and public output together; push the official main branch directly without a pull request or manual merge.",
     "Verify the new official domain and deployed file hashes after Vercel finishes deployment, then verify every legacy route uses exactly one permanent redirect to the matching new route.",
-    "Only after official-domain verification, send the matching Chinese HTML attachment and the fixed multiline Telegram message."
+    "Only after official-domain verification, send the fixed multiline Telegram link notification without an attachment."
   ],
   "repositoryPublishAllowlist": [
     "content/zh/YYYYMMDD_ALUX_AI智能体情报日报.html",
@@ -76,7 +76,8 @@
   "telegramDelivery": {
     "target": "configured-private-recipient",
     "targetEnvironmentVariable": "ALUX_TELEGRAM_CHAT_ID",
-    "attachment": "content/zh/YYYYMMDD_ALUX_AI智能体情报日报.html",
+    "mode": "text-only official-site notification",
+    "attachmentsAllowed": false,
     "sendAfter": "official deployment verification passes",
     "preserveBlankLines": true,
     "messageTemplate": "【ALUX AI智能体情报日报】\n\n中文站：\nhttps://ai.alux.network/daily/\n\n英文站：\nhttps://ai.alux.network/daily/en/\n\nYYYY-MM-DD：\nhttps://ai.alux.network/daily/YYYY/MM/DD/"
@@ -108,7 +109,8 @@
     "No file outside repositoryPublishAllowlist may enter a daily release commit.",
     "No private identity, credential, local path, internal artifact, work log, tool output or process narration may enter public release content.",
     "Daily publication must commit and push the official main branch directly; it must not stop at a pull request or wait for a manual merge.",
-    "Telegram delivery is blocked until the new official domain serves byte-equivalent current home, latest and dated pages and every legacy route passes the single-308 compatibility gate.",
+    "Telegram notification is blocked until the new official domain serves byte-equivalent current home, latest and dated pages and every legacy route passes the single-308 compatibility gate.",
+    "Routine Telegram delivery is text-only and must not include HTML, ZIP, image or other report attachments; the fixed official domain is the durable storage and bilingual reading surface.",
     "All canonical, hreflang, sitemap, QR-code, share-card and newly published public links must use https://ai.alux.network/daily/ rather than the compatibility domain.",
     "The compatibility domain home, English, latest and dated routes must use exactly one 308 redirect to the matching new route, preserve query parameters, and never produce /daily/daily/.",
     "Routine daily publication must not modify DNS; only the public routing contract belongs in this repository, while provider account and verification data must remain private.",

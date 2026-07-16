@@ -2,7 +2,7 @@
 
 本文件是所有继续维护者的第一入口。克隆或同步仓库后，先读本文件，再读 `README.md`、`AUTOMATION.md`、`docs/OPERATIONS.md`、`docs/DOMAIN_ROUTING.md`、`docs/RESPONSIVE_LAYOUT_STANDARD.md`、`docs/PUBLIC_REPOSITORY_BOUNDARY.md` 与 `docs/SHARE_CARD_STANDARD.md`。OpenClaw Agent 还必须读 `automation/OPENCLAW_DAILY_TASK.md`，并用该合同升级现有定时任务的正文。
 
-当前自动化合同版本为 `2.4.0`。OpenClaw 发现现有日报任务没有 `[ALUX_DAILY_CONTRACT_VERSION: 2.4.0]` 时，必须保留原任务 ID、执行时间、时区和凭据，只替换任务正文并完成一次 dry run；不得另建一个重复任务。
+当前自动化合同版本为 `2.5.0`。OpenClaw 发现现有日报任务没有 `[ALUX_DAILY_CONTRACT_VERSION: 2.5.0]` 时，必须保留原任务 ID、执行时间、时区和凭据，只替换任务正文并完成一次 dry run；不得另建一个重复任务。
 
 负责在其他电脑生成并提交日报的专用 Agent，必须额外阅读 `docs/DOMAIN_ROUTING.md`。DNS 已完成配置，日常发布不得修改 DNS；它只需按合同生成中英内容、重建站点、推送 `main`，再同时验证新主地址与旧域名兼容入口。
 
@@ -90,7 +90,7 @@
 
 ## OpenClaw Telegram 交付
 
-OpenClaw 只能在正式域名通过部署验证后发送当期中文 HTML 附件。正文固定为以下格式，空行必须保留：
+OpenClaw 只能在正式域名通过部署验证后发送纯文字链接通知，不再发送 HTML、ZIP、图片或其他日报附件。固定域名承担长期存储、双语切换和历史归档。正文固定为以下格式，空行必须保留：
 
 ```text
 【ALUX AI智能体情报日报】
@@ -105,7 +105,7 @@ YYYY-MM-DD：
 https://ai.alux.network/daily/YYYY/MM/DD/
 ```
 
-附件、中文站、英文站和日期页必须是同一期；不得发送 Vercel 预览域名、临时隧道或尚未部署完成的链接。
+中文站、英文站和日期页必须是同一期；不得发送 Vercel 预览域名、临时隧道或尚未部署完成的链接。中英文内容必须先在本地完成并独立审校，语言切换栏由仓库构建统一注入。
 
 ## 接续已有任务
 
