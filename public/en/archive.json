@@ -1,17 +1,28 @@
 {
   "schemaVersion": 3,
   "locale": "en-US",
-  "generatedAt": "2026-07-16T03:34:34.1266370Z",
+  "generatedAt": "2026-07-17T08:51:56.5493420Z",
   "baseUrl": "https://ai.alux.network",
   "publicationPath": "/daily/en",
   "publicationUrl": "https://ai.alux.network/daily/en/",
   "latest": {
-    "date": "2026-07-16",
-    "url": "/daily/en/2026/07/16/",
+    "date": "2026-07-17",
+    "url": "/daily/en/2026/07/17/",
     "latestUrl": "/daily/en/latest/",
-    "alternateUrl": "/daily/2026/07/16/"
+    "alternateUrl": "/daily/2026/07/17/"
   },
   "reports": [
+    {
+      "date": "2026-07-17",
+      "title": "AI Agent — Execution Boundaries Become the Product",
+      "lead": "Today’s highest-value signals are not about better conversation. Agent actions are beginning to carry real-time interception, session ownership, infrastructure isolation, and organizational handoffs.",
+      "url": "/daily/en/2026/07/17/",
+      "alternateUrl": "/daily/2026/07/17/",
+      "publicPath": "en/2026/07/17/index.html",
+      "sourceFile": "20260717.body.html",
+      "sha256": "a73fc20bb415752c3551873242c255488d6764854e0564de6d0f19a80c9b6a34",
+      "publicSha256": "addfed1bef7cfec8fc0385c701ea8027b86713d0166aadcd5be6367b149e8c94"
+    },
     {
       "date": "2026-07-16",
       "title": "AI Agent — Security Enters the Causal Chain",
@@ -21,7 +32,7 @@
       "publicPath": "en/2026/07/16/index.html",
       "sourceFile": "20260716.body.html",
       "sha256": "c6e2dbc4d4f3628f6990d823b5ea58cd0ddc5668dc4ea0559364d9ece3df93a2",
-      "publicSha256": "672b2612ef210d30925af408f8c81735e7808a3516e746028189c5cf9bfba11c"
+      "publicSha256": "dff1666a623690b52fe9570976c96c7c3b5f779ee157a9af28a0268b8587f583"
     },
     {
       "date": "2026-07-15",

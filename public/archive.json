@@ -1,17 +1,28 @@
 {
   "schemaVersion": 3,
   "locale": "zh-CN",
-  "generatedAt": "2026-07-16T03:34:34.1266370Z",
+  "generatedAt": "2026-07-17T08:51:56.5493420Z",
   "baseUrl": "https://ai.alux.network",
   "publicationPath": "/daily",
   "publicationUrl": "https://ai.alux.network/daily/",
   "latest": {
-    "date": "2026-07-16",
-    "url": "/daily/2026/07/16/",
+    "date": "2026-07-17",
+    "url": "/daily/2026/07/17/",
     "latestUrl": "/daily/latest/",
-    "alternateUrl": "/daily/en/2026/07/16/"
+    "alternateUrl": "/daily/en/2026/07/17/"
   },
   "reports": [
+    {
+      "date": "2026-07-17",
+      "title": "AI Agent执行边界成为产品",
+      "lead": "今天的高价值信号不在更会说，而在 Agent 的动作开始同时携带实时拦截、会话所有权、基础设施隔离和组织交接。",
+      "url": "/daily/2026/07/17/",
+      "alternateUrl": "/daily/en/2026/07/17/",
+      "publicPath": "2026/07/17/index.html",
+      "sourceFile": "20260717_ALUX_AI智能体情报日报.html",
+      "sha256": "d4dc9d17ead25228637bec2c7d0341d757a2f3d5b4a43e736c5596a2e8bdc87d",
+      "publicSha256": "6f0a55509f629cac6ae38fc46de73250f142ebcc6105c9cc3c9738b2150b7b38"
+    },
     {
       "date": "2026-07-16",
       "title": "AI Agent安全进入因果链",
@@ -21,7 +32,7 @@
       "publicPath": "2026/07/16/index.html",
       "sourceFile": "20260716_ALUX_AI智能体情报日报.html",
       "sha256": "5f13d9fb664f01f31d6eb5b8b01d79e6416e90188656d84fb8a10a81ff5b5114",
-      "publicSha256": "607c146790d6ff137ff1d146db047498a94237ed742a1354f8a374031665ff2c"
+      "publicSha256": "fcf5341348476f3c9a04b1042fe96766b6f73a55e480f5cabab9d1084cb82f46"
     },
     {
       "date": "2026-07-15",
