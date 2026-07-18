@@ -1,17 +1,28 @@
 {
   "schemaVersion": 3,
   "locale": "en-US",
-  "generatedAt": "2026-07-17T08:51:56.5493420Z",
+  "generatedAt": "2026-07-18T04:46:20.0237710Z",
   "baseUrl": "https://ai.alux.network",
   "publicationPath": "/daily/en",
   "publicationUrl": "https://ai.alux.network/daily/en/",
   "latest": {
-    "date": "2026-07-17",
-    "url": "/daily/en/2026/07/17/",
+    "date": "2026-07-18",
+    "url": "/daily/en/2026/07/18/",
     "latestUrl": "/daily/en/latest/",
-    "alternateUrl": "/daily/2026/07/17/"
+    "alternateUrl": "/daily/2026/07/18/"
   },
   "reports": [
+    {
+      "date": "2026-07-18",
+      "title": "AI Agent — The Runtime Chain of Responsibility Tightens",
+      "lead": "Today’s highest-value changes are not new skills. Permissions, recovery, isolation, and enterprise connectivity are moving into the execution path itself.",
+      "url": "/daily/en/2026/07/18/",
+      "alternateUrl": "/daily/2026/07/18/",
+      "publicPath": "en/2026/07/18/index.html",
+      "sourceFile": "20260718.body.html",
+      "sha256": "ba914e79fa256c436d7dc3ec424f31a726ebc372d31510cc4252fd3660608fd5",
+      "publicSha256": "de688d4f8fa87cdbe4fbc69e446d95b348859d14eca432cd88ccb06437e178ba"
+    },
     {
       "date": "2026-07-17",
       "title": "AI Agent — Execution Boundaries Become the Product",
@@ -21,7 +32,7 @@
       "publicPath": "en/2026/07/17/index.html",
       "sourceFile": "20260717.body.html",
       "sha256": "a73fc20bb415752c3551873242c255488d6764854e0564de6d0f19a80c9b6a34",
-      "publicSha256": "addfed1bef7cfec8fc0385c701ea8027b86713d0166aadcd5be6367b149e8c94"
+      "publicSha256": "90f441064a6641fbc0e5cd3db9ee1f979e820dad3b0090636510c2476e7cc461"
     },
     {
       "date": "2026-07-16",

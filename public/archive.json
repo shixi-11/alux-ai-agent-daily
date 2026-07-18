@@ -1,17 +1,28 @@
 {
   "schemaVersion": 3,
   "locale": "zh-CN",
-  "generatedAt": "2026-07-17T08:51:56.5493420Z",
+  "generatedAt": "2026-07-18T04:46:20.0237710Z",
   "baseUrl": "https://ai.alux.network",
   "publicationPath": "/daily",
   "publicationUrl": "https://ai.alux.network/daily/",
   "latest": {
-    "date": "2026-07-17",
-    "url": "/daily/2026/07/17/",
+    "date": "2026-07-18",
+    "url": "/daily/2026/07/18/",
     "latestUrl": "/daily/latest/",
-    "alternateUrl": "/daily/en/2026/07/17/"
+    "alternateUrl": "/daily/en/2026/07/18/"
   },
   "reports": [
+    {
+      "date": "2026-07-18",
+      "title": "AI Agent运行时责任链收紧",
+      "lead": "今天最有价值的变化，不是 Agent 又多会一种技能，而是权限、恢复、隔离与企业连接正在被写进执行路径本身。",
+      "url": "/daily/2026/07/18/",
+      "alternateUrl": "/daily/en/2026/07/18/",
+      "publicPath": "2026/07/18/index.html",
+      "sourceFile": "20260718_ALUX_AI智能体情报日报.html",
+      "sha256": "43a5591196ba32ccd746a8fed0e45535d28d88f7ec0c799b8ba4bb2735071fd8",
+      "publicSha256": "60db8aeabdc850600686b57219e5d3c9c87a4576033662778321878f491e7f5c"
+    },
     {
       "date": "2026-07-17",
       "title": "AI Agent执行边界成为产品",
@@ -21,7 +32,7 @@
       "publicPath": "2026/07/17/index.html",
       "sourceFile": "20260717_ALUX_AI智能体情报日报.html",
       "sha256": "d4dc9d17ead25228637bec2c7d0341d757a2f3d5b4a43e736c5596a2e8bdc87d",
-      "publicSha256": "6f0a55509f629cac6ae38fc46de73250f142ebcc6105c9cc3c9738b2150b7b38"
+      "publicSha256": "ade47f01b970695d21bef55ea6d142830288878fede9aa4750a79ac2dad3e45b"
     },
     {
       "date": "2026-07-16",
