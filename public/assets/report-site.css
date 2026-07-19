@@ -223,6 +223,17 @@ html[lang="en-US"] .heat-row .strength {
   text-align: center;
 }
 
+/* Keep short Chinese panel titles from shrinking below their rendered text width. */
+.panel-head strong {
+  flex: 0 0 auto;
+  min-width: max-content;
+}
+
+.panel-head span {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
 html[lang="en-US"] .intel-panel,
 html[lang="en-US"] .panel-head,
 html[lang="en-US"] .panel-head > * {
