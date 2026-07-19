@@ -1,17 +1,28 @@
 {
   "schemaVersion": 3,
   "locale": "zh-CN",
-  "generatedAt": "2026-07-18T04:46:20.0237710Z",
+  "generatedAt": "2026-07-19T00:23:29.3743660Z",
   "baseUrl": "https://ai.alux.network",
   "publicationPath": "/daily",
   "publicationUrl": "https://ai.alux.network/daily/",
   "latest": {
-    "date": "2026-07-18",
-    "url": "/daily/2026/07/18/",
+    "date": "2026-07-19",
+    "url": "/daily/2026/07/19/",
     "latestUrl": "/daily/latest/",
-    "alternateUrl": "/daily/en/2026/07/18/"
+    "alternateUrl": "/daily/en/2026/07/19/"
   },
   "reports": [
+    {
+      "date": "2026-07-19",
+      "title": "AI Agent边界与会话合流",
+      "lead": "今天最值得看的变化，是 Agent 一边把执行边界改成默认拒绝，一边把会话、技能与跨工具效果变成可携带的组织状态。",
+      "url": "/daily/2026/07/19/",
+      "alternateUrl": "/daily/en/2026/07/19/",
+      "publicPath": "2026/07/19/index.html",
+      "sourceFile": "20260719_ALUX_AI智能体情报日报.html",
+      "sha256": "9b8490633721545343579c420cd10d3c879575e9d6265fb5eec18eae95a74d91",
+      "publicSha256": "22a01132823f57e610a5dca5d74e78f3009659821784627c3490c898a4c9a423"
+    },
     {
       "date": "2026-07-18",
       "title": "AI Agent运行时责任链收紧",
@@ -21,7 +32,7 @@
       "publicPath": "2026/07/18/index.html",
       "sourceFile": "20260718_ALUX_AI智能体情报日报.html",
       "sha256": "43a5591196ba32ccd746a8fed0e45535d28d88f7ec0c799b8ba4bb2735071fd8",
-      "publicSha256": "60db8aeabdc850600686b57219e5d3c9c87a4576033662778321878f491e7f5c"
+      "publicSha256": "76da58cda23244b6836753ff67cdb1683d20a82e57e97d9a6c81e7514cb47ca5"
     },
     {
       "date": "2026-07-17",

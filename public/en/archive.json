@@ -1,17 +1,28 @@
 {
   "schemaVersion": 3,
   "locale": "en-US",
-  "generatedAt": "2026-07-18T04:46:20.0237710Z",
+  "generatedAt": "2026-07-19T00:23:29.3743660Z",
   "baseUrl": "https://ai.alux.network",
   "publicationPath": "/daily/en",
   "publicationUrl": "https://ai.alux.network/daily/en/",
   "latest": {
-    "date": "2026-07-18",
-    "url": "/daily/en/2026/07/18/",
+    "date": "2026-07-19",
+    "url": "/daily/en/2026/07/19/",
     "latestUrl": "/daily/en/latest/",
-    "alternateUrl": "/daily/2026/07/18/"
+    "alternateUrl": "/daily/2026/07/19/"
   },
   "reports": [
+    {
+      "date": "2026-07-19",
+      "title": "AI Agent — Execution Boundaries Meet Organizational Sessions",
+      "lead": "Today’s defining shift is a convergence: agents are moving toward deny-by-default execution boundaries while turning sessions, skills, and cross-tool effects into portable organizational state.",
+      "url": "/daily/en/2026/07/19/",
+      "alternateUrl": "/daily/2026/07/19/",
+      "publicPath": "en/2026/07/19/index.html",
+      "sourceFile": "20260719.body.html",
+      "sha256": "96fef54843f81ef1629a72aef389d13a4011bd9b8fd789e27986ffc7215478be",
+      "publicSha256": "140d962b78c07d2dc27f3f3a88045fb3a4184c110e2f1055bf785753506623cb"
+    },
     {
       "date": "2026-07-18",
       "title": "AI Agent — The Runtime Chain of Responsibility Tightens",
@@ -21,7 +32,7 @@
       "publicPath": "en/2026/07/18/index.html",
       "sourceFile": "20260718.body.html",
       "sha256": "ba914e79fa256c436d7dc3ec424f31a726ebc372d31510cc4252fd3660608fd5",
-      "publicSha256": "de688d4f8fa87cdbe4fbc69e446d95b348859d14eca432cd88ccb06437e178ba"
+      "publicSha256": "c403279c668c1582b5ae641abddae059fdfb7cbf022b46cb510c7f2067f5c4d2"
     },
     {
       "date": "2026-07-17",
