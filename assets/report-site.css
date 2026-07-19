@@ -223,13 +223,18 @@ html[lang="en-US"] .heat-row .strength {
   text-align: center;
 }
 
+html[lang="en-US"] .eyebrow span {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
 /* Keep short Chinese panel titles from shrinking below their rendered text width. */
-.panel-head strong {
+html[lang="zh-CN"] .panel-head strong {
   flex: 0 0 auto;
   min-width: max-content;
 }
 
-.panel-head span {
+html[lang="zh-CN"] .panel-head span {
   flex: 1 1 0;
   min-width: 0;
 }
