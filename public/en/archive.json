@@ -1,17 +1,28 @@
 {
   "schemaVersion": 3,
   "locale": "en-US",
-  "generatedAt": "2026-07-19T00:23:29.3743660Z",
+  "generatedAt": "2026-07-20T01:00:03.1238090Z",
   "baseUrl": "https://ai.alux.network",
   "publicationPath": "/daily/en",
   "publicationUrl": "https://ai.alux.network/daily/en/",
   "latest": {
-    "date": "2026-07-19",
-    "url": "/daily/en/2026/07/19/",
+    "date": "2026-07-20",
+    "url": "/daily/en/2026/07/20/",
     "latestUrl": "/daily/en/latest/",
-    "alternateUrl": "/daily/2026/07/19/"
+    "alternateUrl": "/daily/2026/07/20/"
   },
   "reports": [
+    {
+      "date": "2026-07-20",
+      "title": "AI Agent — Permissions and State, Rewritten",
+      "lead": "Today’s defining shift is an acknowledgment that validation, intervention, durable state, and remote connectivity all need an explicit initiator, a bounded authority, and recoverable evidence.",
+      "url": "/daily/en/2026/07/20/",
+      "alternateUrl": "/daily/2026/07/20/",
+      "publicPath": "en/2026/07/20/index.html",
+      "sourceFile": "20260720.body.html",
+      "sha256": "199a9290e77f5a34b27b9be8ea28f76d299b7c012cd0a26787d51c44b3b00e24",
+      "publicSha256": "054a5d801d07546b5b3cdf9abfdaa9be7fc67edc2a22ff51a44c55bcc97f470c"
+    },
     {
       "date": "2026-07-19",
       "title": "AI Agent — Execution Boundaries Meet Organizational Sessions",
@@ -21,7 +32,7 @@
       "publicPath": "en/2026/07/19/index.html",
       "sourceFile": "20260719.body.html",
       "sha256": "96fef54843f81ef1629a72aef389d13a4011bd9b8fd789e27986ffc7215478be",
-      "publicSha256": "140d962b78c07d2dc27f3f3a88045fb3a4184c110e2f1055bf785753506623cb"
+      "publicSha256": "2da4fa3f31e75dcb9d5231c629489b5d439f39792e1b0068e5a2ae62ce915116"
     },
     {
       "date": "2026-07-18",

@@ -1,17 +1,28 @@
 {
   "schemaVersion": 3,
   "locale": "zh-CN",
-  "generatedAt": "2026-07-19T00:23:29.3743660Z",
+  "generatedAt": "2026-07-20T01:00:03.1238090Z",
   "baseUrl": "https://ai.alux.network",
   "publicationPath": "/daily",
   "publicationUrl": "https://ai.alux.network/daily/",
   "latest": {
-    "date": "2026-07-19",
-    "url": "/daily/2026/07/19/",
+    "date": "2026-07-20",
+    "url": "/daily/2026/07/20/",
     "latestUrl": "/daily/latest/",
-    "alternateUrl": "/daily/en/2026/07/19/"
+    "alternateUrl": "/daily/en/2026/07/20/"
   },
   "reports": [
+    {
+      "date": "2026-07-20",
+      "title": "AI Agent权限与状态重写",
+      "lead": "今天最值得看的变化，是 Agent 产品开始承认：验证、干预、持久状态与远程连接都必须有明确触发者、边界和恢复证据。",
+      "url": "/daily/2026/07/20/",
+      "alternateUrl": "/daily/en/2026/07/20/",
+      "publicPath": "2026/07/20/index.html",
+      "sourceFile": "20260720_ALUX_AI智能体情报日报.html",
+      "sha256": "b226e6d3a31a5e438d02a35f529a602287b3b3b67ca61a2ec6e9b0ceb117988b",
+      "publicSha256": "1fc4cfdff18ddcf2d9de2bbdfe84e4268ff560d1504a8a8d814da4f1802ea2f2"
+    },
     {
       "date": "2026-07-19",
       "title": "AI Agent边界与会话合流",
@@ -21,7 +32,7 @@
       "publicPath": "2026/07/19/index.html",
       "sourceFile": "20260719_ALUX_AI智能体情报日报.html",
       "sha256": "9b8490633721545343579c420cd10d3c879575e9d6265fb5eec18eae95a74d91",
-      "publicSha256": "22a01132823f57e610a5dca5d74e78f3009659821784627c3490c898a4c9a423"
+      "publicSha256": "8e2ea1713038e324c0b5bcae6621e937d0361caa3c1156062f1ba576ea63156f"
     },
     {
       "date": "2026-07-18",
