@@ -1,17 +1,28 @@
 {
   "schemaVersion": 3,
   "locale": "zh-CN",
-  "generatedAt": "2026-07-20T01:00:03.1238090Z",
+  "generatedAt": "2026-07-21T00:19:52.1023160Z",
   "baseUrl": "https://ai.alux.network",
   "publicationPath": "/daily",
   "publicationUrl": "https://ai.alux.network/daily/",
   "latest": {
-    "date": "2026-07-20",
-    "url": "/daily/2026/07/20/",
+    "date": "2026-07-21",
+    "url": "/daily/2026/07/21/",
     "latestUrl": "/daily/latest/",
-    "alternateUrl": "/daily/en/2026/07/20/"
+    "alternateUrl": "/daily/en/2026/07/21/"
   },
   "reports": [
+    {
+      "date": "2026-07-21",
+      "title": "AI Agent恢复与委派成形",
+      "lead": "今天最值得看的变化，不是 Agent 又多了一个功能，而是恢复身份、工具执行真值、长期委派和技能来源开始被写成可检查的系统状态。",
+      "url": "/daily/2026/07/21/",
+      "alternateUrl": "/daily/en/2026/07/21/",
+      "publicPath": "2026/07/21/index.html",
+      "sourceFile": "20260721_ALUX_AI智能体情报日报.html",
+      "sha256": "f9c4bba7b527da962ab0479dc935077183c4a17d8349d44420d06f42fb8e8a16",
+      "publicSha256": "c860c8267ed3fe0f8b6b7ff344f150245c21f6d0a19aa18035f1e51a73b182c2"
+    },
     {
       "date": "2026-07-20",
       "title": "AI Agent权限与状态重写",
@@ -21,7 +32,7 @@
       "publicPath": "2026/07/20/index.html",
       "sourceFile": "20260720_ALUX_AI智能体情报日报.html",
       "sha256": "b226e6d3a31a5e438d02a35f529a602287b3b3b67ca61a2ec6e9b0ceb117988b",
-      "publicSha256": "1fc4cfdff18ddcf2d9de2bbdfe84e4268ff560d1504a8a8d814da4f1802ea2f2"
+      "publicSha256": "92ea1fb053aca78f1d702abf42020a91fc7bce4d88ca8745f5558a3d94b612f2"
     },
     {
       "date": "2026-07-19",

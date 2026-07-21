@@ -1,17 +1,28 @@
 {
   "schemaVersion": 3,
   "locale": "en-US",
-  "generatedAt": "2026-07-20T01:00:03.1238090Z",
+  "generatedAt": "2026-07-21T00:19:52.1023160Z",
   "baseUrl": "https://ai.alux.network",
   "publicationPath": "/daily/en",
   "publicationUrl": "https://ai.alux.network/daily/en/",
   "latest": {
-    "date": "2026-07-20",
-    "url": "/daily/en/2026/07/20/",
+    "date": "2026-07-21",
+    "url": "/daily/en/2026/07/21/",
     "latestUrl": "/daily/en/latest/",
-    "alternateUrl": "/daily/2026/07/20/"
+    "alternateUrl": "/daily/2026/07/21/"
   },
   "reports": [
+    {
+      "date": "2026-07-21",
+      "title": "AI Agent — Recovery and Delegation Take Shape",
+      "lead": "Today’s most important change is not another agent feature. Restored identity, execution truth, long-running delegation, and skill provenance are becoming inspectable system state.",
+      "url": "/daily/en/2026/07/21/",
+      "alternateUrl": "/daily/2026/07/21/",
+      "publicPath": "en/2026/07/21/index.html",
+      "sourceFile": "20260721.body.html",
+      "sha256": "2ede5979e816950786f0829e07e6e2ffd8c365e1f79fd7a91680a95fabb07f01",
+      "publicSha256": "70f5acd957e9ef642b1fa8eecd091c5e547df6d976dffc459bc42b0199c0c377"
+    },
     {
       "date": "2026-07-20",
       "title": "AI Agent — Permissions and State, Rewritten",
@@ -21,7 +32,7 @@
       "publicPath": "en/2026/07/20/index.html",
       "sourceFile": "20260720.body.html",
       "sha256": "199a9290e77f5a34b27b9be8ea28f76d299b7c012cd0a26787d51c44b3b00e24",
-      "publicSha256": "054a5d801d07546b5b3cdf9abfdaa9be7fc67edc2a22ff51a44c55bcc97f470c"
+      "publicSha256": "c456728ea6eb693105b64f46885795f50c28d9d074bd7eb5ad0db0251e5c765a"
     },
     {
       "date": "2026-07-19",
