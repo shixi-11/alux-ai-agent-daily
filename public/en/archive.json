@@ -1,17 +1,28 @@
 {
   "schemaVersion": 3,
   "locale": "en-US",
-  "generatedAt": "2026-07-21T00:19:52.1023160Z",
+  "generatedAt": "2026-07-22T00:27:43.6797160Z",
   "baseUrl": "https://ai.alux.network",
   "publicationPath": "/daily/en",
   "publicationUrl": "https://ai.alux.network/daily/en/",
   "latest": {
-    "date": "2026-07-21",
-    "url": "/daily/en/2026/07/21/",
+    "date": "2026-07-22",
+    "url": "/daily/en/2026/07/22/",
     "latestUrl": "/daily/en/latest/",
-    "alternateUrl": "/daily/2026/07/21/"
+    "alternateUrl": "/daily/2026/07/22/"
   },
   "reports": [
+    {
+      "date": "2026-07-22",
+      "title": "AI Agent — Session Evidence Converges",
+      "lead": "The day’s most consequential shift is that threads, memories, connectors, human responses, and recovery boundaries are no longer mere product settings. They are becoming portable, inspectable work state.",
+      "url": "/daily/en/2026/07/22/",
+      "alternateUrl": "/daily/2026/07/22/",
+      "publicPath": "en/2026/07/22/index.html",
+      "sourceFile": "20260722.body.html",
+      "sha256": "5c7f302b3c96d4fc626772218446288e41f43a28409beb1dbeb3586b7dc72362",
+      "publicSha256": "61aeff77c76ee0096097b840f652a5c20d868b1a9afefaef9f928efec2bde30e"
+    },
     {
       "date": "2026-07-21",
       "title": "AI Agent — Recovery and Delegation Take Shape",
@@ -21,7 +32,7 @@
       "publicPath": "en/2026/07/21/index.html",
       "sourceFile": "20260721.body.html",
       "sha256": "2ede5979e816950786f0829e07e6e2ffd8c365e1f79fd7a91680a95fabb07f01",
-      "publicSha256": "70f5acd957e9ef642b1fa8eecd091c5e547df6d976dffc459bc42b0199c0c377"
+      "publicSha256": "c08fe815b636d0072f0b20f2f3677128d1f2050b60a310250ccb6c3dcff41284"
     },
     {
       "date": "2026-07-20",

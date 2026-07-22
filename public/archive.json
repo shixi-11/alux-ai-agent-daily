@@ -1,17 +1,28 @@
 {
   "schemaVersion": 3,
   "locale": "zh-CN",
-  "generatedAt": "2026-07-21T00:19:52.1023160Z",
+  "generatedAt": "2026-07-22T00:27:43.6797160Z",
   "baseUrl": "https://ai.alux.network",
   "publicationPath": "/daily",
   "publicationUrl": "https://ai.alux.network/daily/",
   "latest": {
-    "date": "2026-07-21",
-    "url": "/daily/2026/07/21/",
+    "date": "2026-07-22",
+    "url": "/daily/2026/07/22/",
     "latestUrl": "/daily/latest/",
-    "alternateUrl": "/daily/en/2026/07/21/"
+    "alternateUrl": "/daily/en/2026/07/22/"
   },
   "reports": [
+    {
+      "date": "2026-07-22",
+      "title": "AI Agent会话证据汇流",
+      "lead": "今天最值得看的变化，是线程、记忆、连接器、人工响应与恢复边界不再只是产品设置，而开始组成可迁移、可检查的工作状态。",
+      "url": "/daily/2026/07/22/",
+      "alternateUrl": "/daily/en/2026/07/22/",
+      "publicPath": "2026/07/22/index.html",
+      "sourceFile": "20260722_ALUX_AI智能体情报日报.html",
+      "sha256": "dba70034289d3dc8414cd9b070d9dc09dd02a2a7c1818c311f46a0f4d7eb9f51",
+      "publicSha256": "5a47757913c5778292530d4cf7a11741d4419162fdbb3976d70eee16c2ed97c0"
+    },
     {
       "date": "2026-07-21",
       "title": "AI Agent恢复与委派成形",
@@ -21,7 +32,7 @@
       "publicPath": "2026/07/21/index.html",
       "sourceFile": "20260721_ALUX_AI智能体情报日报.html",
       "sha256": "f9c4bba7b527da962ab0479dc935077183c4a17d8349d44420d06f42fb8e8a16",
-      "publicSha256": "c860c8267ed3fe0f8b6b7ff344f150245c21f6d0a19aa18035f1e51a73b182c2"
+      "publicSha256": "00a9c0b8fd2e2acaae77e9a34b26e59860eae37f26db330524a9c8b80a85ab97"
     },
     {
       "date": "2026-07-20",
