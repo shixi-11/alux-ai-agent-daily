@@ -1,17 +1,28 @@
 {
   "schemaVersion": 3,
   "locale": "zh-CN",
-  "generatedAt": "2026-07-22T00:27:43.6797160Z",
+  "generatedAt": "2026-07-23T00:24:49.6147500Z",
   "baseUrl": "https://ai.alux.network",
   "publicationPath": "/daily",
   "publicationUrl": "https://ai.alux.network/daily/",
   "latest": {
-    "date": "2026-07-22",
-    "url": "/daily/2026/07/22/",
+    "date": "2026-07-23",
+    "url": "/daily/2026/07/23/",
     "latestUrl": "/daily/latest/",
-    "alternateUrl": "/daily/en/2026/07/22/"
+    "alternateUrl": "/daily/en/2026/07/23/"
   },
   "reports": [
+    {
+      "date": "2026-07-23",
+      "title": "AI Agent权限恢复同面收敛",
+      "lead": "今天最有价值的变化，不是又多一个 Agent 功能，而是凭据选择、工作区隔离、委派限制、恢复阶段与监控证据开始进入同一生产责任面。",
+      "url": "/daily/2026/07/23/",
+      "alternateUrl": "/daily/en/2026/07/23/",
+      "publicPath": "2026/07/23/index.html",
+      "sourceFile": "20260723_ALUX_AI智能体情报日报.html",
+      "sha256": "78509969fa7802f18bdbce8993b5e48d1739e02f64ee90acc9a8d1fe5606e5e3",
+      "publicSha256": "a3b9165f1a37eb86a9d5e3954fdcbd9237a1d0f97b845152a142dfa4378bbfcd"
+    },
     {
       "date": "2026-07-22",
       "title": "AI Agent会话证据汇流",
@@ -21,7 +32,7 @@
       "publicPath": "2026/07/22/index.html",
       "sourceFile": "20260722_ALUX_AI智能体情报日报.html",
       "sha256": "dba70034289d3dc8414cd9b070d9dc09dd02a2a7c1818c311f46a0f4d7eb9f51",
-      "publicSha256": "5a47757913c5778292530d4cf7a11741d4419162fdbb3976d70eee16c2ed97c0"
+      "publicSha256": "a24778b0812bf0cd7d94b4557a894e57700e6eef51265a6a21317bb0b2404970"
     },
     {
       "date": "2026-07-21",

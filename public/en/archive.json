@@ -1,17 +1,28 @@
 {
   "schemaVersion": 3,
   "locale": "en-US",
-  "generatedAt": "2026-07-22T00:27:43.6797160Z",
+  "generatedAt": "2026-07-23T00:24:49.6147500Z",
   "baseUrl": "https://ai.alux.network",
   "publicationPath": "/daily/en",
   "publicationUrl": "https://ai.alux.network/daily/en/",
   "latest": {
-    "date": "2026-07-22",
-    "url": "/daily/en/2026/07/22/",
+    "date": "2026-07-23",
+    "url": "/daily/en/2026/07/23/",
     "latestUrl": "/daily/en/latest/",
-    "alternateUrl": "/daily/2026/07/22/"
+    "alternateUrl": "/daily/2026/07/23/"
   },
   "reports": [
+    {
+      "date": "2026-07-23",
+      "title": "AI Agent — Authority and recovery converge",
+      "lead": "Today’s highest-value shift is not another agent feature. Credential selection, workspace isolation, delegation limits, recovery phases, and monitoring evidence are converging on a single production-accountability surface.",
+      "url": "/daily/en/2026/07/23/",
+      "alternateUrl": "/daily/2026/07/23/",
+      "publicPath": "en/2026/07/23/index.html",
+      "sourceFile": "20260723.body.html",
+      "sha256": "a4b963c1b424fb014dcfd003c7f0f6d6ad00f18edcaedcb6b11aec00096f5f25",
+      "publicSha256": "e94b21306c5733067b2ea4032a5ad0286f276a39442261d19b47a449029d002b"
+    },
     {
       "date": "2026-07-22",
       "title": "AI Agent — Session Evidence Converges",
@@ -21,7 +32,7 @@
       "publicPath": "en/2026/07/22/index.html",
       "sourceFile": "20260722.body.html",
       "sha256": "5c7f302b3c96d4fc626772218446288e41f43a28409beb1dbeb3586b7dc72362",
-      "publicSha256": "61aeff77c76ee0096097b840f652a5c20d868b1a9afefaef9f928efec2bde30e"
+      "publicSha256": "c0aade2170988fb2cfdba88558f7603c6ea000bbb1bcbbebec190aeb3cb2c995"
     },
     {
       "date": "2026-07-21",
