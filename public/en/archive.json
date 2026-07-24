@@ -1,17 +1,28 @@
 {
   "schemaVersion": 3,
   "locale": "en-US",
-  "generatedAt": "2026-07-23T00:24:49.6147500Z",
+  "generatedAt": "2026-07-24T00:25:06.1648130Z",
   "baseUrl": "https://ai.alux.network",
   "publicationPath": "/daily/en",
   "publicationUrl": "https://ai.alux.network/daily/en/",
   "latest": {
-    "date": "2026-07-23",
-    "url": "/daily/en/2026/07/23/",
+    "date": "2026-07-24",
+    "url": "/daily/en/2026/07/24/",
     "latestUrl": "/daily/en/latest/",
-    "alternateUrl": "/daily/2026/07/23/"
+    "alternateUrl": "/daily/2026/07/24/"
   },
   "reports": [
+    {
+      "date": "2026-07-24",
+      "title": "AI Agent — State and authority converge",
+      "lead": "Today’s highest-value shift is that durable state, organizational connectivity, tool boundaries, and evidence integrity are moving onto one runtime surface. An agent must not only continue execution; it must also establish where state lives, who may read it, and how recovery works after failure.",
+      "url": "/daily/en/2026/07/24/",
+      "alternateUrl": "/daily/2026/07/24/",
+      "publicPath": "en/2026/07/24/index.html",
+      "sourceFile": "20260724.body.html",
+      "sha256": "0cc39e6c40cd7381def926b5c39047170766dcb160ba6b0bf4ac8f8816b48b26",
+      "publicSha256": "9f09fc86361d08bd8acb9a4221084c69464e1498cd4c2137f3daf4fbcf4ebf90"
+    },
     {
       "date": "2026-07-23",
       "title": "AI Agent — Authority and recovery converge",
@@ -21,7 +32,7 @@
       "publicPath": "en/2026/07/23/index.html",
       "sourceFile": "20260723.body.html",
       "sha256": "a4b963c1b424fb014dcfd003c7f0f6d6ad00f18edcaedcb6b11aec00096f5f25",
-      "publicSha256": "e94b21306c5733067b2ea4032a5ad0286f276a39442261d19b47a449029d002b"
+      "publicSha256": "e847d10848699ae6e279d87391db5d44f4059e5722725bba64f9e006d679cb5a"
     },
     {
       "date": "2026-07-22",

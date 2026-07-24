@@ -1,17 +1,28 @@
 {
   "schemaVersion": 3,
   "locale": "zh-CN",
-  "generatedAt": "2026-07-23T00:24:49.6147500Z",
+  "generatedAt": "2026-07-24T00:25:06.1648130Z",
   "baseUrl": "https://ai.alux.network",
   "publicationPath": "/daily",
   "publicationUrl": "https://ai.alux.network/daily/",
   "latest": {
-    "date": "2026-07-23",
-    "url": "/daily/2026/07/23/",
+    "date": "2026-07-24",
+    "url": "/daily/2026/07/24/",
     "latestUrl": "/daily/latest/",
-    "alternateUrl": "/daily/en/2026/07/23/"
+    "alternateUrl": "/daily/en/2026/07/24/"
   },
   "reports": [
+    {
+      "date": "2026-07-24",
+      "title": "AI Agent状态权限一体收敛",
+      "lead": "今天最有价值的变化，是耐久状态、组织连接、工具边界与证据完整性开始进入同一运行面：Agent 不只要继续执行，还要说明状态放在哪里、谁能读取、失败后怎样恢复。",
+      "url": "/daily/2026/07/24/",
+      "alternateUrl": "/daily/en/2026/07/24/",
+      "publicPath": "2026/07/24/index.html",
+      "sourceFile": "20260724_ALUX_AI智能体情报日报.html",
+      "sha256": "7cca2fd978df3bc0ac2276659e97fde99bd76b3b6ce453356d7a451159baaace",
+      "publicSha256": "469d2736dafd1e68b35e7a3d2de361070b7940230b9fc140e30d2d7c363b21a2"
+    },
     {
       "date": "2026-07-23",
       "title": "AI Agent权限恢复同面收敛",
@@ -21,7 +32,7 @@
       "publicPath": "2026/07/23/index.html",
       "sourceFile": "20260723_ALUX_AI智能体情报日报.html",
       "sha256": "78509969fa7802f18bdbce8993b5e48d1739e02f64ee90acc9a8d1fe5606e5e3",
-      "publicSha256": "a3b9165f1a37eb86a9d5e3954fdcbd9237a1d0f97b845152a142dfa4378bbfcd"
+      "publicSha256": "a98f8bdc5ecdc10032492dce1fc82867ee7b3e0dcdc62df2704d2cc1447686d4"
     },
     {
       "date": "2026-07-22",
